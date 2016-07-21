@@ -1,0 +1,28 @@
+# Webstop Default .editorconfig file
+#
+# This file should be placed in the root level of every Webstop project.
+# 
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs.
+#
+# For more information see http://editorconfig.org
+#
+# Tread lightly, changes to this file affect everyone and could 
+# draw the ire of every developer on our team... You'd be wise 
+# run any changes by Greg first.
+
+root = true
+
+# Defaults for all file types
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Markdown 
+# In Markdown two trailing spaces indicates a <br>
+[*.{md,markdown}]
+trim_trailing_whitespace = false
