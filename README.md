@@ -9,7 +9,7 @@ Make sure you have the following prerequisites installed:
 
 - Ruby 2
 - RVM
-- Bundler
+- Bundler (`gem install bundler`)
 
 Once you've gotten the prerequisites met issue the following command:
 
