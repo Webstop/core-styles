@@ -17,5 +17,13 @@ $`bundle install`
 
 ---
 
+Bootstrap Docs
+--------------
+
+Note we don't include `getting-started/introduction` page, becasue this page does not apply to our enviroment and gives conflicting instructions.
+
+
+---
+
 lovingly crafted by Greg Hemphill
 

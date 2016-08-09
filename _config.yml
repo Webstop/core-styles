@@ -15,21 +15,24 @@ url: "http://localhost:4000" # the base hostname & protocol for your site
 twitter_username: Hemphill
 github_username:  Hemphill
 
-gems:
-  - jekyll-redirect-from
-  - jekyll-sitemap
-
 # Build settings
 markdown: kramdown
-include: [node_modules/bootstrap-docs/docs/getting-started,
-          node_modules/bootstrap-docs/docs/layout,
-          node_modules/bootstrap-docs/docs/content,
-          node_modules/bootstrap-docs/docs/components,
-          node_modules/bootstrap-docs/docs/about,
-          node_modules/bootstrap-docs/docs/migration.md]
 exclude: [Gemfile,
           Gemfile.lock,
           Gruntfile.js,
           README.md,
           grunt,
-          package.json]
+          package.json,
+          workspace,
+          node_modules/bootstrap-docs/CHANGELOG.md,
+          node_modules/bootstrap-docs/dist,
+          node_modules/bootstrap-docs/grunt,
+          node_modules/bootstrap-docs/Gruntfile.js,
+          node_modules/bootstrap-docs/LICENSE,
+          node_modules/bootstrap-docs/package.json,
+          node_modules/bootstrap-docs/README.md,
+          node_modules/bootstrap-docs/scss,
+          node_modules/jquery,
+          node_modules/tether]
+
+

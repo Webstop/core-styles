@@ -6,4 +6,4 @@ permalink: /
 
 This is the cool home page.
 
-See our [Bootstrap Docs](/node_modules/bootstrap-docs/docs/getting-started/introduction.html) or our [about](/about) page. 
+See our [Bootstrap Docs](docs/bootstrap/getting-started/introduction.html) or our [about](about.html) page. 
