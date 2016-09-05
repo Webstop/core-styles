@@ -24,8 +24,8 @@
 // Happy Bootstrapping!
 
 // Load Bootstrap variables and mixins
-@import "../../../scss/variables";
-@import "../../../scss/mixins";
+@import "../../node_modules/bootstrap-docs/scss/variables";
+@import "../../node_modules/bootstrap-docs/scss/mixins";
 
 // Local docs variables
 $bd-purple:         #563d7c;

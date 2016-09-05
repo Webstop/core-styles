@@ -1,0 +1,108 @@
+// scss-lint:disable ImportantRule
+
+.wsg-page-header.wsg-home-page-header {
+
+
+  h1 {
+    font-size: 2rem;
+    strong {
+      display: none;
+    }
+  }
+
+
+
+  img {
+    width: 50%;
+  }
+
+
+  @include media-breakpoint-up(md) {
+
+      h1 {
+        font-size: 4rem;
+        strong {
+          display: inline;
+        }
+      }
+    img {
+      width: 100%;
+      max-width: 556px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    p {
+      font-size: 2rem;
+    }
+  }
+}
+
+.wsg-page-header {
+  padding: 2rem ($grid-gutter-width / 2);
+  margin-bottom: 1.5rem;
+  color: $wsg-blue-light;
+  text-align: center;
+  background-color: $wsg-blue;
+  background-image: url("/assets/images/Webstop-boxes.png");
+  background-size: 100px 100px;
+  background-repeat: repeat-y;
+  background-position: right center;
+
+  .container {
+    position: relative;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    color: #fff;
+  }
+
+  p {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 3rem;
+    text-align: left;
+    background-size: 256px 256px;
+
+    p {
+      margin-right: 100px;
+    }
+
+  }
+
+  @include media-breakpoint-up(md) {
+
+    background-size: 512px 512px;
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-right: 100px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    h1,
+    p {
+      margin-right: 150px;
+    }
+
+    .carbonad {
+      position: absolute;
+      top: 0;
+      right: .75rem; // offset from the .container's padding
+      margin: 0 !important;
+    }
+  }
+}

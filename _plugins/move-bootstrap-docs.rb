@@ -6,11 +6,13 @@ module MoveBootstrapDocs
 
       site.pages.each do |page|
         if page.url.include? node_path
-          puts "move from: #{page.url}"
+          #puts "move from: #{page.url}"
+
           page.url.sub!(node_path, '')
           page.url.prepend(preferred_path)
-          puts "move to:   #{page.url}"
-          puts ''
+
+          #puts "move to:   #{page.url}"
+          #puts ''
         end
       end
 

@@ -1,9 +1,12 @@
 ---
-layout: page
-title: Home Page
+layout: home
+group: home
+title: Grocery Style Guide
 permalink: /
 ---
 
-This is the cool home page.
 
-See our [Bootstrap Docs](docs/bootstrap/getting-started/introduction.html) or our [about](about.html) page. 
+
+- [Introduction](/docs/introduction.html)
+- [Getting Started](/docs/getting-started.html)
+- [Bootstrap Docs](/docs/bootstrap/getting-started/introduction.html)

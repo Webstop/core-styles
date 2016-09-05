@@ -12,14 +12,15 @@
 
     {% include nav-home.html %}
 
-    <div class="wsg-page-header">
+    <div class="wsg-page-header wsg-home-page-header">
       <div class="container">
         {% include page-headers.html %}
       </div>
     </div>
 
     <div class="container">
-      <div class="row">
+      {{ content }}
+<!--       <div class="row">
         <div class="col-xs-12 col-md-3 push-md-9 bd-sidebar">
           {% include nav-docs.html %}
         </div>
@@ -27,7 +28,7 @@
           <h1 class="bd-title" id="content">{{ page.title }}</h1>
           {{ content }}
         </div>
-      </div>
+      </div> -->
     </div>
 
     {% include footer.html %}
