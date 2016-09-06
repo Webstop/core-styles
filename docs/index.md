@@ -7,6 +7,5 @@ permalink: /
 
 
 
-- [Introduction](/docs/introduction.html)
-- [Getting Started](/docs/getting-started.html)
+- [Introduction](/docs/getting-started/introduction.html)
 - [Bootstrap Docs](/docs/bootstrap/getting-started/introduction.html)

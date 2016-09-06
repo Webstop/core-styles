@@ -1,60 +1,72 @@
-<form class="bd-search hidden-sm-down">
+<form class="wsg-search hidden-sm-down">
   <input type="text" class="form-control" id="search-input" placeholder="Search..." autocomplete="off">
-  <div class="dropdown-menu bd-search-results" id="search-results"></div>
+  <div class="dropdown-menu wsg-search-results" id="search-results"></div>
 </form>
 
-<p>nav-docs.html</p>
+<nav class="wsg-links" id="docsNavbarContent">
+  {% for category in site.data.nav %}
+    {% assign first_group = category.pages | first %}
+    {% assign link = first_group.pages | first %}
+    {% assign category_slug = category.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-' %}
+    {% assign active = nil %}
 
-<nav class="bd-links" id="docsNavbarContent">
-  {% for group in site.data.nav %}
-  {% assign link = group.pages | first %}
-  {% assign slug = group.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-' %}
-  {% assign active = nil %}
+    {% if page.url contains category_slug %}
+      {% assign active = 'is-active-category' %}
+    {% endif %}
 
-  {% if page.url contains slug %}
-    {% assign active = 'active' %}
-  {% endif %}
-
-  <div class="bd-toc-item {{ active }}">
-    {% if slug == "examples" %}
-        <a class="bd-toc-link" href="{{ site.baseurl }}/{{ group.title | downcase | replace: ' ', '-' }}/">
-      {% else %}
-        <a class="bd-toc-link" href="{{ site.baseurl }}/{{ group.title | downcase | replace: ' ', '-' }}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}">
-      {% endif %}
-        {{ group.title }}
+    <div class="wsg-toc-category {{ active }}">
+      <a class="wsg-toc-category-link" href="{{ site.baseurl }}/docs/{{ category.title | downcase | replace: ' ', '-' }}/{{ first_group.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}">
+        {{ category.title }}
       </a>
 
-      <ul class="nav bd-sidenav">
-        {% for doc in group.pages %}
-          {% assign slug = doc.title | downcase | replace: ' ', '-' | replace:'-&-','-' %}
-          {% capture slug %}/{{ slug }}{% endcapture %}
-          {% assign active = nil %}
+      {% for group in category.pages %}
+        {% assign link = group.pages | first %}
+        {% assign slug = group.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-' %}
+        {% assign active = nil %}
 
-          {% if page.url contains slug %}
-            {% assign active = 'active bd-sidenav-active' %}
-          {% endif %}
+        {% if page.url contains slug %}
+          {% assign active = 'is-active-group' %}
+        {% endif %}
 
-          <li class="{{ active }}">
-            <a href="{{ site.baseurl }}/{{ group.title | downcase | replace: ' ', '-' }}/{{ doc.title | downcase | replace: ' ', '-' | replace:'-&-','-' }}">
-              {{ doc.title }}
-            </a>
+        <div class="wsg-toc-group wsg-category-nav {{ active }}">
+          <a class="wsg-toc-group-link" href="{{ site.baseurl }}/docs/{{ category_slug }}/{{ group.title | downcase | replace: ' ', '-' }}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}">
+            {{ group.title }}
+          </a>
 
-            {% comment %}
-            {% unless doc.sections == nil %}
-              <ul class="nav">
-                {% for section in doc.sections %}
-                  <li>
-                    <a href="#{{ section.title | downcase | replace: ' ', '-' }}">
-                      {{ section.title }}
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endunless %}
-            {% endcomment %}
-          </li>
-        {% endfor %}
-      </ul>
+          <!-- START: doc/pages -->
+          <ul class="nav wsg-group-nav">
+            {% for doc in group.pages %}
+              {% assign slug = doc.title | downcase | replace: ' ', '-' | replace:'-&-','-' %}
+              {% capture slug %}/{{ slug }}{% endcapture %}
+              {% assign active = nil %}
+
+              {% if page.url contains slug %}
+                {% assign active = 'active wsg-group-nav-active' %}
+              {% endif %}
+
+              <li class="{{ active }}">
+                <a href="{{ site.baseurl }}/docs/{{ category_slug }}/{{ group.title | downcase | replace: ' ', '-' }}/{{ doc.title | downcase | replace: ' ', '-' | replace:'-&-','-' }}">
+                  {{ doc.title }}
+                </a>
+
+                {% comment %}
+                {% unless doc.sections == nil %}
+                  <ul class="nav">
+                    {% for section in doc.sections %}
+                      <li>
+                        <a href="#{{ section.title | downcase | replace: ' ', '-' }}">
+                          {{ section.title }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endunless %}
+                {% endcomment %}
+              </li>
+            {% endfor %}
+          </ul><!-- START: doc/pages -->
+        </div>
+      {% endfor %}
     </div>
   {% endfor %}
 </nav>

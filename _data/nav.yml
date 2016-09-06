@@ -11,59 +11,73 @@
     - title: Best practices
     - title: Accessibility
 
-- title: Layout
+- title: Bootstrap
   pages:
-    - title: Overview
-    - title: Grid
-    - title: Flexbox grid
-    - title: Media object
-    - title: Responsive utilities
+    - title: Layout
+      pages:
+        - title: Overview
+        - title: Grid
+        - title: Flexbox grid
+        - title: Media object
+        - title: Responsive utilities
 
-- title: Content
+    - title: Content
+      pages:
+        - title: Reboot
+        - title: Typography
+        - title: Code
+        - title: Images
+        - title: Tables
+        - title: Figures
+
+    - title: Components
+      pages:
+        - title: Alerts
+        - title: Breadcrumb
+        - title: Buttons
+        - title: Button group
+        - title: Card
+        - title: Carousel
+        - title: Collapse
+        - title: Dropdowns
+        - title: Forms
+        - title: Input group
+        - title: Jumbotron
+        - title: List group
+        - title: Modal
+        - title: Navs
+        - title: Navbar
+        - title: Pagination
+        - title: Popovers
+        - title: Progress
+        - title: Scrollspy
+        - title: Tag
+        - title: Tooltips
+        - title: Utilities
+    - title: About
+      pages:
+        - title: History
+        - title: Team
+        - title: Brand
+        - title: License
+        - title: Translations
+- title: Grocery Modules
   pages:
-    - title: Reboot
-    - title: Typography
-    - title: Code
-    - title: Images
-    - title: Tables
-    - title: Figures
-
-- title: Components
-  pages:
-    - title: Alerts
-    - title: Breadcrumb
-    - title: Buttons
-    - title: Button group
-    - title: Card
-    - title: Carousel
-    - title: Collapse
-    - title: Dropdowns
-    - title: Forms
-    - title: Input group
-    - title: Jumbotron
-    - title: List group
-    - title: Modal
-    - title: Navs
-    - title: Navbar
-    - title: Pagination
-    - title: Popovers
-    - title: Progress
-    - title: Scrollspy
-    - title: Tag
-    - title: Tooltips
-    - title: Utilities
-
-# - title: Extend
-#   pages:
-#     - title: Approach
-#     - title: Icon fonts
-
-- title: About
-  pages:
-    - title: History
-    - title: Team
-    - title: Brand
-    - title: License
-    - title: Translations
-
-- title: Migration
+    - title: Recipes
+      pages:
+        - title: Recipe
+        - title: Recipes
+        - title: My Cook Book
+    - title: Circulars
+      pages:
+        - title: Sale Items
+        - title: Recipes
+        - title: Coupons
+        - title: Videos
+        - title: HTML Contents
+        - title: Modals
+        - title: Navigation
+    - title: Coupons
+      pages:
+        - title: Coupons
+        - title: Wallet Items

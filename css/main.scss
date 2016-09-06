@@ -48,9 +48,10 @@ $on-laptop:        800px;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "../node_modules/bootstrap-docs/scss/bootstrap",
-        "base",
-        "layout",
-        "syntax-highlighting",
+        // "base",
+        // "layout",
+        // "syntax-highlighting",
         "../node_modules/bootstrap-docs/docs/assets/scss/docs",
+        "docs-bs/docs",
         "docs/wsg-docs"
 ;
