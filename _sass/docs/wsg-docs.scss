@@ -16,11 +16,17 @@
 // Happy Styling!
 
 
-// Local docs variables
-$wsg-blue:         #336699;
-$wsg-blue-bright:  lighten(saturate($wsg-blue, 5%), 15%);
-$wsg-blue-light:   #99ccff;
-
 // Load docs components
 @import "page-header";
 
+
+// Navbar
+.wsg-site-nav.navbar {
+  border-bottom: 1px solid lighten($brand-primary, 50%);
+  background-color: #fff;
+
+  .navbar-brand {
+    color: $brand-primary;
+    font-weight: bold;
+  }
+}

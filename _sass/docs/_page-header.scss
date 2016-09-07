@@ -2,7 +2,6 @@
 
 .wsg-page-header.wsg-home-page-header {
 
-
   h1 {
     font-size: 2rem;
     strong {
@@ -10,12 +9,9 @@
     }
   }
 
-
-
   img {
     width: 50%;
   }
-
 
   @include media-breakpoint-up(md) {
 
@@ -41,9 +37,9 @@
 .wsg-page-header {
   padding: 2rem ($grid-gutter-width / 2);
   margin-bottom: 1.5rem;
-  color: $wsg-blue-light;
+  color: lighten($brand-primary, 35%);;
   text-align: center;
-  background-color: $wsg-blue;
+  background-color: $brand-primary;
   background-image: url("/assets/images/Webstop-boxes.png");
   background-size: 100px 100px;
   background-repeat: repeat-y;
@@ -68,6 +64,7 @@
   @include media-breakpoint-up(sm) {
     padding-top: 4rem;
     padding-bottom: 4rem;
+    margin-top: 55px;
     margin-bottom: 3rem;
     text-align: left;
     background-size: 256px 256px;
