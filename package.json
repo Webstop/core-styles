@@ -6,6 +6,7 @@
   "author": "",
   "license": "",
   "devDependencies": {
-    "bootstrap-docs": "github:hemphill/bootstrap-docs#v4-docs"
+    "bootstrap-docs": "github:hemphill/bootstrap-docs#v4-docs",
+    "holderjs": "^2.9.4"
   }
 }

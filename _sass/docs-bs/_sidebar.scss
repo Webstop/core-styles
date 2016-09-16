@@ -51,26 +51,32 @@
   }
 }
 
+.wsg-links li ul {
+  margin-left: 1rem;
+  border-left: 4px solid #eee;
+}
+
 // TOC Categories - top level sections (e.g. Bootstrap, Grocery Modules)
 .wsg-category-nav {
   display: none;
+  padding-left: 1rem;
 }
 
 .wsg-toc-category-link {
   display: block;
   padding: .25rem .75rem;
-  color: $gray;
+  // color: $brand-primary;
+  font-size: 1.2rem;
 }
 .wsg-toc-category-link:hover,
 .wsg-toc-category-link:focus {
   color: $brand-primary;
   text-decoration: none;
 }
-.is-active-category > .wsg-toc-category-link {
+.is-active-category .wsg-toc-category-link {
   font-weight: 500;
-  color: $gray-dark;
 }
-.is-active-category > .wsg-category-nav {
+.is-active-category .wsg-category-nav {
   display: block;
 }
 
@@ -89,6 +95,7 @@
 // TOC Groups - items within a category (e.g. sections in Bootstrap)
 .wsg-group-nav {
   display: none;
+  padding-left: 1rem;
 }
 
 .wsg-toc-group-link {
@@ -101,11 +108,11 @@
   color: $brand-primary;
   text-decoration: none;
 }
-.is-active-group > .wsg-toc-group-link {
+.is-active-group .wsg-toc-group-link {
   font-weight: 500;
   color: $gray-dark;
 }
-.is-active-group > .wsg-group-nav {
+.is-active-group .wsg-group-nav {
   display: block;
 }
 

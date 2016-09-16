@@ -1,13 +1,13 @@
 # ToDos
 
-
+- Change search.json file to exclude pages we don't use; like those under Bootstrap's Getting-Started section.
 
 
 
 
 # 3rd Party Script Tag
 
-Third parties will be able to drop the following script tag on 
+Third parties will be able to drop the following script tag on
 their site.
 
 ```js
