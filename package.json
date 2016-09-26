@@ -1,6 +1,6 @@
 {
-  "name": "webstop-grocery-website-style-guide",
-  "version": "0.0.0",
+  "name": "core-styles",
+  "version": "1.0.0.alpha1",
   "description": "The definitive source of styling guidelines for grocery website features.",
   "private": true,
   "author": "",
