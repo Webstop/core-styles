@@ -1,10 +1,10 @@
 {
   "name": "core-styles",
-  "version": "1.0.0.alpha1",
+  "version": "0.0.1",
   "description": "The definitive source of styling guidelines for grocery website features.",
   "private": true,
-  "author": "",
-  "license": "",
+  "author": "Greg Hemphill",
+  "license": "private",
   "devDependencies": {
     "bootstrap-docs": "github:hemphill/bootstrap-docs#v4-docs",
     "holderjs": "^2.9.4"
