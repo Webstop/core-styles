@@ -5,11 +5,13 @@
   "private": true,
   "author": "Greg Hemphill",
   "license": "private",
+  "dependencies": {
+    "bootstrap-docs": "github:hemphill/bootstrap-docs#v4-docs"
+  },
   "devDependencies": {
-    "bootstrap-docs": "github:hemphill/bootstrap-docs#v4-docs",
     "holderjs": "^2.9.4"
-  }
+  },
   "files": [
     "_sass/framework"
-  ],
+  ]
 }
