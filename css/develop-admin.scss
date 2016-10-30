@@ -8,8 +8,12 @@ $brand-primary: #336699;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "wsg/wsg",
-        "../node_modules/bootstrap-docs/docs/assets/scss/docs",
-        "docs-bs/docs",
-        "docs/wsg-docs"
+  "wsg/wsg",
+  "docs/wsg-docs"
 ;
+
+.develop-admin-content {
+  padding-top: 108px;
+}
+
+

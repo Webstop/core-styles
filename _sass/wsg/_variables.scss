@@ -1,0 +1,18 @@
+// Theming & Branding variables
+$theme-primary: #d9d6c1 !default;
+$theme-bg: lighten($theme-primary, 15%) !default;
+$body-bg:  $theme-bg !default;
+
+// Layout
+
+$header-height: 55px !default;
+
+// Toolbar
+$toolbar-padding-x: $spacer !default;
+$toolbar-padding-y: ($spacer / 2) !default;
+
+// Grocery Apps
+$shopping-list-column-width: 250px !default;
+
+
+
