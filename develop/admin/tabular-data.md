@@ -27,6 +27,9 @@ group: develop
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>1</td><td>Joe Smith</td><td>(727) 123-4567</td><td>example@example.com</td><td>09/07/2016</td><td>10/30/2016</td>
+    </tr>
   
   </tbody>
 </table>
