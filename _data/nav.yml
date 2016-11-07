@@ -18,7 +18,6 @@
     - title: Layout
       pages:
         - title: Overview
-        - title: test
         - title: Grid
         - title: Flexbox grid
         - title: Media object
@@ -36,6 +35,7 @@
     - title: Components
       pages:
         - title: Alerts
+          path:  bootstrap/components/alerts#path
         - title: Breadcrumb
         - title: Buttons
         - title: Button group

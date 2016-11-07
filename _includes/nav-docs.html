@@ -5,6 +5,7 @@
 
 <nav class="wsg-links" id="docsNavbarContent">
   <ul class="list-unstyled">
+    {% capture base_docs_url %}{{ site.baseurl }}/docs{% endcapture %}
     {% for category in site.data.nav %}
       {% assign first_group = category.pages | first %}
       {% assign link = first_group.pages | first %}
@@ -13,7 +14,7 @@
 
       {% if page.url contains category_slug %}
         {% assign active = 'is-active-category' %}
-      {% endif %} 
+      {% endif %}
 
       <li class="wsg-toc-category {{ active }}">
         <a class="wsg-toc-category-link" href="{{ site.baseurl }}/docs/{{ category.title | downcase | replace: ' ', '-' }}/{{ first_group.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}">
@@ -23,6 +24,7 @@
           {% for group in category.pages %}
             {% assign link = group.pages | first %}
             {% assign slug = group.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-' %}
+            {% capture base_category_url %}{{base_docs_url}}/{{ category_slug }}/{{ group.title | downcase | replace: ' ', '-' }}{% endcapture %}
             {% assign active = nil %}
 
             {% if page.url contains slug %}
@@ -30,8 +32,8 @@
             {% endif %}
 
             <li class="wsg-toc-group wsg-category-nav {{ active }}">
-              <a class="wsg-toc-group-link" href="{{ site.baseurl }}/docs/{{ category_slug }}/{{ group.title | downcase | replace: ' ', '-' }}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}">
-                {{ group.title }}
+              <a class="wsg-toc-group-link" href="{{base_category_url}}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}">
+               {{ group.title }}
               </a>
 
               <!-- START: doc/pages -->
@@ -45,24 +47,29 @@
                     {% assign active = 'active wsg-group-nav-active' %}
                   {% endif %}
 
+                  {% if doc.path == null or doc.path == ''  %}
+
+                    {% capture doc_url %}{{base_category_url}}/{{ doc.title | downcase | replace: ' ', '-' | replace:'-&-','-' }}{% endcapture %}
+                  {% else %}
+                    {% capture doc_url %}{{base_docs_url}}/{{ doc.path }}{% endcapture %}
+                  {% endif %}
+
                   <li class="{{ active }}">
-                    <a href="{{ site.baseurl }}/docs/{{ category_slug }}/{{ group.title | downcase | replace: ' ', '-' }}/{{ doc.title | downcase | replace: ' ', '-' | replace:'-&-','-' }}">
+                    <a href="{{doc_url}}">
                       {{ doc.title }}
                     </a>
 
-                    {% comment %}
                     {% unless doc.sections == nil %}
-                      <ul class="nav">
-                        {% for section in doc.sections %}
-                          <li>
-                            <a href="#{{ section.title | downcase | replace: ' ', '-' }}">
-                              {{ section.title }}
-                            </a>
-                          </li>
-                        {% endfor %}
-                      </ul>
+                    <ul class="nav">
+                      {% for section in doc.sections %}
+                      <li>
+                        <a href="{{doc_url}}#{{ section.title | downcase | replace: ' ', '-' }}">
+                          {{ section.title }}
+                        </a>
+                      </li>
+                      {% endfor %}
+                    </ul>
                     {% endunless %}
-                    {% endcomment %}
                   </li>
                 {% endfor %}
               </ul><!-- START: doc/pages -->
