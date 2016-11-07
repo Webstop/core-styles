@@ -18,18 +18,22 @@
       <li class="nav-item">
         <a class="nav-link {% if page.layout == "Themes" %}active{% endif %}" href="{{ site.baseurl }}/themes/introduction">Themes</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link {% if page.layout == "Themes" %}active{% endif %}" href="{{ site.baseurl }}/develop/introduction">Develop</a>
-      </li>
+      {% if jekyll.environment == "development" %}
+        <li class="nav-item">
+          <a class="nav-link {% if page.layout == "develop" %}active{% endif %}" href="{{ site.baseurl }}/develop/introduction">Develop</a>
+        </li>
+      {% endif %}
       <li class="nav-item">
         <a class="nav-link {% if page.layout == "wiki" %}active{% endif %}" href="https://github.com/Webstop/webstop-wiki">Wiki</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link {% if page.layout == "api" %}active{% endif %}" href="{{ site.baseurl }}/api/introduction">API</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link {% if page.layout == "support" %}active{% endif %}" href="{{ site.baseurl }}/contact/support">Support</a>
-      </li>
+      {% if jekyll.environment == "production" %}
+        <li class="nav-item">
+          <a class="nav-link {% if page.layout == "api" %}active{% endif %}" href="{{ site.baseurl }}/api/introduction">API</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {% if page.layout == "support" %}active{% endif %}" href="{{ site.baseurl }}/contact/support">Support</a>
+        </li>
+      {% endif %}
     </ul>
   </div>
 </div>
