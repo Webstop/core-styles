@@ -10,61 +10,151 @@
     - title: Build tools
     - title: Best practices
     - title: Accessibility
-- title: Page Layout
+
+- title: Layout
+  path:   bootstrap/layout/overview
+  source: Bootstrap
   pages:
+    - title:  Overview
+      path:   bootstrap/layout/overview
+      source: Bootstrap
+
+    - title:  Grid
+      path: bootstrap/layout/grid
+      source: Bootstrap
+
+    - title:  Flexbox grid
+      path:   bootstrap/layout/flexbox-grid
+      source: Bootstrap
+
+    - title:  Media object
+      path:   bootstrap/layout/media-object
+      source: Bootstrap
+
     - title: Toolbar
-- title: Bootstrap
+      source: Webstop
+
+    - title:  Responsive utilities
+      path:   bootstrap/layout/responsive-utilities
+      source: Bootstrap
+
+- title:  Content
+  path:   bootstrap/content/reboot
+  source: Bootstrap
   pages:
-    - title: Layout
-      pages:
-        - title: Overview
-        - title: Grid
-        - title: Flexbox grid
-        - title: Media object
-        - title: Responsive utilities
+    - title:  Reboot
+      path:   bootstrap/content/reboot
+      source: Bootstrap
 
-    - title: Content
-      pages:
-        - title: Reboot
-        - title: Typography
-        - title: Code
-        - title: Images
-        - title: Tables
-        - title: Figures
+    - title:  Typography
+      path:   bootstrap/content/typography
+      source: Bootstrap
 
-    - title: Components
-      pages:
-        - title: Alerts
-          path:  bootstrap/components/alerts#path
-        - title: Breadcrumb
-        - title: Buttons
-        - title: Button group
-        - title: Card
-        - title: Carousel
-        - title: Collapse
-        - title: Dropdowns
-        - title: Forms
-        - title: Input group
-        - title: Jumbotron
-        - title: List group
-        - title: Modal
-        - title: Navs
-        - title: Navbar
-        - title: Pagination
-        - title: Popovers
-        - title: Progress
-        - title: Scrollspy
-        - title: Tag
-        - title: Tooltips
-        - title: Utilities
-    - title: About
-      pages:
-        - title: History
-        - title: Team
-        - title: Brand
-        - title: License
-        - title: Translations
-- title: Grocery Modules
+    - title:  Code
+      path:   bootstrap/content/code
+      source: Bootstrap
+
+    - title:  Images
+      path:   bootstrap/content/images
+      source: Bootstrap
+
+    - title:  Tables
+      path:   bootstrap/content/tables
+      source: Bootstrap
+
+    - title:  Figures
+      path:   bootstrap/content/figures
+      source: Bootstrap
+
+- title: Components
+  path:   bootstrap/components/alerts
+  source: Bootstrap
+  pages:
+    - title:  Alerts
+      path:   bootstrap/components/alerts
+      source: Bootstrap
+
+    - title:  Breadcrumb
+      path:   bootstrap/components/breadcrumbs
+      source: Bootstrap
+
+    - title:  Buttons
+      path:   bootstrap/components/buttons
+      source: Bootstrap
+
+    - title:  Button group
+      path:   bootstrap/components/button-group
+      source: Bootstrap
+
+    - title:  Card
+      path:   bootstrap/components/card
+      source: Bootstrap
+
+    - title:  Carousel
+      path:   bootstrap/components/carousel
+      source: Bootstrap
+
+    - title:  Collapse
+      path:   bootstrap/components/collapse
+      source: Bootstrap
+
+    - title:  Dropdowns
+      path:   bootstrap/components/dropdowns
+      source: Bootstrap
+
+    - title:  Forms
+      path:   bootstrap/components/forms
+      source: Bootstrap
+
+    - title:  Input group
+      path:   bootstrap/components/input-group
+      source: Bootstrap
+
+    - title:  Jumbotron
+      path:   bootstrap/components/jumbotron
+      source: Bootstrap
+
+    - title:  List group
+      path:   bootstrap/components/list-group
+      source: Bootstrap
+
+    - title:  Modal
+      path:   bootstrap/components/modal
+      source: Bootstrap
+
+    - title:  Navs
+      path:   bootstrap/components/navs
+      source: Bootstrap
+
+    - title:  Navbar
+      path:   bootstrap/components/navbar
+      source: Bootstrap
+
+    - title:  Pagination
+      path:   bootstrap/components/pagination
+      source: Bootstrap
+
+    - title:  Popovers
+      path:   bootstrap/components/popovers
+      source: Bootstrap
+
+    - title:  Scrollspy
+      path:   bootstrap/components/scrollspy
+      source: Bootstrap
+
+    - title:  Tag
+      path:   bootstrap/components/tag
+      source: Bootstrap
+
+    - title:  Tooltips
+      path:   bootstrap/components/tooltips
+      source: Bootstrap
+
+    - title:  Utilities
+      path:   bootstrap/components/utilities
+      source: Bootstrap
+      
+- title: Grocery Components
   pages:
     - title: Recipes
       pages:

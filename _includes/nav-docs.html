@@ -12,12 +12,18 @@
       {% assign category_slug = category.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-' %}
       {% assign active = nil %}
 
+      {% if category.path == null or category.path == ''  %}
+        {% capture category_url %}{{base_docs_url}}//{{ category.title | downcase | replace: ' ', '-' }}/{{ first_group.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}{% endcapture %}
+      {% else %}
+        {% capture category_url %}{{base_docs_url}}/{{ category.path }}{% endcapture %}
+      {% endif %}
+
       {% if page.url contains category_slug %}
         {% assign active = 'is-active-category' %}
       {% endif %}
 
       <li class="wsg-toc-category {{ active }}">
-        <a class="wsg-toc-category-link" href="{{ site.baseurl }}/docs/{{ category.title | downcase | replace: ' ', '-' }}/{{ first_group.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}">
+        <a class="wsg-toc-category-link" href="{{ category_url }}">
           {{ category.title }}
         </a>
         <ul class="list-unstyled">
@@ -27,12 +33,18 @@
             {% capture base_category_url %}{{base_docs_url}}/{{ category_slug }}/{{ group.title | downcase | replace: ' ', '-' }}{% endcapture %}
             {% assign active = nil %}
 
+            {% if group.path == null or group.path == ''  %}
+              {% capture group_url %}{{base_category_url}}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}{% endcapture %}
+            {% else %}
+              {% capture group_url %}{{base_docs_url}}/{{ group.path }}{% endcapture %}
+            {% endif %}
+
             {% if page.url contains slug %}
               {% assign active = 'is-active-group' %}
             {% endif %}
 
             <li class="wsg-toc-group wsg-category-nav {{ active }}">
-              <a class="wsg-toc-group-link" href="{{base_category_url}}/{{ link.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-'  }}">
+              <a class="wsg-toc-group-link" href="{{group_url}}">
                {{ group.title }}
               </a>
 
@@ -48,7 +60,6 @@
                   {% endif %}
 
                   {% if doc.path == null or doc.path == ''  %}
-
                     {% capture doc_url %}{{base_category_url}}/{{ doc.title | downcase | replace: ' ', '-' | replace:'-&-','-' }}{% endcapture %}
                   {% else %}
                     {% capture doc_url %}{{base_docs_url}}/{{ doc.path }}{% endcapture %}
