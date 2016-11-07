@@ -6,3 +6,16 @@
   'layout/toolbar'
 ;
 
+@import url('https://fonts.googleapis.com/css?family=Michroma');
+
+.bd-content > h1,
+//.bd-content > h2,
+//.bd-content > h3,
+//.bd-content > h4,
+//.bd-content > h5,
+//.bd-content > h6,
+.wsg-page-header h1,
+.wsg-toc-category-link {
+  font-family: 'Michroma', "Helvetica Neue", Helvetica, arial, sans-serif;
+}
+
