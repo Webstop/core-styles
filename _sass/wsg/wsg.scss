@@ -1,21 +1,41 @@
 @charset "utf-8";
-
+@import url('https://fonts.googleapis.com/css?family=Michroma');
 @import
   '../../node_modules/bootstrap-docs/scss/bootstrap',
+  '../../node_modules/devicons/css/devicons.css',
   'variables',
   'layout/toolbar'
 ;
 
-@import url('https://fonts.googleapis.com/css?family=Michroma');
-
 .bd-content > h1,
-//.bd-content > h2,
-//.bd-content > h3,
-//.bd-content > h4,
-//.bd-content > h5,
-//.bd-content > h6,
 .wsg-page-header h1,
 .wsg-toc-category-link {
   font-family: 'Michroma', "Helvetica Neue", Helvetica, arial, sans-serif;
 }
+
+.page-source {
+  display: inline-block;
+  float: right;
+  opacity: 0.8;
+  color: #333;
+  border-radius: 0;
+  background-color: lighten(#369, 40%);
+}
+
+.wsg-toc-category-link,
+.wsg-toc-group-link{
+  text-transform: capitalize;
+}
+
+// Extend Devicons
+.devicons::after {
+  font-size: 1.2em;
+}
+.devicons-brand-color {
+  &.devicons-bootstrap {
+    color: $bootstrap-purple;
+  }
+}
+
+
 

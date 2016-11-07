@@ -4,7 +4,6 @@ $theme-bg: lighten($theme-primary, 15%) !default;
 $body-bg:  $theme-bg !default;
 
 // Layout
-
 $header-height: 55px !default;
 
 // Toolbar
@@ -13,6 +12,9 @@ $toolbar-padding-y: ($spacer / 2) !default;
 
 // Grocery Apps
 $shopping-list-column-width: 250px !default;
+
+// Bootstrap
+$bootstrap-purple: #563d7c;
 
 
 
