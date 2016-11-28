@@ -1,0 +1,36 @@
+{% include page-header-data.html %}
+
+
+{% if page.group == "home" %}
+  <header class="wsg-page-header">
+    <div class="container-fluid">
+      <h1><strong>WSG &middot;</strong> Webstop Style Guide</h1>
+      <img src="/assets/images/Webstop-device-illustration.png">
+      <p class="lead">
+        The definitive source of styling guidelines for grocery websites &amp; mobile apps.
+      </p>
+    </div>
+  </header>
+{% else %}
+  <header class="wsg-page-header">
+    <div class="container-fluid">
+      <h1>{{ page_heading }}</h1>
+      <p class="lead">{{ page_lead }}</p>
+    </div>
+  </header>
+  {% if source_name != nil %}
+    <div class="container-fluid">
+      <div class="page-source">
+        <p>
+          Source:
+          <a href="{{ source_url }}">
+            {{ source_name }}
+            {% if source_icon != nil %}
+              <span class="page-source-icon {{ source_icon }}"></span>
+            {% endif %}
+          </a>
+        </p>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}

@@ -1,0 +1,10 @@
+// Extend Devicons
+
+.devicons::after {
+  font-size: 1.2em;
+}
+.devicons-brand-color {
+  &.devicons-bootstrap {
+    color: $bootstrap-purple;
+  }
+}

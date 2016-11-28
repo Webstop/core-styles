@@ -1,0 +1,57 @@
+{% assign page_heading = nil %}
+{% assign page_lead    = nil %}
+{% assign source_name  = nil %}
+{% assign source_url   = nil %}
+{% assign source_icon  = nil %}
+
+<!-- Sets Bootstrap Source -->
+{% if page.group == "getting-started"
+   or page.group == "layout"
+   or page.group == "content"
+   or page.group == "components"
+   or page.group == "javascript"
+   or page.group == "about"
+   or page.group == "browser-bugs" %}
+
+  {% assign source_name = 'bootstrap' %}
+  {% assign source_url  = 'http://getbootstrap.com' %}
+  {% assign source_icon = 'devicons devicons-bootstrap devicons-brand-color' %}
+
+{% elsif page.group contains "webstop-" %}
+  {% assign source_name = 'webstop' %}
+  {% assign source_url  = 'http://guides.webstop.com' %}
+{% endif %}
+
+<!-- Selects page heading & leading text -->
+{% if page.group == "getting-started" or page.group == "webstop-getting-started" %}
+  {% assign page_heading = 'Getting started' %}
+  {% assign page_lead = 'An overview of Webstop's front-end framework, including how to install and use it, some basic tips, and more.' %}
+
+{% elsif page.group == "layout" or  page.group == "webstop-layout" %}
+  {% assign page_heading = 'Layout' %}
+  {% assign page_lead = 'Options for structuring your pages with Bootstrap, including global styles, required scaffolding, grid system, and more.' %}
+
+{% elsif page.group == "content" or page.group == "webstop-content" %}
+  {% assign page_heading = 'Content' %}
+  {% assign page_lead = 'Bootstrap's styles for displaying content with some of the most commonly used HTML elements, including normalization, typography, images, tables, and more.' %}
+
+{% elsif page.group == "components" or page.group == "webstop-components" %}
+  {% assign page_heading = 'Base Components' %}
+  {% assign page_lead = 'Reusable components providing the base building blocks for page design. buttons, dropdowns, alerts, and much more.' %}
+
+{% elsif page.group == "javascript" or page.group == "javascript" %}
+  {% assign page_heading = 'JavaScript plugins' %}
+  {% assign page_lead = 'Bring compelling interactions to web freateures with these jQuery plugins.' %}
+
+{% elsif page.group == "about" %}
+  {% assign page_heading = 'About' %}
+  {% assign page_lead = 'Learn about the project's history, meet the maintaining teams, and find out how to use the Bootstrap brand.' %}
+
+{% elsif page.group == "browser-bugs" %}
+  {% assign page_heading = 'Wall of browser bugs' %}
+  {% assign page_lead = 'A list of the browser bugs that Bootstrap is currently grappling with.' %}
+
+{% elsif page.group == "develop" %}
+  {% assign page_heading = 'Develop' %}
+  {% assign page_lead = 'Common templates and test cases for developing components and updating styles.' %}
+{% endif %}

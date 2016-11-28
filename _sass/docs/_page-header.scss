@@ -1,5 +1,23 @@
 // scss-lint:disable ImportantRule
 
+
+.page-source {
+  font-size: 0.8em;
+  text-transform: capitalize;
+  a {
+    color: inherit !important;
+  }
+  .page-source-icon {
+    font-size: 2em;
+    //text-shadow:
+    //  -1px -1px 1px lighten($brand-primary, 10%),
+    //   1px -1px 1px lighten($brand-primary, 10%),
+    //  -1px  1px 1px lighten($brand-primary, 10%),
+    //   1px  1px 1px lighten($brand-primary, 10%);
+  }
+}
+
+
 .wsg-page-header.wsg-home-page-header {
 
   h1 {

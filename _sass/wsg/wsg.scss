@@ -7,35 +7,4 @@
   'layout/toolbar'
 ;
 
-.bd-content > h1,
-.wsg-page-header h1,
-.wsg-toc-category-link {
-  font-family: 'Michroma', "Helvetica Neue", Helvetica, arial, sans-serif;
-}
-
-.page-source {
-  display: inline-block;
-  float: right;
-  opacity: 0.8;
-  color: #333;
-  border-radius: 0;
-  background-color: lighten(#369, 40%);
-}
-
-.wsg-toc-category-link,
-.wsg-toc-group-link{
-  text-transform: capitalize;
-}
-
-// Extend Devicons
-.devicons::after {
-  font-size: 1.2em;
-}
-.devicons-brand-color {
-  &.devicons-bootstrap {
-    color: $bootstrap-purple;
-  }
-}
-
-
 
