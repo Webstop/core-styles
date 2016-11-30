@@ -5,25 +5,43 @@ Webstop Style Guide
 Setup
 -----
 
-Make sure you have the following prerequisites installed:
+1. Install Docker for Mac.  Click the 'Get Docker for Mac (stable)' link
+on this page:
 
-- Ruby 2
-- RVM
-- Bundler (`gem install bundler`)
+   * [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/)
 
-Once you've gotten the prerequisites met issue the following command:
+2. After copying the 'Docker' app from the downloaded DMG to your Applications folder
+launch the app so that it can install and configure Docker on your computer.
+This will add a whale icon menu item to your menubar which will automatically
+launch on subsequent restarts of your mac.  This menubar item provides options
+for stopping the docker vm if desired.
 
-$`bundle install`
+Run Jekyll Commands
+-------------------
+
+Open a terminal window in the root of this project and then execute all
+jekyll commands as usual - except replace the regular `jekyll` with `./jekyll`
+so that it will instead execute the shell script in the project root named 
+`jekyll`.
+
+Note that the very first time that you execute a `./jekyll` command that docker
+will go out and download the Node and Ruby docker containers.  This download is 
+totally automatic and the command you entered will run directly after the 
+download has finished.  This will only take about a minute.
+
+Example `./jekyll` commands
+--------------------------
+
+```bash
+$ ./jekyll help build
+```
+
+```bash
+$ ./jekyll serve
+```
+
 
 ---
 
-Bootstrap Docs
---------------
-
-Note we don't include `getting-started/introduction` page, becasue this page does not apply to our enviroment and gives conflicting instructions.
-
-
----
-
-lovingly crafted by Greg Hemphill
+Crafted by Greg Hemphill
 
