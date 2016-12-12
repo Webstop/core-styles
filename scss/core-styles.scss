@@ -1,11 +1,10 @@
-@charset "utf-8";
+@charset 'utf-8';
 
-// Custom values for Docs
-$brand-primary: #336699;
-
-// Import partials from `sass_dir` (defaults to `_sass`)
 @import
-  "core-styles/_coupons.scss",
-  "core-styles/_recipes.scss",
-  "core-styles/_circulars.scss"
+  '../node_modules/bootstrap-docs/scss/bootstrap',
+  'core-styles/variables',
+  'core-styles/layout/toolbar',
+  'core-styles/circulars',
+  'core-styles/coupons',
+  'core-styles/recipes'
 ;
