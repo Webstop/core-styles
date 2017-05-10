@@ -1,6 +1,24 @@
 Webstop Style Guide
 ===================
 
+tl;dr
+-----
+
+To run the development server:
+
+```bash
+./jekyll serve
+```
+
+Then visit [`http://localhost:4000`](http://localhost:4000) in your web browser.
+
+
+To quit the server:
+
+```bash
+Ctrl + c
+```
+
 
 Setup
 -----
@@ -33,11 +51,11 @@ Example `./jekyll` commands
 --------------------------
 
 ```bash
-$ ./jekyll help build
+./jekyll help build
 ```
 
 ```bash
-$ ./jekyll serve
+./jekyll serve
 ```
 
 
