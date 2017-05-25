@@ -7,7 +7,7 @@ tl;dr
 To run the development server:
 
 ```bash
-./jekyll serve
+./serve
 ```
 
 Then visit [`http://localhost:4000`](http://localhost:4000) in your web browser.
@@ -33,6 +33,24 @@ launch the app so that it can install and configure Docker on your computer.
 This will add a whale icon menu item to your menubar which will automatically
 launch on subsequent restarts of your mac.  This menubar item provides options
 for stopping the docker vm if desired.
+
+Run The Web Server
+------------------
+
+From the root directory of the project, run:
+
+```bash
+./serve
+```
+
+Then visit [`http://localhost:4000`](http://localhost:4000) in your web browser.
+
+To quit the server:
+
+```bash
+Ctrl + c
+```
+
 
 Run Jekyll Commands
 -------------------
