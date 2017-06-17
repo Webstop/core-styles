@@ -19,6 +19,8 @@ host: 0.0.0.0
 
 # Build settings
 markdown: kramdown
+sass:
+    sass_dir: assets/scss
 exclude: [Gemfile,
           Gemfile.lock,
           Gruntfile.js,
@@ -26,6 +28,7 @@ exclude: [Gemfile,
           grunt,
           package.json,
           workspace,
+          assets/scss,
           node_modules/bootstrap-docs/CHANGELOG.md,
           node_modules/bootstrap-docs/dist,
           node_modules/bootstrap-docs/grunt,
