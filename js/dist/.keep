@@ -1,0 +1,7 @@
+The .keep file
+
+Git will not track a folder if it is empty. 
+
+Sometimes you want a folder in your project even if there isn't content in it yet.
+
+The .keep file is a convention used to fix this problem. A nearly empty file placed in a otherwise empty folder to give it content for git to track.

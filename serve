@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
-
+echo "Starting..."
+echo "Running npm install..."
 docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:6.9.1' npm install
-
+echo "Running scss-lint..."
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' -p 4000:4000 'webstop/jekyll:latest' bundle exec scss-lint --config .scss-lint.yml scss/*.scss
+echo "Running npm run dist..."
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:6.9.1' npm run dist
+echo "Running npm run watch..."
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:6.9.1' npm run watch
+echo "Running jekyll serve..."
 docker run -ti --rm -v "$(pwd):/myapp" -p 4000:4000 'webstop/jekyll:latest' jekyll serve
