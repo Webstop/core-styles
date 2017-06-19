@@ -12,9 +12,9 @@
   "scripts": {
     "bash": "bash",
     "css": "npm-run-all css-compile css-prefix css-minify",
-    "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/bootstrap.scss dist/css/bootstrap.css && node-sass --output-style expanded --source-map true --precision 6 scss/bootstrap-grid.scss dist/css/bootstrap-grid.css && node-sass --output-style expanded --source-map true --precision 6 scss/bootstrap-reboot.scss dist/css/bootstrap-reboot.css",
+    "css-compile": "node-sass --output-style expanded --source-map true --precision 6 scss/core-styles.scss dist/css/core-styles.css && node-sass --output-style expanded --source-map true --precision 6 scss/core-themes/_country-farm.scss dist/css/core-themes/country-farm.css",
     "css-prefix": "postcss --config build/ --replace dist/css/*.css",
-    "css-minify": "cleancss --level 1 --source-map --output dist/css/bootstrap.min.css dist/css/bootstrap.css && cleancss --level 1 --source-map --output dist/css/bootstrap-grid.min.css dist/css/bootstrap-grid.css && cleancss --level 1 --source-map --output dist/css/bootstrap-reboot.min.css dist/css/bootstrap-reboot.css",
+    "css-minify": "cleancss --level 1 --source-map --output dist/css/core-styles.min.css dist/css/core-styles.css && cleancss --level 1 --source-map --output dist/css/country-farm.min.css dist/css/country-farm.css",
     "dist": "npm-run-all --parallel css",
     "watch-css": "nodemon --ignore js/ --ignore dist/ -e scss -x \"npm run css\"",
     "watch": "npm-run-all --parallel watch-css"

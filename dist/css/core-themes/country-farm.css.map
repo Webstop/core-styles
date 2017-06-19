@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "country-farm.css",
+	"sources": [
+		"../../../scss/core-themes/_country-farm.scss"
+	],
+	"names": [],
+	"mappings": ""
+}
