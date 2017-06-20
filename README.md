@@ -103,13 +103,13 @@ Which produces something like:
 In order to make minified versions of the CSS you need to add the name of the theme to the `css-minify` script in the `package.json` file. The text below adds the `country-farm` theme. 
 
 ```text
- && cleancss --level 1 --source-map --output dist/css/country-farm.min.css dist/css/country-farm.css
+ && cleancss --level 1 --source-map --output dist/css/core-themes/country-farm.min.css dist/css/core-themes/country-farm.css
 ```
 
 Which produces something like: 
 
 ```text
-"css-minify": "cleancss --level 1 --source-map --output dist/css/core-styles.min.css dist/css/core-styles.css && cleancss --level 1 --source-map --output dist/css/country-farm.min.css dist/css/country-farm.css",
+"css-minify": "cleancss --level 1 --source-map --output dist/css/core-styles.min.css dist/css/core-styles.css && cleancss --level 1 --source-map --output dist/css/core-themes/country-farm.min.css dist/css/core-themes/country-farm.css",
 ```
 
 

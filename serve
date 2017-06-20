@@ -10,4 +10,4 @@ echo "Running npm run dist..."
 docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:6.9.1' npm run dist
 echo "-----------------------"
 echo "Running jekyll serve..."
-docker run -ti --rm -v "$(pwd):/myapp" -p 4000:4000 'webstop/jekyll:latest' jekyll serve
+docker run -ti --rm -v "$(pwd):/myapp" -p 4000:4000 'webstop/jekyll:latest' jekyll serve --incremental
