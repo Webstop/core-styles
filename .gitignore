@@ -12,3 +12,6 @@ _site
 # Build Tool Files
 bower_components
 node_modules
+
+# Logs
+npm-debug.log
