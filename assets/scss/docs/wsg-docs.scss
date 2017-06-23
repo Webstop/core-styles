@@ -1,3 +1,6 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
 // Dev notes
 //
 // Background information on nomenclature and architecture decisions here.
@@ -12,8 +15,20 @@
 // - Classes are prefixed with `.wsg-`.
 //   These classes indicate custom-built or modified components for the design
 //   and layout of the Webstop Style Guide docs.
-//
-// Happy Styling!
+
+@charset 'utf-8';
+
+// Custom values for Docs
+$brand-primary: #336699;
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+// The order the files are loaded is important
+@import url('https://fonts.googleapis.com/css?family=Michroma');
+@import
+'../scss/core-styles',
+'../../node_modules/devicons/css/devicons.css',
+'docs-bs/docs'
+;
 
 
 // Load docs components

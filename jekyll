@@ -2,4 +2,4 @@
 
 docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:6.9.1' npm install
 
-docker run -ti --rm -v "$(pwd):/myapp" -p 4000:4000 'webstop/jekyll:latest' jekyll $@
+docker run -ti --rm -v "$(pwd):/myapp" 'webstop/jekyll:latest' jekyll $@
