@@ -1,13 +1,12 @@
 {
   "name": "core-styles",
-  "version": "0.0.1",
+  "version": "0.5.1",
   "description": "The definitive source of styling guidelines for grocery website features.",
   "private": true,
   "author": "Greg Hemphill",
   "license": "private",
   "dependencies": {
-    "bootstrap-docs": "github:hemphill/bootstrap-docs#v4-docs",
-    "devicons": "^1.8.0"
+
   },
   "scripts": {
     "bash": "bash",
@@ -20,6 +19,8 @@
     "watch": "npm-run-all --parallel watch-css"
   },
   "devDependencies": {
+    "bootstrap-docs": "github:hemphill/bootstrap-docs#v4-docs",
+    "devicons": "^1.8.0",
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
