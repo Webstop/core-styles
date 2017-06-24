@@ -5,6 +5,7 @@
   "private": true,
   "author": "Greg Hemphill",
   "license": "private",
+  "main": "dist/assets/css/core-styles.css",
   "dependencies": {
 
   },

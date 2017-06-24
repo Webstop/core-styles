@@ -10,7 +10,6 @@ _site
 .jekyll-metadata
 
 # Build Tool Files
-bower_components
 node_modules
 
 # Logs

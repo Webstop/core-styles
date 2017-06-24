@@ -1,0 +1,44 @@
+.DS_Store
+_config.yml
+_data
+_includes
+_layouts
+_plugins
+_posts
+_site
+.editorconfig
+.eslintignore
+.git
+.gitignore
+.idea
+.jekyll-metadata
+.keep
+.npmignore
+.ruby-gemset
+.ruby-version
+.sass-cache
+.scss-lint.yml
+assets
+# build
+build_docker.sh
+develop
+# dist
+Dockerfile
+docs
+Gemfile
+Gemfile.lock
+grunt
+Gruntfile.js
+jekyll
+# js
+lib
+node_modules
+NOTES.md
+package-lock.json
+# package.json
+README.md
+# scss
+search.json
+serve
+vendor
+watch
