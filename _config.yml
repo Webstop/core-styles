@@ -21,12 +21,19 @@ host: 0.0.0.0
 markdown: kramdown
 sass:
     sass_dir: assets/scss
-exclude: [Gemfile,
+exclude: [build_docker.sh,
+          Dockerfile,
+          Gemfile,
           Gemfile.lock,
           Gruntfile.js,
           README.md,
           grunt,
           package.json,
+          package-lock.json,
+          jekyll,
+          NOTES.md
+          serve,
+          watch,
           workspace,
           assets/scss,
           node_modules/bootstrap-docs/CHANGELOG.md,
