@@ -51,6 +51,16 @@ To quit the server:
 Ctrl + c
 ```
 
+Install Gems & Ruby Upgrades
+----------------------------
+
+Our development environment relies on a Docker container. The Docker container 
+stores all the Ruby gems and specifies which version of Ruby we are using. To 
+update changes specified in the gemfile, run the following command:
+
+```bash
+./build_docker.sh
+```
 
 Run Jekyll Commands
 -------------------
@@ -74,6 +84,10 @@ Example `./jekyll` commands
 
 ```bash
 ./jekyll serve
+```
+
+```bash
+./jekyll build
 ```
 
 ## Development 

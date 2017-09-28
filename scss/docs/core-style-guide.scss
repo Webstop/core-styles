@@ -23,18 +23,18 @@ $brand-primary: #336699;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 // The order the files are loaded is important
-@import url('https://fonts.googleapis.com/css?family=Michroma');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Montserrat:400,700&amp;subset=cyrillic');
 @import
-'../scss/core-styles',
+'../../scss/core-styles',
 '../../node_modules/devicons/css/devicons.css',
-'docs-bs/docs'
+'../../node_modules/bootstrap-docs/assets/scss/docs'
 ;
 
 
 // Load docs components
-@import "page-header",
-        "toc",
-        "devicons"
+@import "../../scss/docs/page-header",
+        "../../scss/docs/toc",
+        "../../scss/docs/devicons"
 ;
 
 
@@ -49,11 +49,34 @@ $brand-primary: #336699;
   }
 }
 
-
-.bd-content > h1,
-.wsg-page-header h1,
-.wsg-toc-category-link {
-  font-family: 'Michroma', "Helvetica Neue", Helvetica, arial, sans-serif;
+body {
+  font-family: Baskerville, 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  font-size: 18px;
+  line-height: 1.6;
+  padding-top: 0;
+  padding-bottom: 20px;
 }
 
+
+.bd-content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.bd-title,
+.wsg-page-header h1,
+.wsg-toc-category-link {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+.btn, label, input, .form-text, th, td, .alert, .sans-serif {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-size: 16px;
+}
 

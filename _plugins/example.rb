@@ -21,8 +21,8 @@ module Jekyll
               key, value = opt.split('=')
               # If a quoted list, convert to array
               if value && value.include?("\"")
-                  value.gsub!(/"/, "")
-                  value = value.split
+                value.gsub!(/"/, "")
+                value = value.split
               end
               @options[key.to_sym] = value || true
             end
@@ -35,7 +35,7 @@ Syntax Error in tag 'example' while parsing the following markup:
   #{markup}
 
 Valid syntax: example <lang>
-eos
+          eos
         end
       end
 
@@ -46,9 +46,9 @@ eos
 
         output = case context.registers[:site].highlighter
 
-        when 'rouge'
-          render_rouge(code)
-        end
+                   when 'rouge'
+                     render_rouge(code)
+                 end
 
         rendered_output = example(code) + add_code_tag(output)
         prefix + rendered_output + suffix
@@ -57,9 +57,18 @@ eos
       def example(output)
         "<div class=\"bd-example\" data-example-id=\"#{@options[:id]}\">\n#{output}\n</div>"
       end
-    
+
       def remove_holderjs(code)
         code = code.gsub(/data-src="holder.js.+?"/, 'src="..."')
+      end
+
+      def remove_example_classes(code)
+        # Find `bd-` classes and remove them from the highlighted code. Because of how this regex works, it will also
+        # remove classes that are after the `bd-` class. While this is a bug, I left it because it can be helpful too.
+        # To fix the bug, replace `(?=")` with `(?=("|\ ))`.
+        code = code.gsub(/(?!class=".)\ *?bd-.+?(?=")/, "")
+        # Find empty class attributes after the previous regex and remove those too.
+        code = code.gsub(/\ class=""/, "")
       end
 
       def render_rouge(code)
@@ -67,6 +76,7 @@ eos
         formatter = Rouge::Formatters::HTML.new(line_numbers: @options[:linenos], wrap: false)
         lexer = Rouge::Lexer.find_fancy(@lang, code) || Rouge::Lexers::PlainText
         code = remove_holderjs(code)
+        code = remove_example_classes(code)
         code = formatter.format(lexer.lex(code))
         "<div class=\"highlight\"><pre>#{code}</pre></div>"
       end

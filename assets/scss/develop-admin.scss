@@ -1,21 +1,16 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset 'utf-8';
+
+@charset "utf-8";
 
 // Custom values for Docs
 $brand-primary: #336699;
 
-// Import partials from `sass_dir` (defaults to `_sass`)
+
 // The order the files are loaded is important
-@import
-  '../scss/core-styles',
-  'wsg/wsg',
-  'docs/wsg-docs'
-;
+// @import '../../scss/docs/core-style-guide';
 
 .develop-admin-content {
   padding-top: 108px;
 }
-
-

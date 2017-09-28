@@ -5,7 +5,7 @@ echo ""
 echo "Running npm install..."
 echo ""
 docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:6.9.1' npm install
-echo "--------------------"
+echo "-----------------------"
 echo ""
 echo "Running scss-lint..."
 echo ""
