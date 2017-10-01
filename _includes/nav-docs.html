@@ -1,9 +1,4 @@
-<form class="wsg-search hidden-sm-down">
-  <input type="text" class="form-control" id="search-input" placeholder="Search..." autocomplete="off">
-  <div class="dropdown-menu wsg-search-results" id="search-results"></div>
-</form>
-
-<nav class="wsg-links" id="docsNavbarContent">
+<nav class="wsg-links">
   <ul class="list-unstyled">
     {% capture base_docs_url %}{{ site.baseurl }}/docs{% endcapture %}
     {% for category in site.data.nav %}
@@ -26,7 +21,7 @@
         <a class="wsg-toc-category-link" href="{{ category_url }}">
           {{ category.title }}
         </a>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled wsg-toc-groups">
           {% for group in category.pages %}
             {% assign link = group.pages | first %}
             {% assign slug = group.title | downcase | replace: ' ', '-' || page.title | downcase | replace: ' ', '-' %}
@@ -49,7 +44,7 @@
               </a>
 
               <!-- START: doc/pages -->
-              <ul class="nav wsg-group-nav list-unstyled">
+              <ul class="wsg-toc-docs list-unstyled">
                 {% for doc in group.pages %}
                   {% assign slug = doc.title | downcase | replace: ' ', '-' | replace:'-&-','-' %}
                   {% capture slug %}/{{ slug }}{% endcapture %}
@@ -66,15 +61,15 @@
                   {% endif %}
 
                   <li class="{{ active }}">
-                    <a href="{{doc_url}}">
+                    <a href="{{doc_url}}" class="wsg-toc-doc-link">
                       {{ doc.title }}
                     </a>
 
                     {% unless doc.sections == nil %}
-                    <ul class="nav">
+                    <ul class="wsg-toc-sub-docs">
                       {% for section in doc.sections %}
                       <li>
-                        <a href="{{doc_url}}#{{ section.title | downcase | replace: ' ', '-' }}">
+                        <a href="{{doc_url}}#{{ section.title | downcase | replace: ' ', '-' }}" class="wsg-toc-sub-doc-link">
                           {{ section.title }}
                         </a>
                       </li>

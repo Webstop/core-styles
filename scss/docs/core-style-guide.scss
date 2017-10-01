@@ -58,7 +58,7 @@ body {
 }
 
 
-.bd-content {
+.wsg-content .bd-content {
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
     font-weight: 700;
@@ -67,8 +67,7 @@ body {
 }
 
 .bd-title,
-.wsg-page-header h1,
-.wsg-toc-category-link {
+.wsg-page-header h1, {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
@@ -79,4 +78,33 @@ body {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-size: 16px;
 }
+
+.wsg-sidebar {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-size: 16px;
+  .wsg-toc-category {
+    padding-top: 0.5em;
+  }
+  .wsg-toc-category-link {
+    padding-top: 1em;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+  .wsg-toc-group-link {
+    padding-left: 0.5em;
+  }
+  .wsg-toc-doc-link {
+    padding-left: 1em;
+    font-size: 0.8em;
+  }
+  .wsg-toc-groups {
+    display: none;
+  }
+  .is-active-category {
+    .wsg-toc-groups {
+      display: block;
+    }
+  }
+}
+
 
