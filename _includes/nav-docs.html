@@ -1,4 +1,12 @@
-<nav class="wsg-links">
+<form class="d-flex align-items-center">
+  <button class="btn btn-link d-md-none p-0 mr-1" type="button" data-toggle="collapse" data-target="#wsg-docs-nav" aria-controls="wsg-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+
+    <h4>{% include icons/menu.svg class="wsg-docs-nav-menu-icon" width="25" height="25" %} Documentation Navigation</h4>
+  </button>
+
+</form>
+
+<nav class="collapse wsg-links" id="wsg-docs-nav">
   <ul class="list-unstyled">
     {% capture base_docs_url %}{{ site.baseurl }}/docs{% endcapture %}
     {% for category in site.data.nav %}
