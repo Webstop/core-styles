@@ -27,6 +27,7 @@ sass:
 # assets/scss,
 exclude: [.git,
           .github,
+          assets/scss,
           artifacts,
           build,
           build_docker.sh,
