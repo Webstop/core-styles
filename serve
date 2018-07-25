@@ -6,11 +6,11 @@ echo "Running npm install..."
 echo ""
 docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:6.9.1' npm install
 echo "-----------------------"
-echo ""
-echo "Running scss-lint..."
-echo ""
-docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' -p 4000:4000 'webstop/jekyll:latest' bundle exec scss-lint --config .scss-lint.yml scss/*.scss
-echo "-----------------------"
+#echo ""
+#echo "Running scss-lint..."
+#echo ""
+#docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' -p 4000:4000 'webstop/jekyll:latest' bundle exec scss-lint --config .scss-lint.yml scss/*.scss
+#echo "-----------------------"
 echo ""
 echo "Running npm run dist..."
 echo ""

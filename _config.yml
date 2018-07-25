@@ -27,6 +27,7 @@ sass:
 # assets/scss,
 exclude: [.git,
           .github,
+          .idea,
           assets/scss,
           artifacts,
           build,
