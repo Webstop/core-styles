@@ -12,146 +12,146 @@
     - title: Accessibility
 
 - title: Layout
-  path:   bootstrap/4.0/layout/overview
+  path:   bootstrap/4.1/layout/overview
   source: Bootstrap
   pages:
     - title:  Overview
-      path:   bootstrap/4.0/layout/overview
+      path:   bootstrap/4.1/layout/overview
       source: Bootstrap
 
     - title:  Grid
-      path: bootstrap/4.0/layout/grid
+      path: bootstrap/4.1/layout/grid
       source: Bootstrap
 
     - title:  Flexbox grid
-      path:   bootstrap/4.0/layout/flexbox-grid
+      path:   bootstrap/4.1/layout/flexbox-grid
       source: Bootstrap
 
     - title:  Media object
-      path:   bootstrap/4.0/layout/media-object
+      path:   bootstrap/4.1/layout/media-object
       source: Bootstrap
 
     - title: Toolbar
       source: Webstop
 
     - title:  Responsive utilities
-      path:   bootstrap/4.0/layout/responsive-utilities
+      path:   bootstrap/4.1/layout/responsive-utilities
       source: Bootstrap
 
 - title:  Content
-  path:   bootstrap/4.0/content/reboot
+  path:   bootstrap/4.1/content/reboot
   source: Bootstrap
   pages:
     - title:  Reboot
-      path:   bootstrap/4.0/content/reboot
+      path:   bootstrap/4.1/content/reboot
       source: Bootstrap
 
     - title:  Typography
-      path:   bootstrap/4.0/content/typography
+      path:   bootstrap/4.1/content/typography
       source: Bootstrap
 
     - title:  Code
-      path:   bootstrap/4.0/content/code
+      path:   bootstrap/4.1/content/code
       source: Bootstrap
 
     - title:  Images
-      path:   bootstrap/4.0/content/images
+      path:   bootstrap/4.1/content/images
       source: Bootstrap
 
     - title:  Tables
-      path:   bootstrap/4.0/content/tables
+      path:   bootstrap/4.1/content/tables
       source: Bootstrap
 
     - title:  Figures
-      path:   bootstrap/4.0/content/figures
+      path:   bootstrap/4.1/content/figures
       source: Bootstrap
 
 - title: Components
-  path:   bootstrap/4.0/components/alerts
+  path:   bootstrap/4.1/components/alerts
   source: Bootstrap
   pages:
     - title:  Alerts
-      path:   bootstrap/4.0/components/alerts
+      path:   bootstrap/4.1/components/alerts
       source: Bootstrap
 
     - title:  Breadcrumb
-      path:   bootstrap/4.0/components/breadcrumbs
+      path:   bootstrap/4.1/components/breadcrumbs
       source: Bootstrap
 
     - title:  Buttons
-      path:   bootstrap/4.0/components/buttons
+      path:   bootstrap/4.1/components/buttons
       source: Bootstrap
 
     - title:  Button group
-      path:   bootstrap/4.0/components/button-group
+      path:   bootstrap/4.1/components/button-group
       source: Bootstrap
 
     - title:  Card
-      path:   bootstrap/4.0/components/card
+      path:   bootstrap/4.1/components/card
       source: Bootstrap
 
     - title:  Carousel
-      path:   bootstrap/4.0/components/carousel
+      path:   bootstrap/4.1/components/carousel
       source: Bootstrap
 
     - title:  Collapse
-      path:   bootstrap/4.0/components/collapse
+      path:   bootstrap/4.1/components/collapse
       source: Bootstrap
 
     - title:  Dropdowns
-      path:   bootstrap/4.0/components/dropdowns
+      path:   bootstrap/4.1/components/dropdowns
       source: Bootstrap
 
     - title:  Forms
-      path:   bootstrap/4.0/components/forms
+      path:   bootstrap/4.1/components/forms
       source: Bootstrap
 
     - title:  Input group
-      path:   bootstrap/4.0/components/input-group
+      path:   bootstrap/4.1/components/input-group
       source: Bootstrap
 
     - title:  Jumbotron
-      path:   bootstrap/4.0/components/jumbotron
+      path:   bootstrap/4.1/components/jumbotron
       source: Bootstrap
 
     - title:  List group
-      path:   bootstrap/4.0/components/list-group
+      path:   bootstrap/4.1/components/list-group
       source: Bootstrap
 
     - title:  Modal
-      path:   bootstrap/4.0/components/modal
+      path:   bootstrap/4.1/components/modal
       source: Bootstrap
 
     - title:  Navs
-      path:   bootstrap/4.0/components/navs
+      path:   bootstrap/4.1/components/navs
       source: Bootstrap
 
     - title:  Navbar
-      path:   bootstrap/4.0/components/navbar
+      path:   bootstrap/4.1/components/navbar
       source: Bootstrap
 
     - title:  Pagination
-      path:   bootstrap/4.0/components/pagination
+      path:   bootstrap/4.1/components/pagination
       source: Bootstrap
 
     - title:  Popovers
-      path:   bootstrap/4.0/components/popovers
+      path:   bootstrap/4.1/components/popovers
       source: Bootstrap
 
     - title:  Scrollspy
-      path:   bootstrap/4.0/components/scrollspy
+      path:   bootstrap/4.1/components/scrollspy
       source: Bootstrap
 
     - title:  Tag
-      path:   bootstrap/4.0/components/tag
+      path:   bootstrap/4.1/components/tag
       source: Bootstrap
 
     - title:  Tooltips
-      path:   bootstrap/4.0/components/tooltips
+      path:   bootstrap/4.1/components/tooltips
       source: Bootstrap
 
     - title:  Utilities
-      path:   bootstrap/4.0/components/utilities
+      path:   bootstrap/4.1/components/utilities
       source: Bootstrap
 
 - title: Grocery Components

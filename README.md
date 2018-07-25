@@ -19,7 +19,6 @@ To quit the server:
 Ctrl + c
 ```
 
-
 Setup
 -----
 
@@ -125,6 +124,18 @@ Which produces something like:
 ```text
 "css-minify": "cleancss --level 1 --source-map --output dist/css/core-styles.min.css dist/css/core-styles.css && cleancss --level 1 --source-map --output dist/css/core-themes/country-farm.min.css dist/css/core-themes/country-farm.css",
 ```
+
+## Upgrading Bootstrap
+
+After upgrading the Bootstrap-docs repo to the latest release of Bootstrap, you'll want to do the following.
+
+See if the location of the documentation has changed. If it has, do the following.
+
+- Update the paths in the file `plugins/move-bootstrap-docs.rb`
+  - then run `./jekyll build` & verify the files are copied over to the correnct location in the `_site` folder
+- Update the paths in the file `_data/nav.yml`
+
+Run `./jekyll build` to copy over the new documentation files.
 
 # Plugins
 

@@ -7,9 +7,9 @@
   "license": "private",
   "main": "dist/assets/css/core-styles.css",
   "dependencies": {
-    "bootstrap-docs": "github:hemphill/bootstrap-docs#v4-docs-beta",
-    "jquery": "^3.0.0",
-    "popper.js": "^1.12.3"
+    "bootstrap-docs": "github:hemphill/bootstrap-docs#v4.1.3-docs",
+    "jquery": "^3.3.0",
+    "popper.js": "^1.14.0"
   },
   "scripts": {
     "bash": "bash",

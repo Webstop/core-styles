@@ -8,6 +8,7 @@ source 'https://rubygems.org'
 # end
 
 group :development, :test do
+  gem 'rake', '~> 12.3.0' # not sure why I need this
   gem 'jekyll', '~> 3.6.2'
   gem 'jekyll-toc', '~> 0.4.0'
   gem 'scss_lint', '~> 0.56.0', require: false

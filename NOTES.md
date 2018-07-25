@@ -1,6 +1,8 @@
 Webstop Style Guide
 ===================
 
+## Upgrading Bootstrap
+
 TODOS:
 ------
 
