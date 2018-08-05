@@ -1,0 +1,15 @@
+// Load docs components
+
+@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/variables";
+// @import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/content";
+//@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/skiplink";
+//@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/sidebar";
+@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/component-examples";
+@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/callouts";
+@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/examples";
+@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/colors"; // TODO: investigate further
+@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/clipboard-js"; // TODO: investigate further
+
+// Load docs dependencies
+@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/syntax";
+@import "../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/anchor";

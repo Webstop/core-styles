@@ -3,3 +3,38 @@
 .wsg-toc-group-link{
   text-transform: capitalize;
 }
+
+
+.wsg-toc-link {
+  display: block;
+  padding: .25rem 1.5rem;
+  font-weight: 500;
+  color: rgba(0,0,0,.65);
+
+  &:hover {
+    color: rgba(0,0,0,.85);
+    text-decoration: none;
+  }
+}
+
+.wsg-toc-item {
+  &.active {
+    margin-bottom: 1rem;
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+
+    > .wsg-toc-link {
+      color: rgba(0,0,0,.85);
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    > .wsg-sidenav {
+      display: block;
+    }
+  }
+}

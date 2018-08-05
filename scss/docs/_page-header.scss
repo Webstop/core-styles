@@ -10,10 +10,10 @@
   .page-source-icon {
     font-size: 2em;
     //text-shadow:
-    //  -1px -1px 1px lighten($brand-primary, 10%),
-    //   1px -1px 1px lighten($brand-primary, 10%),
-    //  -1px  1px 1px lighten($brand-primary, 10%),
-    //   1px  1px 1px lighten($brand-primary, 10%);
+    //  -1px -1px 1px lighten($primary, 10%),
+    //   1px -1px 1px lighten($primary, 10%),
+    //  -1px  1px 1px lighten($primary, 10%),
+    //   1px  1px 1px lighten($primary, 10%);
   }
 }
 
@@ -55,9 +55,9 @@
 .wsg-page-header {
   padding: 2rem ($grid-gutter-width / 2);
   margin-bottom: 1.5rem;
-  color: lighten($brand-primary, 35%);;
+  color: lighten($primary, 35%);;
   text-align: center;
-  background-color: $brand-primary;
+  background-color: $primary;
   background-image: url("/assets/images/Webstop-boxes.png");
   background-size: 100px 100px;
   background-repeat: repeat-y;

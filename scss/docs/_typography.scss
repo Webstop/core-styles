@@ -1,0 +1,24 @@
+// Typography
+
+// Note: we want to use default fonts in the actual code examples and documentation.
+
+.wsg-content .wsg-content {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+    font-weight: 700;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.wsg-title,
+.wsg-page-header h1, {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+
+}
+
+//.btn, label, input, .form-text, th, td, .alert, .sans-serif {
+//  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
+//  font-size: 16px;
+//}

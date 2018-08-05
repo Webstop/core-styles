@@ -4,6 +4,9 @@
 	"sources": [
 		"../../../scss/core-themes/_country-farm.scss"
 	],
+	"sourcesContent": [
+		"@charset \"utf-8\";\n"
+	],
 	"names": [],
 	"mappings": ""
 }

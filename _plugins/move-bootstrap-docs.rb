@@ -1,18 +1,29 @@
 module MoveBootstrapDocs
   class Generator < Jekyll::Generator
     def generate(site)
+      show_debug = false
       node_path = '/node_modules/bootstrap-docs/site/docs'
       preferred_path = '/docs/bootstrap'
 
-      site.pages.each do |page|
-        if page.url.include? node_path
-          #puts "move from: #{page.url}"
+      puts ''
+      puts '-----------------------'
+      puts ''
+      puts 'Move Bootstrap Docs...'
+      puts ''
 
+      site.pages.each do |page|
+        puts "Page URL: #{page.url}" if show_debug
+
+        if page.url.include? node_path
           page.url.sub!(node_path, '')
           page.url.prepend(preferred_path)
 
-          #puts "move to:   #{page.url}"
-          #puts ''
+          puts "Move From: #{page.url}" if show_debug
+          puts "Move To:   #{page.url}" if show_debug
+          puts '' if show_debug
+        else
+          puts 'Keep in place.' if show_debug
+          puts '' if show_debug
         end
       end
 
