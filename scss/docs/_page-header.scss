@@ -10,10 +10,10 @@
   .page-source-icon {
     font-size: 2em;
     //text-shadow:
-    //  -1px -1px 1px lighten($primary, 10%),
-    //   1px -1px 1px lighten($primary, 10%),
-    //  -1px  1px 1px lighten($primary, 10%),
-    //   1px  1px 1px lighten($primary, 10%);
+    //  -1px -1px 1px lighten($webstop-blue, 10%),
+    //   1px -1px 1px lighten($webstop-blue, 10%),
+    //  -1px  1px 1px lighten($webstop-blue, 10%),
+    //   1px  1px 1px lighten($webstop-blue, 10%);
   }
 }
 
@@ -55,13 +55,16 @@
 .wsg-page-header {
   padding: 2rem ($grid-gutter-width / 2);
   margin-bottom: 1.5rem;
-  color: lighten($primary, 35%);;
+  color: lighten($webstop-blue, 35%);
   text-align: center;
-  background-color: $primary;
-  background-image: url("/assets/images/Webstop-boxes.png");
-  background-size: 100px 100px;
-  background-repeat: repeat-y;
-  background-position: right center;
+  background-color: $webstop-blue;
+  background-image: url("/assets/images/W_on_blue_873x500_300dpi.png");
+  background-size: 218.25px 125px; // 873px x 500px
+  // 1/2 -> 436.5px  250px
+  // 1/4 -> 218.25px 125px
+  // 1/8 -> 109px    63px
+  background-repeat: no-repeat;
+  background-position: right bottom;
 
   .container {
     position: relative;
@@ -85,17 +88,13 @@
     margin-top: 55px;
     margin-bottom: 3rem;
     text-align: left;
-    background-size: 256px 256px;
-
-    p {
-      margin-right: 100px;
-    }
+    //background-size: 256px 256px;
 
   }
 
   @include media-breakpoint-up(md) {
 
-    background-size: 512px 512px;
+    background-size: 436.5px  250px;
 
     h1 {
       font-size: 4rem;
@@ -103,21 +102,7 @@
 
     p {
       font-size: 1.5rem;
-      margin-right: 100px;
     }
   }
 
-  @include media-breakpoint-up(lg) {
-    h1,
-    p {
-      margin-right: 150px;
-    }
-
-    .carbonad {
-      position: absolute;
-      top: 0;
-      right: .75rem; // offset from the .container's padding
-      margin: 0 !important;
-    }
-  }
 }

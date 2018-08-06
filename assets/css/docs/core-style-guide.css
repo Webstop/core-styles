@@ -8529,11 +8529,11 @@ a.text-dark:hover, a.text-dark:focus {
 /* recipes */
 /* recipe */
 .webstop-color {
-  color: #0164d3;
+  color: #0194d3;
 }
 
 .bg-webstop {
-  background-color: #0164d3;
+  background-color: #0194d3;
 }
 
 .webstop-sans-serif {
@@ -9488,14 +9488,10 @@ a.text-dark:hover, a.text-dark:focus {
   -webkit-font-smoothing: antialiased;
 }
 
-.wsg-site-nav.navbar {
-  border-bottom: 1px solid white;
-  background-color: #fff;
-}
-
-.wsg-site-nav.navbar .navbar-brand {
-  color: #007bff;
-  font-weight: bold;
+.navbar .webstop-logo {
+  width: 36px;
+  height: 36px;
+  margin-top: -6px;
 }
 
 .wsg-docs-nav-menu-icon {
@@ -9676,13 +9672,13 @@ a.text-dark:hover, a.text-dark:focus {
 .wsg-page-header {
   padding: 2rem 15px;
   margin-bottom: 1.5rem;
-  color: #b3d7ff;
+  color: #88dbfe;
   text-align: center;
-  background-color: #007bff;
-  background-image: url("/assets/images/Webstop-boxes.png");
-  background-size: 100px 100px;
-  background-repeat: repeat-y;
-  background-position: right center;
+  background-color: #0194d3;
+  background-image: url("/assets/images/W_on_blue_873x500_300dpi.png");
+  background-size: 218.25px 125px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 
 .wsg-page-header .container {
@@ -9708,36 +9704,18 @@ a.text-dark:hover, a.text-dark:focus {
     margin-top: 55px;
     margin-bottom: 3rem;
     text-align: left;
-    background-size: 256px 256px;
-  }
-  .wsg-page-header p {
-    margin-right: 100px;
   }
 }
 
 @media (min-width: 768px) {
   .wsg-page-header {
-    background-size: 512px 512px;
+    background-size: 436.5px  250px;
   }
   .wsg-page-header h1 {
     font-size: 4rem;
   }
   .wsg-page-header p {
     font-size: 1.5rem;
-    margin-right: 100px;
-  }
-}
-
-@media (min-width: 992px) {
-  .wsg-page-header h1,
-  .wsg-page-header p {
-    margin-right: 150px;
-  }
-  .wsg-page-header .carbonad {
-    position: absolute;
-    top: 0;
-    right: .75rem;
-    margin: 0 !important;
   }
 }
 

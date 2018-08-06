@@ -66,7 +66,7 @@
       path:   bootstrap/4.1/content/figures
       source: Bootstrap
 
-- title: Components
+- title: Base Components
   path:   bootstrap/4.1/components/alerts
   source: Bootstrap
   pages:
