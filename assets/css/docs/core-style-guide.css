@@ -8517,19 +8517,133 @@ a.text-dark:hover, a.text-dark:focus {
   position: relative;
 }
 
-/* circulars: collection of ads */
 /* circular: an individual ad */
 .circular .circular-title {
   font-weight: bold;
 }
 
 /* circular-item: an individual ad item */
+.circular-item {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-style: solid;
+  border-color: #ccc;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  /* Makes the 2nd column to sit next to the first without wrapping under. */
+  /* Prevents whitespace between the spans from affecting the display */
+}
+
+.circular-item .circular-item-non-digital-coupon {
+  border-style: dashed;
+  border-color: #090;
+  border-width: 2px;
+  padding-left: 10px;
+  padding-right: 2px;
+}
+
+.circular-item .row > .circular-item:first-child {
+  border-right-width: 1px;
+}
+
+.circular-item .circular-item-images {
+  padding: 0;
+  padding-top: 2px;
+  margin: 0;
+  min-height: 1px;
+}
+
+.circular-item .circular-item-images,
+.circular-item .circular-item-qty-group {
+  padding-right: 15px;
+  float: left;
+  width: 100px;
+  display: block;
+}
+
+.circular-item .circular-item-image {
+  padding: 0;
+  margin: 0;
+  width: 85px;
+  height: 83px;
+}
+
+.circular-item .circular-item-info-trigger {
+  margin-bottom: 0;
+}
+
+.circular-item .circular-item-text-col {
+  overflow: hidden;
+}
+
+.circular-item .circular-item-price-wrapper {
+  font-size: 0;
+}
+
+.circular-item .circular-item-price-text {
+  font-size: 24px;
+  /* standard Bootstrap size is 14px */
+  vertical-align: text-top;
+}
+
+.circular-item .circular-item-price-dollars,
+.circular-item .circular-item-price-cents {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.circular-item .circular-item-price-dollars,
+.circular-item .circular-item-price-cents,
+.circular-item .circular-item-price-change {
+  font-weight: bold;
+}
+
+.circular-item .circular-item-heading,
+.circular-item .circular-item-title,
+.circular-item .circular-item-description,
+.circular-item .circular-item-expiration-date,
+.circular-item .circular-item-sale-dates,
+.circular-item .circular-item-more-info,
+.circular-item .circular-item-recipe {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.circular-item .circular-item-shopping-list-wrapper {
+  min-height: 52px;
+  display: block;
+}
+
+.circular-item .circular-item-shopping-list-form {
+  padding-top: 8px;
+}
+
+.circular-item .circular-item-shopping-list-alert {
+  margin-bottom: 0;
+}
+
+.circular-item .circular-item-qty-group .input-group-addon {
+  padding: 6px 8px;
+}
+
+.circular-item .circular-item-recipe {
+  clear: left;
+}
+
 /* coupons */
 /* coupon */
 /* recipes */
 /* recipe */
 .webstop-color {
   color: #0194d3;
+}
+
+.webstop-color:visited {
+  color: #3cc4fe;
+}
+
+.webstop-color:hover {
+  color: #014d6d;
 }
 
 .bg-webstop {

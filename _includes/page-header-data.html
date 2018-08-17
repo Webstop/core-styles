@@ -39,6 +39,10 @@
   {% assign page_heading = 'Base Components' %}
   {% assign page_lead = 'Reusable components providing the base building blocks for page design. buttons, dropdowns, alerts, and much more.' %}
 
+{% elsif page.group == "grocery" or page.group == "webstop-components" %}
+  {% assign page_heading = 'Grocery Components' %}
+  {% assign page_lead = 'These reusable components are the heart of an interactive grocery retailer websites and mobile apps.' %}
+
 {% elsif page.group == "javascript" or page.group == "javascript" %}
   {% assign page_heading = 'JavaScript plugins' %}
   {% assign page_lead = 'Bring compelling interactions to web freateures with these jQuery plugins.' %}

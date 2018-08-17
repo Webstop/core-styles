@@ -2,7 +2,14 @@
 
 .webstop-color {
   color: $webstop-blue;
+  &:visited {
+    color: lighten($webstop-blue, 20%);
+  }
+  &:hover {
+    color: darken($webstop-blue, 20%);
+  }
 }
+
 
 .bg-webstop{
   background-color: $webstop-blue;

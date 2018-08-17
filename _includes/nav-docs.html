@@ -24,7 +24,7 @@
       {% endif %}
 
       <li class="wsg-toc-category {{ active }}">
-        <a class="wsg-toc-category-link" href="{{ category_url }}">
+        <a class="wsg-toc-category-link webstop-color" href="{{ category_url }}">
           {{ category.title }}
         </a>
         <ul class="list-unstyled wsg-toc-groups">
@@ -45,7 +45,7 @@
             {% endif %}
 
             <li class="wsg-toc-group wsg-category-nav {{ active }}">
-              <a class="wsg-toc-group-link" href="{{group_url}}">
+              <a class="wsg-toc-group-link webstop-color" href="{{group_url}}">
                {{ group.title }}
               </a>
 
@@ -67,7 +67,7 @@
                   {% endif %}
 
                   <li class="{{ active }}">
-                    <a href="{{doc_url}}" class="wsg-toc-doc-link">
+                    <a href="{{doc_url}}" class="wsg-toc-doc-link webstop-color">
                       {{ doc.title }}
                     </a>
 
@@ -75,7 +75,7 @@
                     <ul class="wsg-toc-sub-docs">
                       {% for section in doc.sections %}
                       <li>
-                        <a href="{{doc_url}}#{{ section.title | downcase | replace: ' ', '-' }}" class="wsg-toc-sub-doc-link">
+                        <a href="{{doc_url}}#{{ section.title | downcase | replace: ' ', '-' }}" class="wsg-toc-sub-doc-link webstop-color">
                           {{ section.title }}
                         </a>
                       </li>
