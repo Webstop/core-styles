@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    build: .
+    command: jekyll serve --incremental
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/code
+      - bundle:/usr/local/bundle
+#  watch:
+#    image: node:6.9.1
+#    command: npm run watch
+#    volumes:
+#    - .:/code
+volumes:
+  bundle:
