@@ -1,0 +1,20 @@
+// Cards
+
+.card-readable {
+  max-width: $readable;
+}
+
+.card-shadowed {
+  box-shadow: 5px 5px 10px 2px #ccc;
+}
+
+.card-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-stackable {
+  margin-bottom: 1.25rem;
+}
+
+

@@ -9028,6 +9028,64 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.card-readable {
+  max-width: 36.75rem;
+}
+
+.card-shadowed {
+  box-shadow: 5px 5px 10px 2px #ccc;
+}
+
+.card-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-stackable {
+  margin-bottom: 1.25rem;
+}
+
+select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+  background-image: url("https://s3.grocerywebsite.com/core-repos/core-icons/v0.3.1/core-icons/assets/PNG/arrow-down.png");
+  background-position: calc(100% - 10px) 0.6em;
+  background-repeat: no-repeat;
+}
+
+.form-tab-group .nav-tabs {
+  margin-top: -5px;
+  border-bottom: none;
+  border-bottom: 0;
+}
+
+.form-tab-group .nav-tabs .nav-link {
+  padding: 0.1rem 1rem;
+}
+
+.form-tab-group .first-tab-field {
+  border-top-left-radius: 0;
+}
+
+.text-readable {
+  max-width: 36.75rem;
+}
+
+.site-main-container {
+  padding: 0;
+}
+
+.site-main-row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.site-main {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .toolbar {
   display: block;
   position: absolute;
