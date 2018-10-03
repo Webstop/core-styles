@@ -24,7 +24,8 @@ toc: true
 
 ## Price in Dollars Example
 
-This example shows a price in dollars.
+This example shows a price in dollars. Use the `price-big-dollars` sub-class to 
+give a larger emphasis to the dollar portion of the price.
 
 {% capture example %}
 {% include_relative price-examples/_price-dollar-example.html %}
@@ -33,7 +34,8 @@ This example shows a price in dollars.
 
 ## Price in Cents Example
 
-This example shows a price in cents.
+This example shows a price in cents. Use the `price-big-cents` sub-class to 
+give a larger emphasis to the cents portion of the price.
 
 {% capture example %}
 {% include_relative price-examples/_price-cent-example.html %}

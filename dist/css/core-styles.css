@@ -9121,7 +9121,6 @@ select.form-control {
   padding-bottom: 15px;
   padding-top: 15px;
   /* Makes the 2nd column to sit next to the first without wrapping under. */
-  /* Prevents whitespace between the spans from affecting the display */
 }
 
 .circular-item .circular-item-non-digital-coupon {
@@ -9171,36 +9170,11 @@ select.form-control {
   overflow: hidden;
 }
 
-.circular-item .circular-item-price {
-  font-size: 0;
-}
-
-.circular-item .circular-item-price .circular-item-price-prefix,
-.circular-item .circular-item-price .circular-item-price-dollar-sign,
-.circular-item .circular-item-price .circular-item-price-dollars,
-.circular-item .circular-item-price .circular-item-price-change,
-.circular-item .circular-item-price .circular-item-price-cent-sign,
-.circular-item .circular-item-price .circular-item-price-suffix,
-.circular-item .circular-item-price .circular-item-card {
-  font-size: 2.4rem;
-  vertical-align: text-top;
-}
-
-.circular-item .circular-item-price .circular-item-price-dollars,
-.circular-item .circular-item-price .circular-item-price-cents {
-  font-size: 60px;
-  line-height: 60px;
-}
-
-.circular-item .circular-item-price .circular-item-price-dollars,
-.circular-item .circular-item-price .circular-item-price-cents,
-.circular-item .circular-item-price .circular-item-price-change {
-  font-weight: bold;
-}
-
 .circular-item .circular-item-heading,
 .circular-item .circular-item-title,
+.circular-item .price,
 .circular-item .circular-item-description,
+.circular-item .circular-item-details,
 .circular-item .circular-item-expiration-date,
 .circular-item .circular-item-sale-dates,
 .circular-item .circular-item-more-info,
