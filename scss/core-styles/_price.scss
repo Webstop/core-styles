@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+.price {
+  /* Setting font size to zero prevents whitespace between the spans from affecting the display */
+  font-size: 0;
+
+  .price-overlay,
+  .price-prefix,
+  .price-dollar-sign,
+  .price-dollars,
+  .price-cents,
+  .price-cent-sign,
+  .price-suffix,
+  .price-suffix-icon {
+    font-size: 1.5rem; // 24/16 = 1.5
+    vertical-align: text-top;
+    display: inline;
+    line-height: 1;
+  }
+  &.price-big-overlay .price-overlay,
+  &.price-big-dollars .price-dollars,
+  &.price-big-cents   .price-cents {
+    font-size: 3.75rem; // 60/16 = 3.75
+    line-height: 0.8;
+    vertical-align: text-top;
+  }
+  .price-overlay,
+  .price-dollars,
+  .price-cents {
+    font-weight: bold;
+  }
+  .price-prefix:after,
+  .price-suffix:before {
+    // doing it this way so browsers will actually put the space before the element
+    opacity: 0;
+    content: ':';
+    color: #fff;
+  }
+  .price-suffix-icon {
+    margin: 0;
+    padding: 0;
+    //margin-top: 0.2em;
+    margin-left: 0.3125rem; // 5/16=0.3125
+    height: 1.5rem; // 24/16 = 1.5
+    display: inline-block;
+  }
+
+}
+
+
