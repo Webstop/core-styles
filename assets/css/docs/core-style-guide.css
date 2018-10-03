@@ -8503,6 +8503,13 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.btn-group-xs > .btn, .btn-xs {
+  padding: 0.0625rem 5px;
+  font-size: .75rem;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+
 .card-readable {
   max-width: 36.75rem;
 }
@@ -8616,7 +8623,12 @@ select.form-control {
   padding-right: 15px;
   float: left;
   width: 100px;
-  display: block;
+}
+
+.circular-item .circular-item-qty,
+.circular-item .circular-item-qty-text {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .circular-item .circular-item-image {
@@ -8634,25 +8646,30 @@ select.form-control {
   overflow: hidden;
 }
 
-.circular-item .circular-item-price-wrapper {
+.circular-item .circular-item-price {
   font-size: 0;
 }
 
-.circular-item .circular-item-price-text {
-  font-size: 24px;
-  /* standard Bootstrap size is 14px */
+.circular-item .circular-item-price .circular-item-price-prefix,
+.circular-item .circular-item-price .circular-item-price-dollar-sign,
+.circular-item .circular-item-price .circular-item-price-dollars,
+.circular-item .circular-item-price .circular-item-price-change,
+.circular-item .circular-item-price .circular-item-price-cent-sign,
+.circular-item .circular-item-price .circular-item-price-suffix,
+.circular-item .circular-item-price .circular-item-card {
+  font-size: 2.4rem;
   vertical-align: text-top;
 }
 
-.circular-item .circular-item-price-dollars,
-.circular-item .circular-item-price-cents {
+.circular-item .circular-item-price .circular-item-price-dollars,
+.circular-item .circular-item-price .circular-item-price-cents {
   font-size: 60px;
   line-height: 60px;
 }
 
-.circular-item .circular-item-price-dollars,
-.circular-item .circular-item-price-cents,
-.circular-item .circular-item-price-change {
+.circular-item .circular-item-price .circular-item-price-dollars,
+.circular-item .circular-item-price .circular-item-price-cents,
+.circular-item .circular-item-price .circular-item-price-change {
   font-weight: bold;
 }
 
@@ -8690,6 +8707,54 @@ select.form-control {
 
 /* coupons */
 /* coupon */
+.price {
+  /* Setting font size to zero prevents whitespace between the spans from affecting the display */
+  font-size: 0;
+}
+
+.price .price-overlay,
+.price .price-prefix,
+.price .price-dollar-sign,
+.price .price-dollars,
+.price .price-cents,
+.price .price-cent-sign,
+.price .price-suffix,
+.price .price-suffix-icon {
+  font-size: 1.5rem;
+  vertical-align: text-top;
+  display: inline;
+  line-height: 1;
+}
+
+.price.price-big-overlay .price-overlay,
+.price.price-big-dollars .price-dollars,
+.price.price-big-cents .price-cents {
+  font-size: 3.75rem;
+  line-height: 0.8;
+  vertical-align: text-top;
+}
+
+.price .price-overlay,
+.price .price-dollars,
+.price .price-cents {
+  font-weight: bold;
+}
+
+.price .price-prefix:after,
+.price .price-suffix:before {
+  opacity: 0;
+  content: ':';
+  color: #fff;
+}
+
+.price .price-suffix-icon {
+  margin: 0;
+  padding: 0;
+  margin-left: 0.3125rem;
+  height: 1.5rem;
+  display: inline-block;
+}
+
 /* recipes */
 /* recipe */
 .webstop-color {

@@ -33,7 +33,12 @@
     padding-right: 15px;
     float: left;
     width: 100px;
-    display: block;
+  }
+
+  .circular-item-qty,
+  .circular-item-qty-text {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .circular-item-image {
@@ -51,23 +56,42 @@
   .circular-item-text-col {overflow: hidden;}
 
   /* Prevents whitespace between the spans from affecting the display */
-  .circular-item-price-wrapper {font-size: 0;}
-  .circular-item-price-text {
-    font-size: 24px; /* standard Bootstrap size is 14px */
-    vertical-align: text-top;
-  }
-  .circular-item-price-dollars,
-  .circular-item-price-cents {
-    font-size: 60px;
-    line-height: 60px;
-  }
-  .circular-item-price-dollars,
-  .circular-item-price-cents,
-  .circular-item-price-change {
-    font-weight: bold;
+  .circular-item-price {
+    font-size: 0;
+    // by setting the parent to have a font size of zero, we eliminate any spacing between elements in the price.
+    .circular-item-price-prefix,
+    .circular-item-price-dollar-sign,
+    .circular-item-price-dollars,
+    .circular-item-price-change,
+    .circular-item-price-cent-sign,
+    .circular-item-price-suffix,
+    .circular-item-card {
+      font-size: 2.4rem;
+      vertical-align: text-top;
+    }
+
+    .circular-item-price-dollars,
+    .circular-item-price-cents {
+      font-size: 60px;
+      line-height: 60px;
+    }
+    .circular-item-price-dollars,
+    .circular-item-price-cents,
+    .circular-item-price-change {
+      font-weight: bold;
+    }
+
   }
 
-  .circular-item-heading,
+
+
+
+
+
+
+
+
+.circular-item-heading,
   .circular-item-title,
   .circular-item-description,
   .circular-item-expiration-date,
