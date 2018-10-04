@@ -21,9 +21,28 @@ The original digital circular ad item.
 
 ### Small Circular Item 
 
-The original digital circular ad item.
+Tall format digital circular ad item with a 250 pixel square image.
 
 {% capture example %}
-{% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+{% include_relative circular-item-examples/_circular-item-small-example.html %}
+{% endcapture %}
+{% include example.html content=example %}
+
+
+{% capture example %}
+<div class="row">
+  <div class="col">
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+  </div>
+  <div class="col">
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+  </div>
+  <div class="col">
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+  </div>
+  <div class="col">
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+  </div>
+</div>
 {% endcapture %}
 {% include example.html content=example %}

@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/* circular-item: an individual ad item */
+.circular-item-thumbnail {
+  min-width: 320px;
+  max-width: 450px;
+  //border-width: 0;
+  //border-bottom-width: 1px;
+  //border-style: solid;
+  //border-color: #ccc;
+  //padding-bottom: 15px;
+  //padding-top: 15px;
+
+
+  .circular-item-non-digital-coupon {
+    border-style: dashed;
+    border-color: #090;
+    border-width: 2px;
+    padding-left: 10px;
+    padding-right: 2px;
+  }
+
+  .circular-item-images {
+    padding: 0;
+    padding-top: 2px;
+    margin: 0;
+    min-height: 1px;
+  }
+
+  .circular-item-images,
+  .circular-item-qty-group {
+    padding-right: 15px;
+    float: left;
+    width: 100px;
+  }
+
+  .circular-item-qty,
+  .circular-item-qty-text {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .circular-item-image {
+    padding: 0;
+    margin: 0;
+    width: 85px;
+    height: 83px;
+  }
+
+  .circular-item-info-trigger {
+    margin-bottom: 0;
+  }
+
+  /* Makes the 2nd column to sit next to the first without wrapping under. */
+  .circular-item-text-col {overflow: hidden;}
+
+  .circular-item-heading,
+  .circular-item-title,
+  .price,
+  .circular-item-description,
+  .circular-item-details,
+  .circular-item-expiration-date,
+  .circular-item-sale-dates,
+  .circular-item-more-info,
+  .circular-item-recipe {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+
+  .circular-item-shopping-list-wrapper {
+    min-height: 52px;
+    display: block;
+  }
+
+  .circular-item-shopping-list-form {
+    padding-top: 8px;
+  }
+
+  .circular-item-shopping-list-alert {
+    margin-bottom: 0;
+  }
+
+  .circular-item-qty-group .input-group-addon {
+    padding: 6px 8px;
+  }
+
+  .circular-item-recipe {
+    clear: left;
+  }
+
+}

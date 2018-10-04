@@ -5,7 +5,8 @@
 }
 
 .card-shadowed {
-  box-shadow: 5px 5px 10px 2px #ccc;
+  // box-shadow: 5px 5px 10px 2px #ccc;
+  box-shadow: 5px 5px 10px #d9d6c1;
 }
 
 .card-centered {
@@ -14,7 +15,14 @@
 }
 
 .card-stackable {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.25rem; // 20/16=1.25
+}
+
+.card-standard {
+  border-color: #aaa;
+  transition: 5s;
+  box-shadow: 5px 5px 10px #d9d6c1;
+  margin-bottom: 2.5rem; // 40/16=1.25
 }
 
 
