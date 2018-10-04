@@ -8530,7 +8530,7 @@ a.text-dark:hover, a.text-dark:focus {
 .card-standard {
   border-color: #aaa;
   box-shadow: 5px 5px 10px #d9d6c1;
-  margin-bottom: 2.5rem;
+  margin-bottom: 30px;
 }
 
 select.form-control {
@@ -8554,6 +8554,14 @@ select.form-control {
 
 .form-tab-group .first-tab-field {
   border-top-left-radius: 0;
+}
+
+.col.card,
+[class*="col-"].card {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .text-readable {
@@ -8745,6 +8753,79 @@ select.form-control {
 }
 
 .circular-item-small .shopping-list-item {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
+/* circular-item: an individual ad item */
+.circular-item-tower-1k {
+  max-width: 512px;
+  min-width: 265px;
+  text-align: center;
+  position: relative;
+}
+
+.circular-item-tower-1k .circular-item-body {
+  padding: 0 10px 68px 10px;
+}
+
+.circular-item-tower-1k .circular-item-heading,
+.circular-item-tower-1k .circular-item-description,
+.circular-item-tower-1k .circular-item-details,
+.circular-item-tower-1k .circular-item-expiration-date,
+.circular-item-tower-1k .circular-item-sale-dates,
+.circular-item-tower-1k .circular-item-more-info {
+  font-size: 0.625rem;
+}
+
+.circular-item-tower-1k .circular-item-non-digital-coupon {
+  border-style: dashed;
+  border-color: #090;
+  border-width: 2px;
+  padding-left: 10px;
+  padding-right: 2px;
+}
+
+.circular-item-tower-1k .circular-item-qty,
+.circular-item-tower-1k .circular-item-qty-text {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.circular-item-tower-1k .circular-item-info-trigger {
+  margin-bottom: 0;
+}
+
+.circular-item-tower-1k .circular-item-heading,
+.circular-item-tower-1k .circular-item-title,
+.circular-item-tower-1k .price,
+.circular-item-tower-1k .circular-item-description,
+.circular-item-tower-1k .circular-item-details,
+.circular-item-tower-1k .circular-item-expiration-date,
+.circular-item-tower-1k .circular-item-sale-dates,
+.circular-item-tower-1k .circular-item-more-info,
+.circular-item-tower-1k .circular-item-recipe {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.circular-item-tower-1k .circular-item-recipe {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+}
+
+.circular-item-tower-1k .circular-item-recipes-link {
+  float: right;
+}
+
+.circular-item-tower-1k .circular-item-qty-group {
+  margin-right: -15px;
+  width: 80px;
+}
+
+.circular-item-tower-1k .shopping-list-item {
   position: absolute;
   bottom: 15px;
   right: 20px;

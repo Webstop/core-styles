@@ -19,6 +19,19 @@ The original digital circular ad item.
 {% endcapture %}
 {% include example.html content=example %} 
 
+#### Grid of Thumbnail Circular Items
+
+<div class="bd-example">
+  <div class="row">
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+  </div>
+</div>
+
 ### Small Circular Item 
 
 Tall format digital circular ad item with a 250 pixel square image.
@@ -28,21 +41,49 @@ Tall format digital circular ad item with a 250 pixel square image.
 {% endcapture %}
 {% include example.html content=example %}
 
+#### Grid of Small Circular Items
+<div class="bd-example">
+  <div class="row">
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+  </div>
+</div>
+
+
+### 1k Tower Circular Item 
+
+Tall format digital circular ad item with a 1k 16:9 image.
 
 {% capture example %}
-<div class="row">
-  <div class="col">
-    {% include_relative circular-item-examples/_circular-item-small-example.html %}
+{% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+{% endcapture %}
+{% include example.html content=example %}
+
+#### Grid of 1k Tower Circular Items
+<div class="bd-example">
+  <div class="row">
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
   </div>
-  <div class="col">
+</div>
+
+### Mixed Items
+
+<div class="bd-example">
+  <div class="row">
     {% include_relative circular-item-examples/_circular-item-small-example.html %}
-  </div>
-  <div class="col">
     {% include_relative circular-item-examples/_circular-item-small-example.html %}
-  </div>
-  <div class="col">
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
     {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
   </div>
 </div>
-{% endcapture %}
-{% include example.html content=example %}
