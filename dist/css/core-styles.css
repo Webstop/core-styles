@@ -1852,11 +1852,6 @@ pre code {
   opacity: 1;
 }
 
-.form-control:-ms-input-placeholder {
-  color: #6c757d;
-  opacity: 1;
-}
-
 .form-control::-ms-input-placeholder {
   color: #6c757d;
   opacity: 1;
@@ -9054,7 +9049,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 .card-standard {
   border-color: #aaa;
-  transition: 5s;
   box-shadow: 5px 5px 10px #d9d6c1;
   margin-bottom: 2.5rem;
 }
@@ -9205,8 +9199,8 @@ select.form-control {
 
 /* circular-item: an individual ad item */
 .circular-item-small {
-  max-width: 350px;
-  min-width: 250px;
+  max-width: 375px;
+  min-width: 265px;
   text-align: center;
   position: relative;
 }
