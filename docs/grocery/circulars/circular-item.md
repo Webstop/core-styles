@@ -12,7 +12,7 @@ The basic circular item is the basis for our digital circular content.
 
 ### Thumbnail (Classic) Circular Item 
 
-The original digital circular ad item.
+The original digital circular ad item. With a 
 
 {% capture example %}
 {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
@@ -32,6 +32,7 @@ The original digital circular ad item.
   </div>
 </div>
 
+<!--
 ### Small Circular Item 
 
 Tall format digital circular ad item with a 250 pixel square image.
@@ -52,9 +53,9 @@ Tall format digital circular ad item with a 250 pixel square image.
     {% include_relative circular-item-examples/_circular-item-small-example.html %}
   </div>
 </div>
+-->
 
-
-### 1k Tower Circular Item 
+### Tower (1k) Circular Item 
 
 Tall format digital circular ad item with a 1k 16:9 image.
 
@@ -63,7 +64,7 @@ Tall format digital circular ad item with a 1k 16:9 image.
 {% endcapture %}
 {% include example.html content=example %}
 
-#### Grid of 1k Tower Circular Items
+#### Grid of Tower Circular Items
 <div class="bd-example">
   <div class="row">
     {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
@@ -79,10 +80,12 @@ Tall format digital circular ad item with a 1k 16:9 image.
 
 <div class="bd-example">
   <div class="row">
-    {% include_relative circular-item-examples/_circular-item-small-example.html %}
-    {% include_relative circular-item-examples/_circular-item-small-example.html %}
     {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
     {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-tower-1k-example.html %}
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
+    {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
     {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
     {% include_relative circular-item-examples/_circular-item-thumbnail-example.html %}
   </div>

@@ -4,13 +4,22 @@
 .circular-item-thumbnail {
   min-width: 320px;
   max-width: 450px;
-  //border-width: 0;
-  //border-bottom-width: 1px;
-  //border-style: solid;
-  //border-color: #ccc;
-  //padding-bottom: 15px;
-  //padding-top: 15px;
+  position: relative;
 
+  .circular-item-body {
+    padding: 10px;
+    padding-left: 15px;
+    padding-bottom: 68px;
+  }
+
+  .circular-item-heading,
+  .circular-item-description,
+  .circular-item-details,
+  .circular-item-expiration-date,
+  .circular-item-sale-dates,
+  .circular-item-more-info {
+    font-size: 0.75rem; // 12/16=0.75
+  }
 
   .circular-item-non-digital-coupon {
     border-style: dashed;
@@ -27,8 +36,7 @@
     min-height: 1px;
   }
 
-  .circular-item-images,
-  .circular-item-qty-group {
+  .circular-item-images {
     padding-right: 15px;
     float: left;
     width: 100px;
@@ -67,11 +75,6 @@
     margin-bottom: 2px;
   }
 
-  .circular-item-shopping-list-wrapper {
-    min-height: 52px;
-    display: block;
-  }
-
   .circular-item-shopping-list-form {
     padding-top: 8px;
   }
@@ -86,6 +89,17 @@
 
   .circular-item-recipe {
     clear: left;
+  }
+
+  .circular-item-qty-group {
+    margin-right: -15px;
+    width: 80px;
+  }
+
+  .shopping-list-item {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
   }
 
 }

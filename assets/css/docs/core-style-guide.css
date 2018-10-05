@@ -8605,7 +8605,23 @@ select.form-control {
 .circular-item-thumbnail {
   min-width: 320px;
   max-width: 450px;
+  position: relative;
   /* Makes the 2nd column to sit next to the first without wrapping under. */
+}
+
+.circular-item-thumbnail .circular-item-body {
+  padding: 10px;
+  padding-left: 15px;
+  padding-bottom: 68px;
+}
+
+.circular-item-thumbnail .circular-item-heading,
+.circular-item-thumbnail .circular-item-description,
+.circular-item-thumbnail .circular-item-details,
+.circular-item-thumbnail .circular-item-expiration-date,
+.circular-item-thumbnail .circular-item-sale-dates,
+.circular-item-thumbnail .circular-item-more-info {
+  font-size: 0.75rem;
 }
 
 .circular-item-thumbnail .circular-item-non-digital-coupon {
@@ -8623,8 +8639,7 @@ select.form-control {
   min-height: 1px;
 }
 
-.circular-item-thumbnail .circular-item-images,
-.circular-item-thumbnail .circular-item-qty-group {
+.circular-item-thumbnail .circular-item-images {
   padding-right: 15px;
   float: left;
   width: 100px;
@@ -8664,11 +8679,6 @@ select.form-control {
   margin-bottom: 2px;
 }
 
-.circular-item-thumbnail .circular-item-shopping-list-wrapper {
-  min-height: 52px;
-  display: block;
-}
-
 .circular-item-thumbnail .circular-item-shopping-list-form {
   padding-top: 8px;
 }
@@ -8683,6 +8693,17 @@ select.form-control {
 
 .circular-item-thumbnail .circular-item-recipe {
   clear: left;
+}
+
+.circular-item-thumbnail .circular-item-qty-group {
+  margin-right: -15px;
+  width: 80px;
+}
+
+.circular-item-thumbnail .shopping-list-item {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
 }
 
 /* circular-item: an individual ad item */
@@ -8703,7 +8724,7 @@ select.form-control {
 .circular-item-small .circular-item-expiration-date,
 .circular-item-small .circular-item-sale-dates,
 .circular-item-small .circular-item-more-info {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
 }
 
 .circular-item-small .circular-item-non-digital-coupon {
@@ -8767,7 +8788,8 @@ select.form-control {
 }
 
 .circular-item-tower-1k .circular-item-body {
-  padding: 0 10px 68px 10px;
+  padding: 10px;
+  padding-bottom: 68px;
 }
 
 .circular-item-tower-1k .circular-item-heading,
@@ -8776,7 +8798,7 @@ select.form-control {
 .circular-item-tower-1k .circular-item-expiration-date,
 .circular-item-tower-1k .circular-item-sale-dates,
 .circular-item-tower-1k .circular-item-more-info {
-  font-size: 0.625rem;
+  font-size: 0.75rem;
 }
 
 .circular-item-tower-1k .circular-item-non-digital-coupon {
@@ -8814,10 +8836,6 @@ select.form-control {
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
-}
-
-.circular-item-tower-1k .circular-item-recipes-link {
-  float: right;
 }
 
 .circular-item-tower-1k .circular-item-qty-group {

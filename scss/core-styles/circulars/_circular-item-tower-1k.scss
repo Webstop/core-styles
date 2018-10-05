@@ -2,16 +2,14 @@
 
 /* circular-item: an individual ad item */
 .circular-item-tower-1k {
-  //max-width: 312px; // image (250) + image padding (15) + image margin (1) + item padding (15)
   max-width: 512px;
   min-width: 265px; // Any smaller and the Qty field won't fit on the same line as the Shopping list button and all hell breaks loose
   text-align: center;
   position: relative;
-  //background-color: #ddd;
-  //padding: 15px;
 
   .circular-item-body {
-    padding: 0 10px 68px 10px;
+    padding: 10px;
+    padding-bottom: 68px;
   }
 
   .circular-item-heading,
@@ -20,7 +18,7 @@
   .circular-item-expiration-date,
   .circular-item-sale-dates,
   .circular-item-more-info {
-    font-size: 0.625rem; // 10/16=0.625
+    font-size: 0.75rem; // 12/16=0.75
   }
 
   .circular-item-non-digital-coupon {
@@ -31,23 +29,10 @@
     padding-right: 2px;
   }
 
-  //.shopping-list-item {
-  //  margin-top: 15px;
-  //}
-
   .circular-item-qty,
   .circular-item-qty-text {
     padding-left: 8px;
     padding-right: 8px;
-  }
-
-  .circular-item-image {
-    //padding: 0;
-    //margin-left: auto;
-    //margin-right: auto;
-    //padding: 15px;
-    //width: 100%;
-    //max-width: 282px; // image (250) + padding (15) + margin (1)
   }
 
   .circular-item-info-trigger {
@@ -74,9 +59,9 @@
     text-align: left;
   }
 
-  .circular-item-recipes-link {
-    float: right;
-  }
+  //.circular-item-recipes-link {
+  //  float: right;
+  //}
 
   .circular-item-qty-group {
     margin-right: -15px;
@@ -88,38 +73,5 @@
     bottom: 15px;
     right: 20px;
   }
-
-  //.circular-item-recipe-title-link:after {
-  //  content: '… ';
-  //}
-
-  //.circular-item-qty-group {
-  //  padding-right: 15px;
-  //  float: left;
-  //  width: 100px;
-  //}
-  //
-  //.circular-item-shopping-list-wrapper {
-  //  margin-left: auto;
-  //  margin-right: auto;
-  //  min-height: 52px;
-  //  display: inline-block;
-  //}
-  //
-  //.circular-item-shopping-list-form {
-  //  padding-top: 8px;
-  //}
-  //
-  //.circular-item-shopping-list-alert {
-  //  margin-bottom: 0;
-  //}
-  //
-  //.circular-item-qty-group .input-group-addon {
-  //  padding: 6px 8px;
-  //}
-
-  //.circular-item-recipe {
-  //  clear: left;
-  //}
 
 }

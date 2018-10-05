@@ -9,7 +9,6 @@ toc: true
 ## Examples
 
 
-
 {% capture example %}
 {% include_relative price-examples/_price-dollar-example.html %}
 <hr>
@@ -22,7 +21,7 @@ toc: true
 {% include example.html content=example %}
 
 
-## Price in Dollars Example
+### Price in Dollars Example
 
 This example shows a price in dollars. Use the `price-big-dollars` sub-class to 
 give a larger emphasis to the dollar portion of the price.
@@ -32,7 +31,7 @@ give a larger emphasis to the dollar portion of the price.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Price in Cents Example
+### Price in Cents Example
 
 This example shows a price in cents. Use the `price-big-cents` sub-class to 
 give a larger emphasis to the cents portion of the price.
@@ -42,7 +41,7 @@ give a larger emphasis to the cents portion of the price.
 {% endcapture %}
 {% include example.html content=example %}
 
-## Price Overlay Example
+### Price Overlay Example
 
 In this example we want to overlay the price with text, but still give it special treatment.
 

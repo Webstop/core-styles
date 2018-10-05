@@ -1,5 +1,5 @@
 <article class="circular-item circular-item-thumbnail col card card-standard">
-  <div class="card-body">
+  <div class="circular-item-body card-body">
     <div class="circluar-item-top-row ">
       <div class="circular-item-images">
         <img src="/assets/images/circular-items/sweet_corn_classic_thumbnail.jpg" alt="Picture of Homegrown Amaize! Sweet Corn" class="img-responsive circular-item-image">
@@ -24,31 +24,42 @@
       </div>
     </div>
     <div class="circular-item-bottom-row ">
-      <div role="region" id="ListItem0_2" class="circular-item-shopping-list-wrapper" aria-live="polite">
-        <form action="http://www.topsmarkets.com/WeeklyAd/ShoppingList/Add/NoJS//?I=457079&amp;L=0_2&amp;Ad=180812&amp;D=2018-08-16&amp;Test=" method="post" onsubmit="listAdd('457079', '0_2', '180812', '2018-08-16', '', ''); return false;" class="circular-item-shopping-list-form">
-          <fieldset>
-            <legend class="sr-only">Add Homegrown Amaize! Sweet Corn to shopping list</legend>
-            <input type="hidden" name="URL" value="WeeklyAd/Index/" id="URL0_2">
-            <label for="Qty0_2" class="sr-only">Qty for Homegrown Amaize! Sweet Corn</label>
-
-            <div class="input-group circular-item-qty-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text circular-item-qty-text" id="circular-item-qty-label-0-2">Qty</div>
-              </div>
-              <input type="text" name="Qty" value="12" maxlength="2" class="circular-item-qty form-control" id="Qty0_2" aria-labelledby="circular-item-qty-label-0-2">
-            </div>
-            <button type="submit" class="btn btn-primary">
-              Add to Shopping List
-            </button>
-          </fieldset>
-        </form>
-      </div>
       <p class="circular-item-recipe">
         <span class="circular-item-recipe-label">Recipe:</span>
         <a href="http://www.topsmarkets.com/Recipes/Detail/7417/Amaize_Sweet_Corn_Summer_Spreads/" class="circular-item-recipe-title-link">
           Amaize Sweet Corn Summer Spreads
         </a>
+        <!--<a href="http://www.topsmarkets.com/Recipes/Detail/7417/Amaize_Sweet_Corn_Summer_Spreads/" class="circular-item-recipes-link btn btn-xs btn-outline-primary">-->
+          <!--More Recipes-->
+        <!--</a>-->
       </p>
+
+      <div class="shopping-list-item">
+        <div role="region" id="ListItem0_2" class="circular-item-shopping-list-wrapper" aria-live="polite">
+          <form action="http://www.topsmarkets.com/WeeklyAd/ShoppingList/Add/NoJS//?I=457079&amp;L=0_2&amp;Ad=180812&amp;D=2018-08-16&amp;Test=" method="post" onsubmit="listAdd('457079', '0_2', '180812', '2018-08-16', '', ''); return false;" class="circular-item-shopping-list-form">
+            <fieldset>
+              <legend class="sr-only">Add Homegrown Amaize! Sweet Corn to shopping list</legend>
+              <input type="hidden" name="URL" value="WeeklyAd/Index/" id="URL0_2">
+              <label for="Qty0_2" class="sr-only">Qty for Homegrown Amaize! Sweet Corn</label>
+              <div class="row justify-content-end">
+                <div class="col-auto">
+                  <div class="input-group circular-item-qty-group">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text circular-item-qty-text" id="circular-item-qty-label-0-2">Qty</div>
+                    </div>
+                    <input type="text" name="Qty" value="12" maxlength="2" class="circular-item-qty form-control" id="Qty0_2" aria-labelledby="circular-item-qty-label-0-2">
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="icon-plus-circle-solid"></i><span class="sr-only">Add to</span> Shopping List
+                  </button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </article>
