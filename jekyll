@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:6.9.1' npm install
-
-docker run -ti --rm -v "$(pwd):/myapp" 'webstop/jekyll:latest' jekyll $@

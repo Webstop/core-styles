@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 
 docker-compose stop
-rm tmp/pids/server.pid
 docker-compose up

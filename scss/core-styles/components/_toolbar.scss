@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  position: absolute;
+  top: $header-height;
+  left: 0;
+  background-color: $theme-primary;
+  width: 100%;
+  padding: $toolbar-padding-y $toolbar-padding-x;
+  min-height: 54px;
+
+  .input-group {
+    width: auto;
+  }
+
+  .toolbar-group {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    margin: 0;
+    margin-left: $toolbar-padding-x;
+  }
+
+  > .toolbar-group:first-child {
+    margin-left: 0;
+  }
+
+
+}
+
+// The toolbar-detached class is for docs & examples, not intended for production use
+.toolbar-detached {
+  .toolbar {
+    position: relative;
+    top: 0;
+  }
+
+}

@@ -23,16 +23,9 @@
       path: bootstrap/4.1/layout/grid
       source: Bootstrap
 
-    - title:  Flexbox grid
-      path:   bootstrap/4.1/layout/flexbox-grid
-      source: Bootstrap
-
     - title:  Media object
       path:   bootstrap/4.1/layout/media-object
       source: Bootstrap
-
-    - title: Toolbar
-      source: Webstop
 
     - title:  Responsive utilities
       path:   bootstrap/4.1/layout/responsive-utilities
@@ -145,6 +138,9 @@
     - title:  Tag
       path:   bootstrap/4.1/components/tag
       source: Bootstrap
+
+    - title: Toolbar
+      source: Webstop
 
     - title:  Tooltips
       path:   bootstrap/4.1/components/tooltips

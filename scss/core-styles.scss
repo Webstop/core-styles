@@ -2,7 +2,7 @@
 
 @import
   '../node_modules/bootstrap-docs/scss/bootstrap',
-  //'../node_modules/core-icons/assets/SCSS/core-icons-as-fonts',
+  '../node_modules/core-icons/assets/SCSS/core-icons-as-fonts',
   'core-styles/variables',
   'core-styles/extend_bootstrap/button',
   'core-styles/extend_bootstrap/card',
@@ -10,7 +10,7 @@
   'core-styles/extend_bootstrap/grid',
   'core-styles/extend_bootstrap/text',
   'core-styles/layout/site-main',
-  'core-styles/layout/toolbar',
+  'core-styles/components/toolbar',
   'core-styles/circulars/circular',
   'core-styles/circulars/circular-item',
   'core-styles/coupons',

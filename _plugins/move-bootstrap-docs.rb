@@ -1,7 +1,7 @@
 module MoveBootstrapDocs
   class Generator < Jekyll::Generator
     def generate(site)
-      show_debug = false
+      show_debug = true
       node_path = '/node_modules/bootstrap-docs/site/docs'
       preferred_path = '/docs/bootstrap'
 
