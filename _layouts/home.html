@@ -10,13 +10,20 @@
       </div>
     </a>
 
-    {% include nav-home.html %}
+    {% include docs-navbar.html %}
 
-    <div class="wsg-page-header wsg-home-page-header">
-      <div class="container">
-        {% include page-header.html %}
+    <header class="wsg-page-header mt-0">
+      <div class="container-fluid">
+
+        <a href="/docs/grocery/circulars/circular-items">
+          <h1><strong>WSG &middot;</strong> Webstop Style Guide</h1>
+          <img src="/assets/images/Webstop-device-illustration.png">
+        </a>
+        <p class="lead">
+          The definitive source of styling guidelines for grocery websites &amp; mobile apps.
+        </p>
       </div>
-    </div>
+    </header>
 
     <div class="container">
       {{ content }}
