@@ -18,7 +18,7 @@ is designed to sit nicely next to our
 in a row of similar sized items. 
 
 {% capture example %}
-{% include examples/circular-items/_image-item-tower-2k-square-example.html %}
+{% include examples/circular-items/_circular-item-standard-promotion-example.html %}
 {% endcapture %}
 {% include example.html content=example %}
 
@@ -96,12 +96,12 @@ The following button examples are effective calls to action. They are forced to 
 
 <div class="bd-example">
   <div class="row">
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
   </div>
 </div>
 
@@ -109,16 +109,16 @@ The following button examples are effective calls to action. They are forced to 
 
 <div class="bd-example">
   <div class="row">
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
-    {% include examples/circular-items/_circular-item-tower-1k-example.html %}
-    {% include examples/circular-items/_circular-item-tower-1k-example.html %}
-    {% include examples/circular-items/_circular-item-tower-1k-example.html %}
-    {% include examples/circular-items/_circular-item-tower-1k-example.html %}
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
+    {% include examples/circular-items/_circular-item-standard-example.html %}
+    {% include examples/circular-items/_circular-item-standard-example.html %}
+    {% include examples/circular-items/_circular-item-standard-example.html %}
+    {% include examples/circular-items/_circular-item-standard-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
-    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
+    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
   </div>
 </div>

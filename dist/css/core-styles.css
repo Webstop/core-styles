@@ -9790,25 +9790,25 @@ select.form-control {
 }
 
 /* circular-item: an individual ad item */
-.circular-item-tower-1k {
+.circular-item-standard {
   text-align: center;
 }
 
-.circular-item-tower-1k .circular-item-body {
+.circular-item-standard .circular-item-body {
   padding: 10px;
   padding-bottom: 68px;
 }
 
-.circular-item-tower-1k .circular-item-heading,
-.circular-item-tower-1k .circular-item-description,
-.circular-item-tower-1k .circular-item-details,
-.circular-item-tower-1k .circular-item-expiration-date,
-.circular-item-tower-1k .circular-item-sale-dates,
-.circular-item-tower-1k .circular-item-more-info {
+.circular-item-standard .circular-item-heading,
+.circular-item-standard .circular-item-description,
+.circular-item-standard .circular-item-details,
+.circular-item-standard .circular-item-expiration-date,
+.circular-item-standard .circular-item-sale-dates,
+.circular-item-standard .circular-item-more-info {
   font-size: 0.75rem;
 }
 
-.circular-item-tower-1k.circular-item-non-digital-coupon {
+.circular-item-standard.circular-item-non-digital-coupon {
   border-style: dashed;
   border-color: #090;
   border-width: 2px;
@@ -9816,61 +9816,61 @@ select.form-control {
   padding-right: 2px;
 }
 
-.circular-item-tower-1k .circular-item-qty,
-.circular-item-tower-1k .circular-item-qty-text {
+.circular-item-standard .circular-item-qty,
+.circular-item-standard .circular-item-qty-text {
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.circular-item-tower-1k .circular-item-info-trigger {
+.circular-item-standard .circular-item-info-trigger {
   margin-bottom: 0;
 }
 
-.circular-item-tower-1k .circular-item-heading,
-.circular-item-tower-1k .circular-item-title,
-.circular-item-tower-1k .price,
-.circular-item-tower-1k .circular-item-description,
-.circular-item-tower-1k .circular-item-details,
-.circular-item-tower-1k .circular-item-expiration-date,
-.circular-item-tower-1k .circular-item-sale-dates,
-.circular-item-tower-1k .circular-item-more-info,
-.circular-item-tower-1k .circular-item-recipe {
+.circular-item-standard .circular-item-heading,
+.circular-item-standard .circular-item-title,
+.circular-item-standard .price,
+.circular-item-standard .circular-item-description,
+.circular-item-standard .circular-item-details,
+.circular-item-standard .circular-item-expiration-date,
+.circular-item-standard .circular-item-sale-dates,
+.circular-item-standard .circular-item-more-info,
+.circular-item-standard .circular-item-recipe {
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-.circular-item-tower-1k .circular-item-recipe {
+.circular-item-standard .circular-item-recipe {
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
 }
 
-.circular-item-tower-1k .circular-item-qty-group {
+.circular-item-standard .circular-item-qty-group {
   margin-right: -15px;
   width: 80px;
 }
 
-.circular-item-tower-1k .shopping-list-item {
+.circular-item-standard .shopping-list-item {
   position: absolute;
   bottom: 15px;
   right: 20px;
 }
 
 /* circular-image-item: an individual image item */
-.circular-image-item-tower-2k-square {
+.circular-item-standard-promotion {
   text-align: center;
 }
 
-.circular-image-item-tower-2k-square .circular-image-item-body {
+.circular-item-standard-promotion .circular-image-item-body {
   padding: 10px;
   padding-bottom: 68px;
 }
 
-.circular-image-item-tower-2k-square .circular-image-item-description {
+.circular-item-standard-promotion .circular-image-item-description {
   font-size: 0.75rem;
 }
 
-.circular-image-item-tower-2k-square.circular-image-item-non-digital-coupon {
+.circular-item-standard-promotion.circular-image-item-non-digital-coupon {
   border-style: dashed;
   border-color: #090;
   border-width: 2px;
@@ -9878,19 +9878,19 @@ select.form-control {
   padding-right: 2px;
 }
 
-.circular-image-item-tower-2k-square .circular-image-item-title,
-.circular-image-item-tower-2k-square .circular-image-item-description {
+.circular-item-standard-promotion .circular-image-item-title,
+.circular-item-standard-promotion .circular-image-item-description {
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-.circular-image-item-tower-2k-square .circular-image-item-recipe {
+.circular-item-standard-promotion .circular-image-item-recipe {
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
 }
 
-.circular-image-item-tower-2k-square .circular-image-item-footer {
+.circular-item-standard-promotion .circular-image-item-footer {
   display: block;
   padding: 0 20px;
   position: absolute;
@@ -9899,7 +9899,7 @@ select.form-control {
   width: 100%;
 }
 
-.circular-image-item-tower-2k-square .circular-image-item-footer .circular-image-item-button {
+.circular-item-standard-promotion .circular-image-item-footer .circular-image-item-button {
   display: block;
 }
 
