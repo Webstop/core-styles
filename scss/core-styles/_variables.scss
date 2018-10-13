@@ -12,7 +12,13 @@ $toolbar-padding-y: ($spacer / 2) !default;
 //$toolbar-min-height: 58px !default;
 
 // Grocery Apps
+
+// Shopping List
 $shopping-list-column-width: 250px !default;
+
+// Circulars
+$circular-max-column-width: 375px;
+$circular-min-column-width: 265px;
 
 // Bootstrap
 $bootstrap-purple: #563d7c;

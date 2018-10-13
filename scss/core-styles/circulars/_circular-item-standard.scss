@@ -2,10 +2,7 @@
 
 /* circular-item: an individual ad item */
 .circular-item-tower-1k {
-  max-width: 512px;
-  min-width: 265px; // Any smaller and the Qty field won't fit on the same line as the Shopping list button and all hell breaks loose
   text-align: center;
-  position: relative;
 
   .circular-item-body {
     padding: 10px;
@@ -21,7 +18,7 @@
     font-size: 0.75rem; // 12/16=0.75
   }
 
-  .circular-item-non-digital-coupon {
+  &.circular-item-non-digital-coupon {
     border-style: dashed;
     border-color: #090;
     border-width: 2px;

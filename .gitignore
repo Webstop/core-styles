@@ -17,3 +17,7 @@ npm-debug.log
 
 # Workspace
 artifacts
+
+# Explicitly ignored files
+*--ignore
+**/*--ignore

@@ -29,6 +29,10 @@
   .price-cents {
     font-weight: bold;
   }
+  .price-prefix {
+    text-align: right; // needed for the classic thumbnail circular item
+  }
+
   .price-prefix:after,
   .price-suffix:before {
     // doing it this way so browsers will actually put the space before the element
@@ -36,6 +40,19 @@
     content: ':';
     color: #fff;
   }
+
+  &.price-prefix-no-space {
+    .price-suffix:before {
+      content: '';
+    }
+  }
+
+  &.price-suffix-no-space {
+    .prefix:after {
+      content: '';
+    }
+  }
+
   .price-suffix-icon {
     margin: 0;
     padding: 0;

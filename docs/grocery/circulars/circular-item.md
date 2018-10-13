@@ -84,6 +84,7 @@ Tall format digital circular ad item with a 1k 16:9 image.
     {% include examples/circular-items/_circular-item-tower-1k-example.html %}
     {% include examples/circular-items/_circular-item-tower-1k-example.html %}
     {% include examples/circular-items/_circular-item-tower-1k-example.html %}
+    {% include examples/circular-items/_image-item-tower-2k-square-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
