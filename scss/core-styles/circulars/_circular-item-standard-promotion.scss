@@ -1,46 +1,38 @@
 @charset "utf-8";
 
-/* circular-image-item: an individual image item */
+/* circular-item: an individual image item */
 .circular-item-standard-promotion {
   text-align: center;
 
-  .circular-image-item-body {
+  .circular-item-body {
     padding: 10px;
     padding-bottom: 68px;
   }
 
-  .circular-image-item-description{
+  .circular-item-description{
     font-size: 0.75rem; // 12/16=0.75
   }
 
-  &.circular-image-item-non-digital-coupon {
-    border-style: dashed;
-    border-color: #090;
-    border-width: 2px;
-    padding-left: 10px;
-    padding-right: 2px;
-  }
-
-  .circular-image-item-title,
-  .circular-image-item-description {
+  .circular-item-title,
+  .circular-item-description {
     margin-top: 4px;
     margin-bottom: 4px;
   }
 
-  .circular-image-item-recipe {
+  .circular-item-recipe {
     padding-left: 10px;
     padding-right: 10px;
     text-align: left;
   }
 
-  .circular-image-item-footer {
+  .circular-item-footer {
     display: block;
     padding: 0 20px;
     position: absolute;
     bottom: 15px;
     left: 0;
     width: 100%;
-    .circular-image-item-button {
+    .circular-item-button {
       display: block;
     }
   }

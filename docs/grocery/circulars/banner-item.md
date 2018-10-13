@@ -1,119 +1,57 @@
 ---
 layout: docs
-title: Circular Image Item
-description: Individual image items inside the digital circular.
+title: Banner Circular Item
+description: Full-page width promotional image inside the digital circular.
 group: grocery
 toc: true
 ---
 
+- Banners can be any height and should be 2k to 4k wide. 
+- Small text should be avoided or mobile devices won't be able to read it. 
+- Banners create new sections within a circular page.
+
 ## Examples
 
-The basic circular image item adds promotional content beyond the standard sale items.
+Full-Page banners can be used to draw a lot of attention to a promotion. Another popular us is to  
+create beautiful section heading.
 
-### Tower (2k) Square Image Circular Item 
-
-Tall format digital circular image item with a 2k 9:16 (tall) image. The format 
-is designed to sit nicely next to our 
-[Tower (1k) Circular Item](/docs/grocery/circulars/circular-item#tower-1k-circular-item) 
-in a row of similar sized items. 
+### Full-Page Banner Image Circular Item 
 
 {% capture example %}
-{% include examples/circular-items/_circular-item-standard-promotion-example.html %}
+{% include examples/circular-items/_circular-item-banner-example.html %}
 {% endcapture %}
 {% include example.html content=example %}
 
-#### Button Text
+The way the banner item handles living in a grid is different from how other circular items handle it. 
+The banner item sits inside a table column, but the other circular items **are** the table column. The 
+banner item also differs in that it uses the `col-12` class to span the full width of the page, while 
+most circular items simply use the `col` class to take up a flexible division of available space.
 
-There is an upper limit of about 18 character to the amount of text you can place in the button 
-before the text overflows the button at the smallest size. Because we are using proportional fonts 
-the actual number of characters may vary based on which letters are used and if the site is using a 
-custom font or custom font size. 
+## Responsive Design Considerations
 
-##### Button Examples
+It's important to realizes these images will be shrinking down to about `320px` for some mobile 
+devices, but might be `2000px` wide on a desktop computer. Text that is quite readable on a wide 
+desktop display will often shrink to be completely unreadable on a mobile device. There are two 
+basic approaches for handling text at various responsive sizes.
 
-The following button examples are forced to the minimum size (`223px`) used in a 
-Tower (2k) Square Image Circular Item.
+1. Keep the text big and don't have a lot of text.
+2. Create different images for different responsive sizes.
 
-<div class="row">
-  <div class="col text-center">
-    <h5>10 Characters</h5>
-    <button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-      1234567890 <i class="icon-arrow-right"></i>
-    </button>
-    <p>Short text like the 10 character example will nicely center in the button at any size.</p>
-  </div>
-  <div class="col text-center">
-    <h5>18 Characters</h5>
-    <button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-      123456789012345678 <i class="icon-arrow-right"></i>
-    </button>
-    <p>18 characters is about as big as we can get without the button design looking broken.</p>
-  </div>
-  <div class="col text-center">
-    <h5>20 Characters</h5>
-    <button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-      12345678901234567890 <i class="icon-arrow-right"></i>
-    </button>
-    <p>At 20 characters the right arrow is uncomfortably close to the right side, it looks like a design mistake.</p>
-   </div>
-  <div class="col text-center">
-    <h5>23 Characters</h5>
-    <button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-      12345678901234567890123 <i class="icon-arrow-right"></i>
-    </button>
-    <p>23 characters pushes content off the edge of the button, which is hidden from view.</p>
-  </div>
-</div>
 
-##### Button Title Suggestions
 
-The following button examples are effective calls to action. They are forced to the minimum size 
-(`223px`) used in a Tower (2k) Square Image Circular Item.
+## Mixed Items Example
 
-<button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-  Learn More! <i class="icon-arrow-right"></i>
-</button>
-<button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-  Click Here! <i class="icon-arrow-right"></i>
-</button>
-<button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-  Enter Contest! <i class="icon-arrow-right"></i>
-</button>
-<button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-  Subscribe! <i class="icon-arrow-right"></i>
-</button>
-<button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-  Newsletter Sign-Up! <i class="icon-arrow-right"></i>
-</button>
-<button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-  Enter To Win! <i class="icon-arrow-right"></i>
-</button>
-<button class="circular-image-item-button btn btn-primary mb-2" style="width: 223px;">
-  Watch Video! <i class="icon-arrow-right"></i>
-</button>
-
-#### Grid of Tower Circular Image Items
+Here you can see how the banner creates new section headings within a group of circular items.
 
 <div class="bd-example">
   <div class="row">
-    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
-    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
-    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
-    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
-    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
-    {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
-  </div>
-</div>
-
-### Mixed Items
-
-<div class="bd-example">
-  <div class="row">
+    {% include examples/circular-items/_circular-item-banner-example.html %}
     {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
     {% include examples/circular-items/_circular-item-standard-example.html %}
     {% include examples/circular-items/_circular-item-standard-example.html %}
     {% include examples/circular-items/_circular-item-standard-example.html %}
     {% include examples/circular-items/_circular-item-standard-example.html %}
+    {% include examples/circular-items/_circular-item-banner-example.html %}
     {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}

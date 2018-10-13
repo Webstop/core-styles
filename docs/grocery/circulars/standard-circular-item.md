@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Circular Item
+title: Standard Circular Item
 description: Individual sale items inside the digital circular.
 group: grocery
 toc: true
@@ -10,16 +10,24 @@ toc: true
 
 The basic circular item is the basis for our digital circular content. 
 
-### Standard Circular Item 
-
-Tower format digital circular ad item with a 1k 16:9 image.
+Tower format digital circular item with a 1k 16:9 image.
 
 {% capture example %}
 {% include examples/circular-items/_circular-item-standard-example.html %}
 {% endcapture %}
 {% include example.html content=example %}
 
-#### Grid of Standard Circular Items
+The optional `col` class allows circular items align nicely in a flex box grid. 
+Circular items which rest inside a `row` class and contain a `col` class will 
+nicely divide up the available space in a row to provide a nice group presentation.
+
+If a circular item is going to stand alone on a page or section of a page, the `col` 
+class is unnecessary. 
+
+### Grid of Standard Circular Items
+
+This layout is achieved by giving the circular items a `col` class within the context 
+of a `row`.
 
 <div class="bd-example">
   <div class="row">
@@ -34,40 +42,7 @@ Tower format digital circular ad item with a 1k 16:9 image.
 
 ---
 
-### Thumbnail (Classic) Circular Item 
-
-The original digital circular ad item. With a `85px` x `83px` image.
-
-<div class="alert alert-warning" role="alert">
-  <h4 class="alert-heading">Deprecation Warning!</h4>
-  <p>
-    The thumbnail layout is being superseeded by the Standard Circular Item. 
-    We will continue to support this format while retailers transition to 
-    larger graphics. 
-  </p>
-</div>
-
-{% capture example %}
-{% include examples/circular-items/_circular-item-thumbnail-example.html %}
-{% endcapture %}
-{% include example.html content=example %} 
-
-#### Grid of Thumbnail Circular Items
-
-<div class="bd-example">
-  <div class="row">
-    {% include examples/circular-items/_circular-item-thumbnail-example.html %} 
-    {% include examples/circular-items/_circular-item-thumbnail-example.html %}
-    {% include examples/circular-items/_circular-item-thumbnail-example.html %}
-    {% include examples/circular-items/_circular-item-thumbnail-example.html %}
-    {% include examples/circular-items/_circular-item-thumbnail-example.html %}
-    {% include examples/circular-items/_circular-item-thumbnail-example.html %}
-  </div>
-</div>
-
----
-
-### Mixed Items
+### Mixed Items Example
 
 <div class="bd-example">
   <div class="row">

@@ -1,15 +1,3 @@
-- title: Getting started
-  pages:
-    - title: Introduction
-    - title: Download
-    - title: Contents
-    - title: Browsers & devices
-    - title: JavaScript
-    - title: Options
-    - title: Flexbox
-    - title: Build tools
-    - title: Best practices
-    - title: Accessibility
 
 - title: Layout
   path:   bootstrap/4.1/layout/overview
@@ -154,22 +142,13 @@
   pages:
     - title: Circulars
       pages:
-        - title: Circular Item
-        - title: Image Item
+        - title: Circular Items
+        - title: Standard Circular Item
+        - title: Standard Promotion Item
+        - title: Thumbnail Circular Item
         - title: Banner Item
         - title: Recipe Item
         - title: Coupon Item
-        - title: Videos Item
-        - title: HTML Item
         - title: Modal
         - title: Navigation
-    - title: Coupons
-      pages:
-        - title: Coupons
-        - title: Wallet Item
     - title: Price
-    - title: Recipes
-      pages:
-      - title: Recipe
-      - title: Recipes
-      - title: My Cook Book

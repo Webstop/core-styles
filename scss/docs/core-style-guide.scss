@@ -22,6 +22,9 @@
 
 // The order the files are loaded is important
 @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Montserrat:400,700&amp;subset=cyrillic');
+
+$primary: darken(#0194d3, 10%);
+
 @import
   '../../scss/core-styles',
   //'../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/docs',

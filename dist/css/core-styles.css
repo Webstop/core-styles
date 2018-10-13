@@ -9808,14 +9808,6 @@ select.form-control {
   font-size: 0.75rem;
 }
 
-.circular-item-standard.circular-item-non-digital-coupon {
-  border-style: dashed;
-  border-color: #090;
-  border-width: 2px;
-  padding-left: 10px;
-  padding-right: 2px;
-}
-
 .circular-item-standard .circular-item-qty,
 .circular-item-standard .circular-item-qty-text {
   padding-left: 8px;
@@ -9856,41 +9848,33 @@ select.form-control {
   right: 20px;
 }
 
-/* circular-image-item: an individual image item */
+/* circular-item: an individual image item */
 .circular-item-standard-promotion {
   text-align: center;
 }
 
-.circular-item-standard-promotion .circular-image-item-body {
+.circular-item-standard-promotion .circular-item-body {
   padding: 10px;
   padding-bottom: 68px;
 }
 
-.circular-item-standard-promotion .circular-image-item-description {
+.circular-item-standard-promotion .circular-item-description {
   font-size: 0.75rem;
 }
 
-.circular-item-standard-promotion.circular-image-item-non-digital-coupon {
-  border-style: dashed;
-  border-color: #090;
-  border-width: 2px;
-  padding-left: 10px;
-  padding-right: 2px;
-}
-
-.circular-item-standard-promotion .circular-image-item-title,
-.circular-item-standard-promotion .circular-image-item-description {
+.circular-item-standard-promotion .circular-item-title,
+.circular-item-standard-promotion .circular-item-description {
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-.circular-item-standard-promotion .circular-image-item-recipe {
+.circular-item-standard-promotion .circular-item-recipe {
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
 }
 
-.circular-item-standard-promotion .circular-image-item-footer {
+.circular-item-standard-promotion .circular-item-footer {
   display: block;
   padding: 0 20px;
   position: absolute;
@@ -9899,8 +9883,13 @@ select.form-control {
   width: 100%;
 }
 
-.circular-item-standard-promotion .circular-image-item-footer .circular-image-item-button {
+.circular-item-standard-promotion .circular-item-footer .circular-item-button {
   display: block;
+}
+
+.circular-item-banner {
+  max-width: none;
+  min-width: none;
 }
 
 /* coupons */
@@ -9968,11 +9957,11 @@ select.form-control {
 /* recipes */
 /* recipe */
 .webstop-color {
-  color: #0194d3;
+  color: #0170a0;
 }
 
 .webstop-color:visited {
-  color: #3cc4fe;
+  color: #0194d3;
 }
 
 .webstop-color:hover {

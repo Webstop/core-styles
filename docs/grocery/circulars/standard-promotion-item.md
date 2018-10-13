@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Circular Image Item
+title: Standard Promotion Circular Item
 description: Individual image items inside the digital circular.
 group: grocery
 toc: true
@@ -10,11 +10,11 @@ toc: true
 
 The basic circular image item adds promotional content beyond the standard sale items.
 
-### Tower (2k) Square Image Circular Item 
+### Standard Promotion Circular Item 
 
-Tall format digital circular image item with a 2k 9:16 (tall) image. The format 
+Tower format digital circular item with a 2k square image. The format 
 is designed to sit nicely next to our 
-[Tower (1k) Circular Item](/docs/grocery/circulars/circular-item#tower-1k-circular-item) 
+[Standard Circular Item](/docs/grocery/circulars/standard-circular-item) 
 in a row of similar sized items. 
 
 {% capture example %}
@@ -92,7 +92,7 @@ The following button examples are effective calls to action. They are forced to 
   Watch Video! <i class="icon-arrow-right"></i>
 </button>
 
-#### Grid of Tower Circular Image Items
+#### Grid of Standard Promotion Circular Items
 
 <div class="bd-example">
   <div class="row">
@@ -104,6 +104,8 @@ The following button examples are effective calls to action. They are forced to 
     {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
   </div>
 </div>
+
+---
 
 ### Mixed Items
 
