@@ -9229,6 +9229,10 @@ select.form-control {
   margin-bottom: 2px;
 }
 
+.circular-item-thumbnail .circular-item-bottom-row {
+  clear: both;
+}
+
 .circular-item-thumbnail .circular-item-details {
   padding-left: 100px;
 }
