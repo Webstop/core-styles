@@ -9896,6 +9896,15 @@ select.form-control {
   min-width: none;
 }
 
+.circular-navigation .circular-navigation-circular {
+  margin-right: -1rem;
+}
+
+.circular-navigation .circular-navigation-title,
+.circular-navigation .circular-navigation-dates {
+  font-size: 0.75rem;
+}
+
 /* coupons */
 /* coupon */
 .price {
