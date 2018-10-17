@@ -1,0 +1,91 @@
+// dropdowns
+
+//.dropdown-toggle {
+//  padding-right: 30px;
+//  background-image: url('https://s3.grocerywebsite.com/core-repos/core-icons/v0.3.1/core-icons/assets/PNG/arrow-down.png');
+//  background-position: calc(100% - 10px) .6em;
+//  background-repeat: no-repeat;
+//}
+//
+//.dropup .dropdown-toggle {
+//  background-image: url('https://s3.grocerywebsite.com/core-repos/core-icons/v0.3.1/core-icons/assets/PNG/arrow-up.png');
+//}
+//.dropright .dropdown-toggle {
+//  background-image: url('https://s3.grocerywebsite.com/core-repos/core-icons/v0.3.1/core-icons/assets/PNG/arrow-right.png');
+//}
+//.dropleft .dropdown-toggle {
+//  background-image: url('https://s3.grocerywebsite.com/core-repos/core-icons/v0.3.1/core-icons/assets/PNG/arrow-left.png');
+//  background-position: 10px .6em;
+//  padding-right: 0.75rem;
+//  padding-left: 30px;
+//}
+
+
+//.dropdown-toggle::after {
+//  display: inline-block;
+//  width: 0;
+//  height: 0;
+//  margin-left: 0.255em;
+//  vertical-align: 0.255em;
+//  content: "";
+//  border-top: 0.3em solid;
+//  border-right: 0.3em solid transparent;
+//  border-bottom: 0;
+//  border-left: 0.3em solid transparent;
+//}
+
+// The ruleset below resets the undesirable Bootstrap settings
+.dropdown-toggle::after {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-left: 0;
+  vertical-align: baseline;
+  border: none;
+  border: 0;
+}
+
+.dropdown-toggle {
+  &::after,
+  &::before {
+    font-family: 'core-icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    // bootstrap resets
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-left: 0;
+    vertical-align: baseline;
+    border: none;
+    border: 0;
+  }
+}
+
+.dropdown-toggle::after {
+  padding-left: 8px;
+  content: "\e600";
+}
+
+.dropup .dropdown-toggle::after {
+  @extend .dropdown-toggle;
+  content: "\e603";
+}
+.dropright .dropdown-toggle::after {
+  @extend .dropdown-toggle;
+  content: "\e602";
+}
+.dropleft .dropdown-toggle::before {
+  @extend .dropdown-toggle;
+  padding-right: 8px;
+  content: "\e601";
+}
+
+
+
