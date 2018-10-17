@@ -7,8 +7,9 @@ $body-bg:  $theme-bg !default;
 $header-height: 55px !default;
 
 // Toolbar
-$toolbar-padding-x: $spacer !default;
-$toolbar-padding-y: ($spacer / 2) !default;
+$toolbar-spacer: $spacer !default;
+$toolbar-padding-x: $toolbar-spacer !default;
+$toolbar-padding-y: ($toolbar-spacer / 2) !default;
 //$toolbar-min-height: 58px !default;
 
 // Grocery Apps

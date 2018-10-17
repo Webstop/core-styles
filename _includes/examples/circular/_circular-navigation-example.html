@@ -1,10 +1,112 @@
-<nav class="toolbar">
-  <div class="toolbar-group btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-light">Left</button>
-    <button type="button" class="btn btn-light">Middle</button>
-    <button type="button" class="btn btn-light">Right</button>
-  </div>
+<nav class="toolbar" aria-label="Circular page navigation.">
+  <ul class="toolbar-group pagination">
+    <!--<li class="page-item"><a class="page-link" href="#"><i class="icon-arrow-left"></i><i class="icon-arrow-left"></i><span class="sr-only">First Page</span></a></li>-->
+    <li class="page-item"><a class="page-link" href="#"><i class="icon-arrow-left"></i><span class="sr-only">Previous Page</span></a></li>
+    <li class="page-item">
+      <select class="form-control d-none d-sm-inline" style="border-radius: 0;">
+        <option>Page 1 of 14</option>
+        <option>Page 2 of 14</option>
+        <option>Page 3 of 14</option>
+        <option>Page 4 of 14</option>
+      </select>
+      <select class="form-control d-inline d-sm-none" style="border-radius: 0;">
+        <option>Pg. 1</option>
+        <option>Pg. 2</option>
+        <option>Pg. 3</option>
+        <option>Pg. 4</option>
+      </select>
+    </li>
+    <li class="page-item"><a class="page-link" href="#"><i class="icon-arrow-right"></i><span class="sr-only">Next Page</span></a></li>
+    <!--<li class="page-item"><a class="page-link" href="#"><i class="icon-arrow-right"></i> <i class="icon-arrow-right"></i><span class="sr-only">Last Page</span></a></li>-->
+  </ul>
+
   <div class="toolbar-group">
-    <button type="button" class="btn btn-light">Alone</button>
+    <select class="form-control">
+      <option>Dept</option>
+      <!--<option>Departments</option>-->
+      <!--<option>Bakery Shoppe</option>-->
+      <!--<option>Dairy</option>-->
+      <!--<option>Grocery</option>-->
+    </select>
+  </div>
+
+  <div class="toolbar-group d-none d-sm-inline">
+    <select class="form-control">
+      <option>Brand</option>
+      <!--<option>Campbell's</option>-->
+      <!--<option>Kraft</option>-->
+      <!--<option>Swanson</option>-->
+      <!--<option>Hillshire Farms</option>-->
+    </select>
+  </div>
+
+  <div class="toolbar-group">
+    <div class="d-inline d-sm-none">
+      <button type="button" class="btn btn-light" >
+        <i class="icon-search"></i>
+      </button>
+    </div>
+    <div class="input-group d-none d-sm-inline">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="icon-search"></i></span>
+      </div>
+      <input type="text" class="form-control" placeholder="Search" aria-label="Search Circulars">
+    </div>
   </div>
 </nav>
+
+<br>
+
+<nav class="toolbar" aria-label="Circular page navigation.">
+  <ul class="toolbar-group pagination">
+    <!--<li class="page-item"><a class="page-link" href="#"><i class="icon-arrow-left"></i><i class="icon-arrow-left"></i><span class="sr-only">First Page</span></a></li>-->
+    <li class="page-item"><a class="page-link" href="#"><i class="icon-arrow-left"></i><span class="sr-only">Previous Page</span></a></li>
+    <li class="page-item">
+      <select class="form-control" style="border-radius: 0;">
+        <option>Page 1 of 14</option>
+        <option>Page 2 of 14</option>
+        <option>Page 3 of 14</option>
+        <option>Page 4 of 14</option>
+      </select>
+    </li>
+    <li class="page-item"><a class="page-link" href="#"><i class="icon-arrow-right"></i><span class="sr-only">Next Page</span></a></li>
+    <!--<li class="page-item"><a class="page-link" href="#"><i class="icon-arrow-right"></i> <i class="icon-arrow-right"></i><span class="sr-only">Last Page</span></a></li>-->
+  </ul>
+
+  <div class="toolbar-group">
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Departments
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <a class="dropdown-item" href="#">Dropdown link</a>
+          <a class="dropdown-item" href="#">Dropdown link</a>
+        </div>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop2" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Brands
+        </button>
+        <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+          <a class="dropdown-item" href="#">Dropdown link</a>
+          <a class="dropdown-item" href="#">Dropdown link</a>
+        </div>
+      </div>
+
+
+      <div class="input-group">
+        <input style="border-radius: 0;" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon2"><i class="icon-search"></i></span>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</nav>
+
+
