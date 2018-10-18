@@ -9181,7 +9181,8 @@ a.text-dark:hover, a.text-dark:focus {
   content: "\e601";
 }
 
-select.form-control {
+select.form-control,
+select.custom-select {
   -webkit-appearance: none;
   -moz-appearance: none;
   padding-right: 30px;
@@ -9251,9 +9252,16 @@ select.form-control {
   display: inline-flex;
   vertical-align: middle;
   margin: 0;
-  margin-top: 8px;
   margin-right: 1rem;
   height: 38px;
+}
+
+.toolbar .toolbar-group .btn,
+.toolbar .toolbar-group .form-control,
+.toolbar .toolbar-group .custom-select,
+.toolbar .toolbar-group .input-group-text,
+.toolbar .toolbar-group .page-link {
+  border-color: #bcb792;
 }
 
 .toolbar > .toolbar-group:first-child {
@@ -10559,6 +10567,11 @@ select.form-control {
 
 .bd-example {
   background-color: #f6f5f0;
+}
+
+.bd-example .pagination.toolbar-group {
+  margin: 0;
+  margin-right: 1rem;
 }
 
 .navbar .webstop-logo {

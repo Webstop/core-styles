@@ -7,7 +7,7 @@
   //position: absolute;
   //top: 0; // $header-height;
   //left: 0;
-  background-color: $theme-primary;
+  background-color: $toolbar-bg;
   width: 110%;
   padding: $toolbar-padding-y 0 $toolbar-padding-y $toolbar-padding-x;
   min-height: 54px;
@@ -16,7 +16,6 @@
 
   .input-group {
     width: auto;
-
   }
 
   .toolbar-group {
@@ -24,9 +23,17 @@
     display: inline-flex;
     vertical-align: middle;
     margin: 0;
-    margin-top: 8px;
+    //margin-top: 8px;
     margin-right: $toolbar-spacer;
     height: 38px;
+
+    .btn,
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .page-link {
+      border-color: $toolbar-border-color;
+    }
   }
 
   > .toolbar-group:first-child {
@@ -35,6 +42,17 @@
 
 
 }
+
+//
+//<div class="input-group mb-3">
+//<div class="input-group-prepend">
+//<span class="input-group-text">$</span>
+//</div>
+//<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+//<div class="input-group-append">
+//<span class="input-group-text">.00</span>
+//</div>
+//</div>
 
 // The toolbar-detached class is for docs & examples, not intended for production use
 .toolbar-detached {

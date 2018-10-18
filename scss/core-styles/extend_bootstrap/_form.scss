@@ -1,6 +1,7 @@
 // Forms
 
-select.form-control {
+select.form-control,
+select.custom-select {
   -webkit-appearance:none;
   -moz-appearance:none;
   padding-right: 30px;
