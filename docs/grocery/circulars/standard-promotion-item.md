@@ -1,10 +1,14 @@
 ---
 layout: docs
 title: Standard Promotion Circular Item
-description: Individual image items inside the digital circular.
+description: Individual image items inside the digital circular. 
 group: grocery
 toc: true
 ---
+
+*The Standard Promotion replaces the legacy SIMG item.*
+
+In marketing, promotion refers to any type of marketing communication used to inform or persuade target audiences of the relative merits of a product, service, brand or issue. The aim of promotion is to increase awareness, create interest, generate sales or create brand loyalty.
 
 ## Examples
 
