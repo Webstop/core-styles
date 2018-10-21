@@ -9868,6 +9868,17 @@ select.custom-select {
   display: none;
 }
 
+.site .site-debug-toggle {
+  position: fixed;
+  bottom: 0;
+  left: 60px;
+  opacity: 0.4;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: -5px;
+}
+
 .site.site-fixed {
   margin-left: auto;
   margin-right: auto;

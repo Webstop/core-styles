@@ -2,12 +2,19 @@
 
 .site {
 
-  .site-header {}
-  .site-navigation {}
-  .site-content {}
-  .site-footer {}
   .site-debug {
     display: none;
+  }
+
+  .site-debug-toggle {
+    position: fixed;
+    bottom: 0;
+    left: 60px;
+    opacity: 0.4;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: -5px;
   }
 
   // Sub-Classes
@@ -43,5 +50,6 @@
       display: block;
     }
   }
+
 }
 
