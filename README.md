@@ -23,18 +23,23 @@ Setup
 -----
 
 1. Install Docker for Mac.  Click the 'Get Docker for Mac (stable)' link
-on this page:
-
-   * [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/)
-
+  on this page: [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/)
 2. After copying the 'Docker' app from the downloaded DMG to your Applications folder
-launch the app so that it can install and configure Docker on your computer.
-This will add a whale icon menu item to your menubar which will automatically
-launch on subsequent restarts of your mac.  This menubar item provides options
-for stopping the docker vm if desired.
+  launch the app so that it can install and configure Docker on your computer.
+  This will add a whale icon menu item to your menubar which will automatically
+  launch on subsequent restarts of your mac.  This menubar item provides options
+  for stopping the docker vm if desired.
+3. Run `./serve` from the project's root directory. The first time you run this command it 
+  take longer because it will be going out and downloading the Docker VMs and installing all 
+  of the project's Ruby Gems. The whole process should take about 10 minutes. After you're 
+  setup, the `./serve` command should take a few seconds to launch your web server.
 
-Run The Web Server
-------------------
+
+Development
+-----------
+
+## Running The Web Server
+
 
 From the root directory of the project, run:
 
@@ -44,22 +49,17 @@ From the root directory of the project, run:
 
 Then visit [`http://localhost:4000`](http://localhost:4000) in your web browser.
 
-To quit the server:
+> The first time you run this command it 
+> take longer because it will be going out and downloading the Docker VMs and installing all 
+> of the project's Ruby Gems. The whole process should take about 10 minutes. After you're 
+> setup, the `./serve` command should take a few seconds to launch your web server.
+
+### To quit the server:
 
 ```bash
 Ctrl + c
 ```
 
-Install Gems & Ruby Upgrades
-----------------------------
-
-Our development environment relies on a Docker container. The Docker container 
-stores all the Ruby gems and specifies which version of Ruby we are using. To 
-update changes specified in the gemfile, run the following command:
-
-```bash
-./build_docker.sh
-```
 
 Run Jekyll Commands
 -------------------
@@ -89,7 +89,7 @@ Example `./jekyll` commands
 ./jekyll build
 ```
 
-## Development 
+## Development, Deeper Dive 
 
 ### Creating Themes
 
