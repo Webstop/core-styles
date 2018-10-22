@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -9973,6 +9974,60 @@ select.custom-select {
   border-width: 2px;
 }
 
+.circular-item-banner {
+  max-width: none;
+  min-width: none;
+}
+
+/* circular-item: an individual ad item */
+.circular-item-coupon {
+  border: 2px dashed #007bff;
+}
+
+.circular-item-coupon::after {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+  font-size: 2rem;
+  line-height: 0.35;
+  content: '✃';
+  color: #007bff;
+}
+
+.circular-item-coupon .circular-item-body {
+  padding: 10px;
+  padding-bottom: 68px;
+}
+
+.circular-item-coupon .circular-item-title {
+  font-size: 2rem;
+}
+
+.circular-item-coupon .circular-item-heading,
+.circular-item-coupon .circular-item-title,
+.circular-item-coupon .price,
+.circular-item-coupon .circular-item-description,
+.circular-item-coupon .circular-item-details,
+.circular-item-coupon .circular-item-expiration-date,
+.circular-item-coupon .circular-item-sale-dates,
+.circular-item-coupon .circular-item-more-info,
+.circular-item-coupon .circular-item-recipe {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.circular-item-coupon .circular-item-recipe {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+}
+
+.circular-item-coupon .shopping-list-item {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
 /* circular-item: an individual ad item */
 .circular-item-thumbnail {
   /* Makes the 2nd column to sit next to the first without wrapping under. */
@@ -10184,11 +10239,6 @@ select.custom-select {
 
 .circular-item-standard-promotion .circular-item-footer .circular-item-button {
   display: block;
-}
-
-.circular-item-banner {
-  max-width: none;
-  min-width: none;
 }
 
 .circular-navigation .circular-navigation-circular {
