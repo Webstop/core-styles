@@ -9462,7 +9462,6 @@ select.custom-select {
   min-width: none;
 }
 
-/* circular-item: an individual ad item */
 .circular-item-coupon {
   border: 2px dashed #0170a0;
 }
@@ -9651,6 +9650,48 @@ select.custom-select {
   right: 20px;
 }
 
+.circular-item-standard-coupon {
+  border: 2px dashed #0170a0;
+}
+
+.circular-item-standard-coupon::after {
+  position: absolute;
+  top: 2px;
+  right: 15px;
+  font-size: 2rem;
+  line-height: 0.35;
+  content: '✃';
+  color: #0170a0;
+}
+
+.circular-item-standard-coupon .circular-item-body {
+  padding: 10px 20px;
+  padding-bottom: 68px;
+}
+
+.circular-item-standard-coupon .circular-item-title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.circular-item-standard-coupon .circular-item-expiration-date {
+  text-align: center;
+}
+
+.circular-item-standard-coupon .circular-item-title,
+.circular-item-standard-coupon .circular-item-description,
+.circular-item-standard-coupon .circular-item-expiration-date,
+.circular-item-standard-coupon .circular-item-recipe {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.circular-item-standard-coupon .shopping-list-item {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+}
+
 /* circular-item: an individual image item */
 .circular-item-standard-promotion {
   text-align: center;
@@ -9688,6 +9729,10 @@ select.custom-select {
 
 .circular-item-standard-promotion .circular-item-footer .circular-item-button {
   display: block;
+}
+
+.circular-item-standard-promotion .modal {
+  text-align: left;
 }
 
 .circular-navigation .circular-navigation-circular {
