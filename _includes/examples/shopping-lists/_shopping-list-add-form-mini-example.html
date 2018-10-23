@@ -1,17 +1,12 @@
-<div class="shopping-list-item">
-  <div role="region" id="ListItem0_2" class="circular-item-shopping-list-wrapper" aria-live="polite">
-    <form action="http://www.topsmarkets.com/WeeklyAd/ShoppingList/Add/NoJS//?I=457079&amp;L=0_2&amp;Ad=180812&amp;D=2018-08-16&amp;Test=" method="post" onsubmit="listAdd('457079', '0_2', '180812', '2018-08-16', '', ''); return false;" class="circular-item-shopping-list-form">
-      <fieldset>
-        <legend class="sr-only">Add Homegrown Amaize! Sweet Corn to shopping list</legend>
-        <input type="hidden" name="URL" value="WeeklyAd/Index/" id="URL0_2">
-        <label for="Qty0_2" class="sr-only">Qty for Homegrown Amaize! Sweet Corn</label>
+    <div class="shopping-list-item">
+      <form action="/shopping_list/add/circular_item/[self->id]/qty/" class="shopping-list-item-form">
         <div class="row justify-content-end">
-          <div class="col-auto">
-            <div class="input-group circular-item-qty-group">
+          <div class="shopping-list-item-qty-col col">
+            <div class="shopping-list-item-qty-group input-group ">
               <div class="input-group-prepend">
-                <div class="input-group-text circular-item-qty-text" id="circular-item-qty-label-0-2">Qty</div>
+                <span class="shopping-list-item-qty-label input-group-text" id="shopping-list-qty-label-1">Qty</span>
               </div>
-              <input type="text" name="Qty" value="12" maxlength="2" class="circular-item-qty form-control" id="Qty0_2" aria-labelledby="circular-item-qty-label-0-2">
+              <input type="text" name="Qty" value="12" maxlength="2" class="shopping-list-item-qty form-control"  id="shopping-list-item-qty-1" aria-label="Username" aria-describedby="shopping-list-qty-label-1">
             </div>
           </div>
           <div class="col-auto">
@@ -20,7 +15,5 @@
             </button>
           </div>
         </div>
-      </fieldset>
-    </form>
-  </div>
-</div>
+      </form>
+    </div>

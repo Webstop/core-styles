@@ -9865,6 +9865,10 @@ select.custom-select {
   max-width: 36.75rem;
 }
 
+.site .site-content {
+  background-color: #f6f5f0;
+}
+
 .site .site-debug {
   display: none;
 }
@@ -10072,12 +10076,6 @@ select.custom-select {
   width: 100px;
 }
 
-.circular-item-thumbnail .circular-item-qty,
-.circular-item-thumbnail .circular-item-qty-text {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
 .circular-item-thumbnail .circular-item-image {
   padding: 0;
   margin: 0;
@@ -10119,25 +10117,8 @@ select.custom-select {
   display: inline-block;
 }
 
-.circular-item-thumbnail .circular-item-shopping-list-form {
-  padding-top: 8px;
-}
-
-.circular-item-thumbnail .circular-item-shopping-list-alert {
-  margin-bottom: 0;
-}
-
-.circular-item-thumbnail .circular-item-qty-group .input-group-addon {
-  padding: 6px 8px;
-}
-
 .circular-item-thumbnail .circular-item-recipe {
   clear: left;
-}
-
-.circular-item-thumbnail .circular-item-qty-group {
-  margin-right: -15px;
-  width: 80px;
 }
 
 .circular-item-thumbnail .shopping-list-item {
@@ -10165,12 +10146,6 @@ select.custom-select {
   font-size: 0.75rem;
 }
 
-.circular-item-standard .circular-item-qty,
-.circular-item-standard .circular-item-qty-text {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
 .circular-item-standard .circular-item-info-trigger {
   margin-bottom: 0;
 }
@@ -10192,11 +10167,6 @@ select.custom-select {
   padding-left: 10px;
   padding-right: 10px;
   text-align: left;
-}
-
-.circular-item-standard .circular-item-qty-group {
-  margin-right: -15px;
-  width: 80px;
 }
 
 .circular-item-standard .shopping-list-item {
@@ -10251,6 +10221,32 @@ select.custom-select {
 .circular-navigation .circular-navigation-title,
 .circular-navigation .circular-navigation-dates {
   font-size: 0.75rem;
+}
+
+/* shopping-list-item: add items to a shopping list */
+.shopping-list-item .shopping-list-item-qty-col {
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 2rem;
+}
+
+.shopping-list-item .shopping-list-item-qty-group {
+  margin-right: -15px;
+  min-width: 75px;
+}
+
+.shopping-list-item .shopping-list-item-qty-label {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.shopping-list-item .shopping-list-item-qty {
+  padding-left: 6px;
+  padding-right: 3px;
+}
+
+.shopping-list-item .shopping-list-item-alert {
+  margin-bottom: 0;
 }
 
 /* coupons */

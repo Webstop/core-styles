@@ -10,10 +10,10 @@ toc: true
 
 {% capture example %}
 {% include examples/prices/_price-dollar-example.html %}
-<hr>
+    <hr>
 
 {% include examples/prices/_price-cent-example.html %}
-<hr>
+    <hr>
 
 {% include examples/prices/_price-overlay-example.html %}
 {% endcapture %}

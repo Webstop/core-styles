@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+/* shopping-list-item: add items to a shopping list */
+.shopping-list-item {
+
+  .shopping-list-item-qty-col {
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: ($spacer * 2);
+  }
+
+  .shopping-list-item-qty-group {
+    margin-right: -15px;
+    min-width: 75px;
+  }
+  .shopping-list-item-qty-label {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .shopping-list-item-qty {
+    padding-left: 6px;
+    padding-right: 3px;
+  }
+
+  .shopping-list-item-alert {
+    margin-bottom: 0;
+  }
+
+}

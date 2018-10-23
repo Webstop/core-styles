@@ -2,10 +2,12 @@
 
 .site {
 
+  .site-content {
+    background-color: $theme-bg;
+  }
   .site-debug {
     display: none;
   }
-
   .site-debug-toggle {
     position: fixed;
     bottom: 0;
@@ -50,6 +52,5 @@
       display: block;
     }
   }
-
 }
 
