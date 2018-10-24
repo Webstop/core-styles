@@ -3,6 +3,8 @@
 /* circular-item: an individual image item */
 .circular-item-standard-promotion {
   text-align: center;
+  //max-width: $circular-max-column-width * 2;
+  //min-width: $circular-min-column-width * 2;
 
   .circular-item-body {
     padding: 10px;
