@@ -7,3 +7,7 @@
   margin: 0;
   margin-right: $toolbar-spacer;
 }
+
+.example-height-fixed .bd-example .shopping-list-power-bar-items {
+  max-height: 270px;
+}

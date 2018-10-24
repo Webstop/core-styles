@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+.shopping-list-power-bar {
+  width: 0;
+  overflow: hidden;
+  transition: all 1.2s;
+  background-color: $white;
+  height: 100%;
+
+  .shopping-list-power-bar-heading {
+    padding: $spacer;
+    border-bottom: 1px solid $theme-primary;
+  }
+
+  .shopping-list-power-bar-title {
+    text-align: center;
+  }
+
+  .shopping-list-power-bar-items {
+    overflow-y: scroll;
+  }
+
+  .shopping-list-power-bar-item:first-child {
+    border-top: 0;
+  }
+
+  .shopping-list-power-bar-item {
+    border-color: $theme-primary;
+  }
+
+  &.shopping-list-power-bar-open {
+    width: 250px;
+  }
+
+}

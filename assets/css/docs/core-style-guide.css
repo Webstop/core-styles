@@ -9364,6 +9364,12 @@ select.custom-select {
   margin-bottom: -5px;
 }
 
+.site .site-aside {
+  padding: 0;
+  background: #fff;
+  border-left: 1px solid #d9d6c1;
+}
+
 .site.site-fixed {
   margin-left: auto;
   margin-right: auto;
@@ -9384,11 +9390,8 @@ select.custom-select {
   flex-wrap: wrap;
   justify-content: flex-start;
   background-color: #d9d6c1;
-  width: 110%;
   padding: 0.5rem 0 0.5rem 1rem;
   min-height: 54px;
-  margin-right: -1rem;
-  margin-left: -1rem;
 }
 
 .toolbar .input-group {
@@ -9742,6 +9745,39 @@ select.custom-select {
 .circular-navigation .circular-navigation-title,
 .circular-navigation .circular-navigation-dates {
   font-size: 0.75rem;
+}
+
+.shopping-list-power-bar {
+  width: 0;
+  overflow: hidden;
+  transition: all 1.2s;
+  background-color: #fff;
+  height: 100%;
+}
+
+.shopping-list-power-bar .shopping-list-power-bar-heading {
+  padding: 1rem;
+  border-bottom: 1px solid #d9d6c1;
+}
+
+.shopping-list-power-bar .shopping-list-power-bar-title {
+  text-align: center;
+}
+
+.shopping-list-power-bar .shopping-list-power-bar-items {
+  overflow-y: scroll;
+}
+
+.shopping-list-power-bar .shopping-list-power-bar-item:first-child {
+  border-top: 0;
+}
+
+.shopping-list-power-bar .shopping-list-power-bar-item {
+  border-color: #d9d6c1;
+}
+
+.shopping-list-power-bar.shopping-list-power-bar-open {
+  width: 250px;
 }
 
 /* shopping-list-item: add items to a shopping list */
@@ -10809,6 +10845,10 @@ select.custom-select {
 .bd-example .pagination.toolbar-group {
   margin: 0;
   margin-right: 1rem;
+}
+
+.example-height-fixed .bd-example .shopping-list-power-bar-items {
+  max-height: 270px;
 }
 
 .navbar .webstop-logo {

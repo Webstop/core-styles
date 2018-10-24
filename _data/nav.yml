@@ -155,4 +155,8 @@
         - title: Coupon Item
         - title: Modal
         - title: Navigation
+    - title: Shopping Lists
+      pages:
+        - title: Shopping List Power Bar
+        - title: Shopping List Mini Form
     - title: Price
