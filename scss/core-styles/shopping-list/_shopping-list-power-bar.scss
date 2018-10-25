@@ -10,16 +10,6 @@
   z-index: 1000;
   height: 100vh;
 
-  .shopping-list-power-bar-toolbar {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .toolbar-group {
-    margin-right: 0;
-    margin-left: 22.5px;
-  }
-
   .shopping-list-power-bar-heading {
     padding: $spacer;
     border-bottom: 1px solid $theme-primary;
@@ -30,8 +20,6 @@
   .shopping-list-power-bar-title {
     text-align: center;
     white-space: nowrap;
-    margin-right: 0;
-    margin-left: 6px;
   }
 
   .shopping-list-power-bar-items {

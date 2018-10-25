@@ -27,7 +27,7 @@
   .site-aside {
     padding: 0;
     background: $white;
-    border-left: 1px solid $theme-primary;
+    border-left: 1px solid darken($theme-primary, 10%);
   }
 
   .site-aside-slider {

@@ -9903,7 +9903,7 @@ select.custom-select {
 .site .site-aside {
   padding: 0;
   background: #fff;
-  border-left: 1px solid #d9d6c1;
+  border-left: 1px solid #c6c1a1;
 }
 
 .site .site-aside-slider {
@@ -9948,7 +9948,7 @@ select.custom-select {
   background-color: #d9d6c1;
   padding: 0.5rem 0 0.5rem 1rem;
   min-height: 54px;
-  margin-right: -1rem;
+  margin-right: -0.9375rem;
   margin-left: -1rem;
 }
 
@@ -10329,16 +10329,6 @@ select.custom-select {
   height: 100vh;
 }
 
-.shopping-list-power-bar .shopping-list-power-bar-toolbar {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.shopping-list-power-bar .toolbar-group {
-  margin-right: 0;
-  margin-left: 22.5px;
-}
-
 .shopping-list-power-bar .shopping-list-power-bar-heading {
   padding: 1rem;
   border-bottom: 1px solid #d9d6c1;
@@ -10349,8 +10339,6 @@ select.custom-select {
 .shopping-list-power-bar .shopping-list-power-bar-title {
   text-align: center;
   white-space: nowrap;
-  margin-right: 0;
-  margin-left: 6px;
 }
 
 .shopping-list-power-bar .shopping-list-power-bar-items {

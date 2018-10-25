@@ -8,7 +8,7 @@
   background-color: $toolbar-bg;
   padding: $toolbar-padding-y 0 $toolbar-padding-y $toolbar-padding-x;
   min-height: 54px;
-  margin-right: -$spacer;
+  margin-right: -$spacer + 0.0625rem; // 1px/16 = 0.0625rem
   margin-left: -$spacer;
 
   .input-group {
