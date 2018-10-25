@@ -3,8 +3,6 @@
 .site {
 
   .site-main-col {
-    //margin-right: -$spacer;
-    //margin-left: -$spacer;
     margin: 0;
     padding: 0;
   }
@@ -30,6 +28,21 @@
     padding: 0;
     background: $white;
     border-left: 1px solid $theme-primary;
+  }
+
+  .site-aside-slider {
+    width: 0;
+    transition: width 1.2s;
+    overflow-x: hidden;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 100vh;
+  }
+
+  .site-aside-slider-open {
+    width: 250px;
   }
 
   // Sub-Classes

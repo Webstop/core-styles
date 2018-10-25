@@ -9906,6 +9906,21 @@ select.custom-select {
   border-left: 1px solid #d9d6c1;
 }
 
+.site .site-aside-slider {
+  width: 0;
+  transition: width 1.2s;
+  overflow-x: hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 100vh;
+}
+
+.site .site-aside-slider-open {
+  width: 250px;
+}
+
 .site.site-fixed {
   margin-left: auto;
   margin-right: auto;
@@ -9929,6 +9944,7 @@ select.custom-select {
   flex-wrap: wrap;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  opacity: 0.95;
   background-color: #d9d6c1;
   padding: 0.5rem 0 0.5rem 1rem;
   min-height: 54px;
@@ -9978,6 +9994,13 @@ select.custom-select {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.circular .toolbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .circular-item {
@@ -10296,9 +10319,8 @@ select.custom-select {
 }
 
 .shopping-list-power-bar {
-  width: 0;
+  width: 250px;
   overflow: hidden;
-  transition: width 1.2s;
   background-color: #fff;
   position: -webkit-sticky;
   position: sticky;
@@ -10312,17 +10334,29 @@ select.custom-select {
   margin-right: 0;
 }
 
+.shopping-list-power-bar .toolbar-group {
+  margin-right: 0;
+  margin-left: 22.5px;
+}
+
 .shopping-list-power-bar .shopping-list-power-bar-heading {
   padding: 1rem;
   border-bottom: 1px solid #d9d6c1;
+  opacity: 0.95;
+  background-color: #f6f5f0;
 }
 
 .shopping-list-power-bar .shopping-list-power-bar-title {
   text-align: center;
+  white-space: nowrap;
+  margin-right: 0;
+  margin-left: 6px;
 }
 
 .shopping-list-power-bar .shopping-list-power-bar-items {
-  max-height: calc(100vh - 161px);
+  margin-top: -161px;
+  padding-top: 161px;
+  max-height: 100vh;
   overflow-y: auto;
 }
 
@@ -10332,10 +10366,12 @@ select.custom-select {
 
 .shopping-list-power-bar .shopping-list-power-bar-item {
   border-color: #d9d6c1;
-}
-
-.shopping-list-power-bar.shopping-list-power-bar-open {
-  width: 250px;
+  min-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 8px;
+  z-index: -1;
 }
 
 /* shopping-list-item: add items to a shopping list */
