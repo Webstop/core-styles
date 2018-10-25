@@ -3,21 +3,57 @@
 .shopping-list-power-bar {
   width: 0;
   overflow: hidden;
-  transition: all 1.2s;
+  transition: width 1.2s;
   background-color: $white;
-  height: 100%;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 100vh;
+
+
+  .shopping-list-power-bar-toolbar {
+    margin-left: 0;
+    margin-right: 0;
+    //position: sticky;
+    //position: fixed;
+    //top: 0;
+    //right: 0;
+    //width: 0;
+  }
+
+  //.toolbar-group {
+  //  width: 0;
+  //}
 
   .shopping-list-power-bar-heading {
+    //position: fixed;
+    //top: 54px;
+    //right: 0;
     padding: $spacer;
     border-bottom: 1px solid $theme-primary;
+    //width: 0;
   }
 
   .shopping-list-power-bar-title {
     text-align: center;
+    //width: 0;
   }
 
+  //.shopping-list-power-bar-lists {
+  //  width: 0;
+  //}
+
+  //.shopping-list-power-bar-error {
+  //  margin-top: 161px;
+  //}
+
   .shopping-list-power-bar-items {
-    overflow-y: scroll;
+    //margin-top: 161px;
+    //overflow-y: scroll;
+    max-height: calc(100vh - 161px);
+    overflow-y: auto;
   }
 
   .shopping-list-power-bar-item:first-child {
@@ -26,10 +62,21 @@
 
   .shopping-list-power-bar-item {
     border-color: $theme-primary;
+    transition-duration: 600ms;
+    transition-property: background-color, color, border-color;
   }
 
   &.shopping-list-power-bar-open {
     width: 250px;
+    //.shopping-list-power-bar-toolbar,
+    //.toolbar-group,
+    //.shopping-list-power-bar-heading,
+    //.shopping-list-power-bar-title,
+    //.shopping-list-power-bar-lists {
+    //  width: 250px;
+    //}
   }
+
+
 
 }

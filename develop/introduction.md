@@ -4,8 +4,10 @@ title: Introduction
 group: develop
 ---
 
-## Consumer Templates & Page Layouts
 
-## Administration Templates & Page Layouts
+## Development Page Index
 
+
+- [Site Layout](/develop/site)
+- [Circular Page](/develop/circular)
 - [Tabular Data Template](/develop/admin/tabular-data)

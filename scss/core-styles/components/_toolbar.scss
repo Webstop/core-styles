@@ -11,8 +11,8 @@
   //width: 110%;
   padding: $toolbar-padding-y 0 $toolbar-padding-y $toolbar-padding-x;
   min-height: 54px;
-  //margin-right: -$spacer;
-  //margin-left: -$spacer;
+  margin-right: -$spacer;
+  margin-left: -$spacer;
 
   .input-group {
     width: auto;
@@ -38,6 +38,11 @@
 
   > .toolbar-group:first-child {
     margin-left: 0;
+  }
+
+  .toolbar-text-item {
+    padding-top: $btn-padding-y;
+    padding-bottom: $btn-padding-y;
   }
 
 
