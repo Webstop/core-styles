@@ -62,8 +62,6 @@
 
   .shopping-list-power-bar-item {
     border-color: $theme-primary;
-    transition-duration: 600ms;
-    transition-property: background-color, color, border-color;
   }
 
   &.shopping-list-power-bar-open {
