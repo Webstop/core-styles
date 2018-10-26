@@ -11,6 +11,14 @@
 .wsg-sidebar {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-size: 16px;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 3.625rem; // 58/16 = 3.625
+  z-index: 1000;
+  height: calc(100vh - 3.625rem);
+  overflow-y: auto;
+
   .wsg-toc-category {
     padding-top: 0.5em;
   }
