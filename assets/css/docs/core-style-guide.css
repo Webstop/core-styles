@@ -10935,7 +10935,7 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 270px;
 }
 
-.navbar {
+.wsg-navbar {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -10943,25 +10943,25 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.95;
 }
 
-.navbar .webstop-logo {
+.wsg-navbar .webstop-logo {
   width: 36px;
   height: 36px;
   margin-top: -6px;
 }
 
-.navbar .wsg-nav {
+.wsg-navbar .wsg-nav {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-weight: 500;
   -webkit-font-smoothing: antialiased;
   font-size: 1.2rem;
 }
 
-.navbar .wsg-nav .wsg-nav-link:visited {
+.wsg-navbar .wsg-nav .wsg-nav-link:visited {
   padding-right: 8px;
   padding-left: 8px;
 }
 
-.navbar .wsg-nav .wsg-nav-link:visited {
+.wsg-navbar .wsg-nav .wsg-nav-link:visited {
   color: rgba(255, 255, 255, 0.7);
 }
 

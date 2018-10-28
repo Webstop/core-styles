@@ -1,3 +1,9 @@
+- title: Guide
+  pages:
+  - title: Overview
+  - title: Components
+  - title: Development
+  - title: Conventions
 
 - title: Layout
   path:   bootstrap/4.1/layout/overview

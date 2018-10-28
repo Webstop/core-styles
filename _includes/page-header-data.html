@@ -25,7 +25,11 @@
 <!-- Selects page heading & leading text -->
 {% if page.group == "getting-started" or page.group == "webstop-getting-started" %}
   {% assign page_heading = 'Getting started' %}
-  {% assign page_lead = 'An overview of Webstop's front-end framework, including how to install and use it, some basic tips, and more.' %}
+  {% assign page_lead = 'An overview of Webstop's front-end design system, including how to install and use it, some basic tips, and more.' %}
+
+{% elsif page.group == "guide" or  page.group == "webstop-guide" %}
+{% assign page_heading = 'Front-End Guide' %}
+{% assign page_lead = "Guide for getting the most out of Webstop's front-end design system." %}
 
 {% elsif page.group == "layout" or  page.group == "webstop-layout" %}
   {% assign page_heading = 'Layout' %}
