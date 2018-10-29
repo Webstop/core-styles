@@ -8,7 +8,7 @@ toc: true
 
 
 
-<div class="bd-example" style="min-width: 1210px; max-width: 1640px;">
+<div class="bd-example" style="min-width: 816px; max-width: 1221px;">
   <div class="row">
     <div class="col">
       <h4 class="text-center">
@@ -26,26 +26,40 @@ toc: true
     </div>
     <div class="col">
       <h4 class="text-center">
-        <a href="/docs/grocery/circulars/coupon-item">
-          Coupon Circular Item
+        <a href="/docs/grocery/circulars/Thumbnail-circular-item">
+          Thumbnail Circular Item
         </a>
        </h4>
     </div>
-    <div class="col">
-          <h4 class="text-center">
-            <a href="/docs/grocery/circulars/Thumbnail-circular-item">
-              Thumbnail Circular Item
-            </a>
-           </h4>
-        </div>
   </div>
 
   <div class="row">
     {% include examples/circular-items/_circular-item-standard-example.html %}
     {% include examples/circular-items/_circular-item-standard-promotion-example.html %}
-    {% include examples/circular-items/_circular-item-coupon-example.html %}
     {% include examples/circular-items/_circular-item-thumbnail-example.html %}
   </div>  
+  
+  <div class="row" style="min-width: 594px; max-width: 814px;">
+    <div class="col">
+      <h4 class="text-center">
+        <a href="/docs/grocery/circulars/standard-coupon-item">
+          Standard Coupon Item
+        </a>
+       </h4>
+    </div>
+    <div class="col">
+      <h4 class="text-center">
+        <a href="/docs/grocery/circulars/coupon-item">
+          Coupon Circular Item
+        </a>
+       </h4>
+    </div>
+  </div>
+
+  <div class="row">
+    {% include examples/circular-items/_circular-item-standard-coupon-example.html %}
+    {% include examples/circular-items/_circular-item-coupon-example.html %}
+  </div>
   
   <h4 class="text-center">
     <a href="/docs/grocery/circulars/banner-item">
