@@ -9,21 +9,25 @@ toc: true
 The front-end component is a powerful design pattern for building 
 front-end objects.
 
+Front-End Components Are:
+
 - portable
 - reliable
 - extensible
+- reusable
+- self-contained
 
 ## Anatomy of a Front-End Component
 
-There are three basic parts of a component the name (namespace), sub-classes, 
-and attributes. As illustrated below.
+There are three basic parts of a component the name (namespace), 
+modifier classes, and attributes. As illustrated below.
 
 {% highlight html %}
 {% include examples/guide/_component-anatomy-example.html %}
 {% endhighlight %}
 
-The components name should always be the first CSS class listed 
-in the class attribute, followed by any subclasses.
+The component's name should always be the first CSS class listed 
+in the class attribute, followed by any modifier classes.
 
 ### Name, Namespace, & Root Element
 
@@ -37,7 +41,7 @@ namespace.
 The component name is the unique name of the component; it 
 is _important_ you don't give two components the same name. 
 
-The component name also acts as a namespace for all subclasses 
+The component name also acts as a namespace for all modifier classes 
 and attributes of the component.
 
 Consider the Price component.
@@ -51,11 +55,11 @@ Consider the Price component.
 
 Notice how the component name `price` is the _first_ thing listed in the 
 root element's class attribute, followed by the `price-big-dollars`, 
-subclass, this order is important for maintaining a clear understanding 
+modifier class, this order is important for maintaining a clear understanding 
 of a component. If the component's root element contained other 
 classes, for example the responsive utility classes `d-none` 
 and `d-sm-block`, then those would come after the component 
-specific classes for name and subclasses. 
+specific classes for name and modifier classes. 
 
 For example:
 
@@ -70,7 +74,7 @@ Observe how every attribute name begins with the component
 name plus a dash. Thus, what we might have called the 
 `dollar-sign` attribute is actually expressed as `price-dollar-sign`. 
 By strictly adhering to the namespacing of all attributes 
-and subclasses we are able to apply styling to a component 
+and modifier classes we are able to apply styling to a component 
 with absolute confidence that no other component or portion 
 of our website will be affected. This makes our design system 
 very reliable! _I can't overstate what a benefit adhering to 
@@ -144,7 +148,7 @@ reliable, and robust.
 You can write this in your retailer theme and have complete 
 confidence it's not going to have any untended consequences. 
 
-Plus, you won't see fragile CSS selectors like these gems 
+Plus, you won't see complicated & fragile CSS selectors like these gems 
 lifted from the Tops website:
 
 {% highlight css %}
@@ -165,5 +169,167 @@ that's a sign your component probably has a flaw in it's design.
 _You should never use actual tag names or id attributes for 
 CSS selectors!_
 
-### Subclasses 
+### Modifier Classes 
 
+Modifier classes allow you to enhance the default characteristics 
+of the component or extend it with a subclass. 
+
+Modifier classes are _usually_ placed on the component's root element 
+directly proceeding the component's name class. The one exception to 
+this is when you're building a modifier that only affects one item in 
+a list of items, and you need to specify which item to apply the effect 
+to.
+
+Modifier classes can come in many different varieties. 
+
+Example Modifier classes:
+
+- Size classes like `name-sm` or `name-lg`
+- Visual effects like `name-shadow`, `name-stripped`, or `name-bordered`
+- Colors like `name-primary`, `name-warning`, or `name-danger`
+
+Note: _in the examples above the `name` portion would be replaced by 
+the name of your component (e.g. `price-sm`, `price-lg`)._
+
+These are just a few examples so you can get an idea of how modifier 
+classes work.
+
+#### Subclasses
+
+A special kind of modifier class is the subclass. Those familiar with 
+Object Oriented Programming (OOP) ought to recognize the term subclass. 
+We are assuming you are familiar with the concept, so we won't be going 
+into a detailed description here. However, it's important to understand 
+how subclasses are implemented in our design system.
+
+Consider the following example:
+
+{% highlight html %}
+<div class="circular-item circular-item-standard"> ... </div>
+<div class="circular-item circular-item-standard-promotion"> ... </div>
+<div class="circular-item circular-item-standard-coupon"> ... </div>
+{% endhighlight %}
+
+Here we have three `circular-item` components. Each one shares some 
+common styling, they are all cards on the grid, with a slight shadow, 
+and padding at the bottom for an absolute positioned button row, 
+rounded corners, a `1px` border, & etc. They all receive this styling 
+by having the root `circular-item` class. 
+
+While they are similar in many ways, they also have some distinct 
+differences handled by their subclass. For example, of these three 
+items only the `circular-item-standard` has a `circular-item-heading` 
+`circular-item-details` attributes. Also the 
+`circular-item-standard-promotion` is the only one with a square image 
+instead of the shorter rectangle images the other two have. By 
+subclassing we are able to apply styles common to all `circular-item` 
+components and unique styles for each subclass. 
+
+## Components within Components
+
+The whole point of components is to create discrete, reusable, parts. 
+We can use simple components to build more complex components. This 
+means we have a bunch of very simple objects that are included within 
+more complex objects. 
+
+An easy example to understand is the button object. The button component 
+looks something like this:
+
+{% capture example %}
+<button type="submit" class="btn btn-primary">
+  Add to Shopping List
+</button>
+{% endcapture %}
+{% include example.html content=example %}
+
+Now look at our `circular-item` component we want a shopping list form 
+at the bottom of each component, so we use a `btn` component.
+
+
+{% highlight html %}
+<div class="circular-item circular-item-standard">
+  <div class="circular-item-heading">Wow!</div>
+  <div class="circular-item-title">Some Awesome Deal!</div>
+ ... 
+   <button type="submit" class="btn btn-primary">
+     Add to Shopping List
+   </button>
+ </div>
+{% endhighlight %}
+
+When you take an even closer look you'll see the 
+`circular-item circular-item-standard` component contains several 
+more basic components:
+
+- `price`
+- `icon`
+- `btn`
+- `shopping-list-item`
+
+{% capture example %}
+{% include examples/circular-items/_circular-item-standard-example.html %}
+{% endcapture %}
+{% include example.html content=example %}
+
+### Multi-Component Objects
+
+If you look at the example above you'll notice the `circular-item`
+component also has a `card` component on the same element. In 
+case it should be clear that `card` is a less specific and 
+more generic component, and the `circular-item` is a more specific 
+and less composable object. 
+
+
+If you look at the example above you'll notice the `circular-item`
+component also has a `card` component on the same element. We list 
+the `circular-item` component and it's modifiers first because it 
+is the more specific component and the `card` component afterwards 
+because it is more generic. 
+
+
+
+When two component are defined on the same HTML element, list the 
+more specific component and it's modifiers first and the more 
+generic second. A good rule of thumb for deciding which is the more 
+specific and which is the more generic, ask yourself this "can I 
+add the CSS rule sets for object A and place it in object B 
+and still call it an object B?" and then ask the reverse and see 
+which holds more true.
+
+For example:
+
+A. Can I add the CSS rule sets for `circular-item` and place it in 
+`card` and still call it a `card`?
+
+_This wouldn't workout very well, it wouldn't make sense to include 
+a sale item's data, and add to shopping list button and etc in all 
+the places we use a card._
+
+vs.
+
+B. Can I add the CSS rule sets for `card` and place it in 
+`circular-item` and still call it a `circular-item`?
+
+_This would work just fine, there probably are none (or very few) 
+places we would want a circular item without it having a card 
+layout._
+
+Using this little test it should be clear the preferred way to list 
+our classes is as follows:
+
+{% highlight html %}
+<div class="circular-item circular-item-standard card card-standard"> ... </div>
+{% endhighlight %}
+
+## Conclusions
+
+The component design pattern is:
+
+- **Reliable**: by namespacing the component, it's attributes, and modifiers 
+  you can have complete confidence your styles won't inadvertently 
+  affect some other part of the website.
+- **Reusable**: a component can be used many times on the same page
+- **Portable**: a components are self-contained and able to be 
+  dropped in anywhere
+- **Extensible**: using modifier classes and subclasses we can build 
+  a variety of component variations
