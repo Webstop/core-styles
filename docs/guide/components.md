@@ -7,7 +7,8 @@ toc: true
 ---
 
 The front-end component is a powerful design pattern for building 
-front-end objects.
+front-end objects. The component pattern adds a level of reliability 
+and confidence in your stylesheets you wouldn't have otherwise.
 
 Front-End Components Are:
 
