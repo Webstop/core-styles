@@ -9465,11 +9465,18 @@ select.custom-select {
 }
 
 /* circular: an individual ad */
+.circular .circular-header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .circular .circular-title {
   font-weight: bold;
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+}
+
+.circular .circular-description {
+  text-align: center;
 }
 
 .circular .toolbar {
