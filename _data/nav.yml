@@ -2,8 +2,8 @@
   pages:
   - title: Overview
   - title: Components
-  - title: Development
-  - title: Conventions
+  - title: Development Approach
+  - title: Development Process
 
 - title: Layout
   path:   bootstrap/4.1/layout/overview
