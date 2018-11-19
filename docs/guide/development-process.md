@@ -6,6 +6,10 @@ group: guide
 toc: true
 ---
 
+Now you've read about our approach to front-end components, and using 
+the Style Guide Drive Development methodology. This guide is less esoteric, 
+it is more pragmatic as it gets into the nuts and 
+bolts of how to use the style guide on a day-to-day basis.
 
 ## First Time Setup
 

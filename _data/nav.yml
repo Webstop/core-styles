@@ -132,6 +132,9 @@
       path:   bootstrap/4.1/components/scrollspy
       source: Bootstrap
 
+    - title: Search
+      soruce: Webstop
+
     - title:  Tag
       path:   bootstrap/4.1/components/tag
       source: Bootstrap

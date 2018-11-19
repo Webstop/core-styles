@@ -36,46 +36,54 @@ need to get the most out of your design system.
 
   <div class="col card card-standard">
     <div class="card-body">
-      <h4 class="text-center"><a href="docs/guide/components/">Front-End Components</a></h4>
+      <h4 class="text-center"><a href="/docs/guide/components/">Front-End Components</a></h4>
       <p>
         The component pattern is the basis of our front-end framework. 
       </p>
       <p>
         The front-end component is a powerful design pattern for building 
         front-end objects. The component pattern adds a level of reliability 
-        and confidence in your stylesheets you wouldn't have otherwis
+        and confidence in your stylesheets you wouldn't have otherwise.
       </p>
     </div>
     <div class="card-footer">
-      <a href="docs/guide/components/" class="btn btn-primary btn-block">Learn More <i class="icon-arrow-right"></i></a>
+      <a href="/docs/guide/components/" class="btn btn-primary btn-block">Learn More <i class="icon-arrow-right"></i></a>
     </div>
   </div>
   
   <div class="col card card-standard">
     <div class="card-body">
-      <h4 class="text-center">Development Approach</h4>
+      <h4 class="text-center"><a href="/docs/guide/development-approach/">Development Approach</a></h4>
       <p>
         Our design system is setup to support Style Guide Driven Development (SGDD). 
       </p>
+      <p>
+        Style Guide Driven Development is an approach which places a living style guide a the heart of the front-end development process. This approach produces more reliable, portable, and well documented front-end pattern libraries.
+      </p>
     </div>
     <div class="card-footer">
-      <a href="docs/guide/components/" class="btn btn-primary btn-block">Learn More <i class="icon-arrow-right"></i></a>
+      <a href="/docs/guide/development-approach/" class="btn btn-primary btn-block">Learn More <i class="icon-arrow-right"></i></a>
     </div>
   </div>
   
   <div class="col card card-standard">
     <div class="card-body">
-      <h4 class="text-center">Development Process</h4>
+      <h4 class="text-center"><a href="/docs/guide/development-process/">Development Process</a></h4>
       <p>
         Your guide to using the core-styles site for your front-end development. 
       </p>
+      <p>
+        Now you've read about our approach to front-end components, and using 
+        the Style Guide Drive Development methodology. This guide is less esoteric, 
+        it is more pragmatic as it gets into the nuts and 
+        bolts of how to use the style guide on a day-to-day basis.
+      </p>
     </div>
     <div class="card-footer">
-      <a href="docs/guide/components/" class="btn btn-primary btn-block">Learn More <i class="icon-arrow-right"></i></a>
+      <a href="docs/guide/development-process/" class="btn btn-primary btn-block">Learn More <i class="icon-arrow-right"></i></a>
     </div>
   </div>
   
-  
 </div>
-```
+
 
