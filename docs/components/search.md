@@ -37,11 +37,11 @@ the same form element the `search-form` is placed on.
 
 ### Search Form in a Toolbar Example
 
-Inline search forms can be placed inside a toolbar. This example is from the circular toolbar.
+Inline search forms can be placed inside a toolbar.
 
 <div class="toolbar-detached">
 {% capture example %}
-{% include examples/circular/_circular-navigation-example.html %}
+{% include examples/search/_search-form-in-toolbar-example.html %}
 {% endcapture %}
 {% include example.html content=example %} 
 </div>
