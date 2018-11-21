@@ -15,17 +15,17 @@ $(function() {
 
       let $form = $(this).parents('[data-search="live"]');
       let target = $form.data('target');
-      let searchText = event.target.value;
+      let search = event.target.value;
       let url = $form.attr('action');
 
-      console.log('typed: ' + searchText);
+      console.log('typed: ' + search);
 
-      if(searchText.lenght <= 2){
+      if(search.length <= 2){
         // clear target
-        $target.html(' ');
+        $(target).html('');
       } else {
-        //delay = setTimeout(function(){ performSearch(searchText, target, url, $) }, 500);
-        performSearch(searchText, target, url)
+        delay = setTimeout(function(){ performSearch(search, target, url) }, 500);
+        //performSearch(search, target, url)
       }
 
       //setTimeout(function(){ alert("Hello"); }, 3000);
@@ -34,13 +34,13 @@ $(function() {
 
   }
 
-  function performSearch(searchText, target, url){
-    console.log('search: ' + searchText);
+  function performSearch(search, target, url){
+    console.log('search: ' + search);
     console.log(target);
     console.log($(target));
     console.log('url:' + url);
     // load here
-    $(target).load(url, { search: searchText });
+    $(target).load(url, { search: search });
   }
 
   liveSearch();

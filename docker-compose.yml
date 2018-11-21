@@ -1,10 +1,18 @@
 version: '2'
 services:
-  web:
+  jekyll:
     build: .
     command: jekyll serve --incremental
     ports:
       - "4000:4000"
+    volumes:
+      - .:/code
+      - bundle:/usr/local/bundle
+  sinatra:
+    build: .
+    command: ruby sinatra/server.rb -o 0.0.0.0
+    ports:
+      - "4567:4567"
     volumes:
       - .:/code
       - bundle:/usr/local/bundle

@@ -1,0 +1,18 @@
+<% if !@search.nil? && @search != '' %>
+  <h1 class="text-center">Search Results: <small><%= @search %></small></h1>
+
+  <div class="row">
+    <% (12 - @search.length).times do %>
+      <div class="col">
+        <div class="card card-standard bg-white" style="max-width: 300px; min-width: 200px;">
+          <div class="card-body">
+            <h4 class="card-heading">A Search Result</h4>
+            <p>This is one of many search results.</p>
+            <div class="btn btn-primary btn-block">See Result</div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<% end %>
