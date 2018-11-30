@@ -2,57 +2,56 @@
 // Search Component
 
 $(function() {
-  function liveSearch(){
 
+  function liveSearch(){
     let delay = null;
 
-
-
-
     $('[data-search="live"]').find('.search-from-search-text').on('keyup', function(event) {
-
       clearTimeout(delay);
-
       let $form = $(this).parents('[data-search="live"]');
       let target = $form.data('target');
-      let search = event.target.value;
+      let hide = $form.data('hide');
       let url = $form.attr('action');
-
-      console.log('typed: ' + search);
+      let search = event.target.value;
 
       if(search.length <= 2){
-        // clear target
-        $(target).html('');
+        exitSearch(target);
       } else {
-        delay = setTimeout(function(){ performSearch(search, target, url) }, 500);
-        //performSearch(search, target, url)
+        let data = $form.serializeArray();
+        delay = setTimeout(function(){ performSearch(data, target, hide, url) }, 500);
       }
-
-      //setTimeout(function(){ alert("Hello"); }, 3000);
-
     });
 
+    $('[data-search="live"]').find('.search-form-clear').on('click', function(event) {
+      event.preventDefault();
+      let $form = $(this).parents('[data-search="live"]');
+      let target = $form.data('target');
+      let reveal = $form.data('hide');
+      let $clear = $form.find('.search-from-search-text');
+      exitSearch(target, reveal, $clear);
+    });
   }
 
-  function performSearch(search, target, url){
-    console.log('search: ' + search);
-    console.log(target);
-    console.log($(target));
-    console.log('url:' + url);
-    // load here
-    $(target).load(url, { search: search });
+  function exitSearch(target, reveal = null, $clear = null){
+    if($clear != null){
+      $clear.val('');
+    }
+    let $target = $(target);
+    $target.html('');
+    $target.hide();
+    if(reveal != null){
+      $(reveal).show();
+    }
+  }
+
+  function performSearch(data, target, hide, url){
+    let $target = $(target);
+    $(hide).hide();
+    $target.show('fast', function(){
+      $target.load(url, data);
+    });
   }
 
   liveSearch();
 });
 
-// var timeoutID = null;
-//
-// function findMember(str) {
-//   console.log('search: ' + str);
-// }
-//
-// $('#target').keyup(function(e) {
-//   clearTimeout(timeoutID);
-//   timeoutID = setTimeout(findMember.bind(undefined, e.target.value), 500);
-// });

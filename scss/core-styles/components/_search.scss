@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+.search-form {
+
+  .search-from-search-text {
+    padding-right: 24px;
+  }
+
+  .search-form-clear {
+    margin-top: 12px;
+    margin-left: -28px;
+    width: 1.5rem; // 24/16 = 1.5
+    height: 1rem;
+    z-index: 2000;
+    display: block;
+    color: $gray-400;
+  }
+
+}

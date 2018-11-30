@@ -1,5 +1,19 @@
 <nav class="toolbar">
-  {% include examples/search/_search-form-example.html %}
+  <form class="search-form" action="http://localhost:4567/search_results" method="post" data-search="live" data-target="#search-results-toolbar" data-hide=".search-hidden-toolbar">
+    <div class="toolbar-group input-group">
+      <input class="search-from-search-text form-control" type="text" name="search" placeholder="Search" aria-label="Enter text to search for.">
+      <a href="#" class="search-form-clear icon-cancel-circle-solid" aria-label="Clear Search"></a>
+      <div class="input-group-append">
+        <button class="search-from-submit btn btn-primary" type="submit" aria-label="Submit Search">
+          <i class="icon-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
 </nav>
 
-<section id="search-results"></section>
+<section id="search-results-toolbar"></section>
+<section class="search-hidden-toolbar">
+  <h4>Some Page Content</h4>
+  <p>This section should get replaced by search results when a search is active, and reappear when the search is exited.</p>
+</section>

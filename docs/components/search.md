@@ -31,13 +31,17 @@ the same form element the `search-form` is placed on.
 |---------------| ----|
 | `data-search` | The attribute `data-search` with a value of `live` enables Live Search on the form. |
 | `data-target` | The attribute `data-target` identifies the HTML element to place the search results inside. |
+| `data-hide`   | The attribute `data-hide` identifies the HTML elements to hide while the search results are being displayed, and reveal when the search is cancelled. |
 | `action`      | The `action` attribute identifies the URL to use for the AJAX search request. **The results are to be in HTML format.** |
 
 <br>
 
 ### Search Form in a Toolbar Example
 
-Inline search forms can be placed inside a toolbar.
+Inline search forms can be placed inside a toolbar. 
+
+Notice the `toolbar-group` class is placed inside the form on the same element containing the `input-group`, trying to 
+place the `toolbar-group` class on other elements will likely produce undesirable results.
 
 <div class="toolbar-detached">
 {% capture example %}
@@ -47,3 +51,14 @@ Inline search forms can be placed inside a toolbar.
 </div>
 
 
+### Complex Search Form Example
+
+Search forms can have any number of fields and the AJAX request will submit them along with the 
+`search-from-search-text` field.
+
+<div class="toolbar-detached">
+{% capture example %}
+{% include examples/search/_search-form-complex-example.html %}
+{% endcapture %}
+{% include example.html content=example %} 
+</div>

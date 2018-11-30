@@ -146,9 +146,9 @@
       path:   bootstrap/4.1/components/tooltips
       source: Bootstrap
 
-    - title:  Utilities
-      path:   bootstrap/4.1/components/utilities
-      source: Bootstrap
+- title: Utilities
+  pages:
+    - title: State Management
 
 - title: Grocery
   pages:

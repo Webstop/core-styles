@@ -1,0 +1,47 @@
+<form class="search-form" action="http://localhost:4567/search_results" method="post" data-search="live" data-target="#search-results-complex" data-hide=".search-hidden-complex">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="search-from-search-text form-control" type="text" name="search" placeholder="Search" aria-label="Enter text to search for.">
+      <a href="#" class="search-form-clear icon-cancel-circle-solid" aria-label="Clear Search"></a>
+      <div class="input-group-append">
+        <button class="search-from-submit btn btn-primary" type="submit" aria-label="Submit Search">
+          <i class="icon-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <input type="hidden" name="date" value="2018-12-25">
+
+  <div class="form-group">
+    <label for="select-1">Example Select</label>
+    <select class="form-control" name="select-1" id="select-1">
+      <option>Select Option 1</option>
+      <option>Select Option 2</option>
+      <option>Select Option 3</option>
+      <option>Select Option 4</option>
+      <option>Select Option 5</option>
+    </select>
+  </div>
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Checkbox Selection 1" name="checkbox-1" id="checkbox-1">
+    <label class="form-check-label" for="checkbox-1">
+      Example Checkbox Selection 1
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="Checkbox Selection 2" name="checkbox-2" id="checkbox-2">
+    <label class="form-check-label" for="checkbox-2">
+      Example Checkbox Selection 2
+    </label>
+  </div>
+  <button class="btn btn-primary mt-2">Search</button>
+</form>
+
+<hr>
+<section id="search-results-complex"></section>
+<section class="search-hidden-complex">
+  <h4>Some Page Content</h4>
+  <p>This section should get replaced by search results when a search is active, and reappear when the search is exited.</p>
+</section>

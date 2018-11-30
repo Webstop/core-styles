@@ -1,5 +1,8 @@
 <% if !@search.nil? && @search != '' %>
   <h1 class="text-center">Search Results: <small><%= @search %></small></h1>
+  <% if params['search'] %><p class="text-center"><%= params['select-1'] %></p><% end %>
+  <% if params['checkbox-1'] %><p class="text-center"><%= params['checkbox-1'] %></p><% end %>
+  <% if params['checkbox-2'] %><p class="text-center"><%= params['checkbox-2'] %></p><% end %>
 
   <div class="row">
     <% (12 - @search.length).times do %>
