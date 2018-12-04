@@ -9601,6 +9601,10 @@ select.custom-select {
   font-size: 0.75rem;
 }
 
+.circular-item-thumbnail .circular-item-title {
+  font-size: 1.5rem;
+}
+
 .circular-item-thumbnail .circular-item-non-digital-coupon {
   border-style: dashed;
   border-color: #090;
