@@ -9876,6 +9876,10 @@ select.custom-select {
   max-width: 36.75rem;
 }
 
+.is-hidden {
+  display: none;
+}
+
 .site .site-main-col {
   margin: 0;
   padding: 0;
