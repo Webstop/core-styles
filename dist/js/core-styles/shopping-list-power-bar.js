@@ -18,32 +18,48 @@ $(function() {
   let $modal = $('#shopping-list-modal')
 
   $modal.on('show.bs.modal', function(event) {
-    let $form = $modal.find('.shopping-list-form')
-    let $errors = $form.find('.shopping-list-form-errors')
-    let button = $(event.relatedTarget) // Button that triggered the modal
-    //  verbs: Create (new), Update (rename/edit), Delete (delete)
-    let verb = button.data('verb') // Extract info from data-* attributes
+    // jQuery Objects
+    let $form        = $modal.find('.shopping-list-form')
+    let $errors      = $form.find('.shopping-list-form-errors')
+    let $button      = $(event.relatedTarget) // Button or link that triggered the modal
+    let $title       = $modal.find('.modal-title')
+    let $nameGroup   = $modal.find('.modal-body .shopping-list-form-name-group')
+    let $name        = $modal.find('.modal-body .shopping-list-form-name')
+    let $submit      = $form.find('.shopping-list-form-submit')
+    let $description = $form.find('.shopping-list-form-description')
+
+    // strings
+    //let currentList = $('#shopping-list-power-bar-list').text()
+    let verb = $button.data('verb') //  verbs: Create (new), Update (rename/edit), Delete (delete)
+    let url =  $button.data('url')
     let response = {status: '', message: ''}
-    let $name = $modal.find('.modal-body .shopping-list-form-name')
 
-    $modal.find('.modal-title').text(verb + ' Shopping List')
+    //console.log('current list: ' + currentList)
+
+
+    $title.text(verb + ' Shopping List')
+    $submit.text(verb)
     $errors.html('')
-
-    if(verb == 'Delete'){
-      $modal.find('.shopping-list-form-name-group').addClass('is-hidden')
-    } else {
-      $modal.find('.shopping-list-form-name-group').removeClass('is-hidden')
-    }
+    $form.attr('action', url)
 
     if(verb == 'Create'){
       let today = new Date();
       today = today.toLocaleDateString('en-US', {year: 'numeric', month: 'numeric', day: 'numeric' })
+      $nameGroup.removeClass('is-hidden')
       $name.val('My ' + today + ' List')
+      $description.text('')
+      $description.addClass('is-hidden')
+    }else if(verb == 'Rename'){
+      $nameGroup.removeClass('is-hidden')
+      $name.val($('#shopping-list-power-bar-list').text())
+      $description.text('')
+      $description.addClass('is-hidden')
+    }else if(verb == 'Delete'){
+      $nameGroup.addClass('is-hidden')
+      $description.removeClass('is-hidden')
+      $description.text('Once deleted your most recent shopping list will become your current list. If you have no shopping lists a new one will be created. Are you sure you want to delete your current shopping list?')
     }
 
-    let url = '/shopping_lists/List/' + verb;
-
-    $form.attr('action', url);
 
     // Form response expects the following JSON:
     // {
@@ -57,13 +73,17 @@ $(function() {
         url: url,
         method: 'POST',
         //data: { id : menuId },
+        contentType: "application/json",
         dataType: 'json'
       });
 
-      request.done(function(data){
+      request.done(function(jqXHR, data){
+        console.log('ajax response status: ' + data.status)
+        console.log('message: ' + data.message)
         if(data.status == 'success'){
           response = data
-          $modal.hide()
+          $modal.modal('hide')
+          console.log('hide modal triggered')
         } else if(data.status == 'failure') {
           response = data
         } else {
@@ -75,11 +95,18 @@ $(function() {
         }
 
       })
+
+      request.fail(function(response){
+        $errors.html('<p class="shopping-list-form-errors-message alert alert-danger">' + response.message + '</p>');
+      })
+
+
     });
 
   })
 
   $modal.on('hidden.bs.modal', function() {
+    console.log('modal fully hidden')
     loadShoppingListPowerBar();
   })
 

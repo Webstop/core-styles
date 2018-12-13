@@ -9,13 +9,13 @@
   <div class="shopping-list-power-bar-heading">
     <h4 class="shopping-list-power-bar-title text-nowrap">My Shopping List</h4>
     <div class="shopping-list-power-bar-lists dropdown">
-      <button class="btn btn-light btn-block dropdown-toggle" type="button" id="shopping-list-power-bar-list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        My 10/23/2018 List
-      </button>
+      <!-- NOTE: keeping this on one line because any white space in the button text will show up on the rename form -->
+      <button class="btn btn-light btn-block dropdown-toggle" type="button" id="shopping-list-power-bar-list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My 10/23/2018 List</button>
       <div class="dropdown-menu shadow-sm" aria-labelledby="shopping-list-power-bar-list">
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Create">New List</a>
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename">Rename List</a>
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Delete">Delete List</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Create" data-url="http://localhost:4567/shopping_lists/list/create">New List</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename" data-url="http://localhost:4567/shopping_lists/list/rename">Rename List</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename" data-url="http://localhost:4567/shopping_lists/list/rename_error">Rename (Error Response)</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Delete" data-url="http://localhost:4567/shopping_lists/list/delete">Delete List</a>
         <div class="dropdown-divider"></div>
         <span class="dropdown-item"><strong>My Lists:</strong></span>
         <a class="dropdown-item" href="#">Ivani's Birthday List</a>
@@ -51,56 +51,6 @@
     </ul>
   </div>
 
-  <div class="shopping-list-modal modal fade" id="shopping-list-modal" tabindex="-1" role="dialog" aria-labelledby="shopping-list-modal-title" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="shopping-list-modal-title modal-title" id="shopping-list-modal-title"></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <form class="shopping-list-form" action="">
-          <div class="modal-body">
-            <div class="shopping-list-form-name-group form-group">
-              <label for="shopping-list-form-name" class="shopping-list-form-name-label">Name</label>
-              <input type="text" class="shopping-list-form-name form-control" id="shopping-list-form-name">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" style="z-index: 5000;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="z-index: 5000;" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
+
 

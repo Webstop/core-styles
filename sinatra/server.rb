@@ -19,8 +19,21 @@ post '/search_results' do
   erb( :search_results )
 end
 
-get '/search_results' do
-  "Hello World"
+
+post '/shopping_lists/list/:verb' do |verb|
+  content_type :json
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  content = {status: 'success', message: ''}
+  name = params['name']
+
+  if verb == 'rename_error'
+    content = {status: 'failure', message: 'Simulated failure message.'}
+    halt 500
+  elsif (verb == 'Create' || verb == 'Rename') && name == ''
+    content = {status: 'failure', message: 'Name is a required field, but was left blank.'}
+  end
+
+  content.to_json
 end
 
 

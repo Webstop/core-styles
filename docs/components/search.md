@@ -62,3 +62,5 @@ Search forms can have any number of fields and the AJAX request will submit them
 {% endcapture %}
 {% include example.html content=example %} 
 </div>
+
+
