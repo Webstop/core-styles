@@ -12,6 +12,26 @@ end
 # AJAX Results #
 ################
 
+get '/alert_success' do
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  erb( :alert_success )
+end
+
+post '/alert_success' do
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  erb( :alert_success )
+end
+
+get '/alert_error' do
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  erb( :alert_error )
+end
+
+post '/alert_error' do
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  erb( :alert_error )
+end
+
 post '/search_results' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
   #headers 'Access-Control-Allow-Origin' => '*'

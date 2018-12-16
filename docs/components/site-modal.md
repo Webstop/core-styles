@@ -8,19 +8,17 @@ toc: true
 
 The `site-model` is included on every page when you used the code found on the [site layout](/docs/layout/site/) page.
 
-## Basic Example
+## Example
 
-When you set the `data-target` of a modal trigger to `#site-modal`, then you are specifing you want to use the site wide 
-modal which enables remote content loading on the modal. 
-Use the `data-load` attribute to load content using AJAX, or the `data-content` attribute to load content from the DOM. 
-You should also include the `data-title` to set the text for the title of the modal.
+When you set the `data-target` of a modal trigger to `#site-modal`, then you are indicating you want to use the site wide 
+modal, which enables remote content loading via AJAX. The `data-load` attribute specifies the URL to pull the body 
+content from, it is expected to be in HTML format. You should also include the `data-title` to set the text for the title of the modal.
+
 
 {% capture example %}
 {% include examples/layout/_site-modal-example.html %}
 {% endcapture %}
 {% include example.html content=example %}
-
-
 
 ## Options
 
@@ -42,25 +40,20 @@ The Site Modal inherits all the abilities of a standard modal, and is extended w
       <td><code class="text-nowrap">data-load</code></td>
       <td>
         Attribute specifies the URL of the content you want AJAX'd into the modal body. The AJAX request should return 
-        the HTML content to display inside the moda. Alternatively, you can use the `data-content` attribute instead of 
-        `data-load`.
+        HTML content to display inside the modal. 
       </td>
     </tr>
     <tr>
-      <td><code class="text-nowrap">data-content</code></td>
-      <td>Alternative to `data-load`, specify the DOM node containing the HTML content to place in the modal body.</td>
-    </tr>
-    <tr>
-      <td><code class="text-nowrap">data-footer="false"</code></td>
-      <td>When set to `false` will hide the modal footer (which contains a close button).</td>
+      <td><code class="text-nowrap">data-footer</code></td>
+      <td>
+        By default the modal will display a footer with a close button. To hide the footer and it's content, include the 
+        attribute <code class="text-nowrap">data-footer</code> set to <code class="text-nowrap">hide</code>
+        (<code class="text-nowrap">data-footer="hide"</code>) on the trigger element.
+      </td>
     </tr>
   </tbody>
 </table>
 
-**Note:** _if both `data-content` & `data-load` are present, the modal will first show the content from `data-content` and 
-replace it once the AJAX request pulls the HTML from the URL specified in the `data-load` tag._
-
----
 
 
 <div class="site-modal modal fade" id="site-modal" tabindex="-1" role="dialog" aria-labelledby="site-modal-title" aria-hidden="true">
