@@ -112,6 +112,9 @@
       path:   bootstrap/4.1/components/modal
       source: Bootstrap
 
+    - title:  Site Modal
+      source: Webstop
+
     - title:  Navs
       path:   bootstrap/4.1/components/navs
       source: Bootstrap

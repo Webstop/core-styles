@@ -19,6 +19,11 @@ post '/search_results' do
   erb( :search_results )
 end
 
+get '/shopping_lists/list/new' do
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  erb(:modify_list_form, layout: :layout_empty)
+end
+
 
 post '/shopping_lists/list/:verb' do |verb|
   content_type :json
