@@ -34,7 +34,6 @@ end
 
 post '/search_results' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
-  #headers 'Access-Control-Allow-Origin' => '*'
   @search = params['search']
   erb( :search_results )
 end
