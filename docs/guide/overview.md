@@ -26,11 +26,10 @@ We have incorporated may of the industries latest best practices
 and applied them to our environment.
 
 
-## Explore
+## Explore: The Basics
 
 The follow three guides will arm you with the information you'll 
 need to get the most out of your design system.
-
 
 <div class="row">
 
@@ -85,5 +84,25 @@ need to get the most out of your design system.
   </div>
   
 </div>
+
+
+## Explore: Extra Topics
+
+<div class="row">
+
+  <div class="col card card-standard">
+    <div class="card-body">
+      <h4 class="text-center"><a href="/docs/guide/working-with-ajax/">Working with AJAX</a></h4>
+      <p>
+        Guide for working with components that utilize AJAX.
+      </p>
+    </div>
+    <div class="card-footer">
+      <a href="/docs/guide/working-with-ajax/" class="btn btn-primary btn-block">Learn More <i class="icon-arrow-right"></i></a>
+    </div>
+  </div>
+  
+</div>
+
 
 

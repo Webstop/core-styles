@@ -17,8 +17,6 @@ module MoveBootstrapDocs
         if page.url.include? node_path
           page.url.sub!(node_path, '')
           page.url.prepend(preferred_path)
-
-          puts "Move From: #{page.url}" if show_debug
           puts "Move To:   #{page.url}" if show_debug
           puts '' if show_debug
         else
@@ -26,6 +24,9 @@ module MoveBootstrapDocs
           puts '' if show_debug
         end
       end
+
+      puts 'Finished Moving Bootstrap Docs'
+      puts ''
 
     end
   end
