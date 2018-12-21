@@ -61,6 +61,9 @@
   path:   bootstrap/4.1/components/alerts
   source: Bootstrap
   pages:
+    - title:  AJAX Load
+      source: Webstop
+
     - title:  Alerts
       path:   bootstrap/4.1/components/alerts
       source: Bootstrap

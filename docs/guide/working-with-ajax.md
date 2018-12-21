@@ -63,7 +63,7 @@ You create routes in Sinatra like the following:
 ```ruby
 get '/foo' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
-  erb( :foo )
+  erb( :foo, layout: :layout_empty )
 end
 ```
 
@@ -79,7 +79,7 @@ get method. We also create a `@search` variable from the `search` parameter, whi
 post '/search_results' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
   @search = params['search']
-  erb( :search_results )
+  erb( :search_results, layout: :layout_empty )
 end
 ```
 
@@ -91,12 +91,12 @@ two entries for it, like so:
 ```ruby
 get '/alert_success' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
-  erb( :alert_success )
+  erb( :alert_success, layout: :layout_empty )
 end
 
 post '/alert_success' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
-  erb( :alert_success )
+  erb( :alert_success, layout: :layout_empty )
 end
 ```
 

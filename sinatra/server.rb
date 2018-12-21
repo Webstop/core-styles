@@ -14,28 +14,28 @@ end
 
 get '/alert_success' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
-  erb( :alert_success )
+  erb( :alert_success, layout: :layout_empty )
 end
 
 post '/alert_success' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
-  erb( :alert_success )
+  erb( :alert_success, layout: :layout_empty )
 end
 
 get '/alert_error' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
-  erb( :alert_error )
+  erb( :alert_error, layout: :layout_empty )
 end
 
 post '/alert_error' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
-  erb( :alert_error )
+  erb( :alert_error, layout: :layout_empty )
 end
 
 post '/search_results' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
   @search = params['search']
-  erb( :search_results )
+  erb( :search_results, layout: :layout_empty )
 end
 
 get '/shopping_lists/list/new' do
