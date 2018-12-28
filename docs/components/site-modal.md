@@ -55,7 +55,7 @@ The Site Modal inherits all the abilities of a standard modal, and is extended w
 </table>
 
 
-
+<!-- this site-modal should probably be an include? -->
 <div class="site-modal modal fade" id="site-modal" tabindex="-1" role="dialog" aria-labelledby="site-modal-title" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="site-modal-content modal-content">
