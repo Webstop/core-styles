@@ -5,6 +5,7 @@
   .site-main-col {
     margin: 0;
     padding: 0;
+    overflow: hidden; // fixes bug where `.site-aside` would sometimes get pushed under `.site-main-col`
   }
 
   .site-content {
