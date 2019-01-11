@@ -1,8 +1,7 @@
 // scss-lint:disable ImportantRule
 
-
 .page-source {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   text-transform: capitalize;
   a {
     color: inherit !important;
@@ -17,92 +16,59 @@
   }
 }
 
+.wsg-page-section-header {
+  margin: 0;
+  padding: 1rem ($grid-gutter-width / 2);
+  background-color: lighten($webstop-blue, 35%);
+  text-align: center;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 
-.wsg-page-header.wsg-home-page-header {
-
-  h1 {
-    font-size: 2rem;
-    strong {
-      display: none;
-    }
+  @include media-breakpoint-up(sm) {
+    text-align: left;
   }
 
-  img {
-    width: 50%;
+  .page-section-title {
+     font-size: 2rem;
+     //color: #fff;
+   }
+
+  .page-section-lead {
+    margin-bottom: 0;
   }
 
-  @include media-breakpoint-up(md) {
-
-      h1 {
-        font-size: 4rem;
-        strong {
-          display: inline;
-        }
-      }
-    img {
-      width: 100%;
-      max-width: 556px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-
-    p {
-      font-size: 2rem;
-    }
-  }
 }
 
 .wsg-page-header {
-  padding: 2rem ($grid-gutter-width / 2);
+  padding: 1rem ($grid-gutter-width / 2);
   margin-bottom: 1.5rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
   color: lighten($webstop-blue, 35%);
   text-align: center;
   background-color: $webstop-blue;
   background-image: url("/assets/images/W_on_blue_873x500_300dpi.png");
-  background-size: 218.25px 125px; // 873px x 500px
+  background-size: 163.5px 93.5px; // 873px x 500px
   // 1/2 -> 436.5px  250px
   // 1/4 -> 218.25px 125px
+  // 1/6 -> 163.5px  93.5px
   // 1/8 -> 109px    63px
   background-repeat: no-repeat;
   background-position: right bottom;
-
-  .container {
-    position: relative;
-  }
-
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
+  
+  .page-title {
+    font-size: 4rem;
     color: #fff;
   }
 
-  p {
+  .page-lead {
+    font-size: 1.5rem;
     margin-bottom: 0;
-    font-size: 1.25rem;
-    font-weight: 300;
   }
 
   @include media-breakpoint-up(sm) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    margin-top: 55px;
-    margin-bottom: 3rem;
     text-align: left;
-    //background-size: 256px 256px;
-
-  }
-
-  @include media-breakpoint-up(md) {
-
-    background-size: 436.5px  250px;
-
-    h1 {
-      font-size: 4rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-    }
+    background-size: 218.25px 125px;
   }
 
 }

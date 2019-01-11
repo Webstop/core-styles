@@ -1,23 +1,22 @@
 {% include page-header-data.html %}
-
-<header class="wsg-page-header">
-  <div class="container-fluid">
-    <h1>{{ page_heading }}</h1>
-    <p class="lead">{{ page_lead }}</p>
-  </div>
+<header class="wsg-page-section-header">
+  <h4 class="page-section-title">{{ page_heading }}</h4>
+  <p class="page-section-lead">{{ page_lead }}</p>
 </header>
+<header class="wsg-page-header"><div class="container-fluid">
+  <h1 class="page-title">{{ page.title }}</h1>
+  <p class="page-lead">{{ page.description }}</p>
+
+</header>
+
 {% if source_name != nil %}
-  <div class="container-fluid">
-    <div class="page-source">
-      <p>
-        Source:
-        <a href="{{ source_url }}">
-          {{ source_name }}
-          {% if source_icon != nil %}
-            <span class="page-source-icon {{ source_icon }}"></span>
-          {% endif %}
-        </a>
-      </p>
-    </div>
-  </div>
+<p class="page-source">
+  Source:
+  <a href="{{ source_url }}">
+    {{ source_name }}
+    {% if source_icon != nil %}
+    <span class="page-source-icon {{ source_icon }}"></span>
+    {% endif %}
+  </a>
+</p>
 {% endif %}

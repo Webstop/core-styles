@@ -7,7 +7,6 @@ toc: true
 ---
 
 
-
 ## Examples
 
 Here are a couple of use examples of the AJAX Form feature.

@@ -11134,7 +11134,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-source {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   text-transform: capitalize;
 }
 
@@ -11146,87 +11146,57 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2em;
 }
 
-.wsg-page-header.wsg-home-page-header h1 {
-  font-size: 2rem;
-}
-
-.wsg-page-header.wsg-home-page-header h1 strong {
-  display: none;
-}
-
-.wsg-page-header.wsg-home-page-header img {
-  width: 50%;
-}
-
-@media (min-width: 768px) {
-  .wsg-page-header.wsg-home-page-header h1 {
-    font-size: 4rem;
-  }
-  .wsg-page-header.wsg-home-page-header h1 strong {
-    display: inline;
-  }
-  .wsg-page-header.wsg-home-page-header img {
-    width: 100%;
-    max-width: 556px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .wsg-page-header.wsg-home-page-header p {
-    font-size: 2rem;
-  }
-}
-
-.wsg-page-header {
-  padding: 2rem 15px;
-  margin-bottom: 1.5rem;
-  color: #88dbfe;
+.wsg-page-section-header {
+  margin: 0;
+  padding: 1rem 15px;
+  background-color: #88dbfe;
   text-align: center;
-  background-color: #0194d3;
-  background-image: url("/assets/images/W_on_blue_873x500_300dpi.png");
-  background-size: 218.25px 125px;
-  background-repeat: no-repeat;
-  background-position: right bottom;
-}
-
-.wsg-page-header .container, .wsg-page-header .site.site-fixed, .wsg-page-header .site.site-fixed .site-header, .site.site-fixed .wsg-page-header .site-header,
-.wsg-page-header .site.site-fixed .site-navigation, .site.site-fixed .wsg-page-header .site-navigation,
-.wsg-page-header .site.site-fixed .site-content, .site.site-fixed .wsg-page-header .site-content,
-.wsg-page-header .site.site-fixed .site-footer, .site.site-fixed .wsg-page-header .site-footer,
-.wsg-page-header .site.site-fixed .site-debug, .site.site-fixed .wsg-page-header .site-debug {
-  position: relative;
-}
-
-.wsg-page-header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.wsg-page-header p {
-  margin-bottom: 0;
-  font-size: 1.25rem;
-  font-weight: 300;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 @media (min-width: 576px) {
-  .wsg-page-header {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    margin-top: 55px;
-    margin-bottom: 3rem;
+  .wsg-page-section-header {
     text-align: left;
   }
 }
 
-@media (min-width: 768px) {
+.wsg-page-section-header .page-section-title {
+  font-size: 2rem;
+}
+
+.wsg-page-section-header .page-section-lead {
+  margin-bottom: 0;
+}
+
+.wsg-page-header {
+  padding: 1rem 15px;
+  margin-bottom: 1.5rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: #88dbfe;
+  text-align: center;
+  background-color: #0194d3;
+  background-image: url("/assets/images/W_on_blue_873x500_300dpi.png");
+  background-size: 163.5px 93.5px;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.wsg-page-header .page-title {
+  font-size: 4rem;
+  color: #fff;
+}
+
+.wsg-page-header .page-lead {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+@media (min-width: 576px) {
   .wsg-page-header {
-    background-size: 436.5px  250px;
-  }
-  .wsg-page-header h1 {
-    font-size: 4rem;
-  }
-  .wsg-page-header p {
-    font-size: 1.5rem;
+    text-align: left;
+    background-size: 218.25px 125px;
   }
 }
 
