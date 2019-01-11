@@ -22,13 +22,12 @@ Ctrl + c
 Setup
 -----
 
+1. Install docker for 
+
 1. Install Docker for Mac.  Click the 'Get Docker for Mac (stable)' link
   on this page: [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/)
-2. After copying the 'Docker' app from the downloaded DMG to your Applications folder
-  launch the app so that it can install and configure Docker on your computer.
-  This will add a whale icon menu item to your menubar which will automatically
-  launch on subsequent restarts of your mac.  This menubar item provides options
-  for stopping the docker vm if desired.
+2. Get a copy of the repo. First `cd` to the directory you want to install the project into then 
+  run `git clone git@github.com:Webstop/core-styles.git` after the clone completes run `cd core-styles`.
 3. Run `./serve` from the project's root directory. The first time you run this command it 
   take longer because it will be going out and downloading the Docker VMs and installing all 
   of the project's Ruby Gems. The whole process should take about 10 minutes. After you're 
