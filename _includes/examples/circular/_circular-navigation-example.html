@@ -45,7 +45,17 @@
     </div>
   </div>
 
-  {% include examples/search/_search-form-example.html %}
+  <form class="search-form" action="http://localhost:4567/search_results" method="post" data-search="live" data-target="#search-results" data-hide=".search-hidden">
+    <div class="input-group">
+      <input class="search-from-search-text form-control" type="text" name="search" placeholder="Search" aria-label="Enter text to search for.">
+      <a href="#" class="search-form-clear icon-cancel-circle-solid" aria-label="Clear Search"></a>
+      <div class="input-group-append">
+        <button class="search-from-submit btn btn-primary" type="submit" aria-label="Submit Search">
+          <i class="icon-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
 
   <div class="toolbar-group d-inline-flex d-sm-none">
     <div class="dropleft">
@@ -62,3 +72,11 @@
     <a href="#" class="toolbar-text-item site-aside-slider-toggle"><strong>Shopping List</strong> <i class="icon-shopping-list"></i></a>
   </div>
 </nav>
+
+<br>
+
+<section id="search-results"></section>
+<section class="search-hidden">
+  <h4>Some Page Content</h4>
+  <p>This section should get replaced by search results when a search is active, and reappear when the search is exited.</p>
+</section>
