@@ -49,10 +49,15 @@ From the root directory of the project, run:
 
 Then visit [`http://localhost:4000`](http://localhost:4000) in your web browser.
 
+The web Jekyll server will monitor for changes to your Markdown or HTML files and recompile the 
+site every time you make a change.
+
 > The first time you run this command it 
 > take longer because it will be going out and downloading the Docker VMs and installing all 
 > of the project's Ruby Gems. The whole process should take about 10 minutes. After you're 
 > setup, the `./serve` command should take a few seconds to launch your web server.
+
+
 
 ### To quit the server:
 
@@ -60,6 +65,42 @@ Then visit [`http://localhost:4000`](http://localhost:4000) in your web browser.
 Ctrl + c
 ```
 
+## Watch Sass Files
+
+When you make a change to a SCSS file it will automatically recompile all your Sass files into 
+CSS files. This makes development much simplier. I usually run this along side the web server in 
+a separated terminal tab.
+
+From the root directory of the project, run:
+
+```bash
+./watch
+```
+
+### To quit the watch script:
+
+```bash
+Ctrl + c
+```
+
+## Move JavaScript Files
+
+We don't have a watch script for JS files like we do for stylesheets or html pages. When you make 
+changes to JavaScript files you can open a node terminal and run a simple command to distribute the 
+Javascript source files into the served files.
+
+In a 3rd tab run:
+
+```bash
+./node
+```
+
+This will open a terminal session into a Node.js server. Then after you make changes to a Javascript 
+file you can run the following to make it available to the server:
+
+```bash
+npm run dist
+```
 
 Run Jekyll Commands
 -------------------

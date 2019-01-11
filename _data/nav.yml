@@ -25,10 +25,6 @@
       path:   bootstrap/4.1/layout/media-object
       source: Bootstrap
 
-    - title:  Responsive utilities
-      path:   bootstrap/4.1/layout/responsive-utilities
-      source: Bootstrap
-
 - title:  Content
   path:   bootstrap/4.1/content/reboot
   source: Bootstrap
@@ -168,14 +164,9 @@
         - title: Recipe Item
         - title: Standard Coupon Item
         - title: Coupon Item
-        - title: Modal
         - title: Navigation
     - title: Shopping Lists
       pages:
         - title: Shopping List Power Bar
         - title: Shopping List Mini Form
     - title: Price
-
-- title: Utilities
-  pages:
-  - title: State Management
