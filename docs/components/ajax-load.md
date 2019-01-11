@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: AJAX Load
+title: Ajax Load
 description: An easy way to load HTML content into a section of the page.
 group: components
 toc: true
@@ -14,7 +14,7 @@ Here are a couple of common uses of the AJAX Load feature.
 
 ### Basic Example
 
-To use the AJAX Load feature place a `data-ajax` attribute on an HTML element (e.g. link or button). The `data-load` 
+To use the Ajax Load feature place a `data-ajax` attribute on an HTML element (e.g. link or button). The `data-load` 
 attribute specifies the URL to pull the content from, it is expected to be in HTML format. You specify where to place 
 the AJAX content with the `data-target` attribute, it accepts standard jQuery selectors.
 
@@ -46,7 +46,7 @@ The following attributes are required.
   </thead>
   <tbody>
     <tr>
-      <td><code class="text-nowrap">data-ajax</code></td>
+      <td><code class="text-nowrap">data-ajax-load</code></td>
       <td>The presence of this attribute indicates clicking on this element should trigger an AJAX load.</td>
     </tr>
     <tr>
@@ -60,7 +60,13 @@ The following attributes are required.
       <td><code class="text-nowrap">data-target</code></td>
       <td>
         The DOM node to load the content into. Uses standard jQuery selectors, usually targets an id attribute 
-        (e.g. `#some-target`).
+        (e.g. <code class="text-nowrap">#some-target</code>).
+      </td>
+    </tr>
+    <tr>
+      <td><code class="text-nowrap">data-power-bar</code></td>
+      <td>
+        When present, completing the ajax call triggers a reload of the Shopping List Power Bar.
       </td>
     </tr>
   </tbody>

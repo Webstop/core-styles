@@ -61,7 +61,10 @@
   path:   bootstrap/4.1/components/alerts
   source: Bootstrap
   pages:
-    - title:  AJAX Load
+    - title:  Ajax Form
+      source: Webstop
+
+    - title:  Ajax Load
       source: Webstop
 
     - title:  Alerts
@@ -153,10 +156,6 @@
       path:   bootstrap/4.1/components/tooltips
       source: Bootstrap
 
-- title: Utilities
-  pages:
-    - title: State Management
-
 - title: Grocery
   pages:
     - title: Circulars
@@ -176,3 +175,7 @@
         - title: Shopping List Power Bar
         - title: Shopping List Mini Form
     - title: Price
+
+- title: Utilities
+  pages:
+  - title: State Management

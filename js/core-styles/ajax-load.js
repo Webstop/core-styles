@@ -6,16 +6,16 @@ $(function() {
   $('[data-ajax-load]').on('click', function(event){
     event.preventDefault();
 
-    console.log('data-ajax triggered');
-
     let $this = $(this);
-    let url = $this.attr('data-load');
-    let target = $this.attr('data-target');
+    let url = $this.data('load');
+    let target = $this.data('target');
 
-    console.log('url: ' + url);
-    console.log('target: ' + target);
+    if( $this.is('[data-power-bar]') ){
+      $(target).load(url,loadShoppingListPowerBar());
+    } else {
+      $(target).load(url);
+    }
 
-    $(target).load(url);
   });
 
 });

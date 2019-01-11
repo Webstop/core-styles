@@ -9883,6 +9883,7 @@ select.custom-select {
 .site .site-main-col {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .site .site-content {

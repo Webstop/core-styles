@@ -2,6 +2,7 @@
 
 // TODO: For now this is global. It really should be loaded as an es6 module instead.
 function loadShoppingListPowerBar(){
+  console.log('loadShoppingListPowerBar triggered');
   $('#site-aside-slider').load('/shopping_list/power_bar');
 }
 
@@ -14,6 +15,9 @@ $(function() {
     $('#site-aside-slider').toggleClass('site-aside-slider-open');
   });
 
+  // Everything below here should probably go, as more generic methods are appropriate
+  // ajax-form and site-modal should be used instead. Keeping it for now as reference
+  // until we get the shopping list features.
 
   let $modal = $('#shopping-list-modal')
 
