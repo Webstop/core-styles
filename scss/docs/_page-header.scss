@@ -30,11 +30,12 @@
 
   .page-section-title {
      font-size: 2rem;
-     //color: #fff;
+     color: $primary;
    }
 
   .page-section-lead {
     margin-bottom: 0;
+    color: $primary;
   }
 
 }

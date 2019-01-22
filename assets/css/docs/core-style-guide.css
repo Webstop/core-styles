@@ -11163,10 +11163,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .wsg-page-section-header .page-section-title {
   font-size: 2rem;
+  color: #0170a0;
 }
 
 .wsg-page-section-header .page-section-lead {
   margin-bottom: 0;
+  color: #0170a0;
 }
 
 .wsg-page-header {
