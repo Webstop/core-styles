@@ -1,0 +1,88 @@
+<div class="stores-list">
+  <h1 class="stores-list-title">Store Locations</h1>
+  <p class="stores-list-description">We have 37 locations to serve you.</p>
+
+  <ul class="stores-states-index nav nav-tabs" id="stores-states-index" role="tablist">
+    <li class="stores-states-item nav-item">
+      <a class="stores-states-link nav-link active" id="state-1-tab" data-toggle="tab" href="#state-1" role="tab" aria-controls="state-1" aria-selected="true">Florida</a>
+    </li>
+    <li class="stores-states-item nav-item">
+      <a class="stores-states-link nav-link" id="state-2-tab" data-toggle="tab" href="#state-2" role="tab" aria-controls="state-2" aria-selected="false">New York</a>
+    </li>
+    <li class="stores-states-item nav-item">
+      <a class="stores-states-link nav-link" id="state-3-tab" data-toggle="tab" href="#state-3" role="tab" aria-controls="state-3" aria-selected="false">Pennsylvania</a>
+    </li>
+    <li class="stores-states-item nav-item">
+      <a class="stores-states-link nav-link" id="state-4-tab" data-toggle="tab" href="#state-4" role="tab" aria-controls="state-4" aria-selected="false">Vermont</a>
+    </li>
+  </ul>
+  <div class="stores-by-states tab-content" id="store-states-content">
+    <div class="stores-in-state tab-pane fade show active" id="state-1" role="tabpanel" aria-labelledby="state-1-tab">
+      <div class="stores-in-state-extras">
+        We have 9 locations in Florida.
+      </div>
+      <div class="stores-in-state-list row">
+        {% include examples/stores/_store-list-item-example.html store_number=221 address='221B Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=222 address='222 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=223 address='223 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=224 address='224 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=225 address='225 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=622 address='622 E Tarpon Ave' city='Tarpon Springs' location_name='Tarpon Springs Main St.' %}
+        {% include examples/stores/_store-list-item-example.html store_number=623 address='6230 E Tarpon Ave' city='Tarpon Springs' location_name='Tarpon Springs Main St.' %}
+        {% include examples/stores/_store-list-item-example.html store_number=201 address='3448 East Lake Rd. Suite #201' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=202 address='3448 East Lake Rd. Suite #202' city='Palm Harbor' location_name='Boot Ranch' %}
+      </div>
+    </div>
+    <div class="stores-in-state tab-pane fade" id="state-2" role="tabpanel" aria-labelledby="state-2-tab">
+      <div class="stores-in-state-extras">
+        We have 17 locations in New York.
+      </div>
+      <div class="stores-in-state-list row">
+        {% include examples/stores/_store-list-item-example.html store_number=221 address='221B Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=222 address='222 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=223 address='223 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=224 address='224 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=225 address='225 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=622 address='622 E Tarpon Ave' city='Tarpon Springs' location_name='Tarpon Springs Main St.' %}
+        {% include examples/stores/_store-list-item-example.html store_number=623 address='623 E Tarpon Ave' city='Tarpon Springs' location_name='Tarpon Springs Main St.' %}
+        {% include examples/stores/_store-list-item-example.html store_number=624 address='624 E Tarpon Ave' city='Tarpon Springs' location_name='Tarpon Springs Main St.' %}
+        {% include examples/stores/_store-list-item-example.html store_number=625 address='625 E Tarpon Ave' city='Tarpon Springs' location_name='Tarpon Springs Main St.' %}
+        {% include examples/stores/_store-list-item-example.html store_number=201 address='3448 East Lake Rd. Suite #201' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=202 address='3448 East Lake Rd. Suite #202' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=203 address='3448 East Lake Rd. Suite #203' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=204 address='3448 East Lake Rd. Suite #204' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=205 address='3448 East Lake Rd. Suite #205' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=206 address='3448 East Lake Rd. Suite #206' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=207 address='3448 East Lake Rd. Suite #207' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=208 address='3448 East Lake Rd. Suite #208' city='Palm Harbor' location_name='Boot Ranch' %}
+      </div>
+    </div>
+    <div class="stores-in-state tab-pane fade" id="state-3" role="tabpanel" aria-labelledby="state-3-tab">
+      <div class="stores-in-state-extras">
+        We have 8 locations in Pennsylvania.
+      </div>
+      <div class="stores-in-state-list row">
+        {% include examples/stores/_store-list-item-example.html store_number=221 address='221B Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=222 address='222 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=223 address='223 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=224 address='224 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=225 address='225 Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=622 address='622 E Tarpon Ave' city='Tarpon Springs' location_name='Tarpon Springs Main St.' %}
+        {% include examples/stores/_store-list-item-example.html store_number=201 address='3448 East Lake Rd. Suite #201' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=202 address='3448 East Lake Rd. Suite #202' city='Palm Harbor' location_name='Boot Ranch' %}
+      </div>
+    </div>
+    <div class="stores-in-state tab-pane fade" id="state-4" role="tabpanel" aria-labelledby="state-4-tab">
+      <div class="stores-in-state-extras">
+        We have 4 locations in Vermont.
+      </div>
+      <div class="stores-in-state-list row">
+        {% include examples/stores/_store-list-item-example.html store_number=221 address='221B Baker Street' city='London' location_name='Mystery Marketplace' %}
+        {% include examples/stores/_store-list-item-example.html store_number=622 address='622 E Tarpon Ave' city='Tarpon Springs' location_name='Tarpon Springs Main St.' %}
+        {% include examples/stores/_store-list-item-example.html store_number=201 address='3448 East Lake Rd. Suite #201' city='Palm Harbor' location_name='Boot Ranch' %}
+        {% include examples/stores/_store-list-item-example.html store_number=202 address='3448 East Lake Rd. Suite #202' city='Palm Harbor' location_name='Boot Ranch' %}
+      </div>
+    </div>
+  </div>
+</div>
+

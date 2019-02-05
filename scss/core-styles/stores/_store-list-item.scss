@@ -1,0 +1,43 @@
+.store-list-item {
+  max-width: $store-max-column-width;
+  min-width: $store-min-column-width;
+  position: relative;
+  display: block;
+  border-right: $list-group-border-width solid $list-group-border-color;
+  border-bottom: $list-group-border-width solid $list-group-border-color;
+  padding-top: $spacer;
+  padding-bottom: $spacer;
+  background-color: $body-bg;
+
+  &:hover {
+    background-color: lighten($primary, 65%);
+  }
+  &.store-list-item-min {
+    width: $store-min-column-width;
+  }
+  .store-list-item-address {
+    font-size: 0.8rem;
+  }
+  .store-list-item-number {
+    font-size: 0.8rem;
+  }
+  .store-list-item-city,
+  .store-list-item-location-name {
+    font-size: 1.2rem;
+  }
+  .store-list-item-city {
+    font-weight: bold;
+    margin-right: -$spacer;
+  }
+  .store-list-item-location-name {
+    text-align: right;
+  }
+
+}
+
+// only applies to documentation
+.bd-example > .store-list-item {
+  border-left: $list-group-border-width solid $list-group-border-color;
+  border-top: $list-group-border-width solid $list-group-border-color;
+  max-width: 350px;
+}

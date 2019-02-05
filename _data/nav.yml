@@ -169,4 +169,8 @@
       pages:
         - title: Shopping List Power Bar
         - title: Shopping List Mini Form
+    - title: Stores
+      pages:
+      - title: Stores List
+      - title: Store List Item
     - title: Price

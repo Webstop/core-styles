@@ -10418,6 +10418,76 @@ select.custom-select {
   margin-bottom: 0;
 }
 
+.stores-list .stores-by-states {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #fff;
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.stores-list .stores-in-state-extras {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.stores-list .stores-in-state-list {
+  margin-right: -1rem;
+}
+
+.store-list-item {
+  max-width: 100%;
+  min-width: 290px;
+  position: relative;
+  display: block;
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #fff;
+}
+
+.store-list-item:hover {
+  background-color: white;
+}
+
+.store-list-item.store-list-item-min {
+  width: 290px;
+}
+
+.store-list-item .store-list-item-address {
+  font-size: 0.8rem;
+}
+
+.store-list-item .store-list-item-number {
+  font-size: 0.8rem;
+}
+
+.store-list-item .store-list-item-city,
+.store-list-item .store-list-item-location-name {
+  font-size: 1.2rem;
+}
+
+.store-list-item .store-list-item-city {
+  font-weight: bold;
+  margin-right: -1rem;
+}
+
+.store-list-item .store-list-item-location-name {
+  text-align: right;
+}
+
+.bd-example > .store-list-item {
+  border-left: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  max-width: 350px;
+}
+
 /* coupons */
 /* coupon */
 .price {
