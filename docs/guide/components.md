@@ -226,6 +226,64 @@ instead of the shorter rectangle images the other two have. By
 subclassing we are able to apply styles common to all `circular-item` 
 components and unique styles for each subclass. 
 
+### SCSS Structure
+
+The namespaceing of a component is enforced by using Sass nesting. Sass nesting allows us to enforce the namespace of 
+the component and write reliable styles.
+
+
+{% highlight scss %}
+.name {
+  margin: 15px;
+  
+  .name-attribute-one {
+    ...
+  }
+  .name-attribute-two {
+    ...
+  }
+
+}
+{% endhighlight %}
+
+Notice in the example above the `name` class wraps around all other class of the component. This way if we forget to 
+namespace the name of an attribute (or otherwise have a class name collision in some other part of our code) our 
+rule set for an attribute will only work if it is located inside our component. Also, notice we have all our CSS 
+classes namespaced with teh same value as the root element. Consider these examples:
+
+#### Price Example
+
+{% highlight scss %}
+.price {
+  
+  .price-prefix {
+    ...
+  }
+  .price-suffix {
+    ...
+  }
+
+}
+{% endhighlight %}
+
+#### Shopping List Item Example
+
+{% highlight scss %}
+.shopping-list-item {
+  
+  .shopping-list-item-name {
+    ...
+  }
+  .shopping-list-item-quantity {
+    ...
+  }
+
+}
+{% endhighlight %}
+
+_MMMmmm... nice clean namespacing!_
+
+
 ## Components within Components
 
 The whole point of components is to create discrete, reusable, parts. 

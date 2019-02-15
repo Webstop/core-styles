@@ -6,7 +6,7 @@ group: grocery
 toc: true
 ---
 
-## Examples
+## Example
 
 Pretty straight forward. The `store-list-item` class names spaces the item, which includes address information for the 
 store. This example wrapps the contents of the element in a link.
