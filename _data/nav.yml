@@ -63,6 +63,10 @@
     - title:  Ajax Load
       source: Webstop
 
+    - title:  Ajax Modal
+      source: Webstop
+
+
     - title:  Alerts
       path:   bootstrap/4.1/components/alerts
       source: Bootstrap
@@ -114,9 +118,6 @@
     - title:  Modal
       path:   bootstrap/4.1/components/modal
       source: Bootstrap
-
-    - title:  Site Modal
-      source: Webstop
 
     - title:  Navs
       path:   bootstrap/4.1/components/navs

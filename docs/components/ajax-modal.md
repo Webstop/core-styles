@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Site Modal
+title: Ajax Modal
 description: A modal available site-wide for AJAX content.
 group: components
 toc: true
