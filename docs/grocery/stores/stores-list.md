@@ -4,6 +4,7 @@ title: Stores Listing
 description: Listing all the stores for a grocery retailer.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 ## Example

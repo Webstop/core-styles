@@ -1,10 +1,26 @@
 // Extend Devicons
 
-.devicons::after {
-  font-size: 1.2em;
+.devicons::before {
+  font-size: 0.7em;
 }
 .devicons-brand-color {
   &.devicons-bootstrap {
     color: $bootstrap-purple;
   }
+}
+
+.devicons.devicons-bootstrap {
+  //margin-top: 5px;
+  //margin-bottom: -5px;
+  //line-height: 0.8;
+}
+
+.webstop-icon {
+  margin-top: 5px;
+  margin-bottom: -5px;
+  background-image: url('/assets/images/webstop-icon-blue-128x128-72dpi.png');
+  background-size: 1.1rem;
+  width:  1.1rem;
+  height: 1.1rem;
+  display: inline-block;
 }

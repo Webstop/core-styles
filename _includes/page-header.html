@@ -6,17 +6,15 @@
 <header class="wsg-page-header"><div class="container-fluid">
   <h1 class="page-title">{{ page.title }}</h1>
   <p class="page-lead">{{ page.description }}</p>
-
 </header>
 
 {% if source_name != nil %}
-<p class="page-source">
-  Source:
-  <a href="{{ source_url }}">
-    {{ source_name }}
+<p class="page-source sans-serif">
+  <span class="page-source-inner">
+    Source: {{ source_name }}
     {% if source_icon != nil %}
-    <span class="page-source-icon {{ source_icon }}"></span>
+    <i class="page-source-icon {{ source_icon }}"></i>
     {% endif %}
-  </a>
+  </span>
 </p>
 {% endif %}

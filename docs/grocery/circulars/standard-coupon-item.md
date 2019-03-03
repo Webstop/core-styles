@@ -4,6 +4,7 @@ title: Standard Digital Coupon Circular Item
 description: Individual digital coupons inside the digital circular.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 ## Examples

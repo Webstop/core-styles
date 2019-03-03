@@ -4,6 +4,7 @@ title: Store List Item
 description: An individual store listing in a list of store locations.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 ## Example

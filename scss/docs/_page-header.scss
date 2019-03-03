@@ -3,9 +3,16 @@
 .page-source {
   font-size: 0.8rem;
   text-transform: capitalize;
-  a {
-    color: inherit !important;
+  .page-source-inner {
+    background: #ddd;
+    padding: 0 10px 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
   }
+  //a {
+  //  color: inherit !important;
+  //}
   .page-source-icon {
     font-size: 2em;
     //text-shadow:
@@ -15,6 +22,21 @@
     //   1px  1px 1px lighten($webstop-blue, 10%);
   }
 }
+
+//.page-source {
+//  background: #ddd;
+//  padding: 0 10px 5px 10px;
+//  border-radius: 4px;
+//  display: inline-block;
+//  font-size: 1rem;
+//  line-height: 16px;
+//  height: 24px;
+//}
+//
+//.page-source a {
+//  padding: 0;
+//  margin: 0;
+//}
 
 .wsg-page-section-header {
   margin: 0;
@@ -73,3 +95,5 @@
   }
 
 }
+
+

@@ -1,25 +1,17 @@
-{% assign page_heading = nil %}
-{% assign page_lead    = nil %}
-{% assign source_name  = nil %}
-{% assign source_url   = nil %}
-{% assign source_icon  = nil %}
+{% assign page_heading   = nil %}
+{% assign page_lead      = nil %}
+{% assign source_name    = nil %}
+{% assign source_url     = nil %}
+{% assign source_icon    = nil %}
 
-<!-- Sets Bootstrap Source -->
-{% if page.group == "getting-started"
-   or page.group == "layout"
-   or page.group == "content"
-   or page.group == "components"
-   or page.group == "javascript"
-   or page.group == "about"
-   or page.group == "browser-bugs" %}
-
-  {% assign source_name = 'bootstrap' %}
+{% if page.source == "Webstop" %}
+  {% assign source_name = 'Webstop' %}
+  {% assign source_url  = 'https://www.webstop.com' %}
+  {% assign source_icon = 'webstop-icon' %}
+{% elsif page.url contains "/bootstrap/" %}
+  {% assign source_name = 'Bootstrap' %}
   {% assign source_url  = 'http://getbootstrap.com' %}
   {% assign source_icon = 'devicons devicons-bootstrap devicons-brand-color' %}
-
-{% elsif page.group contains "webstop-" %}
-  {% assign source_name = 'webstop' %}
-  {% assign source_url  = 'http://guides.webstop.com' %}
 {% endif %}
 
 <!-- Selects page heading & leading text -->

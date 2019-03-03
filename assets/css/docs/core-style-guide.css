@@ -11003,8 +11003,12 @@ select.custom-select {
   -webkit-font-smoothing: antialiased;
 }
 
-body {
+body, .serif {
   font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+.sans-serif {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11208,8 +11212,12 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: capitalize;
 }
 
-.page-source a {
-  color: inherit !important;
+.page-source .page-source-inner {
+  background: #ddd;
+  padding: 0 10px 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .page-source .page-source-icon {
@@ -11309,12 +11317,22 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-.devicons::after {
-  font-size: 1.2em;
+.devicons::before {
+  font-size: 0.7em;
 }
 
 .devicons-brand-color.devicons-bootstrap {
   color: #563d7c;
+}
+
+.webstop-icon {
+  margin-top: 5px;
+  margin-bottom: -5px;
+  background-image: url("/assets/images/webstop-icon-blue-128x128-72dpi.png");
+  background-size: 1.1rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  display: inline-block;
 }
 
 /*# sourceMappingURL=core-style-guide.css.map */

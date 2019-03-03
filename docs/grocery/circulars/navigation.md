@@ -4,6 +4,7 @@ title: Circular Navigation
 description: Navigation for digital circular content.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 ## Examples
