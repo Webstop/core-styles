@@ -26,6 +26,8 @@
 $primary: darken(#0194d3, 10%);
 
 @import
+  '../../node_modules/bootstrap/scss/bootstrap',
+  '../../node_modules/core-icons/assets/SCSS/core-icons-as-fonts',
   '../../scss/core-styles',
   //'../../node_modules/bootstrap-docs/site/docs/4.1/assets/scss/docs',
   '../../scss/docs/bootstrap-docs',

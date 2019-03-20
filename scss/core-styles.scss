@@ -1,8 +1,6 @@
 @charset 'utf-8';
 
 @import
-  '../node_modules/bootstrap-docs/scss/bootstrap',
-  '../node_modules/core-icons/assets/SCSS/core-icons-as-fonts',
   'core-styles/variables',
   'core-styles/extend_bootstrap/button',
   'core-styles/extend_bootstrap/card',
@@ -23,3 +21,13 @@
   'core-styles/recipes',
   'core-styles/webstop-brand'
 ;
+
+
+// NOTE: we originally imported Bootstrap inside core-styles. However, the location of
+// the `node_modules` folder is inside the core-styles repo for the core-styles dev site,
+// but outside the core-styles folder for everywhere core-styles is installed as a
+// node module. For example, in core-customizations Bootstrap and Core-Styles reside
+// inside the same `node_modules` folder, so the path in core-styles.scss wouldn't work.
+//
+// In light of this, our new approach is to have core-styles.scss only contain imports for
+// files that are part of the core-styles repo.
