@@ -4,6 +4,7 @@ title: Thumbnail (Classic) Circular Item
 description: The classic individual sale item inside the digital circular.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 <div class="alert alert-warning" role="alert">

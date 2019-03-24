@@ -4,6 +4,7 @@ title: Shopping List Power Bar
 description: Site wide shopping list side car.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 ## Examples

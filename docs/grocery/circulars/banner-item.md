@@ -4,6 +4,7 @@ title: Banner Circular Item
 description: Full-page width promotional image inside the digital circular.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 - Banners can be any height and should be 2k to 4k wide. 

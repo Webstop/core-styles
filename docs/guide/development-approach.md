@@ -4,6 +4,7 @@ title: Development Approach
 description: Our design system is setup to support Style Guide Driven Development (SGDD).
 group: guide
 toc: true
+source: Webstop
 ---
 
 Style Guide Driven Development is an approach which places a living 

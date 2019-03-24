@@ -4,6 +4,7 @@ title: Standard Promotion Circular Item
 description: Individual image items inside the digital circular. 
 group: grocery
 toc: true
+source: Webstop
 ---
 
 *The Standard Promotion replaces the legacy SIMG item.*

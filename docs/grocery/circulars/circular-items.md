@@ -4,6 +4,7 @@ title: Circular Items
 description: Content items designed to live inside the digital circular.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 

@@ -4,6 +4,7 @@ title: Standard Circular Item
 description: Individual sale items inside the digital circular.
 group: grocery
 toc: true
+source: Webstop
 ---
 
 ## Examples

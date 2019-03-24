@@ -1,0 +1,23 @@
+.stores-list {
+
+  .stores-by-states {
+    padding-left: $spacer;
+    padding-right: $spacer;
+    background: $body-bg;
+    border-left: $list-group-border-width solid $list-group-border-color;
+  }
+  .stores-in-state-extras {
+    padding-top:    $spacer;
+    padding-bottom: $spacer;
+    padding-left:   $spacer;
+    padding-right:  $spacer;
+    border-right:   $list-group-border-width solid $list-group-border-color;
+    border-bottom:  $list-group-border-width solid $list-group-border-color;
+    margin-left:    -$spacer;
+    margin-right:   -$spacer;
+  }
+  .stores-in-state-list {
+    margin-right: -$spacer;
+  }
+
+}

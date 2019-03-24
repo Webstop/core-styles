@@ -24,8 +24,12 @@
 //}
 
 
-body {
+body, .serif {
   font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+.sans-serif {
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -4,6 +4,7 @@ title: Working with AJAX
 description: Guide for working with components that utilize AJAX . 
 group: guide
 toc: false
+source: Webstop
 ---
 
 When working with AJAX you will sometimes need a response from the server that changes based on the data you submit 

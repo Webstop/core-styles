@@ -7,150 +7,125 @@
   - title: Working with AJAX
 
 - title: Layout
-  path:   bootstrap/4.1/layout/overview
-  source: Bootstrap
+  path:  bootstrap/4.1/layout/overview
+
   pages:
-    - title:  Overview
-      path:   bootstrap/4.1/layout/overview
-      source: Bootstrap
+    - title: Overview
+      path:  bootstrap/4.1/layout/overview
 
     - title: Site
-      source: Webstop
 
-    - title:  Grid
+    - title: Grid
       path: bootstrap/4.1/layout/grid
-      source: Bootstrap
 
-    - title:  Media object
-      path:   bootstrap/4.1/layout/media-object
-      source: Bootstrap
+    - title: Media object
+      path:  bootstrap/4.1/layout/media-object
 
-- title:  Content
-  path:   bootstrap/4.1/content/reboot
-  source: Bootstrap
+- title: Content
+  path:  bootstrap/4.1/content/reboot
+
   pages:
-    - title:  Reboot
-      path:   bootstrap/4.1/content/reboot
-      source: Bootstrap
+    - title: Reboot
+      path:  bootstrap/4.1/content/reboot
 
-    - title:  Typography
-      path:   bootstrap/4.1/content/typography
-      source: Bootstrap
+    - title: Typography
+      path:  bootstrap/4.1/content/typography
 
-    - title:  Code
-      path:   bootstrap/4.1/content/code
-      source: Bootstrap
+    - title: Code
+      path:  bootstrap/4.1/content/code
 
-    - title:  Images
-      path:   bootstrap/4.1/content/images
-      source: Bootstrap
+    - title: Images
+      path:  bootstrap/4.1/content/images
 
-    - title:  Tables
-      path:   bootstrap/4.1/content/tables
-      source: Bootstrap
+    - title: Tables
+      path:  bootstrap/4.1/content/tables
 
-    - title:  Figures
-      path:   bootstrap/4.1/content/figures
-      source: Bootstrap
+    - title: Figures
+      path:  bootstrap/4.1/content/figures
+
 
 - title: Components
-  path:   bootstrap/4.1/components/alerts
-  source: Bootstrap
+  path:  bootstrap/4.1/components/alerts
+
   pages:
-    - title:  Ajax Form
-      source: Webstop
+    - title: Ajax Form
 
-    - title:  Ajax Load
-      source: Webstop
+    - title: Ajax Load
 
-    - title:  Alerts
-      path:   bootstrap/4.1/components/alerts
-      source: Bootstrap
+    - title: Ajax Modal
 
-    - title:  Breadcrumb
-      path:   bootstrap/4.1/components/breadcrumbs
-      source: Bootstrap
+    - title: Alerts
+      path:  bootstrap/4.1/components/alerts
 
-    - title:  Buttons
-      path:   bootstrap/4.1/components/buttons
-      source: Bootstrap
+    - title: Badges
+      path:  bootstrap/4.1/components/badge
 
-    - title:  Button group
-      path:   bootstrap/4.1/components/button-group
-      source: Bootstrap
+    - title: Breadcrumb
+      path:  bootstrap/4.1/components/breadcrumbs
 
-    - title:  Card
-      path:   bootstrap/4.1/components/card
-      source: Bootstrap
+    - title: Buttons
+      path:  bootstrap/4.1/components/buttons
 
-    - title:  Carousel
-      path:   bootstrap/4.1/components/carousel
-      source: Bootstrap
+    - title: Button group
+      path:  bootstrap/4.1/components/button-group
 
-    - title:  Collapse
-      path:   bootstrap/4.1/components/collapse
-      source: Bootstrap
+    - title: Card
+      path:  bootstrap/4.1/components/card
 
-    - title:  Dropdowns
-      path:   bootstrap/4.1/components/dropdowns
-      source: Bootstrap
+    - title: Carousel
+      path:  bootstrap/4.1/components/carousel
 
-    - title:  Forms
-      path:   bootstrap/4.1/components/forms
-      source: Bootstrap
+    - title: Collapse
+      path:  bootstrap/4.1/components/collapse
 
-    - title:  Input group
-      path:   bootstrap/4.1/components/input-group
-      source: Bootstrap
+    - title: Dropdowns
+      path:  bootstrap/4.1/components/dropdowns
 
-    - title:  Jumbotron
-      path:   bootstrap/4.1/components/jumbotron
-      source: Bootstrap
+    - title: Forms
+      path:  bootstrap/4.1/components/forms
 
-    - title:  List group
-      path:   bootstrap/4.1/components/list-group
-      source: Bootstrap
+    - title: Input group
+      path:  bootstrap/4.1/components/input-group
 
-    - title:  Modal
-      path:   bootstrap/4.1/components/modal
-      source: Bootstrap
+    - title: Jumbotron
+      path:  bootstrap/4.1/components/jumbotron
 
-    - title:  Site Modal
-      source: Webstop
+    - title: List group
+      path:  bootstrap/4.1/components/list-group
 
-    - title:  Navs
-      path:   bootstrap/4.1/components/navs
-      source: Bootstrap
+    - title: Media Object
+      path:  bootstrap/4.1/components/media-object/
 
-    - title:  Navbar
-      path:   bootstrap/4.1/components/navbar
-      source: Bootstrap
+    - title: Modal
+      path:  bootstrap/4.1/components/modal
 
-    - title:  Pagination
-      path:   bootstrap/4.1/components/pagination
-      source: Bootstrap
+    - title: Navs
+      path:  bootstrap/4.1/components/navs
 
-    - title:  Popovers
-      path:   bootstrap/4.1/components/popovers
-      source: Bootstrap
+    - title: Navbar
+      path:  bootstrap/4.1/components/navbar
 
-    - title:  Scrollspy
-      path:   bootstrap/4.1/components/scrollspy
-      source: Bootstrap
+    - title: Pagination
+      path:  bootstrap/4.1/components/pagination
+
+    - title: Popovers
+      path:  bootstrap/4.1/components/popovers
+
+    - title: Scrollspy
+      path:  bootstrap/4.1/components/scrollspy
 
     - title: Search
-      soruce: Webstop
 
-    - title:  Tag
-      path:   bootstrap/4.1/components/tag
-      source: Bootstrap
+    - title: Spinners
+      path:  bootstrap/4.1/components/spinners
+
+    - title: Toasts
+      path:  bootstrap/4.1/components/toasts
 
     - title: Toolbar
-      source: Webstop
 
-    - title:  Tooltips
-      path:   bootstrap/4.1/components/tooltips
-      source: Bootstrap
+    - title: Tooltips
+      path:  bootstrap/4.1/components/tooltips
 
 - title: Grocery
   pages:
@@ -169,4 +144,68 @@
       pages:
         - title: Shopping List Power Bar
         - title: Shopping List Mini Form
+    - title: Stores
+      pages:
+      - title: Stores List
+      - title: Store List Item
     - title: Price
+
+- title: Utilities
+  pages:
+    - title: Borders
+      path:  bootstrap/4.1/components/borders
+
+    - title: Clearfix
+      path:  bootstrap/4.1/components/clearfix
+
+    - title: Close icon
+      path:  bootstrap/4.1/components/close-icon
+
+    - title: Colors
+      path:  bootstrap/4.1/components/colors
+
+    - title: Display
+      path:  bootstrap/4.1/components/display
+
+    - title: Embed
+      path:  bootstrap/4.1/components/embec
+
+    - title: Flex
+      path:  bootstrap/4.1/components/flex
+
+    - title: Float
+      path:  bootstrap/4.1/components/float
+
+    - title: Image replacement
+      path:  bootstrap/4.1/components/image-replacement
+
+    - title: Overflow
+      path:  bootstrap/4.1/components/overflow
+
+    - title: Position
+      path:  bootstrap/4.1/components/position
+
+    - title: Screen readers
+      path:  bootstrap/4.1/components/screen-readers
+
+    - title: Shadows
+      path:  bootstrap/4.1/components/shadows
+
+    - title: Sizing
+      path:  bootstrap/4.1/components/sizing
+
+    - title: Spacing
+      path:  bootstrap/4.1/components/spacing
+
+    - title: Stretched link
+      path:  bootstrap/4.1/components/stretched-link
+
+    - title: Text
+      path:  bootstrap/4.1/components/text
+
+    - title: Vertical align
+      path:  bootstrap/4.1/components/vertical-align
+
+    - title: Visibility
+      path:  bootstrap/4.1/components/visibility
+

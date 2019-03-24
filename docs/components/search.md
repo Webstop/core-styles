@@ -4,6 +4,7 @@ title: Live Search
 description: Get search results as you type.
 group: components
 toc: true
+source: Webstop
 ---
 
 Live search watches a search field and makes AJAX requests as you type.
