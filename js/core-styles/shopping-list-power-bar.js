@@ -3,7 +3,8 @@
 // TODO: For now this is global. It really should be loaded as an es6 module instead.
 function loadShoppingListPowerBar(){
   console.log('loadShoppingListPowerBar triggered');
-  $('#site-aside-slider').load('/shopping_list/power_bar');
+  let url = '/shopping_list/power_bar?url=' + window.location.href ;
+  $('#site-aside-slider').load(url);
 }
 
 $(function() {

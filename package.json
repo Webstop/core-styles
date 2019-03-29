@@ -14,7 +14,8 @@
   },
   "scripts": {
     "bash": "bash",
-    "css": "npm-run-all --parallel css-compile --sequential css-prefix css-minify",
+    "css": "npm-run-all --sequential css-prefix css-minify",
+    "css-DISABLED": "npm-run-all --parallel css-compile --sequential css-prefix css-minify",
     "css-orig": "npm-run-all --parallel css-lint css-compile --sequential css-prefix css-minify",
     "css-NOTES": "TODO: need to fix issue where css-lint errors because stylelint can't be found, yet it's installed.",
     "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/core-styles.scss dist/css/core-styles.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/docs/core-style-guide.scss assets/css/docs/core-style-guide.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/core-themes/_country-farm.scss dist/css/core-themes/country-farm.css",

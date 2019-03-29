@@ -1,5 +1,7 @@
 @charset 'utf-8';
 
+// Note, Bootstrap Sass must be loaded first.
+
 @import
   'core-styles/variables',
   'core-styles/extend_bootstrap/button',

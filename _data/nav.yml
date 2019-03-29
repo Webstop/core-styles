@@ -61,7 +61,7 @@
       path:  bootstrap/4.1/components/badge
 
     - title: Breadcrumb
-      path:  bootstrap/4.1/components/breadcrumbs
+      path:  bootstrap/4.1/components/breadcrumb
 
     - title: Buttons
       path:  bootstrap/4.1/components/buttons
