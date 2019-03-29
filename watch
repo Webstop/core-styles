@@ -2,9 +2,9 @@
 echo ""
 echo "Starting Sass Watch Script..."
 echo ""
-echo "Running npm install..."
+echo "Running yarn install..."
 echo ""
-docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:8' yarn install
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:8' yarn install --modules-folder vendor/assets/node_modules
 echo "--------------------"
 # echo ""
 # echo "Running scss-lint..."

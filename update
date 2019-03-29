@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:8' yarn install  --modules-folder vendor/assets/node_modules
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:8' yarn install --modules-folder vendor/assets/node_modules
+
+docker-compose run jekyll bundle update
