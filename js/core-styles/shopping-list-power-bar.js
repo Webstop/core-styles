@@ -13,7 +13,14 @@ $(function() {
 
   $('.site-aside-slider-toggle').on('click', function(event){
     event.preventDefault();
-    $('#site-aside-slider').toggleClass('site-aside-slider-open');
+    let $aside = $('#site-aside-slider');
+    if( $aside.hasClass('site-aside-slider-open') ){
+      $aside.removeClass('site-aside-slider-open');
+      Cookies.set('site_aside', 'close', {expires: 1460});
+    } else {
+      $aside.addClass('site-aside-slider-open');
+      Cookies.set('site_aside', 'open', {expires: 1460});
+    }
   });
 
   // Everything below here should probably go, as more generic methods are appropriate

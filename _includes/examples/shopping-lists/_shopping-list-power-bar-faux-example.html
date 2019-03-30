@@ -1,0 +1,56 @@
+<div class="shopping-list-power-bar shopping-list-power-bar-faux" id="shopping-list-power-bar">
+  <nav class="shopping-list-power-bar-toolbar toolbar justify-content-center">
+    <div class="toolbar-group btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-light">View</button>
+      <button type="button" class="btn btn-light">Print</button>
+      <button type="button" class="btn btn-light">Edit</button>
+    </div>
+  </nav>
+  <div class="shopping-list-power-bar-heading">
+    <h4 class="shopping-list-power-bar-title text-nowrap">My Shopping List</h4>
+    <div class="shopping-list-power-bar-lists dropdown">
+      <!-- NOTE: keeping this on one line because any white space in the button text will show up on the rename form -->
+      <button class="btn btn-light btn-block dropdown-toggle" type="button" id="shopping-list-power-bar-list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My 10/23/2018 List</button>
+      <div class="dropdown-menu shadow-sm" aria-labelledby="shopping-list-power-bar-list">
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Create" data-url="http://localhost:4567/shopping_lists/list/create">New List</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename" data-url="http://localhost:4567/shopping_lists/list/rename">Rename List</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename" data-url="http://localhost:4567/shopping_lists/list/rename_error">Rename (Error Response)</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Delete" data-url="http://localhost:4567/shopping_lists/list/delete">Delete List</a>
+        <div class="dropdown-divider"></div>
+        <span class="dropdown-item"><strong>My Lists:</strong></span>
+        <a class="dropdown-item" href="#">Ivani's Birthday List</a>
+        <a class="dropdown-item" href="#">Office Party List</a>
+        <a class="dropdown-item active" href="#">My 10/23/2018 List</a>
+        <a class="dropdown-item" href="#">My 9/12/2018 List</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="shopping-list-power-bar-items">
+    <ul class="shopping-list-power-bar-items-group list-group list-group-flush">
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Cras justo odio</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Dapibus ac facilisis in</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Morbi leo risus</li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Porta ac consectetur ac facilisis in</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Vestibulum at eros</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Cras justo odio</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Dapibus ac facilisis in at eros</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Morbi leo risus</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Porta ac consectetur ac</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Vestibulum at eros</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Cras justo odio</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Dapibus ac facilisis in</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Morbi leo risus</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Porta ac consectetur ac</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Vestibulum at eros</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Cras justo odio</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Dapibus ac facilisis in</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Morbi leo risus</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Porta ac consectetur ac</span></li>
+      <li class="shopping-list-power-bar-item list-group-item"><span class="shopping-list-power-bar-item-text">Vestibulum at eros</span></li>
+    </ul>
+  </div>
+
+</div>
+
+

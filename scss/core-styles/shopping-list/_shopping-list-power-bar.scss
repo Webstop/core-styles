@@ -44,4 +44,12 @@
     z-index: -1;
   }
 
+  &.shopping-list-power-bar-faux {
+    opacity: 0.5;
+    .shopping-list-power-bar-item-text {
+      background: #ccc;
+      color: #999;
+    }
+  } // faux
+
 }
