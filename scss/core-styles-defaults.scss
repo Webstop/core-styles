@@ -1,0 +1,12 @@
+@charset 'utf-8';
+
+// Don't use this file if you are interested in using the Sass directly. You probably want to use
+// retailer_:id.css from the core-customizations app. This file won't contain any retailer specific styling.
+
+@import
+'../node_modules/bootstrap/scss/bootstrap',
+'../node_modules/core-icons/assets/SCSS/core-icons-as-fonts',
+'../scss/core-styles'
+;
+
+

@@ -23,13 +23,13 @@ Trace:
       at Request.module.exports.Request.onRequestResponse (/opt/yarn-v1.9.4/lib/cli.js:138345:10)
       at emitOne (events.js:116:13)
       at ClientRequest.emit (events.js:211:7)
-      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:544:21)
+      at HTTPParser.parserOnIncomingClient (_http_client.js:544:21)
       at HTTPParser.parserOnHeadersComplete (_http_common.js:117:17)
 
 npm manifest: 
   {
     "name": "core-styles",
-    "version": "0.5.3",
+    "version": "0.5.4",
     "description": "The definitive source of styling guidelines for grocery website features.",
     "private": true,
     "author": "Greg Hemphill",
@@ -48,7 +48,7 @@ npm manifest:
       "css": "npm-run-all --parallel css-compile --sequential css-prefix css-minify",
       "css-orig": "npm-run-all --parallel css-lint css-compile --sequential css-prefix css-minify",
       "css-NOTES": "TODO: need to fix issue where css-lint errors because stylelint can't be found, yet it's installed.",
-      "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/docs/core-style-guide.scss assets/css/docs/core-style-guide.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/core-themes/_country-farm.scss dist/css/core-themes/country-farm.css",
+      "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/core-styles-defaults.scss dist/css/core-styles-defaults.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/docs/core-style-guide.scss assets/css/docs/core-style-guide.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/core-themes/_country-farm.scss dist/css/core-themes/country-farm.css",
       "css-compile-DISABLED": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/core-styles.scss dist/css/core-styles.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/docs/core-style-guide.scss assets/css/docs/core-style-guide.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/core-themes/_country-farm.scss dist/css/core-themes/country-farm.css",
       "css-lint": "stylelint --syntax scss \"scss/**/*.scss\"",
       "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",

@@ -10,6 +10,10 @@
   min-height: 54px;
   margin-right: -$spacer + 0.0625rem; // 1px/16 = 0.0625rem
   margin-left: -$spacer;
+  //position: -webkit-sticky;
+  //position: sticky;
+  //top: 0;
+  //z-index: 1000;
 
   .input-group {
     width: auto;
