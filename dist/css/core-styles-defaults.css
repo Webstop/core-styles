@@ -11018,6 +11018,12 @@ select.custom-select {
   top: 0;
 }
 
+@supports (-ms-ime-align: auto) {
+  .toolbar .circular-toolbar {
+    position: relative;
+  }
+}
+
 /* circular: an individual ad */
 .circular .circular-header {
   margin-top: 2rem;
@@ -11410,6 +11416,12 @@ select.custom-select {
 .shopping-list-power-bar.shopping-list-power-bar-faux .shopping-list-power-bar-item-text {
   background: #ccc;
   color: #999;
+}
+
+@supports (-ms-ime-align: auto) {
+  .shopping-list-power-bar {
+    position: fixed;
+  }
 }
 
 /* shopping-list-item: add items to a shopping list */

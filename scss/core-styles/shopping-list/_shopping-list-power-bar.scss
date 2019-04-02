@@ -53,3 +53,11 @@
   } // faux
 
 }
+
+// Bug: Edge forces dropdown menus under other items because it doesn't understand position: sticky
+// the following fixes that.
+@supports (-ms-ime-align: auto) {
+  .shopping-list-power-bar {
+    position: fixed;
+  }
+}

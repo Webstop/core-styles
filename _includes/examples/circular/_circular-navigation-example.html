@@ -1,82 +1,96 @@
 <nav class="toolbar" aria-label="Circular page navigation.">
-
-
-  <div class="toolbar-group btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-light">
+  <div class="toolbar-group btn-group" role="group" aria-label="Circular Page Navigation">
+    <a href="/circulars/Page/3/Insert/1/190326_NCM//" class="btn btn-light">
       <i class="icon-arrow-left"></i><span class="sr-only">Previous Page</span>
-    </button>
+    </a>
     <div class="dropdown btn-group" role="group">
-      <button class="btn btn-light dropdown-toggle" type="button" id="circular-pages-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="d-none d-sm-inline">Page 3 of 14</span>
-        <span class="d-inline d-sm-none">Pg. 3</span>
+      <button class="btn btn-primary dropdown-toggle" type="button" id="circular-pages-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="d-none d-sm-inline">Page 1 of 9</span>
+        <span class="d-inline d-sm-none">Pg. 1</span>
       </button>
       <div class="dropdown-menu" aria-labelledby="circular-pages-button">
-        <a class="dropdown-item" href="#"><strong>Recommended For You</strong></a>
-        <a class="dropdown-item" href="#">Page 1 of 14</a>
+        <a class="dropdown-item" href="/circulars/Page/1/Base/1/190326_NCM//"><strong>Weekly Specials</strong></a>
+        <a class="dropdown-item active" href="/circulars/Page/1/Base/1/190326_NCM//">Page 1 of 9</a>
+        <a class="dropdown-item " href="/circulars/Page/2/Base/1/190326_NCM//">Page 2 of 9</a>
+        <a class="dropdown-item " href="/circulars/Page/3/Base/1/190326_NCM//">Page 3 of 9</a>
+        <a class="dropdown-item " href="/circulars/Page/4/Base/1/190326_NCM//">Page 4 of 9</a>
+        <a class="dropdown-item " href="/circulars/Page/5/Base/1/190326_NCM//">Page 5 of 9</a>
+        <a class="dropdown-item " href="/circulars/Page/6/Base/1/190326_NCM//">Page 6 of 9</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#"><strong>Weekly Specials!</strong></a>
-        <a class="dropdown-item" href="#">Page 2 of 14</a>
-        <a class="dropdown-item active" href="#">Page 3 of 14</a>
-        <a class="dropdown-item" href="#">Page 4 of 14</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#"><strong>Price Lock Guarantee</strong></a>
-        <a class="dropdown-item" href="#">Page 5 of 14</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#"><strong>Let's Get BOO-ing!</strong></a>
-        <a class="dropdown-item" href="#">Page 5 of 14</a>
+        <a class="dropdown-item" href="/circulars/Page/1/Insert/1/190326_NCM//"><strong>Web Specials</strong></a>
+        <a class="dropdown-item " href="/circulars/Page/1/Insert/1/190326_NCM//">Page 7 of 9</a>
+        <a class="dropdown-item " href="/circulars/Page/2/Insert/1/190326_NCM//">Page 8 of 9</a>
+        <a class="dropdown-item " href="/circulars/Page/3/Insert/1/190326_NCM//">Page 9 of 9</a>
       </div>
     </div>
-    <button type="button" class="btn btn-light">
+    <a href="/circulars/Page/2/Base/1/190326_NCM//" class="btn btn-light">
       <i class="icon-arrow-right"></i><span class="sr-only">Next Page</span>
-    </button>
+    </a>
   </div>
-
-  <div class="toolbar-group">
-    <div class="dropdown">
+  <div class="toolbar-group btn-group" role="group" aria-label="Circular Departments Navigation">
+    <div class="dropdown btn-group" role="group">
       <button class="btn btn-light dropdown-toggle" type="button" id="circular-departments-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="d-none d-sm-inline">Departments</span>
         <span class="d-inline d-sm-none">Depts</span>
       </button>
-      <div class="dropdown-menu" aria-labelledby="circular-departments-button">
-        <a class="dropdown-item" href="#">Bakery Shoppe</a>
-        <a class="dropdown-item" href="#">Dairy</a>
-        <a class="dropdown-item" href="#">Grocery</a>
+      <div class="dropdown-menu dropdown-menu-right dropdown-menu-md-left" aria-labelledby="circular-departments-button">
+        <a class="dropdown-item " href="/circulars/department/Bakery/">Bakery</a>
+        <a class="dropdown-item " href="/circulars/department/Beer_and_Wine/">Beer and Wine</a>
+        <a class="dropdown-item " href="/circulars/department/Dairy/">Dairy</a>
+        <a class="dropdown-item " href="/circulars/department/Deli/">Deli</a>
+        <a class="dropdown-item " href="/circulars/department/Floral/">Floral</a>
+        <a class="dropdown-item " href="/circulars/department/Frozen/">Frozen</a>
+        <a class="dropdown-item " href="/circulars/department/General_Merchandise/">General Merchandise</a>
+        <a class="dropdown-item " href="/circulars/department/Grocery/">Grocery</a>
+        <a class="dropdown-item " href="/circulars/department/Health_and_Beauty_Care/">Health and Beauty Care</a>
+        <a class="dropdown-item " href="/circulars/department/Meat_-_Fresh/">Meat - Fresh</a>
+        <a class="dropdown-item " href="/circulars/department/Meat_-_Packaged/">Meat - Packaged</a>
+        <a class="dropdown-item " href="/circulars/department/Meat_-_Seafood/">Meat - Seafood</a>
+        <a class="dropdown-item " href="/circulars/department/Pets/">Pets</a>
+        <a class="dropdown-item " href="/circulars/department/Produce/">Produce</a>
       </div>
     </div>
   </div>
 
-  <form class="search-form" action="http://localhost:4567/search_results" method="post" data-search="live" data-target="#search-results" data-hide=".search-hidden">
-    <div class="input-group">
-      <input class="search-from-search-text form-control" type="text" name="search" placeholder="Search" aria-label="Enter text to search for.">
-      <a href="#" class="search-form-clear icon-cancel-circle-solid" aria-label="Clear Search"></a>
-      <div class="input-group-append">
-        <button class="search-from-submit btn btn-primary" type="submit" aria-label="Submit Search">
-          <i class="icon-search"></i>
-        </button>
+  <div class="d-none d-sm-inline-flex">
+    <form class="search-form" action="/circulars/search/" method="post" data-search="live"data-target="#search-results" data-hide=".search-hidden">
+      <input type="hidden" name="date" value="">
+      <div class="toolbar-group input-group">
+        <input class="search-from-search-text form-control" type="text" name="search" value="" placeholder="Search" aria-label="Enter text to search circulars.">
+        <a href="#" class="search-form-clear icon-cancel-circle-solid" aria-label="Clear Search"></a>
+        <div class="input-group-append">
+          <button class="search-from-submit btn btn-primary" type="submit" aria-label="Submit Search">
+            <i class="icon-search"></i>
+          </button>
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  </div>
 
-  <div class="toolbar-group d-inline-flex d-sm-none">
-    <div class="dropleft">
-      <button class="btn btn-light" type="button" id="circular-departments-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="icon-search"></i><span class="sr-only">Search Circular</span>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="circular-departments-button">
-        <input type="search" placeholder="Search Circular" class="form-control dropdown-item">
+  <div class="d-inline-flex d-sm-none">
+    <form class="search-form" action="/circulars/search/" method="post" data-search="live"data-target="#search-results" data-hide=".search-hidden">
+      <div class="toolbar-group">
+        <input type="hidden" name="date" value="">
+        <div class="dropleft">
+          <button class="btn btn-light" type="button" id="circular-departments-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="icon-search"></i><span class="sr-only">Search Circular</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="circular-departments-button">
+            <div class="dropdown-item">
+              <div class="min-vw-50" style="min-width: 50vw;">
+                <input class="search-from-search-text form-control" type="text" name="search" value="" placeholder="Search" aria-label="Enter text to search circulars.">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </form>
   </div>
 
   <div class="toolbar-group ml-auto">
-    <a href="#" class="toolbar-text-item site-aside-slider-toggle"><strong>Shopping List</strong> <i class="icon-shopping-list"></i></a>
+    <a href="#" class="toolbar-text-item site-aside-slider-toggle d-none d-sm-inline-block"><strong><span class="d-none d-md-inline">Shopping </span>List</strong> <i class="icon-shopping-list"></i></a>
   </div>
+
 </nav>
 
-<br>
-
 <section id="search-results"></section>
-<section class="search-hidden">
-  <h4>Some Page Content</h4>
-  <p>This section should get replaced by search results when a search is active, and reappear when the search is exited.</p>
-</section>
