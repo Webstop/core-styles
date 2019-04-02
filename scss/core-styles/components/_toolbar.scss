@@ -53,5 +53,12 @@
     position: relative;
     top: 0;
   }
+}
 
+// Bug: Edge forces dropdown menus under other items because it doesn't understand position: sticky
+// the following fixes that.
+@supports (-ms-ime-align: auto) {
+  .toolbar .circular-toolbar {
+    position: relative;
+  }
 }
