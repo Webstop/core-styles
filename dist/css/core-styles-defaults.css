@@ -11046,10 +11046,41 @@ select.custom-select {
   z-index: 1000;
 }
 
+.circular-items {
+  padding-right: 15px;
+}
+
+.circular-items .col-12 {
+  padding-right: 0;
+}
+
+@media (min-width: 576px) {
+  .circular-items {
+    padding-right: 0;
+  }
+  .circular-items .col-12 {
+    padding-right: 15px;
+  }
+}
+
 .circular-item {
   max-width: 375px;
-  min-width: 265px;
+  min-width: 160px;
   position: relative;
+}
+
+.circular-item.card {
+  margin-right: 0;
+}
+
+@media (min-width: 576px) {
+  .circular-item {
+    max-width: 375px;
+    min-width: 265px;
+  }
+  .circular-item.card {
+    margin-right: 15px;
+  }
 }
 
 .circular-item.circular-item-max {
@@ -11057,15 +11088,15 @@ select.custom-select {
 }
 
 .circular-item.circular-item-avg {
-  width: 320px;
+  width: 267.5px;
 }
 
 .circular-item.circular-item-min {
-  width: 265px;
+  width: 160px;
 }
 
 .circular-item.circular-item-min {
-  width: 265px;
+  width: 160px;
 }
 
 .circular-item.circular-item-paper-coupon {
@@ -11229,7 +11260,7 @@ select.custom-select {
 }
 
 .circular-item-standard .circular-item-body {
-  padding: 10px;
+  padding: 5px;
   padding-bottom: 68px;
 }
 
@@ -11239,11 +11270,19 @@ select.custom-select {
 .circular-item-standard .circular-item-expiration-date,
 .circular-item-standard .circular-item-sale-dates,
 .circular-item-standard .circular-item-more-info {
+  font-size: 0.625rem;
+}
+
+.circular-item-standard .circular-item-recipe {
   font-size: 0.75rem;
 }
 
 .circular-item-standard .circular-item-info-trigger {
   margin-bottom: 0;
+}
+
+.circular-item-standard .circular-item-title {
+  font-size: 1.125rem;
 }
 
 .circular-item-standard .circular-item-heading,
@@ -11260,8 +11299,8 @@ select.custom-select {
 }
 
 .circular-item-standard .circular-item-recipe {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   text-align: left;
 }
 
@@ -11269,6 +11308,36 @@ select.custom-select {
   position: absolute;
   bottom: 15px;
   right: 20px;
+}
+
+@media (min-width: 576px) {
+  .circular-item-standard .circular-item-body {
+    padding: 10px;
+    padding-bottom: 68px;
+  }
+  .circular-item-standard .circular-item-title {
+    font-size: 1.75rem;
+  }
+  .circular-item-standard .circular-item-heading,
+  .circular-item-standard .circular-item-description,
+  .circular-item-standard .circular-item-details,
+  .circular-item-standard .circular-item-expiration-date,
+  .circular-item-standard .circular-item-sale-dates,
+  .circular-item-standard .circular-item-more-info {
+    font-size: 0.75rem;
+  }
+  .circular-item-standard .circular-item-recipe {
+    font-size: 1rem;
+  }
+  .circular-item-standard .circular-item-recipe {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .circular-item-standard .shopping-list-item {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+  }
 }
 
 .circular-item-standard-coupon {
@@ -11535,7 +11604,7 @@ select.custom-select {
 .price .price-cent-sign,
 .price .price-suffix,
 .price .price-suffix-icon {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   vertical-align: text-top;
   display: inline;
   line-height: 1;
@@ -11544,7 +11613,7 @@ select.custom-select {
 .price.price-big-overlay .price-overlay,
 .price.price-big-dollars .price-dollars,
 .price.price-big-cents .price-cents {
-  font-size: 3.75rem;
+  font-size: 2.5rem;
   line-height: 0.8;
   vertical-align: text-top;
 }
@@ -11580,6 +11649,25 @@ select.custom-select {
   margin-left: 0.3125rem;
   height: 1.5rem;
   display: inline-block;
+}
+
+@media (min-width: 576px) {
+  .price .price-overlay,
+  .price .price-prefix,
+  .price .price-dollar-sign,
+  .price .price-dollars,
+  .price .price-cents,
+  .price .price-cent-sign,
+  .price .price-suffix,
+  .price .price-suffix-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .price.price-big-overlay .price-overlay,
+  .price.price-big-dollars .price-dollars,
+  .price.price-big-cents .price-cents {
+    font-size: 3.75rem;
+  }
 }
 
 /* recipes */

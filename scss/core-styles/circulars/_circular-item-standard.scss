@@ -5,7 +5,7 @@
   text-align: center;
 
   .circular-item-body {
-    padding: 10px;
+    padding: 5px;
     padding-bottom: 68px;
   }
 
@@ -15,11 +15,19 @@
   .circular-item-expiration-date,
   .circular-item-sale-dates,
   .circular-item-more-info {
+    font-size: 0.625rem; // 10/16=0.625
+  }
+
+  .circular-item-recipe {
     font-size: 0.75rem; // 12/16=0.75
   }
 
   .circular-item-info-trigger {
     margin-bottom: 0;
+  }
+
+  .circular-item-title {
+    font-size: 1.125rem; // 18/16=1.125
   }
 
   .circular-item-heading,
@@ -36,8 +44,8 @@
   }
 
   .circular-item-recipe {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
     text-align: left;
   }
 
@@ -45,6 +53,54 @@
     position: absolute;
     bottom: 15px;
     right: 20px;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .circular-item-body {
+      padding: 10px;
+      padding-bottom: 68px;
+    }
+
+    .circular-item-title {
+      font-size: 1.75rem; // 28/16=1.75
+    }
+
+    .circular-item-heading,
+    .circular-item-description,
+    .circular-item-details,
+    .circular-item-expiration-date,
+    .circular-item-sale-dates,
+    .circular-item-more-info {
+      font-size: 0.75rem; // 12/16=0.75
+    }
+
+    .circular-item-recipe {
+      font-size: 1rem;
+    }
+
+    //.circular-item-heading,
+    //.circular-item-title,
+    //.price,
+    //.circular-item-description,
+    //.circular-item-details,
+    //.circular-item-expiration-date,
+    //.circular-item-sale-dates,
+    //.circular-item-more-info,
+    //.circular-item-recipe {
+    //  margin-top: 4px;
+    //  margin-bottom: 4px;
+    //}
+
+    .circular-item-recipe {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .shopping-list-item {
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+    }
   }
 
 }
