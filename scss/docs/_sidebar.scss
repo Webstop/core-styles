@@ -8,16 +8,22 @@
   top:-.1em;
 }
 
+// Left side navigation
+//
+
 .wsg-sidebar {
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, arial, sans-serif;
   font-size: 16px;
-
+  opacity: 0.95;
   position: -webkit-sticky;
   position: sticky;
-  top: 3.625rem; // 58/16 = 3.625
+  top: 6.375rem; // 102/16 = 6.375
   z-index: 1000;
-  height: calc(100vh - 3.625rem);
   overflow-y: auto;
+  order: 0;
+  background-color: #fff;
+  //background-color: #f5f2f9;
+  border-bottom: 1px solid rgba(0,0,0,.1);
 
   .wsg-toc-category {
     padding-top: 0.5em;
@@ -41,22 +47,11 @@
       display: block;
     }
   }
-}
 
-
-// Left side navigation
-//
-
-.wsg-sidebar {
-  order: 0;
-  // background-color: #f5f2f9;
-  border-bottom: 1px solid rgba(0,0,0,.1);
 
   @include media-breakpoint-up(md) {
     @supports (position: sticky) {
-      position: sticky;
       top: 4rem;
-      z-index: 1000;
       max-height: calc(100vh - 4rem);
     }
     border-right: 1px solid rgba(0,0,0,.1);
@@ -76,18 +71,11 @@
       max-height: calc(100vh - 9rem);
       overflow-y: auto;
     }
-  }
-
-  // Override collapse behaviors
-  @include media-breakpoint-up(md) {
+    // Override collapse behaviors
     display: block !important;
   }
 }
 
-.wsg-links,
-.wsg-toc-group-link {
-
-}
 
 .wsg-search {
   position: relative; // To contain the Algolia search

@@ -4,19 +4,33 @@
     WSG
   </a>
 
+  <p class="wsg-responsive-size sans-serif">
+    <span class="d-block d-sm-none">xs</span>
+    <span class="d-none d-sm-block d-md-none">sm</span>
+    <span class="d-none d-md-block d-lg-none">md</span>
+    <span class="d-none d-lg-block d-xl-none">lg</span>
+    <span class="d-none d-xl-block">xl</span>
+  </p>
+
   <nav class="wsg-nav navbar-nav-scroll">
     <ul class="navbar-nav flex-row">
       <li class="nav-item">
         <a class="wsg-nav-link nav-link {% if page.layout == "home" %}active{% endif %}" href="{{ site.baseurl }}/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="wsg-nav-link nav-link {% if page.layout == "docs" %}active{% endif %}" href="{{ site.baseurl }}/docs/grocery/circulars/circular-items">Documentation</a>
+        <a class="wsg-nav-link nav-link {% if page.layout == "docs" %}active{% endif %}" href="{{ site.baseurl }}/docs/grocery/circulars/circular-items">
+        <span class="d-none d-sm-inline">Documentation</span>
+        <span class="d-sm-none">Docs</span>
+        </a>
       </li>
       <!--<li class="nav-item">-->
         <!--<a class="wsg-nav-link nav-link {% if page.layout == "Themes" %}active{% endif %}" href="{{ site.baseurl }}/themes/introduction">Themes</a>-->
       <!--</li>-->
       <li class="nav-item">
-        <a class="wsg-nav-link nav-link {% if page.layout == "develop" %}active{% endif %}" href="{{ site.baseurl }}/develop/introduction">Develop</a>
+        <a class="wsg-nav-link nav-link {% if page.layout == "develop" %}active{% endif %}" href="{{ site.baseurl }}/develop/introduction">
+          <span class="d-none d-sm-inline">Develop</span>
+          <span class="d-sm-none">Dev</span>
+        </a>
       </li>
       <li class="nav-item">
         <a class="wsg-nav-link nav-link" href="https://github.com/Webstop/webstop-wiki" target="_blank">Wiki</a>
