@@ -13,18 +13,28 @@
   .site-content {
     background-color: $theme-bg;
   }
+
+  .site-footer {
+    position: relative; // so debug toggle can use absolute positioning relative to the footer
+  }
+
   .site-debug {
     display: none;
   }
   .site-debug-toggle {
-    position: fixed;
-    bottom: 0;
-    left: 60px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     opacity: 0.4;
+    color: #000;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px;
     background: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: -5px;
+  }
+  .site-debug-toggle:hover {
+    opacity: 0.2;
+    background: $webstop-blue;
   }
 
   .site-aside {

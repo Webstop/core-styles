@@ -6,7 +6,6 @@
 
   .circular-item-body {
     padding: 5px;
-    padding-bottom: 68px;
   }
 
   .circular-item-heading,
@@ -39,8 +38,8 @@
   .circular-item-sale-dates,
   .circular-item-more-info,
   .circular-item-recipe {
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
 
   .circular-item-recipe {
@@ -49,16 +48,10 @@
     text-align: left;
   }
 
-  .shopping-list-item {
-    position: absolute;
-    bottom: 15px;
-    right: 20px;
-  }
-
+  // iPad & Desktop
   @include media-breakpoint-up(sm) {
     .circular-item-body {
       padding: 10px;
-      padding-bottom: 68px;
     }
 
     .circular-item-title {
@@ -78,29 +71,27 @@
       font-size: 1rem;
     }
 
-    //.circular-item-heading,
-    //.circular-item-title,
-    //.price,
-    //.circular-item-description,
-    //.circular-item-details,
-    //.circular-item-expiration-date,
-    //.circular-item-sale-dates,
-    //.circular-item-more-info,
-    //.circular-item-recipe {
-    //  margin-top: 4px;
-    //  margin-bottom: 4px;
-    //}
+    .circular-item-heading,
+    .circular-item-title,
+    .price,
+    .circular-item-description,
+    .circular-item-details,
+    .circular-item-expiration-date,
+    .circular-item-sale-dates,
+    .circular-item-more-info,
+    .circular-item-recipe {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
 
     .circular-item-recipe {
       padding-left: 10px;
       padding-right: 10px;
     }
-
-    .shopping-list-item {
-      position: absolute;
-      bottom: 15px;
-      right: 20px;
+    .shopping-list-item-qty-col {
+      padding-left: 0;
     }
+
   }
 
 }

@@ -1,7 +1,7 @@
     <div class="shopping-list-item">
       <form action="/shopping_list/add/circular_item/[self->id]/qty/" class="shopping-list-item-form">
         <div class="row justify-content-end">
-          <div class="shopping-list-item-qty-col col">
+          <div class="shopping-list-item-qty-col col-12 col-sm">
             <div class="shopping-list-item-qty-group input-group ">
               <div class="input-group-prepend">
                 <span class="shopping-list-item-qty-label input-group-text" id="shopping-list-qty-label-1">Qty</span>
@@ -9,9 +9,12 @@
               <input type="text" name="Qty" value="12" maxlength="2" class="shopping-list-item-qty form-control"  id="shopping-list-item-qty-1" aria-label="Username" aria-describedby="shopping-list-qty-label-1">
             </div>
           </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary">
-              <i class="icon-plus-circle-solid"></i><span class="sr-only">Add to</span> Shopping List
+          <div class="shopping-list-item-btn-col col-12 col-sm-auto">
+            <button type="submit" class="shopping-list-item-btn btn btn-primary btn-block btn-sm-inline-block">
+              <i class="icon-plus-circle-solid"></i>
+              <span class="d-inline d-sm-none">Add to</span>
+              <span class="d-none d-sm-inline"><span class="sr-only">Add to </span>Shopping</span>
+              List
             </button>
           </div>
         </div>

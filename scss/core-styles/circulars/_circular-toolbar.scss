@@ -1,11 +1,7 @@
 @charset "utf-8";
 
-.circular-navigation {
-  .circular-navigation-circular {
-    margin-right: - $spacer;
-  }
-  .circular-navigation-title,
-  .circular-navigation-dates {
-    font-size: 0.75rem; // 12/16 = 0.75
+.circular-toolbar {
+  .circular-toolbar-page-title {
+    line-height: 1rem;
   }
 }

@@ -2,5 +2,13 @@
 
 .circular-item-banner {
   max-width: none;
-  min-width: none;
+  //min-width: none;
+  //margin-right: 5px;
+
+  // iPad & Desktop
+  @include media-breakpoint-up(sm) {
+    &.card {
+      margin-right: 0;
+    }
+  }
 }

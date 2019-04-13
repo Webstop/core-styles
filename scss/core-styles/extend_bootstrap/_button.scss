@@ -6,3 +6,58 @@
   line-height: 1.5;
   border-radius: 3px;
 }
+
+// responsive block formatting
+.btn-sm-block {
+  @include media-breakpoint-up(sm) {
+    display: block;
+    width: 100%;
+  }
+}
+.btn-md-block {
+  @include media-breakpoint-up(md) {
+    display: block;
+    width: 100%;
+  }
+}
+.btn-lg-block {
+  @include media-breakpoint-up(lg) {
+    display: block;
+    width: 100%;
+  }
+}
+.btn-xl-block {
+  @include media-breakpoint-up(xl) {
+    display: block;
+    width: 100%;
+  }
+}
+// responsive inline-block formatting
+.btn-inline-block {
+  display: inline-block;
+  width: auto;
+}
+.btn-sm-inline-block {
+  @include media-breakpoint-up(sm) {
+    display: inline-block;
+    width: auto;
+  }
+}
+.btn-md-inline-block {
+  @include media-breakpoint-up(md) {
+    display: inline-block;
+    width: auto;
+  }
+}
+.btn-lg-inline-block {
+  @include media-breakpoint-up(lg) {
+    display: inline-block;
+    width: auto;
+  }
+}
+.btn-xl-inline-block {
+  @include media-breakpoint-up(xl) {
+    display: inline-block;
+    width: auto;
+  }
+}
