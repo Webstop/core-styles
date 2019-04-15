@@ -4,9 +4,8 @@
 .circular-item-thumbnail {
 
   .circular-item-body {
-    padding: 10px;
-    padding-left: 15px;
-    padding-bottom: 68px;
+    padding: 5px;
+    //padding-left: 15px;
   }
 
   .circular-item-heading,
@@ -15,11 +14,13 @@
   .circular-item-expiration-date,
   .circular-item-sale-dates,
   .circular-item-more-info {
-    font-size: 0.75rem; // 12/16 = 0.75
+    text-align: center;
+    font-size: 0.625rem; // 10/16=0.625
   }
 
   .circular-item-title {
-    font-size: 1.5rem; // 24/16 = 1.5
+    text-align: center;
+    font-size: 1.125rem; // 18/16=1.125
   }
 
   .circular-item-non-digital-coupon {
@@ -34,13 +35,10 @@
     padding: 0;
     padding-top: 2px;
     margin: 0;
+    margin-left: auto;
+    margin-right: auto;
     min-height: 1px;
-  }
-
-  .circular-item-images {
-    padding-right: 15px;
-    float: left;
-    width: 100px;
+    width: 85px;
   }
 
   .circular-item-image {
@@ -54,9 +52,6 @@
     margin-bottom: 0;
   }
 
-  /* Makes the 2nd column to sit next to the first without wrapping under. */
-  .circular-item-text-col {overflow: hidden;}
-
   .circular-item-heading,
   .circular-item-title,
   .price,
@@ -69,30 +64,67 @@
     margin-top: 2px;
     margin-bottom: 2px;
   }
-
-  .circular-item-bottom-row {
-    clear: both;
-  }
-
-  .circular-item-details {
-    padding-left: 100px;
-  }
-
   .price {
-    .price-prefix {
-      min-width: 100px;
-      display: inline-block;
-    }
+    text-align: center;
   }
+
+
 
   .circular-item-recipe {
-    clear: left;
+    font-size: 0.75rem; // 12/16=0.75
   }
 
-  .shopping-list-item {
-    position: absolute;
-    bottom: 15px;
-    right: 20px;
+  // iPad & Desktop
+  @include media-breakpoint-up(sm) {
+    .circular-item-body {
+      padding: 10px;
+      padding-left: 15px;
+    }
+
+    .circular-item-heading,
+    .circular-item-description,
+    .circular-item-details,
+    .circular-item-expiration-date,
+    .circular-item-sale-dates,
+    .circular-item-more-info {
+      text-align: left;
+      font-size: 0.75rem; // 12/16 = 0.75
+    }
+
+    .circular-item-title {
+      font-size: 1.5rem; // 24/16 = 1.5
+    }
+
+    .circular-item-images {
+      padding-right: 15px;
+      float: left;
+      width: 100px;
+    }
+
+    /* Makes the 2nd column to sit next to the first without wrapping under. */
+    .circular-item-text-col {overflow: hidden;}
+
+    .circular-item-bottom-row {
+      clear: both;
+    }
+
+    .circular-item-details {
+      padding-left: 100px;
+    }
+
+    .price {
+      text-align: left;
+      .price-prefix {
+        min-width: 100px;
+        display: inline-block;
+      }
+    }
+
+    .circular-item-recipe {
+      font-size: 1rem;
+      clear: left;
+    }
+
   }
 
 }

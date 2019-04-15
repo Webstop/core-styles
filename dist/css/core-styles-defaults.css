@@ -11237,14 +11237,8 @@ select.custom-select {
 }
 
 /* circular-item: an individual ad item */
-.circular-item-thumbnail {
-  /* Makes the 2nd column to sit next to the first without wrapping under. */
-}
-
 .circular-item-thumbnail .circular-item-body {
-  padding: 10px;
-  padding-left: 15px;
-  padding-bottom: 68px;
+  padding: 5px;
 }
 
 .circular-item-thumbnail .circular-item-heading,
@@ -11253,11 +11247,13 @@ select.custom-select {
 .circular-item-thumbnail .circular-item-expiration-date,
 .circular-item-thumbnail .circular-item-sale-dates,
 .circular-item-thumbnail .circular-item-more-info {
-  font-size: 0.75rem;
+  text-align: center;
+  font-size: 0.625rem;
 }
 
 .circular-item-thumbnail .circular-item-title {
-  font-size: 1.5rem;
+  text-align: center;
+  font-size: 1.125rem;
 }
 
 .circular-item-thumbnail .circular-item-non-digital-coupon {
@@ -11272,13 +11268,10 @@ select.custom-select {
   padding: 0;
   padding-top: 2px;
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 1px;
-}
-
-.circular-item-thumbnail .circular-item-images {
-  padding-right: 15px;
-  float: left;
-  width: 100px;
+  width: 85px;
 }
 
 .circular-item-thumbnail .circular-item-image {
@@ -11290,10 +11283,6 @@ select.custom-select {
 
 .circular-item-thumbnail .circular-item-info-trigger {
   margin-bottom: 0;
-}
-
-.circular-item-thumbnail .circular-item-text-col {
-  overflow: hidden;
 }
 
 .circular-item-thumbnail .circular-item-heading,
@@ -11309,27 +11298,59 @@ select.custom-select {
   margin-bottom: 2px;
 }
 
-.circular-item-thumbnail .circular-item-bottom-row {
-  clear: both;
-}
-
-.circular-item-thumbnail .circular-item-details {
-  padding-left: 100px;
-}
-
-.circular-item-thumbnail .price .price-prefix {
-  min-width: 100px;
-  display: inline-block;
+.circular-item-thumbnail .price {
+  text-align: center;
 }
 
 .circular-item-thumbnail .circular-item-recipe {
-  clear: left;
+  font-size: 0.75rem;
 }
 
-.circular-item-thumbnail .shopping-list-item {
-  position: absolute;
-  bottom: 15px;
-  right: 20px;
+@media (min-width: 576px) {
+  .circular-item-thumbnail {
+    /* Makes the 2nd column to sit next to the first without wrapping under. */
+  }
+  .circular-item-thumbnail .circular-item-body {
+    padding: 10px;
+    padding-left: 15px;
+  }
+  .circular-item-thumbnail .circular-item-heading,
+  .circular-item-thumbnail .circular-item-description,
+  .circular-item-thumbnail .circular-item-details,
+  .circular-item-thumbnail .circular-item-expiration-date,
+  .circular-item-thumbnail .circular-item-sale-dates,
+  .circular-item-thumbnail .circular-item-more-info {
+    text-align: left;
+    font-size: 0.75rem;
+  }
+  .circular-item-thumbnail .circular-item-title {
+    font-size: 1.5rem;
+  }
+  .circular-item-thumbnail .circular-item-images {
+    padding-right: 15px;
+    float: left;
+    width: 100px;
+  }
+  .circular-item-thumbnail .circular-item-text-col {
+    overflow: hidden;
+  }
+  .circular-item-thumbnail .circular-item-bottom-row {
+    clear: both;
+  }
+  .circular-item-thumbnail .circular-item-details {
+    padding-left: 100px;
+  }
+  .circular-item-thumbnail .price {
+    text-align: left;
+  }
+  .circular-item-thumbnail .price .price-prefix {
+    min-width: 100px;
+    display: inline-block;
+  }
+  .circular-item-thumbnail .circular-item-recipe {
+    font-size: 1rem;
+    clear: left;
+  }
 }
 
 /* circular-item: an individual ad item */
