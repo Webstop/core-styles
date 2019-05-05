@@ -10,12 +10,19 @@
     //overflow: hidden;
   }
 
+  .site-header {
+    overflow: auto;
+  }
+
   .site-content {
     background-color: $theme-bg;
+    overflow: auto;
+    padding-bottom: $spacer;
   }
 
   .site-footer {
     position: relative; // so debug toggle can use absolute positioning relative to the footer
+    overflow: auto;
   }
 
   .site-debug {
