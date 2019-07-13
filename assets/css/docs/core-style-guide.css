@@ -10406,19 +10406,13 @@ select.custom-select {
   padding: 0;
 }
 
-.site .site-header {
-  overflow: auto;
-}
-
 .site .site-content {
   background-color: #f6f5f0;
-  overflow: auto;
   padding-bottom: 1rem;
 }
 
 .site .site-footer {
   position: relative;
-  overflow: auto;
 }
 
 .site .site-debug {
