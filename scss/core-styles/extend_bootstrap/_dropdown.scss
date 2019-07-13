@@ -87,5 +87,8 @@
   content: "\e601";
 }
 
-
+// Dropdown menu should rest on top of the toolbar
+.dropdown-menu {
+  z-index: 2000;
+}
 

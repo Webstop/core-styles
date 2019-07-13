@@ -10913,6 +10913,10 @@ a.text-dark:hover, a.text-dark:focus {
   content: "\e601";
 }
 
+.dropdown-menu {
+  z-index: 2000;
+}
+
 select.form-control,
 select.custom-select {
   -webkit-appearance: none;
@@ -10958,12 +10962,19 @@ select.custom-select {
   padding: 0;
 }
 
+.site .site-header {
+  overflow: auto;
+}
+
 .site .site-content {
   background-color: #f6f5f0;
+  overflow: auto;
+  padding-bottom: 1rem;
 }
 
 .site .site-footer {
   position: relative;
+  overflow: auto;
 }
 
 .site .site-debug {
