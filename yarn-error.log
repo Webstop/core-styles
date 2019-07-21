@@ -8,7 +8,7 @@ Yarn version:
   1.15.2
 
 Node version: 
-  8.16.0
+  11.15.0
 
 Platform: 
   linux x64
@@ -18,28 +18,27 @@ Trace:
       at ResponseError.ExtendableBuiltin (/opt/yarn-v1.15.2/lib/cli.js:696:66)
       at new ResponseError (/opt/yarn-v1.15.2/lib/cli.js:802:124)
       at Request.<anonymous> (/opt/yarn-v1.15.2/lib/cli.js:66128:16)
-      at emitOne (events.js:116:13)
-      at Request.emit (events.js:211:7)
+      at Request.emit (events.js:193:13)
       at Request.module.exports.Request.onRequestResponse (/opt/yarn-v1.15.2/lib/cli.js:130418:10)
-      at emitOne (events.js:116:13)
-      at ClientRequest.emit (events.js:211:7)
-      at HTTPParser.parserOnIncomingClient (_http_client.js:552:21)
-      at HTTPParser.parserOnHeadersComplete (_http_common.js:119:17)
+      at ClientRequest.emit (events.js:198:15)
+      at HTTPParser.parserOnIncomingClient [as onIncoming] (_http_client.js:560:23)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:113:17)
+      at TLSSocket.socketOnData (_http_client.js:447:22)
+      at TLSSocket.emit (events.js:193:13)
 
 npm manifest: 
   {
     "name": "core-styles",
-    "version": "0.5.8",
+    "version": "0.5.11",
     "description": "The definitive source of styling guidelines for grocery website features.",
     "private": true,
     "author": "Greg Hemphill",
     "license": "private",
     "main": "dist/assets/css/core-styles-defaults.css",
     "dependencies": {
-      "bootstrap": "^4.1.3",
+      "bootstrap": "^v4.3.1",
       "core-icons": "https://github.com/Webstop/core-icons.git#v0.3.3",
-      "jquery": "^3.3.0",
-      "popper.js": "^1.14.3",
+      "jquery": "^3.4.1",
       "js-cookie": "^2.2.0"
     },
     "scripts": {
