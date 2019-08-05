@@ -11006,6 +11006,16 @@ select.custom-select {
   line-height: 1rem;
 }
 
+.circular-toolbar .search-from-search-text {
+  max-width: 125px;
+}
+
+@media (min-width: 1200px) {
+  .circular-toolbar .search-from-search-text {
+    max-width: 200px;
+  }
+}
+
 .shopping-list-power-bar {
   width: 250px;
   overflow: hidden;

@@ -1,5 +1,5 @@
 "use strict";
-// Adds data attribute support to components that are missing it from Bootstrap.
+// Adds default data attribute support to components that are missing it from Bootstrap.
 
 $(function() {
   $('[data-toggle="tooltip"]').tooltip();

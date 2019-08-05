@@ -4,4 +4,12 @@
   .circular-toolbar-page-title {
     line-height: 1rem;
   }
+
+  .search-from-search-text {
+    max-width: 125px;
+    @include media-breakpoint-up(xl) {
+      max-width: 200px;
+    }
+  }
+
 }
