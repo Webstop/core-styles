@@ -17,6 +17,10 @@
     font-size: 0.625rem; // 10/16=0.625
   }
 
+  .circular-item-image {
+    min-height: 0.01px; // fixes height on IE11
+  }
+
   .circular-item-recipe {
     font-size: 0.75rem; // 12/16=0.75
   }

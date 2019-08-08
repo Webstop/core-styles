@@ -10620,6 +10620,7 @@ select.custom-select {
 
 .circular-item-banner {
   max-width: none;
+  display: block;
 }
 
 @media (min-width: 576px) {
@@ -10814,6 +10815,10 @@ select.custom-select {
 .circular-item-standard .circular-item-sale-dates,
 .circular-item-standard .circular-item-more-info {
   font-size: 0.625rem;
+}
+
+.circular-item-standard .circular-item-image {
+  min-height: 0.01px;
 }
 
 .circular-item-standard .circular-item-recipe {

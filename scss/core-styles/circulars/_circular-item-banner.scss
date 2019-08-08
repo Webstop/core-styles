@@ -2,8 +2,8 @@
 
 .circular-item-banner {
   max-width: none;
-  //min-width: none;
-  //margin-right: 5px;
+  display: block; // fixes height on IE11
+
 
   // iPad & Desktop
   @include media-breakpoint-up(sm) {
