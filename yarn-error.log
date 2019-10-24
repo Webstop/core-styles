@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /opt/yarn-v1.15.2/bin/yarn.js install
+  /usr/local/bin/node /opt/yarn-v1.15.2/bin/yarn.js install --modules-folder node_modules
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
