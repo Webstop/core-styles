@@ -7,6 +7,8 @@ toc: true
 source: Webstop
 ---
 
+{% include environment_based_variables.html %}
+
 The `site-model` is included on every page when you used the code found on the [site layout](/docs/layout/site/) page.
 
 ## Example
