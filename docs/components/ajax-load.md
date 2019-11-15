@@ -7,7 +7,7 @@ toc: true
 source: Webstop
 ---
 
-
+{% include environment_based_variables.html %}
 
 ## Examples
 

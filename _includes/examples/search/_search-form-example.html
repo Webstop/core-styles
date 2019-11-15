@@ -1,4 +1,4 @@
-<form class="search-form" action="http://localhost:4567/search_results" method="post" data-search="live" data-target="#search-results" data-hide=".search-hidden">
+<form class="search-form" action="{{ sinatra_host }}/search_results" method="post" data-search="live" data-target="#search-results" data-hide=".search-hidden">
   <div class="input-group">
     <input class="search-from-search-text form-control" type="text" name="search" placeholder="Search" aria-label="Enter text to search for.">
     <a href="#" class="search-form-clear icon-cancel-circle-solid" aria-label="Clear Search"></a>

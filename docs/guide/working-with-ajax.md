@@ -36,7 +36,7 @@ make requests to either one at localhost simply by changing the port. We run our
 and our Sinatra app on port `4567`.
 
 - Jekyll server: [`http://localhost:4000`](http://localhost:4000)
-- Sinatra server: [`http://localhost:4567/alert_success`](http://localhost:4567/alert_success)
+- Sinatra server: [`{{ sinatra_host }}/alert_success`]({{ sinatra_host }}/alert_success)
 
 
 ### File Structure
@@ -68,7 +68,7 @@ get '/foo' do
 end
 ```
 
-This will respond to any `get` request coming into `http://localhost:4567/foo`, and will return the 
+This will respond to any `get` request coming into `{{ sinatra_host }}/foo`, and will return the 
 `sinatra/views/foo.erb` file as specified by the `erb` tag on the last line. And it's that simple. The contents of the 
 view file don't need to do any anything fancy, just represent what a result would look like. 
 
