@@ -1,6 +1,8 @@
 {% if jekyll.environment == "production" %}
-  {% assign sinatra_host = 'http://localhost:4567' %}
+  {% assign jekyll_host  = 'http://core-styles.webstop.com' %}
+  {% assign sinatra_host = 'http://core-styles.webstop.com:4567' %}
 {% else %}
+  {% assign jekyll_host  = 'http://localhost:4000' %}
   {% assign sinatra_host = 'http://localhost:4567' %}
 {% endif %}
 

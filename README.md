@@ -10,7 +10,7 @@ To run the development server:
 ./serve
 ```
 
-Then visit [`http://localhost:4000`](http://localhost:4000) in your web browser.
+Then visit [`{{ jekyll_host }}`]({{ jekyll_host }}) in your web browser.
 
 
 To quit the server:
@@ -46,7 +46,7 @@ From the root directory of the project, run:
 ./serve
 ```
 
-Then visit [`http://localhost:4000`](http://localhost:4000) in your web browser.
+Then visit [`{{ jekyll_host }}`]({{ jekyll_host }}) in your web browser.
 
 The web Jekyll server will monitor for changes to your Markdown or HTML files and recompile the 
 site every time you make a change.

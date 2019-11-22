@@ -35,7 +35,7 @@ How do we get both a Sinatra app and a Jekyll app working together? We run each 
 make requests to either one at localhost simply by changing the port. We run our Jekyll development app on port `4000`, 
 and our Sinatra app on port `4567`.
 
-- Jekyll server: [`http://localhost:4000`](http://localhost:4000)
+- Jekyll server: [`{{ jekyll_host }}`]({{ jekyll_host }})
 - Sinatra server: [`{{ sinatra_host }}/alert_success`]({{ sinatra_host }}/alert_success)
 
 

@@ -2,9 +2,9 @@ version: '2'
 services:
   jekyll:
     build: .
-    command: jekyll serve --incremental
+    command: "${JEKYLL_COMMAND}}"
     ports:
-      - "4000:4000"
+      - "${JEKYLL_PORT}:${JEKYLL_PORT}"
     volumes:
       - .:/code
       - bundle:/usr/local/bundle
