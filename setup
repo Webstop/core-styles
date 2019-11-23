@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo ""
+echo "Starting Setup"
+
+if [[ ! -f .env ]]; then
+  echo ""
+  echo "Creating .env from .env_sample"
+  cp -f .env_sample .env
+fi
+
+echo ""
+echo "Setup Finished"
+echo ""

@@ -2,7 +2,7 @@ version: '2'
 services:
   jekyll:
     build: .
-    command: "${JEKYLL_COMMAND}}"
+    command: ${JEKYLL_COMMAND}
     ports:
       - "${JEKYLL_PORT}:${JEKYLL_PORT}"
     volumes:
