@@ -129,6 +129,9 @@
 
 - title: Grocery
   pages:
+    - title: Analytics
+      pages:
+        - title: Tracking
     - title: Circulars
       pages:
         - title: Circular Items

@@ -7,6 +7,8 @@ toc: true
 source: Webstop
 ---
 
+{% include environment_based_variables.html %}
+
 Live search watches a search field and makes AJAX requests as you type.
 
 ## Examples

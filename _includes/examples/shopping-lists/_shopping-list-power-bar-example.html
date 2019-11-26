@@ -12,10 +12,10 @@
       <!-- NOTE: keeping this on one line because any white space in the button text will show up on the rename form -->
       <button class="btn btn-light btn-block dropdown-toggle" type="button" id="shopping-list-power-bar-list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My 10/23/2018 List</button>
       <div class="dropdown-menu shadow-sm" aria-labelledby="shopping-list-power-bar-list">
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Create" data-url="http://localhost:4567/shopping_lists/list/create">New List</a>
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename" data-url="http://localhost:4567/shopping_lists/list/rename">Rename List</a>
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename" data-url="http://localhost:4567/shopping_lists/list/rename_error">Rename (Error Response)</a>
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Delete" data-url="http://localhost:4567/shopping_lists/list/delete">Delete List</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Create" data-url="{{ sinatra_host }}/shopping_lists/list/create">New List</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename" data-url="{{ sinatra_host }}/shopping_lists/list/rename">Rename List</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Rename" data-url="{{ sinatra_host }}/shopping_lists/list/rename_error">Rename (Error Response)</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#shopping-list-modal" data-verb="Delete" data-url="{{ sinatra_host }}/shopping_lists/list/delete">Delete List</a>
         <div class="dropdown-divider"></div>
         <span class="dropdown-item"><strong>My Lists:</strong></span>
         <a class="dropdown-item" href="#">Ivani's Birthday List</a>
