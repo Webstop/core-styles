@@ -170,7 +170,6 @@ In this case the analytics record will record that:
 4. The item tracked was displayed in the context of a `Recipe` model (`data-aye-context="Recipe"`).
 5. The context the item being tracked within has a record id of `10` in the `recipes` database (`data-aye-context-id="10"`).
 
-
 ### Track View Example
 
 By adding the `data-aye-view` attribute our aye.js analytics javascript 
@@ -264,13 +263,4 @@ In this case the analytics record will record that:
 4. The item tracked was displayed in the context of an `Ad` model (`data-aye-context="Ad"`).
 5. The context the item being tracked within has a record id of `1000` in the `ads` database (`data-aye-context-id="1000"`).
 
-<!--
-<div class="alert alert-info" role="alert">
-  <p>
-    TODO: we should enhance the <code>data-aye-submit</code> feature so it allows us to track 
-    data submitted in the form.
-  </p>
-  
-</div>
--->
 
