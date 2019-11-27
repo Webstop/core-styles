@@ -10,5 +10,20 @@ if [[ ! -f .env ]]; then
 fi
 
 echo ""
+echo "Installing Node Modules"
+
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:11' npm install
+
+echo ""
+echo "Building Jekyll & Sinatra Docker Images"
+
+docker-compose build
+
+echo ""
+echo "Building Jekyll Site"
+
+docker-compose run --rm jekyll jekyll build
+
+echo ""
 echo "Setup Finished"
 echo ""

@@ -22,17 +22,16 @@ Ctrl + c
 Setup
 -----
 
-1. Install docker for 
 
 1. Install Docker for Mac.  Click the 'Get Docker for Mac (stable)' link
   on this page: [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/)
 2. Get a copy of the repo. First `cd` to the directory you want to install the project into then 
   run `git clone git@github.com:Webstop/core-styles.git` after the clone completes run `cd core-styles`.
-3. Run `./serve` from the project's root directory. The first time you run this command it 
+3. Run `./setup` from the project's root directory. The first time you run this command it 
   take longer because it will be going out and downloading the Docker VMs and installing all 
-  of the project's Ruby Gems. The whole process should take about 10 minutes. After you're 
-  setup, the `./serve` command should take a few seconds to launch your web server.
+  of the project's Ruby Gems. The whole process should take about 5-10 minutes. 
 
+Now you are setup and can run the `./serve` command described below.
 
 Development
 -----------
