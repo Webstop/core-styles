@@ -12563,4 +12563,14 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
+th > code,
+td > code {
+  white-space: nowrap;
+}
+
+table, .table {
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
 /*# sourceMappingURL=core-style-guide.css.map */
