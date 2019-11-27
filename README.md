@@ -231,7 +231,8 @@ Follow these steps to deploy the Framework.
 3. Commit & Push
   - Do a `git add -A`.
   - then a `git commit -m "some message"`.
-  - then `git push webstop master`. 
+  - then `git push origin master`. 
+  - go to github and make a pull request.
 4. Tag the Release
   - Visit [core-styles releases](https://github.com/Webstop/core-styles/releases) in a web browser.
   - Click the `Draft New Release` button.
