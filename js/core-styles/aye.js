@@ -6,14 +6,14 @@ $(function() {
   let $body = $('body');
   let retailerID  = $body.data('retailer-id');
   let environment = $body.data('environment');
-  let apiHost = '';
+  let apiHost = $body.data('api-host');
 
   if(environment == 'production'){
     apiHost = 'https://api.grocerywebsite.com';
   } else if(environment == 'development'){
     apiHost = 'http://grocery.local:3000';
-  } else if(environment.indexOf('core')===0){
-    apiHost = 'http://grocery.local:3000';
+  // } else if(environment.indexOf('core')===0){
+  //   apiHost = 'http://grocery.local:3000';
   }
 
   ahoy.configure({

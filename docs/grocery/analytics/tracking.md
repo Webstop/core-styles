@@ -263,4 +263,41 @@ In this case the analytics record will record that:
 4. The item tracked was displayed in the context of an `Ad` model (`data-aye-context="Ad"`).
 5. The context the item being tracked within has a record id of `1000` in the `ads` database (`data-aye-context-id="1000"`).
 
+## Installation
 
+Using Aye.js requires a few things be setup on your site template. Specifically some data attributes on the body tag of 
+the web page. Aye uses these variables to craft the URL to submit tracking events to.
+
+| Attribute          | Description |
+|--------------------|-------------|
+| `data-retailer-id` | The record id from the retailer table of the current grocery website. |
+| `data-environment` | This is used to determine what API host to use. Supports `production` (`https://api.grocerywebsite.com`), `development` (`http://grocery.local:3000`), and `test` (`http://grocery.local:3000`). If you need a different environment then you set the `data-api-host` attribute. |
+| `data-api-host`    | If you need to use an environment other than production or local development & testing, you can specify the domain host to use manually with this attribute (e.g. `http://grocery.core1.rails1.webstophq.com`).   |
+
+### Examples
+
+For local development you'd have the following data attributes:
+
+{% highlight html %}
+<body data-retailer-id="767" data-environment="development">
+{% endhighlight %}
+
+For local testing you'd have the following data attributes:
+
+{% highlight html %}
+<body data-retailer-id="767" data-environment="test">
+{% endhighlight %}
+
+For production you'd have the following data attributes:
+
+{% highlight html %}
+<body data-retailer-id="767" data-environment="production">
+{% endhighlight %}
+
+For other environments you can specify the following:
+
+{% highlight html %}
+<body data-retailer-id="767" data-api-host="http://grocery.core1.rails1.webstophq.com">
+{% endhighlight %}
+
+_The example above would be used for the Core1 testing server._
