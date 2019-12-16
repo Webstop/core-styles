@@ -1,27 +1,25 @@
 "use strict";
+
 // Aye
 
 $(function() {
 
-  let $body = $('body');
-  let retailerID  = $body.data('retailer-id');
-  let environment = $body.data('environment');
-  let apiHost = $body.data('api-host');
-
-  if(environment == 'production'){
-    apiHost = 'https://api.grocerywebsite.com';
-  } else if(environment == 'development'){
-    apiHost = 'http://grocery.local:3000';
-  // } else if(environment.indexOf('core')===0){
+  // let $body = $('body');
+  // let retailerID  = $body.data('retailer-id');
+  // let environment = $body.data('environment');
+  // let apiHost = $body.data('api-host');
+  //
+  // if(environment == 'production'){
+  //   apiHost = 'https://api.grocerywebsite.com';
+  // } else if(environment == 'development'){
   //   apiHost = 'http://grocery.local:3000';
-  }
-
-  ahoy.configure({
-    visitParams: {retailer_id: retailerID},
-    visitsUrl: apiHost + "/ahoy/visits",
-    //eventsUrl: "/ahoy/events"
-    eventsUrl: apiHost + "/api/v1/retailers/" + retailerID + "/track/event.json"
-  });
+  // }
+  //
+  // ahoy.configure({
+  //   visitParams: {retailer_id: retailerID},
+  //   visitsUrl: apiHost + "/ahoy/visits",
+  //   eventsUrl: apiHost + "/api/v1/retailers/" + retailerID + "/track/event.json"
+  // });
 
   //ahoy.track('Aye! Loaded!', {app: 1, title: 'aye.js file loaded'});
   //ahoy.track('Aye! Loaded!', {retailer_id: 1234, source: 'In consumer.js file.', app_id: 2, category: 'Consumer', resource: 'Consumer', resource_id: 123})
@@ -38,7 +36,6 @@ $(function() {
 
   // Sends an ahoy track when the user clicks on the element.
   $('[data-aye-click]').on('click', function(){
-    ahoy.track('click triggered!', {app: 1, context: 'Foo', context_id: '1', title: 'foo'});
     let $element = $(this);
     let cargo = ayeCargo(this);
     ahoy.track('click ' + $element.attr('data-aye-click'), cargo);
@@ -83,5 +80,4 @@ $(function() {
   }
 
 });
-
 
