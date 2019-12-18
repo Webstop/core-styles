@@ -11,7 +11,7 @@ source: Webstop
 Aye, analytics provides a convent way to track activity on web and mobile pages. It extends Ahoy 
 analytics with a data attribute interface and a set of special attributes.
 
-tl;dr [skip to examples](#examples)
+> tl;dr [skip to examples](#examples)
 
 ## Data Attributes
 
@@ -24,7 +24,7 @@ and Rails helper methods for tracking as well, but those are beyond the scope of
 
 ### Actions
 
-We provide three base types of tracking actions: 
+We provide three base types of tracking actions. The value is used to populate the name field in our analytics database.
 
 | Action Attribute               | Description |
 |--------------------------------|-------------|
@@ -32,8 +32,34 @@ We provide three base types of tracking actions:
 | Track Click `data-aye-click`   | Applying the `data-aye-click` attribute to an HTML element will record a record when the consumer clicks or taps the HTML element. See the [Track Click Example](#track-click-example) for usage details. |
 | Track Submit `data-aye-submit` | Applying the `data-aye-submit` attribute to an HTML form element will record a record when the consumer submits the form. See the [Track Submit Example](#track-submit-example) for usage details. |
 
-These tracking actions don't require a value to trigger the tracking action. Any value set on an 
-action attribute will be ignored.
+
+#### Action Names
+
+
+These tracking action attributes require a value to populate the event record's name field. The value submitted to the API will combine the name of 
+the action with the value submitted. The following examples illustrate how the event name setting works.
+
+##### Action Name Examples
+
+The following view action will record `view coupon` in the name field of the events database table:
+
+{% highlight html %}
+<div data-aye-view="coupon">...</div>
+{% endhighlight %}
+
+The following click action will record `click coupon` in the name field of the events database table:
+
+{% highlight html %}
+<a href="/coupon" data-aye-click="coupon">...</a>
+{% endhighlight %}
+
+The following submit action will record `submit coupon` in the name field of the events database table:
+
+{% highlight html %}
+<form data-aye-submit="coupon">...</form>
+{% endhighlight %}
+
+
 
 ### Attributes
 
@@ -41,7 +67,7 @@ The following optional attributes provide data to the tracking API. _Try to prov
 
 | Attribute                 | Description |
 |---------------------------|-------------|
-| `data-aye-app`            | The [product ID](#product-id-list) of the current app (a.k.a. module). See the [product ID list](#product-id-list) section below. |
+| `data-aye-app-id`         | The [product ID](#product-id-list) of the current app (a.k.a. module). See the [product ID list](#product-id-list) section below. |
 | `data-aye-resource`       | The Rails model name of the item being tracked. |
 | `data-aye-resource-id`    | The database record ID of the resource being tracked. |
 | `data-aye-resource-label` | A note field about the resource. |
@@ -56,12 +82,12 @@ The following optional attributes provide data to the tracking API. _Try to prov
 
 ## Data Lists
 
-Below you'll find the value lists for the `data-aye-app` attribute and the `data-aye-group` attribute.
+Below you'll find the value lists for the `data-aye-app-id` attribute and the `data-aye-group` attribute.
 
 
 ### Product ID List
 
-These values are used by the `data-aye-app` attribute. The following values match those found 
+These values are used by the `data-aye-app-id` attribute. The following values match those found 
 in core-rails `app` database. You can find the full list on the 
 [core-admin apps page](https://admin.grocerywebsite.com/apps).  
 
@@ -148,8 +174,8 @@ the consumer clicks the element.
 
 {% capture example %}
 <button class="btn btn-primary" 
-  data-aye-click 
-  data-aye-app="8" 
+  data-aye-click="add recipe ingredient" 
+  data-aye-app-id="8" 
   data-aye-resource="RecipeIngredient" 
   data-aye-resource-id="120" 
   data-aye-context="Recipe" 
@@ -164,11 +190,12 @@ We augment the analytics record with additional data by adding more `data-aye-*`
 
 In this case the analytics record will record that:
 
-1. The consumer was using our `Recipe` product (`data-aye-app="8"`).
+1. The consumer was using our `Recipe` product (`data-aye-app-id="8"`).
 2. The item tracked came from the `RecipeIngredient` model (`data-aye-resource="RecipeIngredient"`).
 3. The item tracked has a record id of `120` in the `recipe_ingredients` database (`data-aye-resource-id="120"`).
 4. The item tracked was displayed in the context of a `Recipe` model (`data-aye-context="Recipe"`).
 5. The context the item being tracked within has a record id of `10` in the `recipes` database (`data-aye-context-id="10"`).
+6. The item tracked will have an event name of `click add recipe ingredient`.
 
 ### Track View Example
 
@@ -178,8 +205,8 @@ the consumer visits a web page containing the element.
 
 {% capture example %}
 <img src="/assets/images/aye-analytics/7233_Recipe_SIMG.jpg" style="max-width: 325px;"
-  data-aye-view 
-  data-aye-app="1" 
+  data-aye-view="recipe"  
+  data-aye-app-id="1" 
   data-aye-resource="AdItem" 
   data-aye-resource-id="1000" 
   data-aye-resource-label="Recipe: Silly Muffin" 
@@ -197,7 +224,7 @@ We augment the analytics record with additional data by adding more `data-aye-*`
 
 In this case the analytics record will record that:
 
-1. The consumer was using our `Circular` product (`data-aye-app="1"`).
+1. The consumer was using our `Circular` product (`data-aye-app-id="1"`).
 2. The item tracked came from the `AdItem` model (`data-aye-resource="AdItem"`).
 3. The item tracked has a record id of `1000` in the `ad_item` database (`data-aye-resource-id="1000"`).
 4. The item tracked was displayed in the context of an `Ad` model (`data-aye-context="Ads"`).
@@ -206,6 +233,7 @@ In this case the analytics record will record that:
 7. The event record will have the custom property `recipe_id` recorded with a value of `23517` (`data-aye-property-recipe-id="23517"`).
 8. The event record will have the custom property `recipe_number` recorded with a value of `7233` (`data-aye-property-recipe-number="7233"`).
 9. The event record will have the custom property `recipe_title` recorded with a value of `Silly Muffin` (`data-aye-property-recipe-title="Silly Muffin"`).
+10. The item tracked will have an event name of `view recipe`.
 
 _That's **a lot** of useful information to build analytics reports and dashboards off of!_
 
@@ -236,8 +264,8 @@ the consumer submits the form.
 
 {% capture example %}
 <form
-  data-aye-submit 
-  data-aye-app="6"
+  data-aye-submit="newsletter sign-up" 
+  data-aye-app-id="6"
   data-aye-resource="GroceryNewsletter" 
   data-aye-resource-id="20" 
   data-aye-context="Ads" 
@@ -257,13 +285,14 @@ We augment the analytics record with additional data by adding more `data-aye-*`
 
 In this case the analytics record will record that:
 
-1. The consumer was using our `Grocery Newsletters` product (`data-aye-app="6"`).
+1. The consumer was using our `Grocery Newsletters` product (`data-aye-app-id="6"`).
 2. The item tracked came from the `GroceryNewsletter` model (`data-aye-resource="GroceryNewsletters"`).
 3. The item tracked has a record id of `20` in the `grocery_newsletters` database (`data-aye-resource-id="20"`).
 4. The item tracked was displayed in the context of an `Ad` model (`data-aye-context="Ad"`).
 5. The context the item being tracked within has a record id of `1000` in the `ads` database (`data-aye-context-id="1000"`).
+6. The item tracked will have an event name of `submit newsletter sign-up`.
 
-## Installation
+## Setup & Installation
 
 Using Aye.js requires a few things be setup on your site template. Specifically some data attributes on the body tag of 
 the web page. Aye uses these variables to craft the URL to submit tracking events to.
