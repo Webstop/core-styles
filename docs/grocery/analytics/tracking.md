@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Aye, Analytics Tracking 
-description: Easy way to track elements.
+description: The easy way to gather analytics about specific page elements.
 group: grocery
 toc: true
 source: Webstop
@@ -11,7 +11,7 @@ source: Webstop
 Aye, analytics provides a convent way to track activity on web and mobile pages. It extends Ahoy 
 analytics with a data attribute interface and a set of special attributes.
 
-> tl;dr [skip to examples](#examples)
+tl;dr [skip to examples](#examples)
 
 ## Data Attributes
 
@@ -294,8 +294,19 @@ In this case the analytics record will record that:
 
 ## Setup & Installation
 
-Using Aye.js requires a few things be setup on your site template. Specifically some data attributes on the body tag of 
-the web page. Aye uses these variables to craft the URL to submit tracking events to.
+You might have noticed that Aye has zero CSS, it's all about the JavaScript interface. There are three JavaScript files 
+we need to install in the correct order for this to work.
+
+#### JavaScript Files <small class="text-muted">(listed in order)</small>: 
+
+1. `/dist/js/core-styles/ahoy-config.js`
+2. `/dist/js/ahoy/ahoy.js`
+3. `/dist/js/core-styles/aye.js`
+
+---
+
+Using Aye.js requires a few things be setup on your site template. Specifically, some data attributes on the body tag of 
+the web page. Aye uses these data attributes to craft the URL used to submit tracking events.
 
 | Attribute          | Description |
 |--------------------|-------------|
@@ -305,28 +316,28 @@ the web page. Aye uses these variables to craft the URL to submit tracking event
 
 ### Examples
 
-For local development you'd have the following data attributes:
+For **local development** you'd have the following data attributes:
 
 {% highlight html %}
 <body data-retailer-id="767" data-environment="development">
 {% endhighlight %}
 
-For local testing you'd have the following data attributes:
+For **local testing** you'd have the following data attributes:
 
 {% highlight html %}
 <body data-retailer-id="767" data-environment="test">
 {% endhighlight %}
 
-For production you'd have the following data attributes:
+For **production** you'd have the following data attributes:
 
 {% highlight html %}
 <body data-retailer-id="767" data-environment="production">
 {% endhighlight %}
 
-For other environments you can specify the following:
+For **other environments** you can specify the following:
 
 {% highlight html %}
 <body data-retailer-id="767" data-api-host="http://grocery.core1.rails1.webstophq.com">
 {% endhighlight %}
 
-_The example above would be used for the Core1 testing server._
+_The example above would be used for Webstop's Core 1 testing server._
