@@ -1,5 +1,6 @@
 // Theming & Branding variables
-$theme-primary: #d9d6c1 !default;
+$theme-primary: $primary !default;
+//$theme-primary: #d9d6c1 !default;
 $theme-bg: lighten($theme-primary, 15%) !default;
 $theme-active-bg: lighten($theme-primary, 7.5%) !default;
 $body-bg:  $theme-bg !default;

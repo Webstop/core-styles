@@ -75,6 +75,8 @@
     - title: Carousel
       path:  bootstrap/4.1/components/carousel
 
+    - title: Checkbox Selector
+
     - title: Collapse
       path:  bootstrap/4.1/components/collapse
 
