@@ -46,3 +46,115 @@ toc: false
   </div>
 </div>
 
+<div class="card mt-3">
+  <h4 class="card-header">Custom Track Click <small class="text-muted">Use the form below to set the tracking attributes used on the button to the right.</small></h4>
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <form src="#">
+          <div class="form-group">
+            <label for="title">Event Title</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Click</span>
+              </div>
+              <input type="text" class="form-control" id="title" data-name="data-aye-click" value="add coupon">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="context">Product (App)</label>
+            <select class="form-control" id="app-id" data-name="data-aye-app-id">
+              <option value="">None</option>
+              <option value="1">circulars</option>
+              <option value="2">consumer accounts</option>
+              <option value="3">contact us</option>
+              <option value="5">coupons</option>
+              <option value="6">coupons.com</option>
+              <option value="11">donations</option>
+              <option value="6">grocery newsletters</option>
+              <option value="7">PDF circulars</option>
+              <option value="8">recipes</option>
+              <option value="9">shopping lists</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="resource">Resource</label>
+                <input class="form-control" id="resource" data-name="data-aye-resource" type="text" value="">
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <label for="resource-id">Resource ID</label>
+                <input class="form-control" id="resource-id" data-name="data-aye-resource-id" type="text" value="">
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="context">Context</label>
+                <input class="form-control" id="context" data-name="data-aye-context" type="text" value="">
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="form-group">
+                <label for="context-id">Context ID</label>
+                <input class="form-control" id="context-id" data-name="data-aye-context-id" type="text" value="">
+              </div>
+            </div>
+          </div>
+          <div class="text-right">
+            <button type="button" id="apply-button" class="btn btn-primary">Apply to Button</button>
+          </div>
+
+        </form>
+      </div>
+      <div class="col">
+        <button type="button" data-aye-app-id="1" data-aye-click="add coupon" data-aye-context-id="" data-aye-context="" data-aye-resource-id="" data-aye-resource="" href="#" class="custom-tracking btn btn-primary btn-lg mb-3">
+          Track Click <span class="custom-name text-capitalize">add coupon</span>
+        </button>
+        <p>
+          The button above will use the values in the form to the left. Be sure to click the `Apply to Button` after
+          making changes to the form.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#apply-button').click(function(event){
+      event.preventDefault();
+      console.log('Apply Clicked! #7');
+
+      let title = $('#title').val();
+      let appId = $('#app-id').val();
+      let resource = $('#resource').val();
+      let resourceId = $('#resource-id').val();
+      let context = $('#context').val();
+      let contextId = $('#context-id').val();
+
+      console.log('title: ' + title);
+      console.log('appId: ' + appId);
+      console.log('resource: ' + resource);
+      console.log('resourceId: ' + resourceId);
+      console.log('context: ' + context);
+      console.log('contextId: ' + contextId);
+
+      let $button = $('.custom-tracking');
+
+      $button.attr('data-aye-click', title);
+      $button.find('.custom-name').text(title);
+      $button.attr('data-aye-app-id', appId);
+      $button.attr('data-aye-resource', resource);
+      $button.attr('data-aye-resource-id', resourceId);
+      $button.attr('data-aye-context', context);
+      $button.attr('data-aye-context-id', contextId);
+
+    });
+  });
+</script>
+
