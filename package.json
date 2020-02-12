@@ -12,6 +12,7 @@
     "core-icons": "https://github.com/Webstop/core-icons.git#v0.3.3",
     "jquery": "^3.4.1",
     "js-cookie": "^2.2.1",
+    "jsbarcode": "^3.11.0",
     "popper.js": "^1.14.7"
   },
   "scripts": {
@@ -29,6 +30,7 @@
     "images-move": "cp -R ./images ./dist",
     "js-move": "cp -R ./js ./dist",
     "js-ahoy-move": "cp -R ./node_modules/ahoy.js/dist ./dist/js/ahoy",
+    "js-jsbarcode-move": "cp -R ./node_modules/ahoy.js/dist ./dist/js/ahoy",
     "js-build": "rollup -c",
     "dist": "npm-run-all css icons js-move js-ahoy-move images-move",
     "js-lint": "eslint js/src js/tests build/",
