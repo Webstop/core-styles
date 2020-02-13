@@ -7,6 +7,7 @@
   "license": "private",
   "main": "dist/assets/css/core-styles-defaults.css",
   "dependencies": {
+    "@xg4/in-viewport": "0.0.2",
     "ahoy.js": "^0.3.4",
     "bootstrap": "^v4.3.1",
     "core-icons": "https://github.com/Webstop/core-icons.git#v0.3.3",
