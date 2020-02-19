@@ -1,6 +1,6 @@
 {
   "name": "core-styles",
-  "version": "0.5.18",
+  "version": "0.5.19-beta",
   "description": "The definitive source of styling guidelines for grocery website features.",
   "private": true,
   "author": "Greg Hemphill",
