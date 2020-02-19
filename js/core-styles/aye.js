@@ -5,13 +5,16 @@
 $(function() {
   // Here we set the thee possible events types data-aye-view, data-aye-click, & data-aye-submit
 
-  // Sends an ahoy track when the element is served to the browser.
-  $('[data-aye-view]').each(function(){
-    let $element = $(this);
-    let cargo = ayeCargo(this);
-    ahoy.track('view ' + $element.attr('data-aye-view'), cargo);
+  // Sends an ahoy track when the element is in the viewport on page load
+/*
+  var porthole = new InTheViewport('[data-aye-view]', {
+  	proportion: 0.2
   });
-
+  porthole.init()
+*/
+  
+  ayePortHoleView();
+  
   // Sends an ahoy track when the user clicks on the element.
   $('[data-aye-click]').on('click', function(){
     let $element = $(this);
@@ -26,7 +29,11 @@ $(function() {
     cargo = ayeFormidable($element, cargo);
     ahoy.track('submit ' + $element.attr('data-aye-submit'), cargo);
   });
-
+  
+  // Sends an ahoy track when the element is in the view after a scroll
+  $(window).scrollEnd(function() {
+    ayePortHoleView();
+  }, 500);
 
   // The next two functions (ayeCargo & ayeFormidable) gather data and format it for submitting to ahoy.track
 
@@ -57,6 +64,26 @@ $(function() {
     });
     return cargo;
   }
+  
+  function ayePortHoleView(){
+    $('[data-aye-view]').each(function(){
+      if($(this).visible()) {
+       /* alert("Element is in the viewport");*/
+      	let $element = $(this);
+      	let cargo = ayeCargo(this);
+        ahoy.track('view ' + $element.attr('data-aye-view'), cargo);
+      }
+    });
+  }
 
 });
-
+// extension:
+$.fn.scrollEnd = function(callback, timeout) {
+  $(this).scroll(function(){
+    var $this = $(this);
+    if ($this.data('scrollTimeout')) {
+      clearTimeout($this.data('scrollTimeout'));
+    }
+    $this.data('scrollTimeout', setTimeout(callback,timeout));
+  });
+};
