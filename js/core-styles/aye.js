@@ -68,10 +68,14 @@ $(function() {
   function ayePortHoleView(){
     $('[data-aye-view]').each(function(){
       if($(this).visible()) {
-       /* alert("Element is in the viewport");*/
+
       	let $element = $(this);
       	let cargo = ayeCargo(this);
+/*
         ahoy.track('view ' + $element.attr('data-aye-view'), cargo);
+*/
+        alert("Element is in the viewport");        
+        $element.removeAttr("data-aye-view");
       }
     });
   }
