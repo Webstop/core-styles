@@ -60,3 +60,121 @@ $(function() {
 
 });
 
+
+// window.webstop = {
+//   retailerID: retailerID,
+//   environment: environment,
+//   apiHost: apiHost
+// };
+//data-aye-tag-search data-aye-tag-search-target="#tag-search-target" data-aye-tag-search-display="#tag-search-display"
+
+//     <span class="badge badge-secondary"><i class="icon-tag-tilted"></i> some tag <button  data-aye-tag-text="some tag" data-aye-tag-search-target="#tag-search-target" data-aye-tag-search-display="#tag-search-display"><i class="icon-cancel-circle-solid ml-1"></i></button></span>
+
+function tagSearch(){
+  let delay = null;
+
+  $('[data-aye-tag-search]').on('keyup', function(event) {
+    clearTimeout(delay);
+    const $this    = $(this);
+    const target   = $this.data('aye-tag-search-target');
+    const display  = $this.data('aye-tag-search-display');
+    const results  = $this.data('aye-tag-search-results');
+    const search   = event.target.value;
+
+    if(search.length <= 2){
+      exitTagSearch(results);
+    } else {
+      delay = setTimeout(function(){ performTagSearch(search, target, display, results) }, 250);
+    }
+  });
+
+}
+
+$('[data-aye-tag-search]').each(function() {
+  const $this    = $(this);
+  const target   = $this.data('aye-tag-search-target');
+  const display  = $this.data('aye-tag-search-display');
+  displayTags(target, display);
+});
+
+
+function makeTagButtonsActive(){
+  $('[data-aye-tag-add]').on('click', function(event){
+    event.preventDefault();
+    const $this     = $(this);
+    const target    = $this.data('aye-tag-search-target');
+    const results   = $this.data('aye-tag-search-results');
+    // let   tags     = $(target).val().split('[,]{1}[\\s]?');
+    let   tags      = trimArray($(target).val().split(','));
+    const newTag    = $this.text();
+    const display   = $this.data('aye-tag-search-display');
+
+    tags.push(newTag.trim());
+    $(target).val(tags.join());
+
+    displayTags(target, display);
+    exitTagSearch(results);
+  });
+}
+
+function displayTags(target, display){
+  const tags  = trimArray($(target).val().split(','));
+  let   items = [];
+  let   html  = '';
+
+  //tags = tags.split('[,]{1}[\\s]?');
+
+
+  console.log('tags: ' + tags);
+
+  console.log('Display All Tags:');
+
+  tags.forEach(function(tag){
+    items.push(`<span class="tag bg-secondary"> ${tag} <span data-aye-tag-text="${tag}" data-aye-tag-search-target="${target}" data-aye-tag-search-display="${display}"><i class="icon-cancel ml-1"></i></span></span>`);
+    console.log(tag);
+  });
+  html = items.join('');
+  $(display).html(html);
+}
+
+function exitTagSearch(results){
+  $('[data-aye-tag-add]').val('');
+  $(results).html('');
+}
+
+function performTagSearch(search, target, display, results){
+  const url = window.webstop.apiHost + '/api/v1/aye/tags';
+
+  $.getJSON( `${url}?search=${search}`, function(data){renderTagSearchResults(data, target, display, results)});
+
+}
+
+function trimArray(a){
+  let trim_a = [];
+  a.forEach(function(i){
+    trim_a.push(i.trim());
+  });
+  return trim_a;
+}
+
+function renderTagSearchResults(data, target, display, results){
+  let html;
+  let items = [];
+
+  $.each( data, function( position, record ) {
+    $.each( record, function( key, value ) {
+      if(key == 'name'){
+        items.push(`<button type="button" class="list-group-item list-group-item-action" data-aye-tag-add data-aye-tag-search-target="${target}" data-aye-tag-search-display="${display}" data-aye-tag-search-results="${results}">${value}</button>`);
+      }
+    });
+  });
+
+  html  = '<div class="list-group">';
+  html += items.join('');
+  html += '</div>';
+
+  $(results).html(html);
+  makeTagButtonsActive();
+}
+
+tagSearch();

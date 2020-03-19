@@ -121,6 +121,8 @@
     - title: Spinners
       path:  bootstrap/4.1/components/spinners
 
+    - title: Tags
+
     - title: Toasts
       path:  bootstrap/4.1/components/toasts
 
@@ -134,6 +136,7 @@
     - title: Analytics
       pages:
         - title: Tracking
+        - title: Tags
     - title: Circulars
       pages:
         - title: Circular Items

@@ -15,6 +15,12 @@
     apiHost = 'http://grocery.local:3000';
   }
 
+  window.webstop = {
+    retailerID: retailerID,
+    environment: environment,
+    apiHost: apiHost
+  };
+
   window.ahoy = {
     visitParams: {retailer_id: retailerID},
     visitsUrl: apiHost + "/ahoy/visits",
