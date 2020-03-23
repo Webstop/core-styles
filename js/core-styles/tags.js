@@ -10,10 +10,10 @@
 
     $('[data-tag-search]').on('keyup', function(event) {
       clearTimeout(delay);
-      const search_text   = event.target.value;
-      const tagging = setTagging(this, search_text);
+      const searchText   = event.target.value;
+      const tagging = setTagging(this, searchText);
 
-      if(search_text.length <= 2){
+      if(searchText.length <= 2){
         exitTagSearch(tagging);
       } else {
         delay = setTimeout(function(){ performTagSearch(tagging) }, 100);
@@ -22,23 +22,30 @@
 
   }
 
-  function setTagging(search_this, search_text) {
-    const $search  = $(search_this);
-    const target   = $search.data('tag-search-target');
-    const display  = $search.data('tag-search-display');
-    const results  = $search.data('tag-search-results');
+  function setTagging(searchThis, searchText) {
+    const $search    = $(searchThis);
+    const searchId   = '#' + $search.attr('id');
+    const targetId   = $search.data('tag-search-target');
+    const displayId  = $search.data('tag-search-display');
+    const resultsId  = $search.data('tag-search-results');
 
     const tagging = {
-      search_text: search_text,
-      search_this: search_this,
-      target:   target,
-      display:  display,
-      results:  results,
-      $search:  $search,
-      $target:  $(target),
-      $display: $(display),
-      $results: $(results)
-    }
+      searchText: searchText,
+      searchId:   searchId,
+      targetId:   targetId,
+      displayId:  displayId,
+      resultsId:  resultsId,
+      $search:    $search,
+      $target:    $(targetId),
+      $display:   $(displayId),
+      $results:   $(resultsId)
+    };
+    console.log('Tagging Set');
+    console.log(`searchText: ${searchText}`);
+    console.log(`searchId:   ${searchId}`);
+    console.log(`targetId:   ${targetId}`);
+    console.log(`displayId:  ${displayId}`);
+    console.log(`resultsId:  ${resultsId}`);
     return tagging;
   }
 
@@ -51,10 +58,10 @@
   function makeTagResultsActive(){
     $('[data-tag-add]').on('click', function(event){
       event.preventDefault();
-
-      const tagging = setTagging(this, '');
-      let   tags    = trimArray(tagging.$target.val().split(','));
-      const newTag  = tagging.$search.text().trim();
+      const searchId = $(this).data('tag-search-id');
+      const tagging  = setTagging(searchId, '');
+      let   tags     = trimArray(tagging.$target.val().split(','));
+      const newTag   = $(this).data('tag-search-value').trim();
 
       //tags.indexOf(newTag) === -1 ? tags.push(newTag) : console.log("This tag already exists.");
       tags.push(newTag);
@@ -95,13 +102,13 @@
   }
 
   function exitTagSearch(tagging){
-    $('[data-tag-add]').val('');
+    //$('[data-tag-add]').val('');
     tagging.$results.html('');
   }
 
   function performTagSearch(tagging){
     const url = window.webstop.apiHost + '/api/v1/tags/search';
-    $.getJSON( `${url}?search=${tagging.search_text}`, function(data){renderTagSearchResults(data, tagging)});
+    $.getJSON( `${url}?search=${tagging.searchText}`, function(data){renderTagSearchResults(data, tagging)});
   }
 
   function renderTagSearchResults(data, tagging){
@@ -111,13 +118,13 @@
     $.each( data, function( position, record ) {
       $.each( record, function( key, value ) {
         if(key == 'name'){
-          items.push(`<button type="button" class="list-group-item list-group-item-action" data-tag-add data-tag-search-target="${tagging.target}" data-tag-search-display="${tagging.display}" data-tag-search-results="${tagging.results}" data-tag-search-value="${value}">${value}</button>`);
+          //items.push(`<button type="button" class="list-group-item list-group-item-action" data-tag-add data-tag-search-target="${tagging.targetId}" data-tag-search-display="${tagging.displayId}" data-tag-search-results="${tagging.resultsId}" data-tag-search-value="${value}">${value}</button>`);
+          items.push(`<button type="button" class="list-group-item list-group-item-action" data-tag-add data-tag-search-id="${tagging.searchId}" data-tag-search-value="${value}">${value}</button>`);
         }
       });
     });
 
-    items.push(`<button type="button" class="list-group-item list-group-item-action" data-tag-add data-tag-search-target="${tagging.target}" data-tag-search-display="${tagging.display}" data-tag-search-results="${tagging.results}" data-tag-search-value="${tagging.search_text}">Create New "${tagging.search_text}" Tag.</button>`);
-
+    items.push(`<button type="button" class="list-group-item list-group-item-secondary list-group-item-action" data-tag-add data-tag-add data-tag-search-id="${tagging.searchId}" data-tag-search-value="${tagging.searchText}"><em class="text-muted">Create New "</em>${tagging.searchText}<em class="text-muted">" Tag.</em></button>`);
 
     html  = '<div class="list-group">';
     html += items.join('');
