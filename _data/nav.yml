@@ -139,7 +139,6 @@
     - title: Analytics
       pages:
         - title: Tracking
-        - title: Tags
     - title: Circulars
       pages:
         - title: Circular Items
@@ -162,61 +161,56 @@
     - title: Price
 
 - title: Utilities
+  path:  bootstrap/4.1/utilities/borders
   pages:
     - title: Borders
-      path:  bootstrap/4.1/components/borders
+      path:  bootstrap/4.1/utilities/borders
 
     - title: Clearfix
-      path:  bootstrap/4.1/components/clearfix
+      path:  bootstrap/4.1/utilities/clearfix
 
     - title: Close icon
-      path:  bootstrap/4.1/components/close-icon
+      path:  bootstrap/4.1/utilities/close-icon
 
     - title: Colors
-      path:  bootstrap/4.1/components/colors
+      path:  bootstrap/4.1/utilities/colors
 
     - title: Display
-      path:  bootstrap/4.1/components/display
+      path:  bootstrap/4.1/utilities/display
 
     - title: Embed
-      path:  bootstrap/4.1/components/embec
+      path:  bootstrap/4.1/utilities/embec
 
     - title: Flex
-      path:  bootstrap/4.1/components/flex
+      path:  bootstrap/4.1/utilities/flex
 
     - title: Float
-      path:  bootstrap/4.1/components/float
+      path:  bootstrap/4.1/utilities/float
 
     - title: Image replacement
-      path:  bootstrap/4.1/components/image-replacement
-
-    - title: Overflow
-      path:  bootstrap/4.1/components/overflow
+      path:  bootstrap/4.1/utilities/image-replacement
 
     - title: Position
-      path:  bootstrap/4.1/components/position
+      path:  bootstrap/4.1/utilities/position
 
     - title: Screen readers
-      path:  bootstrap/4.1/components/screen-readers
+      path:  bootstrap/4.1/utilities/screen-readers
 
     - title: Shadows
-      path:  bootstrap/4.1/components/shadows
+      path:  bootstrap/4.1/utilities/shadows
 
     - title: Sizing
-      path:  bootstrap/4.1/components/sizing
+      path:  bootstrap/4.1/utilities/sizing
 
     - title: Spacing
-      path:  bootstrap/4.1/components/spacing
-
-    - title: Stretched link
-      path:  bootstrap/4.1/components/stretched-link
+      path:  bootstrap/4.1/utilities/spacing
 
     - title: Text
-      path:  bootstrap/4.1/components/text
+      path:  bootstrap/4.1/utilities/text
 
     - title: Vertical align
-      path:  bootstrap/4.1/components/vertical-align
+      path:  bootstrap/4.1/utilities/vertical-align
 
     - title: Visibility
-      path:  bootstrap/4.1/components/visibility
+      path:  bootstrap/4.1/utilities/visibility
 
