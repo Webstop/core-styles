@@ -26,11 +26,15 @@
     border-style:solid;
     border-color: transparent transparent #fff #fff;
   }
+  [data-tag-search-remove-tag] {
+    cursor: pointer;
+  }
 }
 
 .tag-group {
+  margin-bottom: $spacer/2;
   .tag {
-    margin-left: $spacer;
+    margin-left: $spacer/2;
     margin-bottom: $spacer/2;
   }
 }

@@ -7,16 +7,15 @@ toc: true
 source: Webstop
 ---
 
-## Examples
 
-### Basic Tag Example
+## Basic Tag Example
 
 {% capture example %}
 <span class="tag">Blueberry</span>
 {% endcapture %}
 {% include example.html content=example %} 
 
-### Tag with Color & Close
+## Tag with Color & Close
 
 {% capture example %}
 <span class="tag bg-primary">Blueberry <i class="icon-cancel"></i></span>
@@ -24,8 +23,10 @@ source: Webstop
 {% include example.html content=example %} 
 
 
-### Multiple Tags Example
+## Tag Group Example
 
+When you want to display more than one tag, wrap the tags in a `tag-group` container. 
+This will apply consistent spacing around your tags.
 
 {% capture example %}
 <div class="tag-group">
@@ -44,9 +45,3 @@ source: Webstop
 </div>
 {% endcapture %}
 {% include example.html content=example %} 
->
-
-
-## Usage Example
-
-Tags are used by <a href="/docs/grocery/analytics/tags">Analytics Tags</a>.

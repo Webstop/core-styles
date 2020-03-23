@@ -297,7 +297,7 @@ we need to install in the correct order for this to work.
 
 #### JavaScript Files <small class="text-muted">(listed in order)</small>: 
 
-1. `/dist/js/core-styles/ahoy-config.js`
+1. `/dist/js/core-styles/config.js`
 2. `/dist/js/ahoy/ahoy.js`
 3. `/dist/js/core-styles/aye.js`
 

@@ -48,11 +48,11 @@
   path:  bootstrap/4.1/components/alerts
 
   pages:
-    - title: Ajax Form
-
-    - title: Ajax Load
-
-    - title: Ajax Modal
+    - title: AJAX
+      pages:
+        - title: Ajax Form
+        - title: Ajax Load
+        - title: Ajax Modal
 
     - title: Alerts
       path:  bootstrap/4.1/components/alerts
@@ -121,7 +121,10 @@
     - title: Spinners
       path:  bootstrap/4.1/components/spinners
 
-    - title: Tags
+    - title: Tagging
+      pages:
+        - title: Tags
+        - title: Tag Search
 
     - title: Toasts
       path:  bootstrap/4.1/components/toasts
