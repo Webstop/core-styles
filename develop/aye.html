@@ -104,6 +104,12 @@ toc: false
               </div>
             </div>
           </div>
+
+          <div class="form-group">
+            <label for="tags">Context</label>
+            <input class="form-control" id="tags" data-name="data-aye-tags" type="text" value="">
+          </div>
+
           <div class="text-right">
             <button type="button" id="apply-button" class="btn btn-primary">Apply to Button</button>
           </div>
@@ -119,26 +125,6 @@ toc: false
           making changes to the form.
         </p>
       </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="card mt-3">
-  <h4 class="card-header">Tag Search</h4>
-  <div class="card-body">
-    <div id="tag-search-display"></div>
-<!--    <span class="badge badge-secondary"><i class="icon-tag-tilted"></i> some tag <span data-aye-tag-text="some tag" data-aye-tag-search-target="#tag-search-target" data-aye-tag-search-display="#tag-search-display"><i class="icon-cancel-circle-solid ml-1"></i></span></span>-->
-    <div class="form-group">
-      <label for="tag-search-1">Tag Search</label>
-      <input type="text" class="form-control" id="tag-search-1" data-aye-tag-search data-aye-tag-search-target="#tag-search-target" data-aye-tag-search-display="#tag-search-display" data-aye-tag-search-results="#tag-search-results" aria-describedby="tag-search-1-help">
-      <small id="tag-search-1-help" class="form-text text-muted">Search for the tags you'd like to add in the form above.</small>
-    </div>
-    <div id="tag-search-results"></div>
-    <div class="form-group">
-      <label for="tag-search-target">Tags</label>
-      <input type="text" class="form-control" id="tag-search-target" value="foo" aria-describedby="tags-help">
-      <small id="tags-help" class="form-text text-muted">Don't enter into this text field. Normally this would be a hidden field, but we are displaying it here for development and testing purposes.</small>
     </div>
   </div>
 </div>
