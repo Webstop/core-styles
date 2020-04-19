@@ -106,7 +106,7 @@ toc: false
           </div>
 
           <div class="form-group">
-            <label for="tags">Context</label>
+            <label for="tags">Tags</label>
             <input class="form-control" id="tags" data-name="data-aye-tags" type="text" value="">
           </div>
 
@@ -133,7 +133,6 @@ toc: false
   $(function() {
     $('#apply-button').click(function(event){
       event.preventDefault();
-      console.log('Apply Clicked! #7');
 
       let title = $('#title').val();
       let appId = $('#app-id').val();
@@ -141,6 +140,7 @@ toc: false
       let resourceId = $('#resource-id').val();
       let context = $('#context').val();
       let contextId = $('#context-id').val();
+      let tags = $('#tags').val();
 
       console.log('title: ' + title);
       console.log('appId: ' + appId);
@@ -148,6 +148,7 @@ toc: false
       console.log('resourceId: ' + resourceId);
       console.log('context: ' + context);
       console.log('contextId: ' + contextId);
+      console.log('tags: ' + tags);
 
       let $button = $('.custom-tracking');
 
@@ -158,6 +159,7 @@ toc: false
       $button.attr('data-aye-resource-id', resourceId);
       $button.attr('data-aye-context', context);
       $button.attr('data-aye-context-id', contextId);
+      $button.attr('data-aye-tags', tags);
 
     });
   });

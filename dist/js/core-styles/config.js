@@ -23,9 +23,10 @@
 
   window.ahoy = {
     visitParams: {retailer_id: retailerID},
-    visitsUrl: apiHost + "/ahoy/visits",
+    //visitsUrl: apiHost + "/ahoy/visits",
     //eventsUrl: apiHost + "/ahoy/events"
-    eventsUrl: apiHost + "/api/v1/retailers/" + retailerID + "/track/event.json"
+    visitsUrl: apiHost + "/api/v1/retailers/" + retailerID + "/aye/visit.json",
+    eventsUrl: apiHost + "/api/v1/retailers/" + retailerID + "/aye/event.json"
   };
 })();
 
