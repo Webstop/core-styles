@@ -29,5 +29,3 @@
     eventsUrl: apiHost + "/api/v1/retailers/" + retailerID + "/aye/event.json"
   };
 })();
-
-

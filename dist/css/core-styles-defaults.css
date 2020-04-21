@@ -10963,7 +10963,7 @@ select.custom-select {
 }
 
 .site .site-content {
-  background-color: #4da3ff;
+  background-color: #f6f5f0;
   padding-bottom: 1rem;
 }
 
@@ -10995,7 +10995,7 @@ select.custom-select {
 .site .site-aside {
   padding: 0;
   background: #fff;
-  border-left: 1px solid #0062cc;
+  border-left: 1px solid #c6c1a1;
 }
 
 .site .site-aside-slider {
@@ -11102,7 +11102,7 @@ select.custom-select {
   -ms-flex-pack: start;
   justify-content: flex-start;
   opacity: 0.95;
-  background-color: #007bff;
+  background-color: #d9d6c1;
   padding: 0.5rem 0 0.5rem 1rem;
   min-height: 54px;
   margin-right: -0.9375rem;
@@ -11132,7 +11132,7 @@ select.custom-select {
 .toolbar .toolbar-group .custom-select,
 .toolbar .toolbar-group .input-group-text,
 .toolbar .toolbar-group .page-link {
-  border-color: #0056b3;
+  border-color: #bcb792;
 }
 
 .toolbar > .toolbar-group:first-child {
@@ -11645,9 +11645,9 @@ select.custom-select {
 
 .shopping-list-power-bar .shopping-list-power-bar-heading {
   padding: 1rem;
-  border-bottom: 1px solid #007bff;
+  border-bottom: 1px solid #d9d6c1;
   opacity: 0.95;
-  background-color: #4da3ff;
+  background-color: #f6f5f0;
 }
 
 .shopping-list-power-bar .shopping-list-power-bar-title {
@@ -11667,7 +11667,7 @@ select.custom-select {
 }
 
 .shopping-list-power-bar .shopping-list-power-bar-item {
-  border-color: #007bff;
+  border-color: #d9d6c1;
   min-height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
