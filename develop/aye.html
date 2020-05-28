@@ -45,88 +45,184 @@ toc: false
   </div>
 </div>
 
-<div class="card mt-3">
-  <h4 class="card-header">Custom Track Click <small class="text-muted">Use the form below to set the tracking attributes used on the button to the right.</small></h4>
-  <div class="card-body">
-    <div class="row">
-      <div class="col">
-        <form src="#">
-          <div class="form-group">
-            <label for="title">Event Title</label>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Click</span>
-              </div>
-              <input type="text" class="form-control" id="title" data-name="data-aye-click" value="add coupon">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="context">Product (App)</label>
-            <select class="form-control" id="app-id" data-name="data-aye-app-id">
-              <option value="">None</option>
-              <option value="1">circulars</option>
-              <option value="2">consumer accounts</option>
-              <option value="3">contact us</option>
-              <option value="5">coupons</option>
-              <option value="6">coupons.com</option>
-              <option value="11">donations</option>
-              <option value="6">grocery newsletters</option>
-              <option value="7">PDF circulars</option>
-              <option value="8">recipes</option>
-              <option value="9">shopping lists</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <label for="resource">Resource</label>
-                <input class="form-control" id="resource" data-name="data-aye-resource" type="text" value="">
+<div class="card-deck">
+  <div class="card mt-3">
+    <h4 class="card-header">Custom Track Click <small class="text-muted">Use the form below to set the tracking attributes used on the button to the right.</small></h4>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+          <form src="#">
+            <div class="form-group">
+              <label for="title">Event Title</label>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Click</span>
+                </div>
+                <input type="text" class="form-control" id="title" data-name="data-aye-click" value="add coupon">
               </div>
             </div>
-            <div class="col-3">
-              <div class="form-group">
-                <label for="resource-id">Resource ID</label>
-                <input class="form-control" id="resource-id" data-name="data-aye-resource-id" type="text" value="">
+            <div class="form-group">
+              <label for="context">Product (App)</label>
+              <select class="form-control" id="app-id" data-name="data-aye-app-id">
+                <option value="">None</option>
+                <option value="1">circulars</option>
+                <option value="2">consumer accounts</option>
+                <option value="3">contact us</option>
+                <option value="5">coupons</option>
+                <option value="6">coupons.com</option>
+                <option value="11">donations</option>
+                <option value="6">grocery newsletters</option>
+                <option value="7">PDF circulars</option>
+                <option value="8">recipes</option>
+                <option value="9">shopping lists</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="resource">Resource</label>
+                  <input class="form-control" id="resource" data-name="data-aye-resource" type="text" value="">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="resource-id">Resource ID</label>
+                  <input class="form-control" id="resource-id" data-name="data-aye-resource-id" type="text" value="">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                <label for="context">Context</label>
-                <input class="form-control" id="context" data-name="data-aye-context" type="text" value="">
+            <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="context">Context</label>
+                  <input class="form-control" id="context" data-name="data-aye-context" type="text" value="">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="form-group">
+                  <label for="context-id">Context ID</label>
+                  <input class="form-control" id="context-id" data-name="data-aye-context-id" type="text" value="">
+                </div>
               </div>
             </div>
-            <div class="col-3">
-              <div class="form-group">
-                <label for="context-id">Context ID</label>
-                <input class="form-control" id="context-id" data-name="data-aye-context-id" type="text" value="">
-              </div>
-            </div>
-          </div>
 
-          <div class="form-group">
-            <label for="tags">Tags</label>
-            <input class="form-control" id="tags" data-name="data-aye-tags" type="text" value="">
-          </div>
+            <div class="form-group">
+              <label for="tags">Tags</label>
+              <input class="form-control" id="tags" data-name="data-aye-tags" type="text" value="">
+            </div>
 
-          <div class="text-right">
-            <button type="button" id="apply-button" class="btn btn-primary">Apply to Button</button>
-          </div>
+            <div class="text-right">
+              <button type="button" id="apply-button" class="btn btn-primary">Apply to Button</button>
+            </div>
 
-        </form>
-      </div>
-      <div class="col">
-        <button type="button" data-aye-app-id="1" data-aye-click="add coupon" data-aye-context-id="" data-aye-context="" data-aye-resource-id="" data-aye-resource="" href="#" class="custom-tracking btn btn-primary btn-lg mb-3">
-          Track Click <span class="custom-name text-capitalize">add coupon</span>
-        </button>
-        <p>
-          The button above will use the values in the form to the left. Be sure to click the `Apply to Button` after
-          making changes to the form.
-        </p>
+          </form>
+        </div>
+        <div class="col">
+          <button type="button" data-aye-app-id="1" data-aye-click="add coupon" data-aye-context-id="" data-aye-context="" data-aye-resource-id="" data-aye-resource="" href="#" class="custom-tracking btn btn-primary btn-lg mb-3">
+            Track Click <span class="custom-name text-capitalize">add coupon</span>
+          </button>
+          <p>
+            The button above will use the values in the form to the left. Be sure to click the `Apply to Button` after
+            making changes to the form.
+          </p>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="card mt-3" style="max-width: 450px;">
+    <h4 class="card-header">Legacy Track </h4>
+    <div class="card-body">
+<!--      $vCardNbr_LI ? #post_url = $vHost_System_Admin '/api/v1/retailers/' $vRetailer_ID '/cards/' $vCardNbr_LI '/tracking/track.json?ip=' self->ip | #post_url = $vHost_System_Admin '/api/v1/retailers/' $vRetailer_ID '/tracking/track.json?ip=' self->ip;-->
+
+      <form action="http://grocery.local:3000/api/v1/retailers/767/cards/0000000197/tracking/track.json?ip=97.76.125.158">
+
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="event">Event Name</label>
+            <select name="event" id="event" class="form-control">
+              <option value="view page">view page</option>
+              <option value="view item">view item</option>
+              <option value="click modal">click modal</option>
+              <option value="click link">click link</option>
+            </select>
+          </div>
+
+          <div class="form-group col">
+            <label for="title">Title (ad item title)</label>
+            <input class="form-control" id="title" name="title" type="text" value="">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="marketing_type">Marketing Type</label>
+            <input class="form-control" id="marketing_type" name="Marketing Type" type="text" value="">
+          </div>
+
+          <div class="form-group col">
+            <label for="presentation_type">Presentation Type</label>
+            <input class="form-control" id="presentation_type" name="Presentation Type" type="text" value="">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="app">App</label>
+            <input class="form-control" id="app" name="app" type="text" value="Circular">
+          </div>
+
+          <div class="form-group col">
+            <label for="adgroupnbr">Ad Group</label>
+            <input class="form-control" id="adgroupnbr" name="Ad Group" type="text" value="">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="adtype">Ad Type Name</label>
+            <input class="form-control" id="adtype" name="Ad Type Name" type="text" value="">
+          </div>
+
+          <div class="form-group col">
+            <label for="adtypenbr">Ad Type Number</label>
+            <input class="form-control" id="adtypenbr" name="Ad Type Number" type="text" value="">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="pagenbr">Page</label>
+            <input class="form-control" id="pagenbr" name="Page" type="text" value="1">
+          </div>
+
+          <div class="form-group col">
+            <label for="Id">Id</label>
+            <input class="form-control" id="Id" name="Id" type="text" value="123">
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="size">Size</label>
+          <select name="size" id="size" class="form-control">
+            <option value="Full Width">Full Width</option>
+            <option value="Half Width">Half Width</option>
+          </select>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">
+          Send Legacy Tracking Event
+        </button>
+      </form>
+
+
+      <br>
+    </div>
+  </div>
+
 </div>
 
 <script>

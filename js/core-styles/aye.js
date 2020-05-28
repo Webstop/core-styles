@@ -9,14 +9,21 @@ $(function() {
   $('[data-aye-view]').each(function(){
     let $element = $(this);
     let cargo = ayeCargo(this);
-    ahoy.track('view ' + $element.attr('data-aye-view'), cargo);
+    let event = ahoy.track('view ' + $element.attr('data-aye-view'), cargo);
+    console.log('view event: ' + event);
+    if(event != true) {
+      setTimeout( function () {
+        ahoy.track('view ' + $element.attr('data-aye-view'), cargo);
+      }, 500);
+    }
   });
 
   // Sends an ahoy track when the user clicks on the element.
   $('[data-aye-click]').on('click', function(){
     let $element = $(this);
     let cargo = ayeCargo(this);
-    ahoy.track('click ' + $element.attr('data-aye-click'), cargo);
+    let event = ahoy.track('click ' + $element.attr('data-aye-click'), cargo);
+    console.log('click event: ' + event);
   });
 
   // Sends an ahoy track when a form is submitted. Place on the form tag.
@@ -24,7 +31,8 @@ $(function() {
     let $element = $(this);
     let cargo = ayeCargo(this);
     cargo = ayeFormidable($element, cargo);
-    ahoy.track('submit ' + $element.attr('data-aye-submit'), cargo);
+    let event = ahoy.track('submit ' + $element.attr('data-aye-submit'), cargo);
+    console.log('submit event: ' + event);
   });
 
 
