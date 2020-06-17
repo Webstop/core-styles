@@ -11877,6 +11877,29 @@ select.custom-select {
   }
 }
 
+.privacy {
+  position: fixed;
+  bottom: 0px;
+  border: 1px solid #ccc;
+  color: #333;
+  background: #eeeeff;
+  width: 100%;
+}
+
+.privacy .privacy-text {
+  margin: 5px;
+  padding: 5px;
+}
+
+.privacy .privacy-close {
+  float: right;
+  padding-right: 5px;
+}
+
+.privacy .privacy-accept {
+  margin-left: 5px;
+}
+
 /* recipes */
 /* recipe */
 .webstop-color {

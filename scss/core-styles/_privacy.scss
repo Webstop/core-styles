@@ -1,0 +1,12 @@
+@charset "utf-8";
+.privacy {
+  position: fixed;
+  bottom: 0px;
+  border: 1px solid #ccc;
+  color: #333; background: #eeeeff;
+  width: 100%;
+
+.privacy-text {margin: 5px; padding: 5px;}
+.privacy-close {float: right; padding-right: 5px;}
+.privacy-accept {margin-left: 5px;}
+}
