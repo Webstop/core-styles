@@ -9,7 +9,7 @@
   "dependencies": {
     "bootstrap": "^v4.3.1",
     "core-icons": "https://github.com/Webstop/core-icons.git#v0.3.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-cookie": "^2.2.1",
     "popper.js": "^1.14.7"
   },
