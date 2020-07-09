@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:11' npm update
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:12.18' npm update
 
 docker-compose run jekyll bundle update
