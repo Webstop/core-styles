@@ -7,7 +7,7 @@
   "license": "private",
   "main": "dist/assets/css/core-styles-defaults.css",
   "dependencies": {
-    "ahoy.js": "^0.3.4",
+    "ahoy.js": "^0.3.7",
     "bootstrap": "^v4.3.1",
     "core-icons": "https://github.com/Webstop/core-icons.git#v0.3.3",
     "jquery": "^3.5.0",
@@ -69,7 +69,7 @@
     "nodemon": "^1.19.2",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^5.0.1",
-    "qunit": "^2.9.2",
+    "qunit": "^2.10.1",
     "rollup": "1.26.5",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -82,8 +82,8 @@
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-config-standard": "^18.3.0",
     "stylelint-order": "^0.8.1",
-    "stylelint-scss": "^3.11.0",
-    "uglify-js": "^3.6.0",
+    "stylelint-scss": "^3.18.0",
+    "uglify-js": "^3.10.0",
     "vnu-jar": "^18.12.18",
     "workbox-build": "^3.6.3"
   },
