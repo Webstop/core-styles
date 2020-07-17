@@ -2,92 +2,77 @@
  * Ahoy.js
  * Simple, powerful JavaScript analytics
  * https://github.com/ankane/ahoy.js
- * v0.3.4
+ * v0.3.7
  * MIT License
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.ahoy = factory());
+  (global = global || self, global.ahoy = factory());
 }(this, (function () { 'use strict';
 
-  function isUndefined(value) {
-    return value === undefined;
-  }
+  var isUndefined = function (value) { return value === undefined; };
 
-  function isNull(value) {
-    return value === null;
-  }
+  var isNull = function (value) { return value === null; };
 
-  function isObject(value) {
-    return value === Object(value);
-  }
+  var isBoolean = function (value) { return typeof value === 'boolean'; };
 
-  function isArray(value) {
-    return Array.isArray(value);
-  }
+  var isObject = function (value) { return value === Object(value); };
 
-  function isDate(value) {
-    return value instanceof Date;
-  }
+  var isArray = function (value) { return Array.isArray(value); };
 
-  function isBlob(value) {
-    return (
-      value &&
-      typeof value.size === 'number' &&
-      typeof value.type === 'string' &&
-      typeof value.slice === 'function'
-    );
-  }
+  var isDate = function (value) { return value instanceof Date; };
 
-  function isFile(value) {
-    return (
-      isBlob(value) &&
-      (typeof value.lastModifiedDate === 'object' ||
-        typeof value.lastModified === 'number') &&
-      typeof value.name === 'string'
-    );
-  }
+  var isBlob = function (value) { return value &&
+    typeof value.size === 'number' &&
+    typeof value.type === 'string' &&
+    typeof value.slice === 'function'; };
 
-  function isFormData(value) {
-    return value instanceof FormData;
-  }
+  var isFile = function (value) { return isBlob(value) &&
+    typeof value.name === 'string' &&
+    (typeof value.lastModifiedDate === 'object' ||
+      typeof value.lastModified === 'number'); };
 
-  function objectToFormData(obj, cfg, fd, pre) {
-    if (isFormData(cfg)) {
-      pre = fd;
-      fd = cfg;
-      cfg = null;
-    }
-
+  var serialize = function (obj, cfg, fd, pre) {
     cfg = cfg || {};
+
     cfg.indices = isUndefined(cfg.indices) ? false : cfg.indices;
-    cfg.nulls = isUndefined(cfg.nulls) ? true : cfg.nulls;
+
+    cfg.nullsAsUndefineds = isUndefined(cfg.nullsAsUndefineds)
+      ? false
+      : cfg.nullsAsUndefineds;
+
+    cfg.booleansAsIntegers = isUndefined(cfg.booleansAsIntegers)
+      ? false
+      : cfg.booleansAsIntegers;
+
     fd = fd || new FormData();
 
     if (isUndefined(obj)) {
       return fd;
     } else if (isNull(obj)) {
-      if (cfg.nulls) {
+      if (!cfg.nullsAsUndefineds) {
         fd.append(pre, '');
       }
-    } else if (isArray(obj)) {
-      if (!obj.length) {
-        var key = pre + '[]';
-
-        fd.append(key, '');
+    } else if (isBoolean(obj)) {
+      if (cfg.booleansAsIntegers) {
+        fd.append(pre, obj ? 1 : 0);
       } else {
-        obj.forEach(function(value, index) {
+        fd.append(pre, obj);
+      }
+    } else if (isArray(obj)) {
+      if (obj.length) {
+        obj.forEach(function (value, index) {
           var key = pre + '[' + (cfg.indices ? index : '') + ']';
 
-          objectToFormData(value, cfg, fd, key);
+          serialize(value, cfg, fd, key);
         });
       }
     } else if (isDate(obj)) {
       fd.append(pre, obj.toISOString());
     } else if (isObject(obj) && !isFile(obj) && !isBlob(obj)) {
-      Object.keys(obj).forEach(function(prop) {
+      Object.keys(obj).forEach(function (prop) {
         var value = obj[prop];
 
         if (isArray(value)) {
@@ -98,16 +83,19 @@
 
         var key = pre ? pre + '[' + prop + ']' : prop;
 
-        objectToFormData(value, cfg, fd, key);
+        serialize(value, cfg, fd, key);
       });
     } else {
       fd.append(pre, obj);
     }
 
     return fd;
-  }
+  };
 
-  var objectToFormdata = objectToFormData;
+  var index_module = {
+    serialize: serialize,
+  };
+  var index_module_1 = index_module.serialize;
 
   // https://www.quirksmode.org/js/cookies.html
 
@@ -155,7 +143,9 @@
     cookieDomain: null,
     headers: {},
     visitParams: {},
-    withCredentials: false
+    withCredentials: false,
+    visitDuration: 4 * 60, // default 4 hours
+    visitorDuration: 2 * 365 * 24 * 60 // default 2 years
   };
 
   var ahoy = window.ahoy || window.Ahoy || {};
@@ -173,8 +163,6 @@
 
   var $ = window.jQuery || window.Zepto || window.$;
   var visitId, visitorId, track;
-  var visitTtl = 4 * 60; // 4 hours
-  var visitorTtl = 2 * 365 * 24 * 60; // 2 years
   var isReady = false;
   var queue = [];
   var canStringify = typeof(JSON) !== "undefined" && typeof(JSON.stringify) !== "undefined";
@@ -224,13 +212,13 @@
     isReady = true;
   }
 
-  function ready(callback) {
+  ahoy.ready = function (callback) {
     if (isReady) {
       callback();
     } else {
       queue.push(callback);
     }
-  }
+  };
 
   function matchesSelector(element, selector) {
     var matches = element.matches ||
@@ -258,7 +246,11 @@
 
   // http://beeker.io/jquery-document-ready-equivalent-vanilla-javascript
   function documentReady(callback) {
-    document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+      setTimeout(callback, 0);
+    } else {
+      document.addEventListener("DOMContentLoaded", callback);
+    }
   }
 
   // https://stackoverflow.com/a/2117523/1177228
@@ -294,7 +286,7 @@
 
   function sendRequest(url, data, success) {
     if (canStringify) {
-      if ($) {
+      if ($ && $.ajax) {
         $.ajax({
           type: "POST",
           url: url,
@@ -343,7 +335,7 @@
   }
 
   function trackEvent(event) {
-    ready( function () {
+    ahoy.ready( function () {
       sendRequest(eventsUrl(), eventData(event), function() {
         // remove from queue
         for (var i = 0; i < eventQueue.length; i++) {
@@ -358,7 +350,7 @@
   }
 
   function trackEventNow(event) {
-    ready( function () {
+    ahoy.ready( function () {
       var data = eventData(event);
       var param = csrfParam();
       var token = csrfToken();
@@ -366,7 +358,7 @@
       // stringify so we keep the type
       data.events_json = JSON.stringify(data.events);
       delete data.events;
-      window.navigator.sendBeacon(eventsUrl(), objectToFormdata(data));
+      window.navigator.sendBeacon(eventsUrl(), index_module_1(data));
     });
   }
 
@@ -427,7 +419,7 @@
     } else {
       if (!visitId) {
         visitId = generateId();
-        setCookie("ahoy_visit", visitId, visitTtl);
+        setCookie("ahoy_visit", visitId, config.visitDuration);
       }
 
       // make sure cookies are enabled
@@ -436,7 +428,7 @@
 
         if (!visitorId) {
           visitorId = generateId();
-          setCookie("ahoy_visitor", visitorId, visitorTtl);
+          setCookie("ahoy_visitor", visitorId, config.visitorDuration);
         }
 
         var data = {
@@ -509,12 +501,12 @@
       js: true
     };
 
-    ready( function () {
+    ahoy.ready( function () {
       if (config.cookies && !ahoy.getVisitId()) {
         createVisit();
       }
 
-      ready( function () {
+      ahoy.ready( function () {
         log(event);
 
         event.visit_token = ahoy.getVisitId();

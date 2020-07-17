@@ -75,8 +75,6 @@
     - title: Carousel
       path:  bootstrap/4.1/components/carousel
 
-    - title: Checkbox Selector
-
     - title: Collapse
       path:  bootstrap/4.1/components/collapse
 
@@ -84,10 +82,13 @@
       path:  bootstrap/4.1/components/dropdowns
 
     - title: Forms
-      path:  bootstrap/4.1/components/forms
-
-    - title: Input group
-      path:  bootstrap/4.1/components/input-group
+      pages:
+        - title: Base Form Elements
+          path:  bootstrap/4.1/components/forms
+        - title: Input group
+          path:  bootstrap/4.1/components/input-group
+        - title: Checkbox Selector
+        - title: Form Toggles
 
     - title: Jumbotron
       path:  bootstrap/4.1/components/jumbotron

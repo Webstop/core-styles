@@ -2,11 +2,11 @@
  * Ahoy.js
  * Simple, powerful JavaScript analytics
  * https://github.com/ankane/ahoy.js
- * v0.3.4
+ * v0.3.7
  * MIT License
  */
 
-import objectToFormData from 'object-to-formdata';
+import { serialize } from 'object-to-formdata';
 
 // https://www.quirksmode.org/js/cookies.html
 
@@ -54,7 +54,9 @@ var config = {
   cookieDomain: null,
   headers: {},
   visitParams: {},
-  withCredentials: false
+  withCredentials: false,
+  visitDuration: 4 * 60, // default 4 hours
+  visitorDuration: 2 * 365 * 24 * 60 // default 2 years
 };
 
 var ahoy = window.ahoy || window.Ahoy || {};
@@ -72,8 +74,6 @@ ahoy.configure(ahoy);
 
 var $ = window.jQuery || window.Zepto || window.$;
 var visitId, visitorId, track;
-var visitTtl = 4 * 60; // 4 hours
-var visitorTtl = 2 * 365 * 24 * 60; // 2 years
 var isReady = false;
 var queue = [];
 var canStringify = typeof(JSON) !== "undefined" && typeof(JSON.stringify) !== "undefined";
@@ -123,13 +123,13 @@ function setReady() {
   isReady = true;
 }
 
-function ready(callback) {
+ahoy.ready = function (callback) {
   if (isReady) {
     callback();
   } else {
     queue.push(callback);
   }
-}
+};
 
 function matchesSelector(element, selector) {
   var matches = element.matches ||
@@ -157,7 +157,11 @@ function onEvent(eventName, selector, callback) {
 
 // http://beeker.io/jquery-document-ready-equivalent-vanilla-javascript
 function documentReady(callback) {
-  document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+  if (document.readyState === "interactive" || document.readyState === "complete") {
+    setTimeout(callback, 0);
+  } else {
+    document.addEventListener("DOMContentLoaded", callback);
+  }
 }
 
 // https://stackoverflow.com/a/2117523/1177228
@@ -193,7 +197,7 @@ function CSRFProtection(xhr) {
 
 function sendRequest(url, data, success) {
   if (canStringify) {
-    if ($) {
+    if ($ && $.ajax) {
       $.ajax({
         type: "POST",
         url: url,
@@ -242,7 +246,7 @@ function eventData(event) {
 }
 
 function trackEvent(event) {
-  ready( function () {
+  ahoy.ready( function () {
     sendRequest(eventsUrl(), eventData(event), function() {
       // remove from queue
       for (var i = 0; i < eventQueue.length; i++) {
@@ -257,7 +261,7 @@ function trackEvent(event) {
 }
 
 function trackEventNow(event) {
-  ready( function () {
+  ahoy.ready( function () {
     var data = eventData(event);
     var param = csrfParam();
     var token = csrfToken();
@@ -265,7 +269,7 @@ function trackEventNow(event) {
     // stringify so we keep the type
     data.events_json = JSON.stringify(data.events);
     delete data.events;
-    window.navigator.sendBeacon(eventsUrl(), objectToFormData(data));
+    window.navigator.sendBeacon(eventsUrl(), serialize(data));
   });
 }
 
@@ -326,7 +330,7 @@ function createVisit() {
   } else {
     if (!visitId) {
       visitId = generateId();
-      setCookie("ahoy_visit", visitId, visitTtl);
+      setCookie("ahoy_visit", visitId, config.visitDuration);
     }
 
     // make sure cookies are enabled
@@ -335,7 +339,7 @@ function createVisit() {
 
       if (!visitorId) {
         visitorId = generateId();
-        setCookie("ahoy_visitor", visitorId, visitorTtl);
+        setCookie("ahoy_visitor", visitorId, config.visitorDuration);
       }
 
       var data = {
@@ -408,12 +412,12 @@ ahoy.track = function (name, properties) {
     js: true
   };
 
-  ready( function () {
+  ahoy.ready( function () {
     if (config.cookies && !ahoy.getVisitId()) {
       createVisit();
     }
 
-    ready( function () {
+    ahoy.ready( function () {
       log(event);
 
       event.visit_token = ahoy.getVisitId();
