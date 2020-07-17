@@ -9,8 +9,6 @@ source: Webstop
 
 Section Toggles reveal or hide additional form content or information based on selections made within the form. It does 
 so by adding or removing the Bootstrap class `d-none`. 
-Section Toggles are organized into three basic types: [Checkbox Toggle](#checkbox-toggle), 
-[Radio Button Toggle](#radio-button-toggle), and [Select List Toggle](#select-list-toggle).
   
 ## Checkbox Toggle
 
