@@ -3,5 +3,37 @@
 /* circulars: collection of ads */
 .circulars {
 
-}
+  .circular-preview-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .circular-preview-title-badge {
+    font-size: 1.2rem;
+  }
 
+  &.circulars-banner-max-width-1140 .circular-item-banner {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.circulars-content-width-1140 .circular-content {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.circulars-content-width-1440 .circular-content {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.circulars-content-width-1600 .circular-content {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
