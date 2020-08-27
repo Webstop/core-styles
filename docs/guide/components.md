@@ -29,7 +29,7 @@ modifier classes, and attributes. As illustrated below.
 {% endhighlight %}
 
 The component's name should always be the first CSS class listed 
-in the class attribute, followed by any modifier classes.
+in the root element, followed by any modifier classes.
 
 ### Name, Namespace, & Root Element
 
@@ -63,12 +63,21 @@ classes, for example the responsive utility classes `d-none`
 and `d-sm-block`, then those would come after the component 
 specific classes for name and modifier classes. 
 
+Order:
+
+1. specific component (or attribute)
+2. specific component-modifiers
+3. generic component
+4. generic component modifiers
+5. utility classes
+
 For example:
 
 {% highlight html %}
 <p class="price price-big-dollars d-none d-sm-block"></p>
 {% endhighlight %}
 
+_Responsive class names are ordered from smaller to larger. Inline with the mobile-first philosophy._
 
 ### Attributes
 

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+echo ""
+echo "Starting Setup"
+
+if [[ ! -f .env ]]; then
+  echo ""
+  echo "Creating .env from .env_sample"
+  cp -f .env_sample .env
+fi
+
+echo ""
+echo "Installing Node Modules"
+
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:12.18' npm install
+
+echo ""
+echo "Building Jekyll & Sinatra Docker Images"
+
+docker-compose build
+
+echo ""
+echo "Building Jekyll Site"
+
+docker-compose run --rm jekyll jekyll build
+
+echo ""
+echo "Setup Finished"
+echo ""

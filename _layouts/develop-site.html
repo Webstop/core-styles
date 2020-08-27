@@ -15,8 +15,11 @@
         height: 36px;
       }
     </style>
+    {% include scripts.html %}
   </head>
-  <body>
+  <body id="api-page-data" data-retailer-id="2661" data-environment="development" data-api-host="http://grocery.core1.rails1.webstophq.com">
+<!--  <body data-retailer-id="2661" data-api-host="https://255.grocerywebsite.com"> -->
+<!--  <body data-retailer-id="2661" data-environment="development"> -->
 
   <div class="site site-fluid">
     <div class="site-row row">
@@ -62,6 +65,9 @@
     <button class="site-debug-toggle" aria-hidden="true">+</button>
   </div>
 
-  {% include scripts.html %}
+  <script src="/dist/js/core-styles/config.js"></script>
+  <script src="/dist/js/ahoy/ahoy.js" defer></script>
+  <script type="module" src="/dist/js/core-styles/aye.js"></script>
+
   </body>
 </html>

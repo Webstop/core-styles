@@ -58,7 +58,7 @@ At this point your first tab is available for you to run git commands, your
 second tab is running a web server, and your third tab is running a Sass 
 watch script.
 
-Now, visit the development website here: [localhost:4000](http://localhost:4000/).
+Now, visit the development website here: [localhost:4000]({{ jekyll_host }}/).
 
 ### Developing a Component
 

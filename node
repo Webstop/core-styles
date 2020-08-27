@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:11' bash
-

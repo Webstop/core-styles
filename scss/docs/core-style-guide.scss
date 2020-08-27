@@ -40,3 +40,14 @@ $primary: darken(#0194d3, 10%);
   '../../scss/docs/toc',
   '../../scss/docs/devicons'
 ;
+
+th > code,
+td > code {
+  white-space: nowrap;
+}
+
+table, .table {
+  margin-bottom: 1rem;
+  color: #212529;
+}
+

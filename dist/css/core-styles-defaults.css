@@ -11029,6 +11029,14 @@ select.custom-select {
   display: block;
 }
 
+.is-select .check-unselect-text {
+  display: none;
+}
+
+.is-unselect .check-select-text {
+  display: none;
+}
+
 .search-form .search-from-search-text {
   padding-right: 24px;
 }
@@ -11041,6 +11049,49 @@ select.custom-select {
   z-index: 2000;
   display: block;
   color: #ced4da;
+}
+
+.tag {
+  position: relative;
+  padding: 0.25em 0.4em 0.25em 0.8em;
+  font-size: 75%;
+  margin: 1px;
+  color: #fff;
+  display: inline-block;
+  background-color: #6c757d;
+}
+
+.tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 0.6em 0.6em 0 0;
+  border-style: solid;
+  border-color: #fff transparent transparent #fff;
+}
+
+.tag::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-width: 0 0.6em 0.6em 0;
+  border-style: solid;
+  border-color: transparent transparent #fff #fff;
+}
+
+.tag [data-tag-search-remove-tag] {
+  cursor: pointer;
+}
+
+.tag-group {
+  margin-bottom: 0.5rem;
+}
+
+.tag-group .tag {
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .toolbar {

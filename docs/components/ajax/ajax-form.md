@@ -7,6 +7,8 @@ toc: true
 source: Webstop
 ---
 
+{% include environment_based_variables.html %}
+
 ## Examples
 
 Here are a couple of use examples of the AJAX Form feature.
