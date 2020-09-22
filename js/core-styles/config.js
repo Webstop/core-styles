@@ -5,16 +5,15 @@
 // Ahoy Config
 
 (function(){
-  //const page = document.querySelector('#api-page-data');
-  const page = document.body;
-  let retailerID  = page.dataset.retailerId;
-  let environment = page.dataset.environment;
-  let apiHost     = page.dataset.apiHost;
+  // const page = document.body;
+  // let retailerID  = page.dataset.retailerId;
+  // let environment = page.dataset.environment;
+  // let apiHost     = page.dataset.apiHost;
 
 
-  // let retailerID  = document.body.getAttribute('data-retailer-id');
-  // let environment = document.body.getAttribute('data-environment');
-  // let apiHost     = document.body.getAttribute('data-api-host');
+  let retailerID  = document.body.getAttribute('data-retailer-id');
+  let environment = document.body.getAttribute('data-environment');
+  let apiHost     = document.body.getAttribute('data-api-host');
 
   if (environment == 'production') {
     apiHost = 'https://api.grocerywebsite.com';

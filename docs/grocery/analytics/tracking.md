@@ -76,8 +76,8 @@ The following optional attributes provide data to the tracking API. _Try to prov
 | `data-aye-context-label`  | A note field about the context. |
 | `data-aye-property-*`     | A prefix for adding arbitrary properties to the database, use `data-property-` followed by an arbitrary key name (i.e. `data-property-key-name`, e.g. `data-property-title` or `data-property-qty`). All properties will be placed in the properties field as a hash.  |
 | `data-aye-category`       | The main section label used to organize the data on analytics pages. |
-| `data-aye-group`          | A lower level label used to organize the data within a report. It can act as a sub-category to the category field. A category is required when presenting a group. |
-| `data-aye-tags`           | Tags used to group data. The format is: 1. all lowercase, 2. uses comas to seperate tags (e.g. `erie insider, free offer, monopoly`). |
+| `data-aye-group`          | A lower level label used to organize the data within a report. It acts as a sub-category to the category field. A category is required when presenting a group. |
+| `data-aye-tags`           | Tags group data together. The format is: 1. all lowercase, 2. comas to separate tags (e.g. `erie insider, free offer, monopoly`). |
 
 
 ## Data Lists
