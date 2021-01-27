@@ -34,6 +34,31 @@ In the following example we replace the button that triggers the request with th
 {% endcapture %}
 {% include example.html content=example %}
 
+### With Ajax-Form Example
+
+In the following example we want to submit an ajax-form, and also perform an ajax-load to refresh content on another 
+part of the page.
+
+
+{% capture example %}
+<form data-ajax-form action="http://localhost:4567/alert_success">
+  <div class="form-group">
+    <label for="title-example">Title</label>
+    <input type="text" class="form-control" name="title-example" id="title-example" placeholder="Title">
+  </div>
+  <button data-ajax-load data-prevent-default="false" data-target="#ajax-target-3" data-load="http://localhost:4567/alert_success" class="btn btn-primary" type="submit">
+    Save Title & Load Content
+  </button>
+</form>
+<div id="ajax-target-3" class="mt-3">
+  <div class="alert alert-info">
+    This box could be replaced by AJAX load content, if only someone would click the button above.
+  </div>
+</div>
+{% endcapture %}
+{% include example.html content=example %}
+
+
 ## Attributes
 
 The following attributes are required.
@@ -62,6 +87,15 @@ The following attributes are required.
       <td>
         The DOM node to load the content into. Uses standard jQuery selectors, usually targets an id attribute 
         (e.g. <code class="text-nowrap">#some-target</code>).
+      </td>
+    </tr>
+    <tr>
+      <td><code class="text-nowrap">data-prevent-default="false"</code></td>
+      <td>
+        Allows you to disable <code>event.preventDefault</code>. Useful when you want the button you've attached the 
+        <code>data-ajax-load</code> to also submit a 
+        <a href="/docs/components/ajax/ajax-form"><code>data-ajax-form</code></a>. Without this option the 
+         ajax-form would be prevented from triggering a form submit event and the ajax-form would not be performed.
       </td>
     </tr>
     <tr>
