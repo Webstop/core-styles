@@ -73,13 +73,30 @@ $(function() {
       $target = $this.parent();
     }
 
-    if( $this.is('[data-power-bar]') ){
-      $target.load(url,data,function(){
-        loadShoppingListPowerBar();
+    $target.load(url,data,function(){
+      if( $this.is('[data-power-bar]') ){ loadShoppingListPowerBar(); }
+      if( $this.is('[data-load-on-callback]') && $this.is('[data-target-on-callback]') ){
+        loadOnCallback();
+      }
+    });
+
+    function loadOnCallback() {
+      console.log('loadOnCallback launched')
+      let callbackUrls = $this.data('load-on-callback').split(',');
+      console.log('callbackUrls: ' + callbackUrls);
+      let callbackTargets = $($this.data('target-on-callback'));
+      callbackUrls.forEach(function(callbackUrl, index){
+        let $callbackTarget =  $(callbackTargets[index]);
+        $callbackTarget.load(callbackUrl);
       });
-    } else {
-      $target.load(url,data);
     }
+    // if( $this.is('[data-power-bar]') ){
+    //   $target.load(url,data,function(){
+    //     loadShoppingListPowerBar();
+    //   });
+    // } else {
+    //   $target.load(url,data);
+    // }
 
   });
 
