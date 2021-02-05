@@ -63,6 +63,16 @@ $(function() {
     let data = $this.serializeArray();
     let $target = $this;
 
+    if( $this.is('[data-disable-loading-indicator]') ) {
+    } else {
+      $this.find('button', 'input[type="submit"]').each(function(){
+        let $button = $(this);
+        $button.prop('disabled', true);
+        $button.val('Loading...');
+        $button.text('Loading...');
+      });
+    }
+
     if( $this.is('[data-target]') ){
       $target = $($this.data('target'));
     } else {
@@ -81,22 +91,13 @@ $(function() {
     });
 
     function loadOnCallback() {
-      console.log('loadOnCallback launched')
       let callbackUrls = $this.data('load-on-callback').split(',');
-      console.log('callbackUrls: ' + callbackUrls);
       let callbackTargets = $($this.data('target-on-callback'));
       callbackUrls.forEach(function(callbackUrl, index){
         let $callbackTarget =  $(callbackTargets[index]);
         $callbackTarget.load(callbackUrl);
       });
     }
-    // if( $this.is('[data-power-bar]') ){
-    //   $target.load(url,data,function(){
-    //     loadShoppingListPowerBar();
-    //   });
-    // } else {
-    //   $target.load(url,data);
-    // }
 
   });
 

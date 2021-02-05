@@ -103,6 +103,15 @@ The `data-ajax-form` & `action` attributes are required. The rest are optional.
       </td>
     </tr>
     <tr>
+      <td><code class="text-nowrap">data-disable-loading-indicator</code></td>
+      <td>
+        When the form is selected all buttons in the form become disabled and the text in the button is replaced with 
+        <code class="text-nowrap">Loading...</code>. If the 
+        <code class="text-nowrap">data-disable-loading-indicator</code> attribute is present this functionality is 
+        disabled and the button remain the same as they did before the form was submitted.
+      </td>
+    </tr>
+    <tr>
       <td><code class="text-nowrap">data-load-on-callback</code></td>
       <td>
         Once the initial AJAX request completes, additional AJAX requests listed in this attribute will trigger. Accepts 
@@ -114,14 +123,12 @@ The `data-ajax-form` & `action` attributes are required. The rest are optional.
     <tr>
       <td><code class="text-nowrap">data-target-on-callback</code></td>
       <td>
-        The DOM node to load the content into. Uses standard jQuery selectors, usually targets an id attribute 
-        (e.g. <code class="text-nowrap">#some-target</code>). Optional, if the <code class="text-nowrap">data-target</code> attribute isn't 
-        present the content will replace the ajax form.
-
-        Once the initial AJAX request completes, additional AJAX requests listed in this attribute will trigger. Accepts 
-        one URL or a comma separated list of URLs. The AJAX request should return 
-        HTML content to display inside the target element. Target elements are specified using the 
-        <code>data-target-on-callback</code> attribute.
+        Once the initial AJAX request completes, additional AJAX requests listed in the 
+        <code class="text-nowrap">data-load-on-callback</code> attribute will trigger.  The 
+        <code class="text-nowrap">data-target-on-callback</code> attribute acts like the <code>action</code> attribute 
+        in that it specifies the DOM node to load the content into. Uses standard jQuery selectors, usually targets an 
+        id attribute  (e.g. <code class="text-nowrap">#some-target</code>). Accepts one selector or a comma separated 
+        list of selectors.
       </td>
     </tr>
   </tbody>
