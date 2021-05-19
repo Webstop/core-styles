@@ -79,6 +79,41 @@ The following optional attributes provide data to the tracking API. _Try to prov
 | `data-aye-group`          | A lower level label used to organize the data within a report. It acts as a sub-category to the category field. A category is required when presenting a group. |
 | `data-aye-tags`           | Tags group data together. The format is: 1. all lowercase, 2. comas to separate tags (e.g. `erie insider, free offer, monopoly`). |
 
+### Resource vs. Context
+
+The difference between the resource and context attributes is the most common source of confusion in the Aye attributes. 
+The resource is the object you are tracking. For example, if the item you are tracking is a coupon offer with an id of 
+`123` the value of your `data-aye-resource` would be `Offer` (matches the Rails model name), and the `data-aye-resource-id`
+would be `123`. We embed coupons all sorts of places, sometimes they are in the coupon gallery, sometimes they are in a 
+digital circular, sometimes in a recipe and etc. This is the purpose of the context, to record *where* the item was being 
+displayed. For example, if our coupon offer is displayed inside recipe `456` then we'd have a context like `data-aye-context` 
+is `Recipe` and `data-aye-context-id` is `456`. 
+
+{% highlight html %}
+<div data-aye-view="coupon" 
+  data-aye-resource="Offer" 
+  data-aye-resource-id="123"
+  data-aye-context="Recipe" 
+  data-aye-context-id="456">
+...
+</div>
+{% endhighlight %}
+
+Often times the context and resource are the same. For example, a recipe that is displayed on the recipe detail page 
+might look like the following (this is an [actual recipe](https://www.topsmarkets.com/Recipes/Detail/7643/Mini_Turkey_Pizzas/)). 
+
+{% highlight html %}
+<div data-aye-view="recipe" 
+  data-aye-resource="Recipe" 
+  data-aye-resource-id="25264"
+  data-aye-context="Recipe" 
+  data-aye-context-id="25264"
+  data-aye-property-recipe-number="7643"
+  data-aye-property-title="Mini Turkey Pizzas"
+  data-aye-property-exclusive-id="69">
+...
+</div>
+{% endhighlight %}
 
 ## Data Lists
 
