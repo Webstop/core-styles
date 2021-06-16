@@ -19,27 +19,32 @@
   {% assign page_heading = 'Getting started' %}
   {% assign page_lead = 'An overview of Webstop's front-end design system, including how to install and use it, some basic tips, and more.' %}
 
-{% elsif page.group == "guide" or  page.group == "webstop-guide" %}
+{% elsif page.group == "guide" %}
 {% assign page_heading = 'Front-End Guide' %}
 {% assign page_lead = "Guide for getting the most out of Webstop's front-end design system." %}
 
-{% elsif page.group == "layout" or  page.group == "webstop-layout" %}
+{% elsif page.group == "layout" %}
   {% assign page_heading = 'Layout' %}
   {% assign page_lead = 'Options for structuring your pages with Bootstrap, including global styles, required scaffolding, grid system, and more.' %}
 
-{% elsif page.group == "content" or page.group == "webstop-content" %}
+{% elsif page.group == "content" %}
   {% assign page_heading = 'Content' %}
   {% assign page_lead = 'Bootstrap's styles for displaying content with some of the most commonly used HTML elements, including normalization, typography, images, tables, and more.' %}
 
-{% elsif page.group == "components" or page.group == "webstop-components" %}
+{% elsif page.group == "components" %}
   {% assign page_heading = 'Base Components' %}
   {% assign page_lead = 'Reusable components providing the base building blocks for page design. buttons, dropdowns, alerts, and much more.' %}
 
-{% elsif page.group == "grocery" or page.group == "webstop-components" %}
+{% elsif page.group == "utilities" %}
+  {% assign page_heading = 'Utilities' %}
+  {% assign page_lead = 'A utility class is typically a single, immutable property-value pairing expressed as a class (e.g., .d-block represents display: block;). Their primary appeal is speed of use while writing HTML and limiting the amount of custom CSS you have to write.' %}
+
+
+{% elsif page.group == "grocery" %}
   {% assign page_heading = 'Grocery Components' %}
   {% assign page_lead = 'These reusable components are the heart of interactive grocery retailer websites and mobile apps.' %}
 
-{% elsif page.group == "javascript" or page.group == "javascript" %}
+{% elsif page.group == "javascript" %}
   {% assign page_heading = 'JavaScript plugins' %}
   {% assign page_lead = 'Bring compelling interactions to web freateures with these jQuery plugins.' %}
 

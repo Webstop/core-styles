@@ -10401,6 +10401,18 @@ select.custom-select {
   display: none;
 }
 
+.max-width-1140 {
+  max-width: 1140px;
+}
+
+.max-width-1440 {
+  max-width: 1440px;
+}
+
+.max-width-1600 {
+  max-width: 1600px;
+}
+
 .site .site-main-col {
   margin: 0;
   padding: 0;
@@ -10539,9 +10551,6 @@ select.custom-select {
 }
 
 .toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   opacity: 0.95;
   background-color: #d9d6c1;
   padding: 0.5rem 0 0.5rem 1rem;
@@ -10552,6 +10561,14 @@ select.custom-select {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.toolbar .toolbar-body {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 .toolbar .input-group {

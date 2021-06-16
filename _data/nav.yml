@@ -191,6 +191,8 @@
     - title: Image replacement
       path:  bootstrap/4.1/utilities/image-replacement
 
+    - title: Max Width
+
     - title: Position
       path:  bootstrap/4.1/utilities/position
 

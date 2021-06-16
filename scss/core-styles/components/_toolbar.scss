@@ -1,9 +1,6 @@
 @charset "utf-8";
 
 .toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   opacity: 0.95;
   background-color: $toolbar-bg;
   padding: $toolbar-padding-y 0 $toolbar-padding-y $toolbar-padding-x;
@@ -14,6 +11,15 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  .toolbar-body {
+    //max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
 
   .input-group {
     width: auto;

@@ -45,3 +45,16 @@ adjust the alignment of your toolbar groups.
 {% endcapture %}
 {% include example.html content=example %} 
 </div>
+
+### Max Width 1140 Toolbar Example
+
+In this example the toolbar is constrained to a maximum width of 1140 pixels. 
+The content is centered within the toolbar. You might need to stretch you browser 
+window wider to see the effect.
+
+<div class="toolbar-detached">
+{% capture example %}
+{% include examples/toolbars/_toolbar-max-width-example.html %}
+{% endcapture %}
+{% include example.html content=example %} 
+</div>
