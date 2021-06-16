@@ -11172,6 +11172,30 @@ select.custom-select {
   }
 }
 
+.toolbar-clingers {
+  margin: 0;
+  padding: 0;
+  min-height: 54px;
+  text-align: center;
+}
+
+.toolbar-clingers .toolbar-clinger {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px 16px;
+  border-top: 1px solid #bcb792;
+  min-height: 54px;
+  text-align: center;
+  background-color: #d9d6c1;
+  display: inline-block;
+  border-bottom-right-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.toolbar-clingers .toolbar-clinger-btn {
+  margin: 0;
+}
+
 /* circular: an individual ad */
 .circular .circular-header {
   margin-top: 2rem;
