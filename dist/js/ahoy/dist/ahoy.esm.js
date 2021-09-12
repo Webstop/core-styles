@@ -1,12 +1,10 @@
-/*
+/*!
  * Ahoy.js
  * Simple, powerful JavaScript analytics
  * https://github.com/ankane/ahoy.js
- * v0.3.7
+ * v0.3.9
  * MIT License
  */
-
-import { serialize } from 'object-to-formdata';
 
 // https://www.quirksmode.org/js/cookies.html
 
@@ -95,6 +93,16 @@ function canTrackNow() {
   return (config.useBeacon || config.trackNow) && isEmpty(config.headers) && canStringify && typeof(window.navigator.sendBeacon) !== "undefined" && !config.withCredentials;
 }
 
+function serialize(object) {
+  var data = new FormData();
+  for (var key in object) {
+    if (object.hasOwnProperty(key)) {
+      data.append(key, object[key]);
+    }
+  }
+  return data;
+}
+
 // cookies
 
 function setCookie(name, value, ttl) {
@@ -140,17 +148,23 @@ function matchesSelector(element, selector) {
     element.webkitMatchesSelector;
 
   if (matches) {
-    return matches.apply(element, [selector]);
+    if (matches.apply(element, [selector])) {
+      return element;
+    } else if (element.parentElement) {
+      return matchesSelector(element.parentElement, selector);
+    }
+    return null;
   } else {
     log("Unable to match");
-    return false;
+    return null;
   }
 }
 
 function onEvent(eventName, selector, callback) {
   document.addEventListener(eventName, function (e) {
-    if (matchesSelector(e.target, selector)) {
-      callback(e);
+    var matchedElement = matchesSelector(e.target, selector);
+    if (matchedElement) {
+      callback.call(matchedElement, e);
     }
   });
 }
@@ -292,14 +306,13 @@ function cleanObject(obj) {
   return obj;
 }
 
-function eventProperties(e) {
-  var target = e.target;
+function eventProperties() {
   return cleanObject({
-    tag: target.tagName.toLowerCase(),
-    id: presence(target.id),
-    "class": presence(target.className),
+    tag: this.tagName.toLowerCase(),
+    id: presence(this.id),
+    "class": presence(this.className),
     page: page(),
-    section: getClosestSection(target)
+    section: getClosestSection(this)
   });
 }
 
@@ -457,35 +470,48 @@ ahoy.trackView = function (additionalProperties) {
   ahoy.track("$view", properties);
 };
 
-ahoy.trackClicks = function () {
-  onEvent("click", "a, button, input[type=submit]", function (e) {
-    var target = e.target;
-    var properties = eventProperties(e);
-    properties.text = properties.tag == "input" ? target.value : (target.textContent || target.innerText || target.innerHTML).replace(/[\s\r\n]+/g, " ").trim();
-    properties.href = target.href;
+ahoy.trackClicks = function (selector) {
+  if (selector === undefined) {
+    log("trackClicks will require a selector in 0.4.0");
+    selector = "a, button, input[type=submit]";
+  }
+  onEvent("click", selector, function (e) {
+    var properties = eventProperties.call(this, e);
+    properties.text = properties.tag == "input" ? this.value : (this.textContent || this.innerText || this.innerHTML).replace(/[\s\r\n]+/g, " ").trim();
+    properties.href = this.href;
     ahoy.track("$click", properties);
   });
 };
 
-ahoy.trackSubmits = function () {
-  onEvent("submit", "form", function (e) {
-    var properties = eventProperties(e);
+ahoy.trackSubmits = function (selector) {
+  if (selector === undefined) {
+    log("trackSubmits will require a selector in 0.4.0");
+    selector = "form";
+  }
+  onEvent("submit", selector, function (e) {
+    var properties = eventProperties.call(this, e);
     ahoy.track("$submit", properties);
   });
 };
 
-ahoy.trackChanges = function () {
-  onEvent("change", "input, textarea, select", function (e) {
-    var properties = eventProperties(e);
+ahoy.trackChanges = function (selector) {
+  if (selector === undefined) {
+    // put here instead of above to prevent message with trackAll
+    log("trackChanges is deprecated and will be removed in 0.4.0");
+    selector = "input, textarea, select";
+  }
+  onEvent("change", selector, function (e) {
+    var properties = eventProperties.call(this, e);
     ahoy.track("$change", properties);
   });
 };
 
 ahoy.trackAll = function() {
+  log("trackAll is deprecated and will be removed in 0.4.0");
   ahoy.trackView();
-  ahoy.trackClicks();
-  ahoy.trackSubmits();
-  ahoy.trackChanges();
+  ahoy.trackClicks("a, button, input[type=submit]");
+  ahoy.trackSubmits("form");
+  ahoy.trackChanges("input, textarea, select");
 };
 
 // push events from queue
