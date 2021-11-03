@@ -1,19 +1,19 @@
 {
   "name": "core-styles",
-  "version": "0.5.28",
+  "version": "0.6.0",
   "description": "The definitive source of styling guidelines for grocery website features.",
   "private": true,
   "author": "Greg Hemphill",
   "license": "private",
   "main": "dist/assets/css/core-styles-defaults.css",
   "dependencies": {
-    "ahoy.js": "^0.3.7",
-    "bootstrap": "^v4.3.1",
+    "ahoy.js": "0.4.0",
+    "bootstrap": "4.6.1",
     "core-icons": "https://github.com/Webstop/core-icons.git#v0.3.3",
-    "jquery": "^3.5.0",
-    "js-cookie": "^2.2.1",
-    "jsbarcode": "^3.11.0",
-    "popper.js": "^1.14.7"
+    "jquery": "3.6.0",
+    "js-cookie": "2.2.1",
+    "jsbarcode": "3.11.5",
+    "popper.js": "1.16.1"
   },
   "scripts": {
     "bash": "bash",

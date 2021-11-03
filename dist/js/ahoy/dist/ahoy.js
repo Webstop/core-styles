@@ -1,8 +1,8 @@
-/*
+/*!
  * Ahoy.js
  * Simple, powerful JavaScript analytics
  * https://github.com/ankane/ahoy.js
- * v0.3.7
+ * v0.4.0
  * MIT License
  */
 
@@ -11,91 +11,6 @@
   typeof define === 'function' && define.amd ? define(factory) :
   (global = global || self, global.ahoy = factory());
 }(this, (function () { 'use strict';
-
-  var isUndefined = function (value) { return value === undefined; };
-
-  var isNull = function (value) { return value === null; };
-
-  var isBoolean = function (value) { return typeof value === 'boolean'; };
-
-  var isObject = function (value) { return value === Object(value); };
-
-  var isArray = function (value) { return Array.isArray(value); };
-
-  var isDate = function (value) { return value instanceof Date; };
-
-  var isBlob = function (value) { return value &&
-    typeof value.size === 'number' &&
-    typeof value.type === 'string' &&
-    typeof value.slice === 'function'; };
-
-  var isFile = function (value) { return isBlob(value) &&
-    typeof value.name === 'string' &&
-    (typeof value.lastModifiedDate === 'object' ||
-      typeof value.lastModified === 'number'); };
-
-  var serialize = function (obj, cfg, fd, pre) {
-    cfg = cfg || {};
-
-    cfg.indices = isUndefined(cfg.indices) ? false : cfg.indices;
-
-    cfg.nullsAsUndefineds = isUndefined(cfg.nullsAsUndefineds)
-      ? false
-      : cfg.nullsAsUndefineds;
-
-    cfg.booleansAsIntegers = isUndefined(cfg.booleansAsIntegers)
-      ? false
-      : cfg.booleansAsIntegers;
-
-    fd = fd || new FormData();
-
-    if (isUndefined(obj)) {
-      return fd;
-    } else if (isNull(obj)) {
-      if (!cfg.nullsAsUndefineds) {
-        fd.append(pre, '');
-      }
-    } else if (isBoolean(obj)) {
-      if (cfg.booleansAsIntegers) {
-        fd.append(pre, obj ? 1 : 0);
-      } else {
-        fd.append(pre, obj);
-      }
-    } else if (isArray(obj)) {
-      if (obj.length) {
-        obj.forEach(function (value, index) {
-          var key = pre + '[' + (cfg.indices ? index : '') + ']';
-
-          serialize(value, cfg, fd, key);
-        });
-      }
-    } else if (isDate(obj)) {
-      fd.append(pre, obj.toISOString());
-    } else if (isObject(obj) && !isFile(obj) && !isBlob(obj)) {
-      Object.keys(obj).forEach(function (prop) {
-        var value = obj[prop];
-
-        if (isArray(value)) {
-          while (prop.length > 2 && prop.lastIndexOf('[]') === prop.length - 2) {
-            prop = prop.substring(0, prop.length - 2);
-          }
-        }
-
-        var key = pre ? pre + '[' + prop + ']' : prop;
-
-        serialize(value, cfg, fd, key);
-      });
-    } else {
-      fd.append(pre, obj);
-    }
-
-    return fd;
-  };
-
-  var index_module = {
-    serialize: serialize,
-  };
-  var index_module_1 = index_module.serialize;
 
   // https://www.quirksmode.org/js/cookies.html
 
@@ -111,7 +26,7 @@
       if (domain) {
         cookieDomain = "; domain=" + domain;
       }
-      document.cookie = name + "=" + escape(value) + expires + cookieDomain + "; path=/";
+      document.cookie = name + "=" + escape(value) + expires + cookieDomain + "; path=/; samesite=lax";
     },
     get: function (name) {
       var i, c;
@@ -184,6 +99,16 @@
     return (config.useBeacon || config.trackNow) && isEmpty(config.headers) && canStringify && typeof(window.navigator.sendBeacon) !== "undefined" && !config.withCredentials;
   }
 
+  function serialize(object) {
+    var data = new FormData();
+    for (var key in object) {
+      if (object.hasOwnProperty(key)) {
+        data.append(key, object[key]);
+      }
+    }
+    return data;
+  }
+
   // cookies
 
   function setCookie(name, value, ttl) {
@@ -229,17 +154,23 @@
       element.webkitMatchesSelector;
 
     if (matches) {
-      return matches.apply(element, [selector]);
+      if (matches.apply(element, [selector])) {
+        return element;
+      } else if (element.parentElement) {
+        return matchesSelector(element.parentElement, selector);
+      }
+      return null;
     } else {
       log("Unable to match");
-      return false;
+      return null;
     }
   }
 
   function onEvent(eventName, selector, callback) {
     document.addEventListener(eventName, function (e) {
-      if (matchesSelector(e.target, selector)) {
-        callback(e);
+      var matchedElement = matchesSelector(e.target, selector);
+      if (matchedElement) {
+        callback.call(matchedElement, e);
       }
     });
   }
@@ -358,7 +289,7 @@
       // stringify so we keep the type
       data.events_json = JSON.stringify(data.events);
       delete data.events;
-      window.navigator.sendBeacon(eventsUrl(), index_module_1(data));
+      window.navigator.sendBeacon(eventsUrl(), serialize(data));
     });
   }
 
@@ -381,14 +312,13 @@
     return obj;
   }
 
-  function eventProperties(e) {
-    var target = e.target;
+  function eventProperties() {
     return cleanObject({
-      tag: target.tagName.toLowerCase(),
-      id: presence(target.id),
-      "class": presence(target.className),
+      tag: this.tagName.toLowerCase(),
+      id: presence(this.id),
+      "class": presence(this.className),
       page: page(),
-      section: getClosestSection(target)
+      section: getClosestSection(this)
     });
   }
 
@@ -546,35 +476,37 @@
     ahoy.track("$view", properties);
   };
 
-  ahoy.trackClicks = function () {
-    onEvent("click", "a, button, input[type=submit]", function (e) {
-      var target = e.target;
-      var properties = eventProperties(e);
-      properties.text = properties.tag == "input" ? target.value : (target.textContent || target.innerText || target.innerHTML).replace(/[\s\r\n]+/g, " ").trim();
-      properties.href = target.href;
+  ahoy.trackClicks = function (selector) {
+    if (selector === undefined) {
+      throw new Error("Missing selector");
+    }
+    onEvent("click", selector, function (e) {
+      var properties = eventProperties.call(this, e);
+      properties.text = properties.tag == "input" ? this.value : (this.textContent || this.innerText || this.innerHTML).replace(/[\s\r\n]+/g, " ").trim();
+      properties.href = this.href;
       ahoy.track("$click", properties);
     });
   };
 
-  ahoy.trackSubmits = function () {
-    onEvent("submit", "form", function (e) {
-      var properties = eventProperties(e);
+  ahoy.trackSubmits = function (selector) {
+    if (selector === undefined) {
+      throw new Error("Missing selector");
+    }
+    onEvent("submit", selector, function (e) {
+      var properties = eventProperties.call(this, e);
       ahoy.track("$submit", properties);
     });
   };
 
-  ahoy.trackChanges = function () {
-    onEvent("change", "input, textarea, select", function (e) {
-      var properties = eventProperties(e);
+  ahoy.trackChanges = function (selector) {
+    log("trackChanges is deprecated and will be removed in 0.5.0");
+    if (selector === undefined) {
+      throw new Error("Missing selector");
+    }
+    onEvent("change", selector, function (e) {
+      var properties = eventProperties.call(this, e);
       ahoy.track("$change", properties);
     });
-  };
-
-  ahoy.trackAll = function() {
-    ahoy.trackView();
-    ahoy.trackClicks();
-    ahoy.trackSubmits();
-    ahoy.trackChanges();
   };
 
   // push events from queue
