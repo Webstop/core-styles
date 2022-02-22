@@ -11,6 +11,8 @@ source: Webstop
 
 The basic circular item is the basis for our digital circular content. 
 
+### Standard Item Example
+
 Tower format digital circular item with a 1k 16:9 image.
 
 {% capture example %}
@@ -24,6 +26,24 @@ nicely divide up the available space in a row to provide a nice group presentati
 
 If a circular item is going to stand alone on a page or section of a page, the `col` 
 class is unnecessary. 
+
+### Price Pinned Bottom Example
+
+Standard circular item with the price pinned to the bottom. 
+
+{% capture example %}
+{% include examples/circular-items/_circular-item-standard-price-bottom-example.html %}
+{% endcapture %}
+{% include example.html content=example %}
+
+### Price Pinned Top Example
+
+Standard circular item with the price pinned to the top.
+
+{% capture example %}
+{% include examples/circular-items/_circular-item-standard-price-top-example.html %}
+{% endcapture %}
+{% include example.html content=example %}
 
 ### Grid of Standard Circular Items
 
