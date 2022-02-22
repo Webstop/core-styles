@@ -12,7 +12,7 @@ fi
 echo ""
 echo "Installing Node Modules"
 
-docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:12.18' npm install
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:16.13' npm install
 
 echo ""
 echo "Building Jekyll & Sinatra Docker Images"

@@ -2,7 +2,11 @@
  * Ahoy.js
  * Simple, powerful JavaScript analytics
  * https://github.com/ankane/ahoy.js
+<<<<<<< HEAD
  * v0.3.9
+=======
+ * v0.4.0
+>>>>>>> master
  * MIT License
  */
 
@@ -20,7 +24,7 @@ var Cookies = {
     if (domain) {
       cookieDomain = "; domain=" + domain;
     }
-    document.cookie = name + "=" + escape(value) + expires + cookieDomain + "; path=/";
+    document.cookie = name + "=" + escape(value) + expires + cookieDomain + "; path=/; samesite=lax";
   },
   get: function (name) {
     var i, c;
@@ -472,8 +476,12 @@ ahoy.trackView = function (additionalProperties) {
 
 ahoy.trackClicks = function (selector) {
   if (selector === undefined) {
+<<<<<<< HEAD
     log("trackClicks will require a selector in 0.4.0");
     selector = "a, button, input[type=submit]";
+=======
+    throw new Error("Missing selector");
+>>>>>>> master
   }
   onEvent("click", selector, function (e) {
     var properties = eventProperties.call(this, e);
@@ -485,8 +493,12 @@ ahoy.trackClicks = function (selector) {
 
 ahoy.trackSubmits = function (selector) {
   if (selector === undefined) {
+<<<<<<< HEAD
     log("trackSubmits will require a selector in 0.4.0");
     selector = "form";
+=======
+    throw new Error("Missing selector");
+>>>>>>> master
   }
   onEvent("submit", selector, function (e) {
     var properties = eventProperties.call(this, e);
@@ -495,10 +507,16 @@ ahoy.trackSubmits = function (selector) {
 };
 
 ahoy.trackChanges = function (selector) {
+<<<<<<< HEAD
   if (selector === undefined) {
     // put here instead of above to prevent message with trackAll
     log("trackChanges is deprecated and will be removed in 0.4.0");
     selector = "input, textarea, select";
+=======
+  log("trackChanges is deprecated and will be removed in 0.5.0");
+  if (selector === undefined) {
+    throw new Error("Missing selector");
+>>>>>>> master
   }
   onEvent("change", selector, function (e) {
     var properties = eventProperties.call(this, e);
@@ -506,6 +524,7 @@ ahoy.trackChanges = function (selector) {
   });
 };
 
+<<<<<<< HEAD
 ahoy.trackAll = function() {
   log("trackAll is deprecated and will be removed in 0.4.0");
   ahoy.trackView();
@@ -514,6 +533,8 @@ ahoy.trackAll = function() {
   ahoy.trackChanges("input, textarea, select");
 };
 
+=======
+>>>>>>> master
 // push events from queue
 try {
   eventQueue = JSON.parse(getCookie("ahoy_events") || "[]");
