@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 echo ""
 echo "Starting Sass Watch Script..."
-echo ""
-echo "Running yarn install..."
-echo ""
-docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:16.13' npm install
-echo "--------------------"
+#echo ""
+#echo "Running yarn install..."
+#echo ""
+#docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:16.13' npm install
+#echo "--------------------"
 # echo ""
 # echo "Running scss-lint..."
 # echo ""

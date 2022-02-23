@@ -5,3 +5,5 @@ docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:16.13' npm install
 docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:16.13' npm update
 
 docker-compose run jekyll bundle update
+
+docker run -ti --rm -v "$(pwd):/myapp" -w '/myapp' 'node:16.13' npm install node-sass@npm:sass

@@ -61,6 +61,22 @@ of a `row`.
   </div>
 </div>
 
+### Grid of Price Bottom Standard Circular Items
+
+Demonstrates the alignment of prices on the bottom of circular items in a group.
+
+<div class="bd-example">
+  {% include examples/circular-items/_circular-item-standard-price-bottom-examples.html %}
+</div>
+
+### Grid of Price Top Standard Circular Items
+
+Demonstrates the alignment of prices on the bottom of circular items in a group.
+
+<div class="bd-example">
+  {% include examples/circular-items/_circular-item-standard-price-top-examples.html %}
+</div>
+
 ---
 
 ### Mixed Items Example
