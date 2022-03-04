@@ -55,11 +55,11 @@
   &.circular-item-price-top {
     .circular-item-body {
       position: relative;
-      padding-top: calc($spacer + 48px);
+      padding-top: calc(#{$spacer} + 48px);
     }
     .price {
       position: absolute;
-      top: calc($spacer / 2);
+      top: calc(#{$spacer} / 2);
       text-align: center;
       width: 100%;
     }
@@ -68,11 +68,11 @@
   &.circular-item-price-bottom {
     .circular-item-body {
       position: relative;
-      padding-bottom: calc($spacer + 48px);
+      padding-bottom: calc(#{$spacer} + 48px);
     }
     .price {
       position: absolute;
-      bottom: calc($spacer / 2);
+      bottom: calc(#{$spacer} / 2);
       text-align: center;
       width: 100%;
     }

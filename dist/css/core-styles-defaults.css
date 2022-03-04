@@ -11621,7 +11621,7 @@ select.custom-select {
 
 .circular-item {
   max-width: 375px;
-  min-width: 160px;
+  min-width: 285px;
   position: relative;
 }
 .circular-item.card {
@@ -11630,7 +11630,7 @@ select.custom-select {
 @media (min-width: 576px) {
   .circular-item {
     max-width: 375px;
-    min-width: 265px;
+    min-width: 277px;
   }
   .circular-item.card {
     margin-right: 15px;
@@ -11640,13 +11640,13 @@ select.custom-select {
   width: 375px;
 }
 .circular-item.circular-item-avg {
-  width: 267.5px;
+  width: 330px;
 }
 .circular-item.circular-item-min {
-  width: 160px;
+  width: 285px;
 }
 .circular-item.circular-item-min {
-  width: 160px;
+  width: 285px;
 }
 .circular-item.circular-item-paper-coupon {
   border-style: dashed;
@@ -11867,7 +11867,7 @@ select.custom-select {
 }
 .circular-item-standard.circular-item-price-top .price {
   position: absolute;
-  top: 0.5rem;
+  top: calc(1rem / 2);
   text-align: center;
   width: 100%;
 }
@@ -11877,7 +11877,7 @@ select.custom-select {
 }
 .circular-item-standard.circular-item-price-bottom .price {
   position: absolute;
-  bottom: 0.5rem;
+  bottom: calc(1rem / 2);
   text-align: center;
   width: 100%;
 }
