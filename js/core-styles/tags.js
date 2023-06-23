@@ -8,7 +8,7 @@
   function tagSearch(){
     let delay = null;
 
-    $('[data-tag-search]').on('keyup', function(event) {
+    $(document.body).on('keyup', '[data-tag-search]', function(event) {
       clearTimeout(delay);
       const searchText   = event.target.value;
       const tagging = setTagging(this, searchText);
@@ -56,7 +56,7 @@
 
 
   function makeTagResultsActive(){
-    $('[data-tag-add]').on('click', function(event){
+    $(document.body).on('click', '[data-tag-add]', function(event){
       event.preventDefault();
       const searchId = $(this).data('tag-search-id');
       const tagging  = setTagging(searchId, '');

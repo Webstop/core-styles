@@ -3,13 +3,13 @@
 
 $(function() {
   // Resets modal once closed
-  $('#site-modal').on('hidden.bs.modal', function () {
+  $(document.body).on('hidden.bs.modal', '#site-modal', function () {
     $('#site-modal-title').text('');
     $('#site-modal-body').html('');
     $('#site-modal-footer').removeClass('d-none');
   });
 
-  $('#site-modal').on('show.bs.modal', function (event) {
+  $(document.body).on('show.bs.modal', '#site-modal', function (event) {
     let $trigger = $(event.relatedTarget)
     let title = $trigger.attr('data-title');
     let url = $trigger.attr('data-load');

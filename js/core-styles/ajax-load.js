@@ -3,7 +3,7 @@
 
 $(function() {
 
-  $('[data-ajax-load]').on('click', function(event){
+  $(document.body).on('click', '[data-ajax-load]', function(event){
     let $this = $(this);
     let url = $this.data('load');
     let $target = $this;

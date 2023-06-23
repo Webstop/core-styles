@@ -55,7 +55,7 @@
 
 $(function() {
 
-  $('[data-ajax-form]').on('submit', function(event){
+  $(document.body).on('submit', '[data-ajax-form]', function(event){
     event.preventDefault();
 
     let $this = $(this);

@@ -3,7 +3,7 @@
 
 $(function() {
 
-  $('[data-form-toggle-trigger]').change(function() {
+  $(document.body).on('change', '[data-form-toggle-trigger]', function(event){
     let $this   = $(this);
     let name    = $this.attr('name');
     let tag     = $this.prop('tagName');

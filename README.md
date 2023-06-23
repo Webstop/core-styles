@@ -90,7 +90,7 @@ Javascript source files into the served files.
 In a 3rd tab run:
 
 ```bash
-./node
+./bash_node
 ```
 
 This will open a terminal session into a Node.js server. Then after you make changes to a Javascript 

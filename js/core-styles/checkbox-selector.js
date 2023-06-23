@@ -55,7 +55,7 @@ $(function() {
 
 
   // If a select/unselect button is clicked, make the grouped checkboxes checked/unchecked.
-  $('[data-check-selector-for]').on('click', function(event){
+  $(document.body).on('click', '[data-check-selector-for]', function(event){
     event.preventDefault();
 
     let $button = $(this);
