@@ -11,7 +11,7 @@ $(function() {
 
   loadShoppingListPowerBar();
 
-  $(document.body).on('change', '.site-aside-slider-toggle', function(event){
+  $(document.body).on('click', '.site-aside-slider-toggle', function(event){
     event.preventDefault();
     let $aside = $('#site-aside-slider');
     if( $aside.hasClass('site-aside-slider-open') ){
