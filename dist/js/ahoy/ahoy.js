@@ -1,113 +1,16 @@
-/*
+/*!
  * Ahoy.js
  * Simple, powerful JavaScript analytics
  * https://github.com/ankane/ahoy.js
- * v0.3.4
+ * v0.4.0
  * MIT License
  */
 
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global.ahoy = factory());
+  (global = global || self, global.ahoy = factory());
 }(this, (function () { 'use strict';
-
-  function isUndefined(value) {
-    return value === undefined;
-  }
-
-  function isNull(value) {
-    return value === null;
-  }
-
-  function isObject(value) {
-    return value === Object(value);
-  }
-
-  function isArray(value) {
-    return Array.isArray(value);
-  }
-
-  function isDate(value) {
-    return value instanceof Date;
-  }
-
-  function isBlob(value) {
-    return (
-      value &&
-      typeof value.size === 'number' &&
-      typeof value.type === 'string' &&
-      typeof value.slice === 'function'
-    );
-  }
-
-  function isFile(value) {
-    return (
-      isBlob(value) &&
-      (typeof value.lastModifiedDate === 'object' ||
-        typeof value.lastModified === 'number') &&
-      typeof value.name === 'string'
-    );
-  }
-
-  function isFormData(value) {
-    return value instanceof FormData;
-  }
-
-  function objectToFormData(obj, cfg, fd, pre) {
-    if (isFormData(cfg)) {
-      pre = fd;
-      fd = cfg;
-      cfg = null;
-    }
-
-    cfg = cfg || {};
-    cfg.indices = isUndefined(cfg.indices) ? false : cfg.indices;
-    cfg.nulls = isUndefined(cfg.nulls) ? true : cfg.nulls;
-    fd = fd || new FormData();
-
-    if (isUndefined(obj)) {
-      return fd;
-    } else if (isNull(obj)) {
-      if (cfg.nulls) {
-        fd.append(pre, '');
-      }
-    } else if (isArray(obj)) {
-      if (!obj.length) {
-        var key = pre + '[]';
-
-        fd.append(key, '');
-      } else {
-        obj.forEach(function(value, index) {
-          var key = pre + '[' + (cfg.indices ? index : '') + ']';
-
-          objectToFormData(value, cfg, fd, key);
-        });
-      }
-    } else if (isDate(obj)) {
-      fd.append(pre, obj.toISOString());
-    } else if (isObject(obj) && !isFile(obj) && !isBlob(obj)) {
-      Object.keys(obj).forEach(function(prop) {
-        var value = obj[prop];
-
-        if (isArray(value)) {
-          while (prop.length > 2 && prop.lastIndexOf('[]') === prop.length - 2) {
-            prop = prop.substring(0, prop.length - 2);
-          }
-        }
-
-        var key = pre ? pre + '[' + prop + ']' : prop;
-
-        objectToFormData(value, cfg, fd, key);
-      });
-    } else {
-      fd.append(pre, obj);
-    }
-
-    return fd;
-  }
-
-  var objectToFormdata = objectToFormData;
 
   // https://www.quirksmode.org/js/cookies.html
 
@@ -123,7 +26,7 @@
       if (domain) {
         cookieDomain = "; domain=" + domain;
       }
-      document.cookie = name + "=" + escape(value) + expires + cookieDomain + "; path=/";
+      document.cookie = name + "=" + escape(value) + expires + cookieDomain + "; path=/; samesite=lax";
     },
     get: function (name) {
       var i, c;
@@ -155,7 +58,9 @@
     cookieDomain: null,
     headers: {},
     visitParams: {},
-    withCredentials: false
+    withCredentials: false,
+    visitDuration: 4 * 60, // default 4 hours
+    visitorDuration: 2 * 365 * 24 * 60 // default 2 years
   };
 
   var ahoy = window.ahoy || window.Ahoy || {};
@@ -173,8 +78,6 @@
 
   var $ = window.jQuery || window.Zepto || window.$;
   var visitId, visitorId, track;
-  var visitTtl = 4 * 60; // 4 hours
-  var visitorTtl = 2 * 365 * 24 * 60; // 2 years
   var isReady = false;
   var queue = [];
   var canStringify = typeof(JSON) !== "undefined" && typeof(JSON.stringify) !== "undefined";
@@ -194,6 +97,16 @@
 
   function canTrackNow() {
     return (config.useBeacon || config.trackNow) && isEmpty(config.headers) && canStringify && typeof(window.navigator.sendBeacon) !== "undefined" && !config.withCredentials;
+  }
+
+  function serialize(object) {
+    var data = new FormData();
+    for (var key in object) {
+      if (object.hasOwnProperty(key)) {
+        data.append(key, object[key]);
+      }
+    }
+    return data;
   }
 
   // cookies
@@ -224,13 +137,13 @@
     isReady = true;
   }
 
-  function ready(callback) {
+  ahoy.ready = function (callback) {
     if (isReady) {
       callback();
     } else {
       queue.push(callback);
     }
-  }
+  };
 
   function matchesSelector(element, selector) {
     var matches = element.matches ||
@@ -241,24 +154,34 @@
       element.webkitMatchesSelector;
 
     if (matches) {
-      return matches.apply(element, [selector]);
+      if (matches.apply(element, [selector])) {
+        return element;
+      } else if (element.parentElement) {
+        return matchesSelector(element.parentElement, selector);
+      }
+      return null;
     } else {
       log("Unable to match");
-      return false;
+      return null;
     }
   }
 
   function onEvent(eventName, selector, callback) {
     document.addEventListener(eventName, function (e) {
-      if (matchesSelector(e.target, selector)) {
-        callback(e);
+      var matchedElement = matchesSelector(e.target, selector);
+      if (matchedElement) {
+        callback.call(matchedElement, e);
       }
     });
   }
 
   // http://beeker.io/jquery-document-ready-equivalent-vanilla-javascript
   function documentReady(callback) {
-    document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+    if (document.readyState === "interactive" || document.readyState === "complete") {
+      setTimeout(callback, 0);
+    } else {
+      document.addEventListener("DOMContentLoaded", callback);
+    }
   }
 
   // https://stackoverflow.com/a/2117523/1177228
@@ -294,7 +217,7 @@
 
   function sendRequest(url, data, success) {
     if (canStringify) {
-      if ($) {
+      if ($ && $.ajax) {
         $.ajax({
           type: "POST",
           url: url,
@@ -343,7 +266,7 @@
   }
 
   function trackEvent(event) {
-    ready( function () {
+    ahoy.ready( function () {
       sendRequest(eventsUrl(), eventData(event), function() {
         // remove from queue
         for (var i = 0; i < eventQueue.length; i++) {
@@ -358,7 +281,7 @@
   }
 
   function trackEventNow(event) {
-    ready( function () {
+    ahoy.ready( function () {
       var data = eventData(event);
       var param = csrfParam();
       var token = csrfToken();
@@ -366,7 +289,7 @@
       // stringify so we keep the type
       data.events_json = JSON.stringify(data.events);
       delete data.events;
-      window.navigator.sendBeacon(eventsUrl(), objectToFormdata(data));
+      window.navigator.sendBeacon(eventsUrl(), serialize(data));
     });
   }
 
@@ -389,14 +312,13 @@
     return obj;
   }
 
-  function eventProperties(e) {
-    var target = e.target;
+  function eventProperties() {
     return cleanObject({
-      tag: target.tagName.toLowerCase(),
-      id: presence(target.id),
-      "class": presence(target.className),
+      tag: this.tagName.toLowerCase(),
+      id: presence(this.id),
+      "class": presence(this.className),
       page: page(),
-      section: getClosestSection(target)
+      section: getClosestSection(this)
     });
   }
 
@@ -427,7 +349,7 @@
     } else {
       if (!visitId) {
         visitId = generateId();
-        setCookie("ahoy_visit", visitId, visitTtl);
+        setCookie("ahoy_visit", visitId, config.visitDuration);
       }
 
       // make sure cookies are enabled
@@ -436,7 +358,7 @@
 
         if (!visitorId) {
           visitorId = generateId();
-          setCookie("ahoy_visitor", visitorId, visitorTtl);
+          setCookie("ahoy_visitor", visitorId, config.visitorDuration);
         }
 
         var data = {
@@ -509,12 +431,12 @@
       js: true
     };
 
-    ready( function () {
+    ahoy.ready( function () {
       if (config.cookies && !ahoy.getVisitId()) {
         createVisit();
       }
 
-      ready( function () {
+      ahoy.ready( function () {
         log(event);
 
         event.visit_token = ahoy.getVisitId();
@@ -554,35 +476,37 @@
     ahoy.track("$view", properties);
   };
 
-  ahoy.trackClicks = function () {
-    onEvent("click", "a, button, input[type=submit]", function (e) {
-      var target = e.target;
-      var properties = eventProperties(e);
-      properties.text = properties.tag == "input" ? target.value : (target.textContent || target.innerText || target.innerHTML).replace(/[\s\r\n]+/g, " ").trim();
-      properties.href = target.href;
+  ahoy.trackClicks = function (selector) {
+    if (selector === undefined) {
+      throw new Error("Missing selector");
+    }
+    onEvent("click", selector, function (e) {
+      var properties = eventProperties.call(this, e);
+      properties.text = properties.tag == "input" ? this.value : (this.textContent || this.innerText || this.innerHTML).replace(/[\s\r\n]+/g, " ").trim();
+      properties.href = this.href;
       ahoy.track("$click", properties);
     });
   };
 
-  ahoy.trackSubmits = function () {
-    onEvent("submit", "form", function (e) {
-      var properties = eventProperties(e);
+  ahoy.trackSubmits = function (selector) {
+    if (selector === undefined) {
+      throw new Error("Missing selector");
+    }
+    onEvent("submit", selector, function (e) {
+      var properties = eventProperties.call(this, e);
       ahoy.track("$submit", properties);
     });
   };
 
-  ahoy.trackChanges = function () {
-    onEvent("change", "input, textarea, select", function (e) {
-      var properties = eventProperties(e);
+  ahoy.trackChanges = function (selector) {
+    log("trackChanges is deprecated and will be removed in 0.5.0");
+    if (selector === undefined) {
+      throw new Error("Missing selector");
+    }
+    onEvent("change", selector, function (e) {
+      var properties = eventProperties.call(this, e);
       ahoy.track("$change", properties);
     });
-  };
-
-  ahoy.trackAll = function() {
-    ahoy.trackView();
-    ahoy.trackClicks();
-    ahoy.trackSubmits();
-    ahoy.trackChanges();
   };
 
   // push events from queue

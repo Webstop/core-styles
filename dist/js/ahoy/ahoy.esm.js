@@ -1,12 +1,10 @@
-/*
+/*!
  * Ahoy.js
  * Simple, powerful JavaScript analytics
  * https://github.com/ankane/ahoy.js
- * v0.3.4
+ * v0.4.0
  * MIT License
  */
-
-import objectToFormData from 'object-to-formdata';
 
 // https://www.quirksmode.org/js/cookies.html
 
@@ -22,7 +20,7 @@ var Cookies = {
     if (domain) {
       cookieDomain = "; domain=" + domain;
     }
-    document.cookie = name + "=" + escape(value) + expires + cookieDomain + "; path=/";
+    document.cookie = name + "=" + escape(value) + expires + cookieDomain + "; path=/; samesite=lax";
   },
   get: function (name) {
     var i, c;
@@ -54,7 +52,9 @@ var config = {
   cookieDomain: null,
   headers: {},
   visitParams: {},
-  withCredentials: false
+  withCredentials: false,
+  visitDuration: 4 * 60, // default 4 hours
+  visitorDuration: 2 * 365 * 24 * 60 // default 2 years
 };
 
 var ahoy = window.ahoy || window.Ahoy || {};
@@ -72,8 +72,6 @@ ahoy.configure(ahoy);
 
 var $ = window.jQuery || window.Zepto || window.$;
 var visitId, visitorId, track;
-var visitTtl = 4 * 60; // 4 hours
-var visitorTtl = 2 * 365 * 24 * 60; // 2 years
 var isReady = false;
 var queue = [];
 var canStringify = typeof(JSON) !== "undefined" && typeof(JSON.stringify) !== "undefined";
@@ -93,6 +91,16 @@ function isEmpty(obj) {
 
 function canTrackNow() {
   return (config.useBeacon || config.trackNow) && isEmpty(config.headers) && canStringify && typeof(window.navigator.sendBeacon) !== "undefined" && !config.withCredentials;
+}
+
+function serialize(object) {
+  var data = new FormData();
+  for (var key in object) {
+    if (object.hasOwnProperty(key)) {
+      data.append(key, object[key]);
+    }
+  }
+  return data;
 }
 
 // cookies
@@ -123,13 +131,13 @@ function setReady() {
   isReady = true;
 }
 
-function ready(callback) {
+ahoy.ready = function (callback) {
   if (isReady) {
     callback();
   } else {
     queue.push(callback);
   }
-}
+};
 
 function matchesSelector(element, selector) {
   var matches = element.matches ||
@@ -140,24 +148,34 @@ function matchesSelector(element, selector) {
     element.webkitMatchesSelector;
 
   if (matches) {
-    return matches.apply(element, [selector]);
+    if (matches.apply(element, [selector])) {
+      return element;
+    } else if (element.parentElement) {
+      return matchesSelector(element.parentElement, selector);
+    }
+    return null;
   } else {
     log("Unable to match");
-    return false;
+    return null;
   }
 }
 
 function onEvent(eventName, selector, callback) {
   document.addEventListener(eventName, function (e) {
-    if (matchesSelector(e.target, selector)) {
-      callback(e);
+    var matchedElement = matchesSelector(e.target, selector);
+    if (matchedElement) {
+      callback.call(matchedElement, e);
     }
   });
 }
 
 // http://beeker.io/jquery-document-ready-equivalent-vanilla-javascript
 function documentReady(callback) {
-  document.readyState === "interactive" || document.readyState === "complete" ? callback() : document.addEventListener("DOMContentLoaded", callback);
+  if (document.readyState === "interactive" || document.readyState === "complete") {
+    setTimeout(callback, 0);
+  } else {
+    document.addEventListener("DOMContentLoaded", callback);
+  }
 }
 
 // https://stackoverflow.com/a/2117523/1177228
@@ -193,7 +211,7 @@ function CSRFProtection(xhr) {
 
 function sendRequest(url, data, success) {
   if (canStringify) {
-    if ($) {
+    if ($ && $.ajax) {
       $.ajax({
         type: "POST",
         url: url,
@@ -242,7 +260,7 @@ function eventData(event) {
 }
 
 function trackEvent(event) {
-  ready( function () {
+  ahoy.ready( function () {
     sendRequest(eventsUrl(), eventData(event), function() {
       // remove from queue
       for (var i = 0; i < eventQueue.length; i++) {
@@ -257,7 +275,7 @@ function trackEvent(event) {
 }
 
 function trackEventNow(event) {
-  ready( function () {
+  ahoy.ready( function () {
     var data = eventData(event);
     var param = csrfParam();
     var token = csrfToken();
@@ -265,7 +283,7 @@ function trackEventNow(event) {
     // stringify so we keep the type
     data.events_json = JSON.stringify(data.events);
     delete data.events;
-    window.navigator.sendBeacon(eventsUrl(), objectToFormData(data));
+    window.navigator.sendBeacon(eventsUrl(), serialize(data));
   });
 }
 
@@ -288,14 +306,13 @@ function cleanObject(obj) {
   return obj;
 }
 
-function eventProperties(e) {
-  var target = e.target;
+function eventProperties() {
   return cleanObject({
-    tag: target.tagName.toLowerCase(),
-    id: presence(target.id),
-    "class": presence(target.className),
+    tag: this.tagName.toLowerCase(),
+    id: presence(this.id),
+    "class": presence(this.className),
     page: page(),
-    section: getClosestSection(target)
+    section: getClosestSection(this)
   });
 }
 
@@ -326,7 +343,7 @@ function createVisit() {
   } else {
     if (!visitId) {
       visitId = generateId();
-      setCookie("ahoy_visit", visitId, visitTtl);
+      setCookie("ahoy_visit", visitId, config.visitDuration);
     }
 
     // make sure cookies are enabled
@@ -335,7 +352,7 @@ function createVisit() {
 
       if (!visitorId) {
         visitorId = generateId();
-        setCookie("ahoy_visitor", visitorId, visitorTtl);
+        setCookie("ahoy_visitor", visitorId, config.visitorDuration);
       }
 
       var data = {
@@ -408,12 +425,12 @@ ahoy.track = function (name, properties) {
     js: true
   };
 
-  ready( function () {
+  ahoy.ready( function () {
     if (config.cookies && !ahoy.getVisitId()) {
       createVisit();
     }
 
-    ready( function () {
+    ahoy.ready( function () {
       log(event);
 
       event.visit_token = ahoy.getVisitId();
@@ -453,35 +470,37 @@ ahoy.trackView = function (additionalProperties) {
   ahoy.track("$view", properties);
 };
 
-ahoy.trackClicks = function () {
-  onEvent("click", "a, button, input[type=submit]", function (e) {
-    var target = e.target;
-    var properties = eventProperties(e);
-    properties.text = properties.tag == "input" ? target.value : (target.textContent || target.innerText || target.innerHTML).replace(/[\s\r\n]+/g, " ").trim();
-    properties.href = target.href;
+ahoy.trackClicks = function (selector) {
+  if (selector === undefined) {
+    throw new Error("Missing selector");
+  }
+  onEvent("click", selector, function (e) {
+    var properties = eventProperties.call(this, e);
+    properties.text = properties.tag == "input" ? this.value : (this.textContent || this.innerText || this.innerHTML).replace(/[\s\r\n]+/g, " ").trim();
+    properties.href = this.href;
     ahoy.track("$click", properties);
   });
 };
 
-ahoy.trackSubmits = function () {
-  onEvent("submit", "form", function (e) {
-    var properties = eventProperties(e);
+ahoy.trackSubmits = function (selector) {
+  if (selector === undefined) {
+    throw new Error("Missing selector");
+  }
+  onEvent("submit", selector, function (e) {
+    var properties = eventProperties.call(this, e);
     ahoy.track("$submit", properties);
   });
 };
 
-ahoy.trackChanges = function () {
-  onEvent("change", "input, textarea, select", function (e) {
-    var properties = eventProperties(e);
+ahoy.trackChanges = function (selector) {
+  log("trackChanges is deprecated and will be removed in 0.5.0");
+  if (selector === undefined) {
+    throw new Error("Missing selector");
+  }
+  onEvent("change", selector, function (e) {
+    var properties = eventProperties.call(this, e);
     ahoy.track("$change", properties);
   });
-};
-
-ahoy.trackAll = function() {
-  ahoy.trackView();
-  ahoy.trackClicks();
-  ahoy.trackSubmits();
-  ahoy.trackChanges();
 };
 
 // push events from queue
