@@ -63,6 +63,7 @@ function load(target, url, infinite) {
     .then(function() { if(infinite){
       pagingObserver.observe(target.querySelector('.paging-trigger'));
       enableNextLoadOnView(target);
+      initDataAttributes();
     } });
 }
 
