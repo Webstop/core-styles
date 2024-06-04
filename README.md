@@ -12,7 +12,6 @@ To run the development server:
 
 Then visit [`{{ jekyll_host }}`]({{ jekyll_host }}) in your web browser.
 
-
 To quit the server:
 
 ```bash
@@ -22,14 +21,13 @@ Ctrl + c
 Setup
 -----
 
-
 1. Install Docker for Mac.  Click the 'Get Docker for Mac (stable)' link
-  on this page: [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/)
+   on this page: [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/)
 2. Get a copy of the repo. First `cd` to the directory you want to install the project into then 
-  run `git clone git@github.com:Webstop/core-styles.git` after the clone completes run `cd core-styles`.
+   run `git clone git@github.com:Webstop/core-styles.git` after the clone completes run `cd core-styles`.
 3. Run `./setup` from the project's root directory. The first time you run this command it 
-  take longer because it will be going out and downloading the Docker VMs and installing all 
-  of the project's Ruby Gems. The whole process should take about 5-10 minutes. 
+   take longer because it will be going out and downloading the Docker VMs and installing all 
+   of the project's Ruby Gems. The whole process should take about 5-10 minutes. 
 
 Now you are setup and can run the `./serve` command described below.
 
@@ -37,7 +35,6 @@ Development
 -----------
 
 ## Running The Web Server
-
 
 From the root directory of the project, run:
 
@@ -54,8 +51,6 @@ site every time you make a change.
 > take longer because it will be going out and downloading the Docker VMs and installing all 
 > of the project's Ruby Gems. The whole process should take about 10 minutes. After you're 
 > setup, the `./serve` command should take a few seconds to launch your web server.
-
-
 
 ### To quit the server:
 
@@ -128,7 +123,7 @@ Example `./jekyll` commands
 ./jekyll build
 ```
 
-## Development, Deeper Dive 
+## Development, Deeper Dive
 
 ### Creating Themes
 
@@ -176,7 +171,6 @@ See if the location of the documentation has changed. If it has, do the followin
 
 Run `./jekyll build` to copy over the new documentation files.
 
-
 # Plugins
 
 Lipsum Usage
@@ -206,15 +200,14 @@ The tag allows up to three numbers as parameters:
 
 Combining this, you can have the following situations:
 
-Usage                    | Result
-:------------------------|:----------------------------------------------------------------
-``{% lipsum %}``         | 1 paragraph. Random length between 10 and 30
-``{% lipsum n %}``       | **_n_** paragraphs. Random length between 10 and 30
-``{% lipsum n l %}``     | **_n_** paragraphs. Exactly a length of **_l_**
-``{% lipsum n l1 l2 %}`` | **_n_** paragraphs. Random length between **_l1_** and **_l2_**
+| Usage                    | Result                                                          |
+|:------------------------ |:--------------------------------------------------------------- |
+| ``{% lipsum %}``         | 1 paragraph. Random length between 10 and 30                    |
+| ``{% lipsum n %}``       | **_n_** paragraphs. Random length between 10 and 30             |
+| ``{% lipsum n l %}``     | **_n_** paragraphs. Exactly a length of **_l_**                 |
+| ``{% lipsum n l1 l2 %}`` | **_n_** paragraphs. Random length between **_l1_** and **_l2_** |
 
 You can improve or modify the behaviour of this liquid tag by simply editing its source code. There you can change the sentence parts to your wishes by simply editing the three arrays of strings from which the generator takes the text parts.
-
 
 ---
 
@@ -225,21 +218,24 @@ Follow these steps to deploy the Framework.
 
 1. Update the version number in the `package.json` file (remember the new version number).
 2. Run the distribution script. We will launch a node container and run the script that moves all our latest CSS and JavaScript into the `dist` folder.
-  - Run the `./bash_node` command.
-  - then run `npm run dist`.
-  - then type `exit` to leave the node container. 
+   - Run the `./bash_node` command.
+   - then run `npm run dist`.
+   - then type `exit` to leave the node container. 
 3. Commit & Push
-  - Do a `git add -A`.
-  - then a `git commit -m "some message"`.
-  - then `git push origin master`. 
-  - go to github and make a pull request.
+   - Do a `git add -A`.
+   - then a `git commit -m "some message"`.
+   - then `git push origin master`. 
+   - go to github and make a pull request.
 4. Tag the Release
-  - Visit [core-styles releases](https://github.com/Webstop/core-styles/releases) in a web browser.
-  - Click the `Draft New Release` button.
-  - Enter the same version number you used in step 1 with a `v` appended to the front (e.g. `1.0.2` = `v1.0.2`). 
-  - Write a Helpful Title, and optionally a description.  
-  - Click `Publish Release`.
-  
+   - do a `git tag x.x.x {branch}`.
+   - then do `git push origin tag x.x.x`
+   - this will push the tag to your repo, but tag will still need to be created in Webstop repo, once the merge is done.
+   - Visit [core-styles releases](https://github.com/Webstop/core-styles/releases) in a web browser.
+   - Click the `Draft New Release` button.
+   - Enter the same version number you used in step 1 with a `v` appended to the front (e.g. `1.0.2` = `v1.0.2`). 
+   - Write a Helpful Title, and optionally a description.  
+   - Click `Publish Release`.
+
 At this point you've deployed the code and tagged it. It is ready and available 
 to be installed as a Node module via NPM or Yarn.
 
@@ -269,32 +265,29 @@ when tagging a release on the Github website.
 
 Now you should have the latest version of the node module installed in your app.
 
-
 ### Installing in Legacy Lasso Pages
 
 Because our legacy Lasso site doesn't have fun tools like NPM installed, we have to 
 do things a bit more manually.
 
 1. Move the dist files to S3 & CloudFront CDN
-  - In your favorite FTP client connect to S3.
-  - Open the `core_app_assets` bucket.
-  - Navigate to `core-repos/core-styles`, in there you will see a bunch of folder, each corresponds to a version of core-styles.
-  - Create a new folder inside the `core-styles` folder. Name the folder the same version number you used when you created the tagged release on the Github website (e.g. `v0.5.14`).
-  - Open this new folder then copy the `dist` folder from your local copy of the `core-styles` app into your new folder.
+   - In your favorite FTP client connect to S3.
+   - Open the `core_app_assets` bucket.
+   - Navigate to `core-repos/core-styles`, in there you will see a bunch of folder, each corresponds to a version of core-styles.
+   - Create a new folder inside the `core-styles` folder. Name the folder the same version number you used when you created the tagged release on the Github website (e.g. `v0.5.14`).
+   - Open this new folder then copy the `dist` folder from your local copy of the `core-styles` app into your new folder.
 2. Set `core-lasso` to use the new version.
-  - In your development copy of the core-lasso site, open the [`/Templates/layouts/core_styles_2.inc`](https://github.com/Webstop/lasso_core/blob/master/Templates/layouts/core_styles_2.inc#L3) file.
-  - In the top of this file (line 3 at the time of this writing) you'll see a variable named `core_styles_version` 
-  being set. Change that variable is it is set to your new version number (e.g. `[var('core_styles_version' = 'v0.5.14')]`).
+   - In your development copy of the core-lasso site, open the [`/Templates/layouts/core_styles_2.inc`](https://github.com/Webstop/lasso_core/blob/master/Templates/layouts/core_styles_2.inc#L3) file.
+   - In the top of this file (line 3 at the time of this writing) you'll see a variable named `core_styles_version` 
+     being set. Change that variable is it is set to your new version number (e.g. `[var('core_styles_version' = 'v0.5.14')]`).
 
 _If the only updates are to CSS or to existing JavaScript files, then you are done._ 
 However if new JavaScript files are introduced you'll need to do the following additional step.
 
 3. Add new JavaScript files to `core-lasso`.
-  - In your development copy of the core-lasso site, open the [`/Templates/layouts/core_styles_2.inc`](https://github.com/Webstop/lasso_core/blob/master/Templates/layouts/core_styles_2.inc#L61-L72) file.
-  - Near the bottom of the file you will find a list of JavaScript files to include (startign at line 61 at the time of this writing), add your new files to this list.
-
+   - In your development copy of the core-lasso site, open the [`/Templates/layouts/core_styles_2.inc`](https://github.com/Webstop/lasso_core/blob/master/Templates/layouts/core_styles_2.inc#L61-L72) file.
+   - Near the bottom of the file you will find a list of JavaScript files to include (startign at line 61 at the time of this writing), add your new files to this list.
 
 ---
 
 Crafted by Greg Hemphill & the Webstop team.
-
