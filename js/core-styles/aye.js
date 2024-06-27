@@ -11,9 +11,11 @@
 
   // Public Sub-Class
   webstop.aye = {}
-  let attrView = 'data-aye-view';
-  let attrClick = 'data-aye-click';
-  let attrSubmit = 'data-aye-submit';
+  // Aye data attributes
+  let attrView     = 'data-aye-view';
+  let attrClick    = 'data-aye-click';
+  let attrSubmit   = 'data-aye-submit';
+  let attrWatching = 'data-aye-watching';
 
 
   webstop.aye.cargo = function(element){
@@ -21,7 +23,7 @@
     for(let attribute of element.attributes) {
       if(attribute.name.indexOf('data-aye-property-')===0) {
         properties[attribute.name.slice(18).split("-").join("_").toLowerCase()] = attribute.value;
-      } else if(attribute.name == attrClick || attribute.name == attrView || attribute.name == attrSubmit ){
+      } else if(attribute.name == attrClick || attribute.name == attrView || attribute.name == attrSubmit || attribute.name == attrWatching ){
         // skip these attributes
       } else if(attribute.name.indexOf('data-aye-')===0) {
         properties[attribute.name.slice(9).split("-").join("_").toLowerCase()] = attribute.value;
@@ -73,7 +75,7 @@
     });
 
     viewables.forEach(function(element) {
-      element.setAttribute('data-aye-watching', '');
+      element.setAttribute(attrWatching, '');
       webstop.aye.track('view', element);
     });
 
@@ -82,7 +84,7 @@
 
   // Name can be 'click', 'submit', or 'view'
   webstop.aye.listen = function(name, element){
-    element.setAttribute('data-aye-watching', '');
+    element.setAttribute(attrWatching, '');
     element.addEventListener(name, function() {
       console.log('Clicked element:', this);
       webstop.aye.track(name, this);
@@ -91,9 +93,9 @@
 
   // The elements fed to this method by the live function are the nodes added to the DOM
   webstop.aye.watch = function(element){
-    if(element.hasAttribute('data-aye-watching') == false) {
+    if(element.hasAttribute(attrWatching) == false) {
       if(element.hasAttribute(attrView)) {
-        element.setAttribute('data-aye-watching', '');
+        element.setAttribute(attrWatching, '');
         webstop.aye.track('view', element);
       }
       if(element.hasAttribute(attrClick)) {

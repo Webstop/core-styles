@@ -1,0 +1,62 @@
+"use strict";
+
+// Using the following design pattern
+// https://web.archive.org/web/20181005005954/https://appendto.com/2010/10/how-good-c-habits-can-encourage-bad-javascript-habits-part-1/
+
+
+// Live
+(function( webstop ) {
+
+  // Public Method live();
+  // Live allows you to perform an action when elements are added to the DOM tree.
+  // This was developed to help add event listeners to DOM elements after they were added via AJAX or fetch.
+  // It also works on DOM elements added via straight Javascript.
+  //
+  // Parameters:
+  //   @target: the selector for elements to watch for
+  //   @parent: the parent DOM node to watch, blank or null defaults to document.body
+  //   @perform: the function to execute in the callback
+  //   @includeNode: indicates if the function specified in perform should include the modified node, defaults to true
+  webstop.live = function(perform, parent= document.body, includeNode= true) {
+
+    // Private Properties
+    let parents; // found DOM elements, based on parent selector
+    const config = {
+      childList: true,
+      subtree: true
+    };
+
+    // Callback function to execute when mutation is observed
+    const callback = function(mutationsList, observer) {
+      if(includeNode) {
+        for(let mutation of mutationsList) {
+          if (mutation.type == 'childList') {
+            let nodes = Array.from(mutation.addedNodes);
+            nodes.forEach(node=>{
+              perform(node);
+            });
+          }
+        }
+      }else{
+        perform();
+      }
+
+    };
+
+    if (typeof parent === "string" && parent.trim().length > 0) {
+      hasParent = true;
+    } else {
+      parent = document.body;
+    }
+
+    parents = document.querySelectorAll(parent);
+
+    if (parents.length > 0) {
+      parents.forEach((container) => {
+        let observer = new MutationObserver(callback);
+        observer.observe(container, config);
+      }
+    }
+  }
+
+})( window.webstop = window.webstop || {} );
