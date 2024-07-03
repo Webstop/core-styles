@@ -57,11 +57,10 @@
     } else if(name === 'view') {
       ahoyName += element.getAttribute(attrView);
     }
-    console.log(`Ahoy Track, name: ${name}, ahoyName: ${ahoyName}, cargo: ${cargo}`)
     ahoy.track(ahoyName, cargo);
   }
 
-  webstop.aye.start = function(){
+  webstop.aye.watch = function(){
     let clickables = document.querySelectorAll('[data-aye-click]:not([data-aye-watching])');
     let submitables = document.querySelectorAll('[data-aye-submit]:not([data-aye-watching])');
     let viewables = document.querySelectorAll('[data-aye-view]:not([data-aye-watching])');
@@ -75,37 +74,31 @@
     });
 
     viewables.forEach(function(element) {
-      element.setAttribute(attrWatching, '');
-      webstop.aye.track('view', element);
+      if(element.hasAttribute(attrWatching) === false){
+        element.setAttribute(attrWatching, '');
+        webstop.aye.track('view', element);
+      }
     });
 
-    webstop.live(webstop.aye.watch);
   }
 
   // Name can be 'click', 'submit', or 'view'
   webstop.aye.listen = function(name, element){
-    element.setAttribute(attrWatching, '');
-    element.addEventListener(name, function() {
-      console.log('Clicked element:', this);
-      webstop.aye.track(name, this);
-    });
-  }
-
-  // The elements fed to this method by the live function are the nodes added to the DOM
-  webstop.aye.watch = function(element){
-    if(element.hasAttribute(attrWatching) == false) {
-      if(element.hasAttribute(attrView)) {
-        element.setAttribute(attrWatching, '');
-        webstop.aye.track('view', element);
-      }
-      if(element.hasAttribute(attrClick)) {
-        webstop.aye.listen('click', element);
-      }
-      if(element.hasAttribute(attrSubmit)) {
-        webstop.aye.listen('submit', element);
-      }
+    if(element.hasAttribute(attrWatching) === false){
+      element.setAttribute(attrWatching, '');
+      element.addEventListener(name, function() {
+        webstop.aye.track(name, this);
+      });
     }
   }
+
+  webstop.aye.start = function(){
+
+    // Live executes the watch script once at init, so we don't have to run it again in here.
+    // webstop.aye.watch();
+    webstop.live(webstop.aye.watch);
+  }
+
 
   // Starts Aye tracking only when the DOM is ready.
   if (document.readyState === "loading") {

@@ -12,13 +12,14 @@
   // This was developed to help add event listeners to DOM elements after they were added via AJAX or fetch.
   // It also works on DOM elements added via straight Javascript.
   //
+  // NOTE: MutationObserver will execute the callback "perform" function immediately when live is instantiated.
+  //       This can cause some unexpected behavior if you aren't aware for it and design for it in your supplied
+  //       callback function (supplied to the perform parameter).
+  //
   // Parameters:
-  //   @target: the selector for elements to watch for
   //   @parent: the parent DOM node to watch, blank or null defaults to document.body
   //   @perform: the function to execute in the callback
-  //   @includeNode: indicates if the function specified in perform should include the modified node, defaults to true
-  webstop.live = function(perform, parent= document.body, includeNode= true) {
-
+  webstop.live = function(perform, parent= 'body',) {
     // Private Properties
     let parents; // found DOM elements, based on parent selector
     const config = {
@@ -27,26 +28,23 @@
     };
 
     // Callback function to execute when mutation is observed
-    const callback = function(mutationsList, observer) {
-      if(includeNode) {
-        for(let mutation of mutationsList) {
-          if (mutation.type == 'childList') {
-            let nodes = Array.from(mutation.addedNodes);
-            nodes.forEach(node=>{
-              perform(node);
-            });
-          }
+
+    let callback = function(mutationsList, observer) {
+      let hasNodesAdded = false;
+      for(let mutation of mutationsList) {
+        if(mutation.type === 'childList') { // We're only interested in child nodes being added or removed
+          hasNodesAdded = true;
         }
-      }else{
+      }
+      if(hasNodesAdded){
         perform();
       }
-
     };
 
     if (typeof parent === "string" && parent.trim().length > 0) {
-      hasParent = true;
+      // hasParent = true;
     } else {
-      parent = document.body;
+      parent ='body';
     }
 
     parents = document.querySelectorAll(parent);
@@ -55,7 +53,7 @@
       parents.forEach((container) => {
         let observer = new MutationObserver(callback);
         observer.observe(container, config);
-      }
+      });
     }
   }
 

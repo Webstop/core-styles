@@ -32,6 +32,21 @@ post '/alert_error' do
   erb( :alert_error, layout: :layout_empty )
 end
 
+get '/aye_view' do
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  erb( :aye_view, layout: :layout_empty )
+end
+
+get '/aye_click' do
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  erb( :aye_click, layout: :layout_empty )
+end
+
+get '/aye_submit' do
+  response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
+  erb( :aye_submit, layout: :layout_empty )
+end
+
 post '/search_results' do
   response['Access-Control-Allow-Origin'] = '*' # this allows AJAX from Jekyll pages
   @search = params['search']

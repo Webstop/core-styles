@@ -11,9 +11,11 @@
 
   // Public Sub-Class
   webstop.aye = {}
-  let attrView = 'data-aye-view';
-  let attrClick = 'data-aye-click';
-  let attrSubmit = 'data-aye-submit';
+  // Aye data attributes
+  let attrView     = 'data-aye-view';
+  let attrClick    = 'data-aye-click';
+  let attrSubmit   = 'data-aye-submit';
+  let attrWatching = 'data-aye-watching';
 
 
   webstop.aye.cargo = function(element){
@@ -21,7 +23,7 @@
     for(let attribute of element.attributes) {
       if(attribute.name.indexOf('data-aye-property-')===0) {
         properties[attribute.name.slice(18).split("-").join("_").toLowerCase()] = attribute.value;
-      } else if(attribute.name == attrClick || attribute.name == attrView || attribute.name == attrSubmit ){
+      } else if(attribute.name == attrClick || attribute.name == attrView || attribute.name == attrSubmit || attribute.name == attrWatching ){
         // skip these attributes
       } else if(attribute.name.indexOf('data-aye-')===0) {
         properties[attribute.name.slice(9).split("-").join("_").toLowerCase()] = attribute.value;
@@ -55,11 +57,10 @@
     } else if(name === 'view') {
       ahoyName += element.getAttribute(attrView);
     }
-    console.log(`Ahoy Track, name: ${name}, ahoyName: ${ahoyName}, cargo: ${cargo}`)
     ahoy.track(ahoyName, cargo);
   }
 
-  webstop.aye.start = function(){
+  webstop.aye.watch = function(){
     let clickables = document.querySelectorAll('[data-aye-click]:not([data-aye-watching])');
     let submitables = document.querySelectorAll('[data-aye-submit]:not([data-aye-watching])');
     let viewables = document.querySelectorAll('[data-aye-view]:not([data-aye-watching])');
@@ -73,37 +74,31 @@
     });
 
     viewables.forEach(function(element) {
-      element.setAttribute('data-aye-watching', '');
-      webstop.aye.track('view', element);
+      if(element.hasAttribute(attrWatching) === false){
+        element.setAttribute(attrWatching, '');
+        webstop.aye.track('view', element);
+      }
     });
 
-    webstop.live(webstop.aye.watch);
   }
 
   // Name can be 'click', 'submit', or 'view'
   webstop.aye.listen = function(name, element){
-    element.setAttribute('data-aye-watching', '');
-    element.addEventListener(name, function() {
-      console.log('Clicked element:', this);
-      webstop.aye.track(name, this);
-    });
-  }
-
-  // The elements fed to this method by the live function are the nodes added to the DOM
-  webstop.aye.watch = function(element){
-    if(element.hasAttribute('data-aye-watching') == false) {
-      if(element.hasAttribute(attrView)) {
-        element.setAttribute('data-aye-watching', '');
-        webstop.aye.track('view', element);
-      }
-      if(element.hasAttribute(attrClick)) {
-        webstop.aye.listen('click', element);
-      }
-      if(element.hasAttribute(attrSubmit)) {
-        webstop.aye.listen('submit', element);
-      }
+    if(element.hasAttribute(attrWatching) === false){
+      element.setAttribute(attrWatching, '');
+      element.addEventListener(name, function() {
+        webstop.aye.track(name, this);
+      });
     }
   }
+
+  webstop.aye.start = function(){
+
+    // Live executes the watch script once at init, so we don't have to run it again in here.
+    // webstop.aye.watch();
+    webstop.live(webstop.aye.watch);
+  }
+
 
   // Starts Aye tracking only when the DOM is ready.
   if (document.readyState === "loading") {
