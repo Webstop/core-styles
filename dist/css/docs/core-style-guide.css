@@ -11021,7 +11021,7 @@ select.custom-select {
 @media (min-width: 576px) {
   .circular-item {
     max-width: 375px;
-    min-width: 257px;
+    min-width: 265px;
   }
   .circular-item.card {
     margin-right: 15px;
