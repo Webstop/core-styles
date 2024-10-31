@@ -20,6 +20,7 @@
 
   webstop.aye.cargo = function(element){
     let properties = {};
+    properties['store_number'] = webstop.storeNumber;
     for(let attribute of element.attributes) {
       if(attribute.name.indexOf('data-aye-property-')===0) {
         properties[attribute.name.slice(18).split("-").join("_").toLowerCase()] = attribute.value;
